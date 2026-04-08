@@ -1,5 +1,5 @@
 ```yaml
-title: Categories data in icon set
+title: 图标集中的分类数据
 types:
   IconSet: './index.md'
   IconCategory: './categories.md#type'
@@ -7,21 +7,21 @@ functions:
   listCategory: './list-category.md'
 ```
 
-# categories
+# 分类
 
-This property is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此属性属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Property `[prop]categories` contains list of categories.
+属性 `[prop]categories` 包含分类列表。
 
-## Structure
+## 结构
 
-Property `[prop]categories` is a `[type]Set` of `[type]IconCategory` entries.
+属性 `[prop]categories` 是一个由 `[type]IconCategory` 条目组成的 `[type]Set`。
 
-## IconCategory type {#type}
+## IconCategory 类型 {#type}
 
-Type `[type]IconCategory` has the following properties:
+类型 `[type]IconCategory` 包含以下属性：
 
-- `[prop]title`, `[type]string`. Category title.
-- `[prop]count`, `[type]number`. Number of icons.
+- `[prop]title`，`[type]string` 类型。分类标题。
+- `[prop]count`，`[type]number` 类型。图标数量。
 
-Number of icons is approximate, to get exact number use `[func]listCategory()` function. Running `[func]listCategory()` updates `[type]IconCategory` entry and deletes empty categories.
+图标数量为近似值，如需获取精确数量，请使用 `[func]listCategory()` 函数。运行 `[func]listCategory()` 会更新 `[type]IconCategory` 条目并删除空分类。

@@ -1,1 +1,1 @@
-There are several internal API functions that are exposed. They are intended to be used by developers that need more control over the component. For example, it is used in Sketch and Figma plug-ins. Use them carefully.
+公开了若干内部 API 函数。它们旨在供需要对组件进行更多控制的开发人员使用。例如，它们被用于 Sketch 和 Figma 插件中。请谨慎使用。

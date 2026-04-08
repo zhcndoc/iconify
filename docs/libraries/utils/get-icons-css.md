@@ -1,5 +1,5 @@
 ```yaml
-title: getIconsCSS() in Iconify Utils
+title: Iconify Utils 中的 getIconsCSS()
 functions:
   getIconCSS: './get-icon-css.md'
   getIconsContentCSS: './get-icons-content-css.md'
@@ -10,63 +10,62 @@ types:
 
 # getIconsCSS()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]getIconsCSS()` generates stylesheet for several icons from an icon set to render them as background or mask images.
+函数 `[func]getIconsCSS()` 为图标集中的多个图标生成样式表，以便将它们渲染为背景或遮罩图像。
 
-It generates code multiple icons from an icon set, splitting common code and icon-specific code.
-To generate code for one icon without splitting code, see `[func]getIconCSS()`.
+它为图标集中的多个图标生成代码，将通用代码和图标特定代码分开。
+若要为单个图标生成代码且不拆分代码，请参阅 `[func]getIconCSS()`。
 
-If instead of using icons as background or mask images,
-you want to use icons as content of pseudo-elements, see `[func]getIconsContentCSS()`.
+如果您不想将图标用作背景或遮罩图像，而是想将图标用作伪元素的内容，请参阅 `[func]getIconsContentCSS()`。
 
-To use icons in HTML, all you need to do is create any element, such as `[tag]span` with class names for an icon set and icon.
+要在 HTML 中使用图标，您只需创建任意元素（例如带有图标集和图标类名的 `[tag]span`）即可。
 
-## Color
+## 颜色
 
-Monotone icons are rendered as mask image with background color set to `[prop]currentColor`. That means icon will use the same color as text.
+单色图标将渲染为遮罩图像，背景颜色设置为 `[prop]currentColor`。这意味着图标将使用与文本相同的颜色。
 
-To change icon color, simply change text color.
+要更改图标颜色，只需更改文本颜色即可。
 
 ```yaml
 include: common/css-demo
 ```
 
-Icons with palette are rendered as background image.
+带调色板的图标将渲染为背景图像。
 
-You can also use `[prop]color` option to convert monotone icon to icon with palette. See `[str]Color option` section below.
+您还可以使用 `[prop]color` 选项将单色图标转换为带调色板的图标。请参阅下方的 `[str]颜色选项` 部分。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数具有以下参数：
 
-- `[prop]iconSet`, `[type]IconifyJSON`. Icon set data.
-- `[prop]names`, `[type]string[]`. Array of icon names.
-- `[prop]options`. Options object, optional.
+- `[prop]iconSet`，`[type]IconifyJSON`。图标集数据。
+- `[prop]names`，`[type]string[]`。图标名称数组。
+- `[prop]options`。选项对象，可选。
 
-Function returns `[type]string` with stylesheet for icons.
+函数返回包含图标样式表的 `[type]string`。
 
-## Options
+## 选项
 
-The `[prop]options` object has the following properties:
+`[prop]options` 对象具有以下属性：
 
-- `[prop]iconSelector`, `[type]string`. Selector for icon, defaults to `[str].icon--{prefix}--{name}`. Variable `[str]{prefix}` is replaced with icon set prefix, `[str]{name}` with icon name.
-- `[prop]commonSelector`, `[type]string`. Common selector for icons, defaults to `[str].icon--{prefix}`. Set it to empty to disable common code (see one of examples below). Variable `[str]{prefix}` is replaced with icon set prefix.
-- `[prop]overrideSelector`, `[type]string`. Selector that mixes `[prop]iconSelector` and `[prop]commonSelector` to generate icon specific style that overrides common style. See below. Default value is `[str].icon--{prefix}.icon--{prefix}--{name}`.
-- `[prop]pseudoSelector`, `[type]boolean`. Set it to `true` if selector for icon is a pseudo-selector, such as `[str].icon--{prefix}--{name}::after`.
-- `[prop]varName`, `[type]string`. Name for variable to use for icon, defaults to `[str]svg` for monotone icons, `null` for icons with palette. Set to `null` to disable.
-- `[prop]forceSquare`, `[type]boolean`. Forces icon to have width of `[num]1em`.
-- `[prop]color`: `[type]string`. Sets color for monotone icons. Also renders icons as background images.
-- `[prop]mode`: `[str]mask` or `[str]background`. Forces icon to render as mask image or background image. If not set, mode will be detected from icon content: icons that contain `[prop]currentColor` will be rendered as mask image, other icons as background image.
-- `[prop]format`. Stylesheet formatting option. Matches options used in Sass. Supported values: `[str]expanded`, `[str]compact`, `[str]compressed`.
-- `[prop]rules`, `[type]Record<string, string>`. Extra rules to add to CSS.
+- `[prop]iconSelector`，`[type]string`。图标的选择器，默认为 `[str].icon--{prefix}--{name}`。变量 `[str]{prefix}` 将被替换为图标集前缀，`[str]{name}` 将被替换为图标名称。
+- `[prop]commonSelector`，`[type]string`。图标的通用选择器，默认为 `[str].icon--{prefix}`。将其设置为空可禁用通用代码（请参阅下方的示例之一）。变量 `[str]{prefix}` 将被替换为图标集前缀。
+- `[prop]overrideSelector`，`[type]string`。混合 `[prop]iconSelector` 和 `[prop]commonSelector` 的选择器，用于生成覆盖通用样式的图标特定样式。见下文。默认值为 `[str].icon--{prefix}.icon--{prefix}--{name}`。
+- `[prop]pseudoSelector`，`[type]boolean`。如果图标的选择器是伪选择器（例如 `[str].icon--{prefix}--{name}::after`），请将其设置为 `true`。
+- `[prop]varName`，`[type]string`。用于图标的变量名称，单色图标默认为 `[str]svg`，带调色板的图标默认为 `null`。设置为 `null` 可禁用。
+- `[prop]forceSquare`，`[type]boolean`。强制图标宽度为 `[num]1em`。
+- `[prop]color`：`[type]string`。设置单色图标的颜色。同时会将图标渲染为背景图像。
+- `[prop]mode`：`[str]mask` 或 `[str]background`。强制图标渲染为遮罩图像或背景图像。如果未设置，将根据图标内容自动检测模式：包含 `[prop]currentColor` 的图标将渲染为遮罩图像，其他图标渲染为背景图像。
+- `[prop]format`。样式表格式化选项。与 Sass 中使用的选项匹配。支持的值：`[str]expanded`、`[str]compact`、`[str]compressed`。
+- `[prop]rules`，`[type]Record<string, string>`。要添加到 CSS 中的额外规则。
 
-## Result
+## 结果
 
-Example of generated stylesheet:
+生成的样式表示例：
 
 ```css
-/* Common code is combined in one class that should be added to each icon */
+/* 通用代码合并到一个类中，该类应添加到每个图标中 */
 .icon--tabler {
 	display: inline-block;
 	width: 1em;
@@ -78,7 +77,7 @@ Example of generated stylesheet:
 	mask-image: var(--svg);
 }
 
-/* SVG for each icon. Class name should be combined with common class name used above */
+/* 每个图标的 SVG。类名应与上面使用的通用类名组合使用 */
 .icon--tabler--code {
 	--svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m7 8l-4 4l4 4m10-8l4 4l-4 4M14 4l-4 16'/%3E%3C/svg%3E");
 }
@@ -92,13 +91,13 @@ Example of generated stylesheet:
 }
 ```
 
-That code can be used in HTML with any element, such as `[tag]span` with class names for both common code and icon specific code:
+该代码可在 HTML 中与任意元素一起使用，例如同时包含通用代码和图标特定代码类名的 `[tag]span`：
 
 ```html
 <span class="icon--tabler icon--tabler--code"></span>
 ```
 
-## Color option
+## 颜色选项
 
 ```yaml
 include: libraries/utils/css-color
@@ -111,11 +110,11 @@ include: libraries/utils/css-color
 ></span>
 ```
 
-## Selectors
+## 选择器
 
-### Simple selector
+### 简单选择器
 
-If you want to change selectors to something simple, like `[str].icon-home` for `[str]home` icon, use the following options:
+如果您想将选择器更改为更简单的形式，例如将 `[str]home` 图标的选择器改为 `[str].icon-home`，请使用以下选项：
 
 ```json
 {
@@ -124,7 +123,7 @@ If you want to change selectors to something simple, like `[str].icon-home` for 
 }
 ```
 
-It will result in stylesheet like this:
+生成的样式表将如下所示：
 
 ```css
 .icon-code,
@@ -153,9 +152,9 @@ It will result in stylesheet like this:
 }
 ```
 
-### Old browsers
+### 旧版浏览器
 
-If you need to support ancient browsers that do not support variables, set `[prop]varName` to `null`:
+如果您需要支持不支持变量的古老浏览器，请将 `[prop]varName` 设置为 `null`：
 
 ```json
 {
@@ -163,7 +162,7 @@ If you need to support ancient browsers that do not support variables, set `[pro
 }
 ```
 
-It will result in CSS like this:
+生成的 CSS 将如下所示：
 
 ```css
 .icon--tabler {
@@ -186,15 +185,15 @@ It will result in CSS like this:
 }
 ```
 
-With monotone icons it will cause duplication because some browsers still require prefix for masks.
+对于单色图标，这会导致代码重复，因为某些浏览器仍然需要遮罩的前缀。
 
-Not needed for icons for palette because default value for icons with palette is `null` (see example below that uses icons with palette).
+带调色板的图标不需要此设置，因为带调色板图标的默认值就是 `null`（请参阅下方使用带调色板图标的示例）。
 
-### Wide and thin icons
+### 宽窄图标
 
-Not all icons are square. Some icon sets use variable width for icons, this mostly applies to icon sets that were designed to be used as fonts.
+并非所有图标都是正方形的。某些图标集为图标使用可变宽度，这主要适用于设计为字体使用的图标集。
 
-By default, common code will have `[prop]width` set to `[num]1em` and it will be overridden by using selectors with higher specificity for each icon:
+默认情况下，通用代码的 `[prop]width` 将设置为 `[num]1em`，并且将通过为每个图标使用特异性更高的选择器来覆盖它：
 
 ```css
 .icon--fa6-solid {
@@ -219,7 +218,7 @@ By default, common code will have `[prop]width` set to `[num]1em` and it will be
 }
 ```
 
-But what if you want icons to be square? Use `[prop]forceSquare` option:
+但如果您希望图标为正方形怎么办？请使用 `[prop]forceSquare` 选项：
 
 ```json
 {
@@ -248,19 +247,19 @@ But what if you want icons to be square? Use `[prop]forceSquare` option:
 }
 ```
 
-### Custom selectors
+### 自定义选择器
 
-If you want to use custom selectors, such as `[str].iconify-{name}` for icons, specify 3 options:
+如果您想使用自定义选择器（例如图标的 `[str].iconify-{name}`），请指定 3 个选项：
 
-- `[prop]iconSelector` with value for icons, where you can use `[str]{prefix}` for icon set prefix and `[str]{name}` for icon name.
-- `[prop]commonSelector` with value for common code, where you can use `[str]{prefix}` for icon set prefix. You can set it to empty or same value as `[prop]iconSelector`.
-- `[prop]overrideSelector` with value for mix of selectors. Why is it a separate option? In case if mix selector is different from simply combining common and icon selectors.
+- `[prop]iconSelector`：图标的值，其中可以使用 `[str]{prefix}` 表示图标集前缀，使用 `[str]{name}` 表示图标名称。
+- `[prop]commonSelector`：通用代码的值，其中可以使用 `[str]{prefix}` 表示图标集前缀。您可以将其设置为空或与 `[prop]iconSelector` 相同的值。
+- `[prop]overrideSelector`：混合选择器的值。为什么它是一个单独的选项？以防混合选择器与简单组合通用和图标选择器的结果不同。
 
-If you set only `[prop]iconSelector`, other 2 options will be ignored.
+如果仅设置 `[prop]iconSelector`，其他两个选项将被忽略。
 
-Examples:
+示例：
 
-#### Using only 1 option
+#### 仅使用 1 个选项
 
 ```json
 {
@@ -268,7 +267,7 @@ Examples:
 }
 ```
 
-Results in:
+结果为：
 
 ```css
 .iconify-alien,
@@ -288,9 +287,9 @@ Results in:
 }
 ```
 
-### Pseudo-selector
+### 伪选择器
 
-This example shows why `[prop]overrideSelector` is an option and how to render icons with pseudo-selectors:
+此示例说明了为什么 `[prop]overrideSelector` 是一个选项，以及如何使用伪选择器渲染图标：
 
 ```json
 {
@@ -325,9 +324,9 @@ This example shows why `[prop]overrideSelector` is an option and how to render i
 }
 ```
 
-## Example
+## 示例
 
-Above examples show various options. This example shows actual code with options:
+上述示例展示了各种选项。此示例展示了带有选项的实际代码：
 
 ```yaml
 src: libraries/utils/get-icons-css.ts

@@ -1,15 +1,15 @@
-Many icons are square. For such icons if you set one dimension, another dimension will have the same value.
+许多图标是正方形的。对于此类图标，如果您设置了其中一个尺寸，另一个尺寸将具有相同的值。
 
-However, there are many icons that are not square. For example, icons imported from icon fonts and Font Awesome.
+然而，也有许多图标并非正方形。例如，从图标字体和 Font Awesome 导入的图标。
 
-This is data for `[icon]fa-regular:address-book`:
+以下是 `[icon]fa-regular:address-book` 的数据：
 
 ```yaml
 src: common/fa-address-book.json
-hint: Icon size is 448 x 512
+hint: 图标尺寸为 448 x 512
 ```
 
-If you do not set any dimensions, `[prop]height` will be set to `[str]1em` and `[prop]width` will be set to `[num]448 / 512` = `[str]0.875em`. However, values that have more than 2 numbers after decimal point are rounded up, so actual `[prop]width` will be `[str]0.88em`:
+如果您不设置任何尺寸，`[prop]height` 将被设置为 `[str]1em`，而 `[prop]width` 将被设置为 `[num]448 / 512` = `[str]0.875em`。但是，小数点后超过两位的数值会进行四舍五入，因此实际的 `[prop]width` 将为 `[str]0.88em`：
 
 ```html
 <svg
@@ -28,13 +28,13 @@ If you do not set any dimensions, `[prop]height` will be set to `[str]1em` and `
 </svg>
 ```
 
-If you set `[prop]width` to `[num]56`, but do not set `[prop]height`, `[prop]height` will be set to `[num]56 * 512 / 448` = `[num]64`:
+如果您将 `[prop]width` 设置为 `[num]56`，但不设置 `[prop]height`，则 `[prop]height` 将被设置为 `[num]56 * 512 / 448` = `[num]64`：
 
 ```html
 <svg width="56" height="64" ...>...</svg>
 ```
 
-If you set both values: `[prop]width` to `[num]56` and `[prop]height` to `[num]128`, values will be as you set them (also see `[str]Alignment` section below):
+如果您同时设置这两个值：将 `[prop]width` 设置为 `[num]56`，将 `[prop]height` 设置为 `[num]128`，则数值将按您设置的那样生效（另请参阅下方的 `[str]Alignment` 部分）：
 
 ```html
 <svg width="56" height="128" ...>...</svg>

@@ -1,6 +1,6 @@
-Functions for adding icons to the component:
+用于向组件添加图标的函数：
 
-- `[func]addIcon()`. Adds one icon.
-- `[func]addCollection()`. Adds an icon set.
+- `[func]addIcon()`。添加单个图标。
+- `[func]addCollection()`。添加图标集。
 
-Note: icons added to the component with these functions are not stored in the icon data cache. Component caches only icons retrieved from API.
+注意：通过这些函数添加到组件的图标不会存储在图标数据缓存中。组件仅缓存从 API 获取的图标。

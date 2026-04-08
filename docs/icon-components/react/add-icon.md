@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify for React Function: addIcon'
+title: 'Iconify for React 函数：addIcon'
 types:
   IconifyJSON: '../../types/iconify-json.md'
   IconifyIcon: '../../types/iconify-icon.md'
@@ -7,17 +7,17 @@ functions:
   addCollection: './add-collection.md'
 ```
 
-# Iconify for React function: addIcon
+# Iconify for React 函数：addIcon
 
-This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
+本教程属于 [Iconify for React 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/add-icon/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/add-icon/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/add-icon.js
@@ -25,23 +25,23 @@ src: icon-components/common/add-icon.js
 
 `include icon-components/functions/add-icon/notes`
 
-## API provider
+## API 提供商
 
 `include icon-components/functions/add-icon/provider`
 
-Example:
+示例：
 
 ```yaml
 src: icon-components/common/add-icon2.js
 ```
 
-Code above adds the following icon:
+上述代码添加了以下图标：
 
-- `[prop]provider` is `[str]custom`.
-- `[prop]prefix` is `[str]md`.
-- `[prop]name` is `[str]test`.
+- `[prop]provider` 是 `[str]custom`。
+- `[prop]prefix` 是 `[str]md`。
+- `[prop]name` 是 `[str]test`。
 
-In component JSX this icon can be used like this:
+在组件 JSX 中，可以像这样使用该图标：
 
 ```jsx
 <Icon icon="@custom:md:test" />
@@ -49,6 +49,6 @@ In component JSX this icon can be used like this:
 
 `include icon-components/functions/add-icon/custom`
 
-## One icon
+## 单个图标
 
 `include icon-components/functions/add-icon/footer`

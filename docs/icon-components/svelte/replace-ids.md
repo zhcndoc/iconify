@@ -1,20 +1,20 @@
 ```yaml
-title: 'Iconify for Svelte Function: replaceIDs'
+title: 'Iconify for Svelte 函数：replaceIDs'
 functions:
   getIcon: './get-icon.md'
 ```
 
-# Iconify for Svelte function: replaceIDs
+# Iconify for Svelte 函数：replaceIDs
 
-This tutorial is part of [Iconify for Svelte functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Svelte 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/replace-ids/intro-component`
 
-## Usage
+## 用法
 
 `include icon-components/functions/replace-ids/props`
 
-## Example
+## 示例
 
 `include icon-components/functions/replace-ids/example-component`
 

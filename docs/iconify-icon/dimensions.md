@@ -1,10 +1,10 @@
 ```yaml
-title: Changing Icon Dimensions in Iconify Icon Web Component
+title: 在 Iconify Icon Web 组件中更改图标尺寸
 ```
 
-# Icon dimensions
+# 图标尺寸
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md).
+本教程是 [Iconify Icon Web 组件教程](./index.md) 的一部分。
 
 ```yaml
 include: icon-components/components/size-intro
@@ -17,13 +17,13 @@ demo: true
 class: icon-size
 ```
 
-If you want to control icon size with `[prop]width` and `[prop]height` in CSS, see [how to remove icon dimensions](#unset) section below.
+如果你想在 CSS 中使用 `[prop]width` 和 `[prop]height` 控制图标尺寸，请参阅下方的 [如何移除图标尺寸](#unset) 部分。
 
-## Units
+## 单位
 
-Both `[prop]width` and `[prop]height` can be used as properties and attributes.
+`[prop]width` 和 `[prop]height` 均可作为属性和特性使用。
 
-Examples of `[num]24px` icon:
+`[num]24px` 图标的示例：
 
 ```html
 <iconify-icon icon="mdi:home" height="24"></iconify-icon>
@@ -35,7 +35,7 @@ Examples of `[num]24px` icon:
 ></iconify-icon>
 ```
 
-## Keyword "auto" {#auto}
+## 关键字 "auto" {#auto}
 
 ```yaml
 include: icon-components/components/size-auto
@@ -45,7 +45,7 @@ include: icon-components/components/size-auto
 <iconify-icon icon="mdi:home" height="auto"></iconify-icon>
 ```
 
-## Keywords "none" and "unset" {#unset}
+## 关键字 "none" 和 "unset" {#unset}
 
 ```yaml
 include: icon-components/components/size-unset
@@ -61,17 +61,17 @@ class: 'icon-size icon-size--unset'
 include: icon-components/components/size-unset-footer
 ```
 
-## Setting only width or height
+## 仅设置宽度或高度
 
-In an example above, all icons only use `[prop]height`.
+在上面的示例中，所有图标仅使用了 `[prop]height`。
 
 `include icon-components/size-one`
 
-### Example
+### 示例
 
 `include icon-components/size-example`
 
-## Alignment
+## 对齐方式
 
 `include icon-components/align-header`
 
@@ -84,13 +84,13 @@ class: highlight-box
 
 `include icon-components/align-behavior`
 
-You can control alignment with `[attr]preserveAspectRatio` attribute. Default value is `[str]xMidYMid slice`.
+你可以使用 `[attr]preserveAspectRatio` 属性控制对齐方式。默认值为 `[str]xMidYMid slice`。
 
-### Slice
+### 裁剪
 
-Instead of adding space around icon to fit it in bounding box, browser can also cut parts of icon that do not fit.
+浏览器不仅可以在图标周围添加空白以使其适应边界框，还可以裁剪掉无法适应的部分。
 
-To cut parts of icon, add `[attr]preserveAspectRatio="xMidYMid slice"` to icon:
+要裁剪图标的部分区域，请向图标添加 `[attr]preserveAspectRatio="xMidYMid slice"`：
 
 ```yaml
 src: icon-components/icon/alignment-slice.html
@@ -99,18 +99,18 @@ demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
 
-### Horizontal alignment {#horizontal}
+### 水平对齐 {#horizontal}
 
-When...
+当...
 
-- icon is too wide...
-- icon is too tall and slice is enabled...
+- 图标过宽时...
+- 图标过高且启用了裁剪（slice）时...
 
-...you can align icon horizontally.
+...你可以水平对齐图标。
 
-To align icon horizontally, change `[str]xMid` in `[attr]preserveAspectRatio` to `[str]xMin` or `[str]xMax`:
+要水平对齐图标，请将 `[attr]preserveAspectRatio` 中的 `[str]xMid` 更改为 `[str]xMin` 或 `[str]xMax`：
 
-Examples of aligning wide icon:
+对齐宽图标的示例：
 
 ```yaml
 src: icon-components/icon/alignment-horizontal.html
@@ -119,7 +119,7 @@ demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
 
-Examples of aligning tall icon with slice enabled:
+启用裁剪时对齐高图标的示例：
 
 ```yaml
 src: icon-components/icon/alignment-horizontal-slice.html
@@ -128,18 +128,18 @@ demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
 
-### Vertical alignment {#vertical}
+### 垂直对齐 {#vertical}
 
-When...
+当...
 
-- icon is too tall...
-- icon is too wide and slice is enabled...
+- 图标过高时...
+- 图标过宽且启用了裁剪（slice）时...
 
-...you can align icon vertically.
+...你可以垂直对齐图标。
 
-To align icon vertically, change `[str]YMid` in `[attr]preserveAspectRatio` to `[str]YMin` or `[str]YMax`:
+要垂直对齐图标，请将 `[attr]preserveAspectRatio` 中的 `[str]YMid` 更改为 `[str]YMin` 或 `[str]YMax`：
 
-Examples of aligning tall icon:
+对齐高图标的示例：
 
 ```yaml
 src: icon-components/icon/alignment-vertical.html
@@ -148,7 +148,7 @@ demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
 
-Examples of aligning wide icon with slice enabled:
+启用裁剪时对齐宽图标的示例：
 
 ```yaml
 src: icon-components/icon/alignment-vertical-slice.html
@@ -157,11 +157,11 @@ demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
 
-### Vertical and horizontal alignment {#full-alignment}
+### 垂直与水平对齐 {#full-alignment}
 
-You can add both horizontal and vertical alignment to icon.
+你可以同时为图标添加水平和垂直对齐。
 
-One of alignments will have no effect. For example, if icon is too tall, horizontal alignment is ignored because icon is already aligned to both left and right sides.
+其中一种对齐方式将不会生效。例如，如果图标过高，水平对齐将被忽略，因为图标已经同时与左侧和右侧对齐。
 
 ```yaml
 src: icon-components/icon/alignment-both.html

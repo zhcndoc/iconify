@@ -1,5 +1,5 @@
 ```yaml
-title: Iconify API Providers
+title: Iconify API 提供商
 types:
   APIConfig: ./providers.md#api-config
 replacements:
@@ -9,7 +9,7 @@ replacements:
     value: '${counters.icons-short}'
   - code: '@iconify/iconify@2'
     value: '${svg-framework.import}'
-  - code: '*$/;' # get rid of auto-formatting for regexp
+  - code: '*$/;' # 避免正则表达式被自动格式化
     value: '*$/'
   - code: 'https://github.com/iconify/iconify/issues'
     value: '${links.issues}'
@@ -17,65 +17,65 @@ replacements:
     value: '${links.sponsor}'
 ```
 
-# Iconify API providers
+# Iconify API 提供商
 
-If you are publishing icons, you can host your own Iconify API server that includes only your icons and give access to it to other users. Iconify icon components can retrieve icon data from multiple independent Iconify API servers.
+如果你正在发布图标，你可以托管自己的 Iconify API 服务器，其中仅包含你的图标，并向其他用户提供访问权限。Iconify 图标组件可以从多个独立的 Iconify API 服务器检索图标数据。
 
-How is it done?
+它是如何实现的？
 
 <namespaces-animation></namespaces-animation>
 
-## Provider in icon name
+## 图标名称中的提供商
 
-Icon names in Iconify icon components have 3 parts:
+Iconify 图标组件中的图标名称包含 3 个部分：
 
 <namespaces-name></namespaces-name>
 
-All parts are separated by `[str]:`, provider is optional and can be skipped if empty.
+所有部分均由 `[str]:` 分隔，提供商是可选的，如果为空则可以省略。
 
-Examples:
+示例：
 
-- `[icon]@my-icons:line-24:home`: icon is retrieved from provider `[str]my-icons`. Icon name for that provider is `[icon]line-24:home`.
-- `[icon]mdi-light:home`: icon does not have provider, so provider is empty. Empty value is used for public Iconify API.
+- `[icon]@my-icons:line-24:home`：图标从提供商 `[str]my-icons` 检索。该提供商的图标名称为 `[icon]line-24:home`。
+- `[icon]mdi-light:home`：图标没有提供商，因此提供商为空。空值用于公共 Iconify API。
 
-Provider naming rules are the same as for prefix and name, but with exception that it can be empty:
+提供商的命名规则与前缀和名称相同，但例外情况是它可以为空：
 
 ```txt
 /^[a-z0-9]+(-[a-z0-9]+)*$/;
 ```
 
-That regular expression means name must start with character or number, followed by mix of characters, numbers and hyphen. Other characters are not allowed.
+该正则表达式表示名称必须以字母或数字开头，后跟字母、数字和连字符的组合。不允许使用其他字符。
 
-## Adding API provider
+## 添加 API 提供商
 
-All icon components have function `[func]addAPIProvider()`. For SVG framework it is `[func]Iconify.addAPIProvider()`, for other components you need to import it from component.
+所有图标组件都具有 `[func]addAPIProvider()` 函数。对于 SVG 框架，它是 `[func]Iconify.addAPIProvider()`；对于其他组件，你需要从组件中导入它。
 
-Example for [React component](../icon-components/react/index.md):
+[React 组件](../icon-components/react/index.md) 示例：
 
 ```js
 import { addAPIProvider } from '@iconify/react';
 
 addAPIProvider('local', {
-	// Array of host names.
-	// Mutliple hosts allow redundancy: if one host is down, component will query another host.
+	// 主机名数组。
+	// 多个主机提供冗余：如果一个主机宕机，组件将查询另一个主机。
 	resources: ['http://localhost:3000'],
 });
 ```
 
-Function has 2 parameters:
+该函数有 2 个参数：
 
-- provider, `[type]string`. Provider name. You can also overwrite configuration for default provider by using empty string.
-- config, `[type]APIConfig`. API configuration.
+- provider，`[type]string`。提供商名称。你也可以使用空字符串来覆盖默认提供商的配置。
+- config，`[type]APIConfig`。API 配置。
 
-For more details see [addAPIProvider documentation from SVG framework](../icon-components/svg-framework/add-api-provider.md).
+更多详细信息请参阅 [SVG 框架的 addAPIProvider 文档](../icon-components/svg-framework/add-api-provider.md)。
 
 ### IconifyProviders
 
-Sometimes using function `[func]addAPIProvider()` is not simple. For example, if you are using SVG framework that is placed at the end of file before `[tag]</body>`.
+有时使用 `[func]addAPIProvider()` 函数并不简单。例如，如果你使用的 SVG 框架被放置在文件末尾的 `[tag]</body>` 之前。
 
-There is alternative solution: assigning API providers to global variable `[var]IconifyProviders` before loading SVG framework. When SVG framework loads, it checks if variable exists and automatically imports all providers from it.
+有一个替代方案：在加载 SVG 框架之前，将 API 提供商分配给全局变量 `[var]IconifyProviders`。当 SVG 框架加载时，它会检查该变量是否存在，并自动从中导入所有提供商。
 
-Format is simple: it is an object, where key is provider name, value is configuration. Example, which does the same as example above:
+格式很简单：它是一个对象，其中键是提供商名称，值是配置。示例（与上面的示例功能相同）：
 
 ```html
 <script>
@@ -88,13 +88,13 @@ Format is simple: it is an object, where key is provider name, value is configur
 <script src="https://code.iconify.design/2/2.0.0/iconify.min.js"></script>
 ```
 
-Components also support it, but components are usually bundled, so you should be able to use `[func]addAPIProvider()` instead of polluting global variables.
+组件也支持此功能，但组件通常会被打包，因此你应该能够使用 `[func]addAPIProvider()` 而不是污染全局变量。
 
-## Using API provider
+## 使用 API 提供商
 
-After you add configuration for API provider, which is one simple function call, you can use icons from that API provider.
+添加 API 提供商配置（只需一次简单的函数调用）后，你就可以使用该 API 提供商的图标。
 
-All you have to do is add provider to icon name. Provider in icon name must match first parameter to `[func]addAPIProvider()`:
+你所要做的就是在图标名称中添加提供商。图标名称中的提供商必须与 `[func]addAPIProvider()` 的第一个参数匹配：
 
 ```html
 <span class="iconify" data-icon="@icons8:ios-glyphs:color-dropper"></span>
@@ -104,31 +104,31 @@ All you have to do is add provider to icon name. Provider in icon name must matc
 src: icon-components/common/add-api-provider.jsx
 ```
 
-## Authentication
+## 身份验证
 
-Currently Iconify does not offer authentication options.
+目前 Iconify 不提供身份验证选项。
 
-If you want to use API providers functionality to host premium icon sets or restrict access, you should add your own authentication logic to both API and clients. Doing that might be tricky due to lack of documentation for internal code, if you need any help, [open an issue at Iconify GitHub repository](https://github.com/iconify/iconify/issues).
+如果你想使用 API 提供商功能来托管高级图标集或限制访问，你应该在 API 和客户端中添加自己的身份验证逻辑。由于内部代码缺乏文档，这样做可能会有些棘手。如果你需要任何帮助，请[在 Iconify GitHub 仓库中提交 issue](https://github.com/iconify/iconify/issues)。
 
-It is on a roadmap for premium edition of Iconify API software, which should make hosting premium icon sets very easy. However, that functionality is far away due to lack of development resources. You can help by [sponsoring Iconify on GitHub](https://github.com/iconify/iconify/sponsors) (click "Sponsor" button).
+它已被列入 Iconify API 软件高级版的路线图中，该版本将使托管高级图标集变得非常容易。然而，由于缺乏开发资源，该功能距离实现还很遥远。你可以通过[在 GitHub 上赞助 Iconify](https://github.com/iconify/iconify/sponsors)（点击“Sponsor”按钮）来提供帮助。
 
-## API Config
+## API 配置
 
-Type `[type]APIConfig` passed to `[func]addAPIProvider()`, is an object.
+传递给 `[func]addAPIProvider()` 的 `[type]APIConfig` 类型是一个对象。
 
-Properties:
+属性：
 
-- `[prop]resources`, `[type]string[]`. List of host names, required. Must start with `[str]https://` or `[str]http://`, should not contain path.
-- `[prop]path`, `[type]string`. Path to root directory. Default value is `[str]/`.
-- `[prop]rotate`, `[type]number`. Timeout before the next host is used, in milliseconds. Default value is `[num]750`.
-- `[prop]timeout`, `[type]number`. Timeout before the API query is considered failed, in milliseconds. Default value is `[num]5000`.
+- `[prop]resources`，`[type]string[]`。主机名列表，必填。必须以 `[str]https://` 或 `[str]http://` 开头，不应包含路径。
+- `[prop]path`，`[type]string`。根目录路径。默认值为 `[str]/`。
+- `[prop]rotate`，`[type]number`。切换到下一个主机之前的超时时间，单位为毫秒。默认值为 `[num]750`。
+- `[prop]timeout`，`[type]number`。API 查询被视为失败之前的超时时间，单位为毫秒。默认值为 `[num]5000`。
 
-Examples:
+示例：
 
 ```js
 import { addAPIProvider } from '@iconify/svelte';
 
-// Override default API provider with Iconify API hosted at 'https://iconify.my-project.com'
+// 使用托管在 'https://iconify.my-project.com' 的 Iconify API 覆盖默认 API 提供商
 addAPIProvider('', {
 	resources: ['https://iconify.my-project.com'],
 });
@@ -136,16 +136,16 @@ addAPIProvider('', {
 
 ```html
 <script>
-	// Define global variable
+	// 定义全局变量
 	IconifyProviders = {
-		// Empty prefix: overwrite default API provider configuration
+		// 空前缀：覆盖默认 API 提供商配置
 		'': {
-			// Use custom API first, use Iconify public API as backup
+			// 优先使用自定义 API，将 Iconify 公共 API 作为备用
 			resources: [
 				'https://iconify.my-project.com',
 				'https://api.iconify.design',
 			],
-			// Wait for 1 second before switching API hosts
+			// 切换 API 主机前等待 1 秒
 			rotate: 1000,
 		},
 	};
@@ -153,8 +153,8 @@ addAPIProvider('', {
 <script src="https://code.iconify.design/2/2.0.0/iconify.min.js"></script>
 ```
 
-## Provider name
+## 提供商名称
 
-Provider name is specific to your code. It is used only to associate icon with API configuration. Actual API server has no effect on what you call provider.
+提供商名称特定于你的代码。它仅用于将图标与 API 配置关联起来。实际的 API 服务器对你如何称呼提供商没有影响。
 
-That means you can change it to whatever you want. Make sure you are using the same provider id in all your code.
+这意味着你可以将其更改为任何你想要的名称。请确保在你的所有代码中使用相同的提供商 ID。

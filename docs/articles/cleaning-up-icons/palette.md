@@ -1,37 +1,37 @@
 ```yaml
-title: Changing icon palette
+title: 更改图标调色板
 functions:
   parseColors: '/docs/libraries/tools/icon/colors.md'
 ```
 
-# Changing icon palette
+# 更改图标调色板
 
-This article is part of [SVG clean up article](./index.md).
+本文是 [SVG 清理文章](./index.md) 的一部分。
 
-After initial [clean up and validation](./cleanup.md), the icon palette is changed.
+在初始的 [清理和验证](./cleanup.md) 之后，会更改图标调色板。
 
-There can only be two types of icons:
+图标只能分为两种类型：
 
-- Icons with a hardcoded palette.
-- Monotone icons, which have only one color.
+- 具有硬编码调色板的图标。
+- 单色图标，仅包含一种颜色。
 
-## Icons with palette {#palette}
+## 带调色板的图标 {#palette}
 
-Some icons have hardcoded palette:
+某些图标具有硬编码的调色板：
 
 `include articles/icon-palette`
 
-Colors of these icons cannot be easily changed with a stylesheet.
+这些图标的颜色无法通过样式表轻松更改。
 
-When such icons are cleaned up, the parser verifies that the icon does not follow system default color (black color for `[attr]fill`) and does not contain `[prop]currentColor`.
+在清理此类图标时，解析器会验证图标是否未跟随系统默认颜色（`[attr]fill` 为黑色），并且不包含 `[prop]currentColor`。
 
-## Monotone icons {#monotone}
+## 单色图标 {#monotone}
 
-Most icons are monotone. They have only one color, which can be changed.
+大多数图标是单色的。它们只有一种颜色，且该颜色可以被更改。
 
 `include articles/icon-monotone`
 
-When parsing monotone icons, color is changed to `[prop]currentColor` to make sure the icon follows text color. This way it is easy to change color for any icon, regardless if icon uses `[prop]fill` or `[prop]stroke`:
+在解析单色图标时，颜色会被更改为 `[prop]currentColor`，以确保图标跟随文本颜色。这样，无论图标使用 `[prop]fill` 还是 `[prop]stroke`，都可以轻松更改任何图标的颜色：
 
 ```css
 svg {
@@ -39,13 +39,13 @@ svg {
 }
 ```
 
-Parsing such icons is not easy. When icons are exported from editors, color is not set to `[prop]currentColor`. Usually monotone icons come with shapes that either use black color or system default color.
+解析此类图标并不容易。当从编辑器导出图标时，颜色通常不会设置为 `[prop]currentColor`。通常，单色图标的形状会使用黑色或系统默认颜色。
 
-Sometimes icons also include white background, which needs to be removed. Parser cleans it up too.
+有时图标还包含白色背景，需要将其移除。解析器也会一并清理。
 
-### System color
+### 系统颜色
 
-Usually, icons that use `[prop]fill`, do not have any colors:
+通常，使用 `[prop]fill` 的图标没有任何颜色设置：
 
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -53,7 +53,7 @@ Usually, icons that use `[prop]fill`, do not have any colors:
 </svg>
 ```
 
-Color in those icons is intended to be changed by changing `[prop]fill` property:
+这些图标中的颜色本意是通过更改 `[prop]fill` 属性来修改的：
 
 ```css
 svg {
@@ -61,9 +61,9 @@ svg {
 }
 ```
 
-Problem is, many icons use `[prop]stroke` instead of `[prop]fill`, so this approach does not apply to many icon sets, therefore it cannot be used.
+问题在于，许多图标使用 `[prop]stroke` 而不是 `[prop]fill`，因此这种方法不适用于许多图标集，故无法采用。
 
-Parser modifies those icons by setting `[prop]fill` to `[prop]currentColor` on elements that use system default `[prop]fill`:
+解析器会修改这些图标，在使用系统默认 `[prop]fill` 的元素上将 `[prop]fill` 设置为 `[prop]currentColor`：
 
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -71,9 +71,9 @@ Parser modifies those icons by setting `[prop]fill` to `[prop]currentColor` on e
 </svg>
 ```
 
-### Custom color
+### 自定义颜色
 
-Usually when you export an icon from editor, it uses whatever color you were using when designing it, usually black:
+通常，当你从编辑器导出图标时，它会使用你设计时所用的颜色，通常是黑色：
 
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -81,7 +81,7 @@ Usually when you export an icon from editor, it uses whatever color you were usi
 </svg>
 ```
 
-Parser changes it to `[prop]currentColor`:
+解析器会将其更改为 `[prop]currentColor`：
 
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -89,9 +89,9 @@ Parser changes it to `[prop]currentColor`:
 </svg>
 ```
 
-### Result
+### 结果
 
-After changes, all shapes that use `[prop]fill` have `[prop]fill` set to `[prop]currentColor`, all shapes that use `[prop]stroke` have `[prop]stroke` set to `[prop]currentColor`, which means icon uses same color as text and can be styled as text:
+更改后，所有使用 `[prop]fill` 的形状其 `[prop]fill` 都会被设置为 `[prop]currentColor`，所有使用 `[prop]stroke` 的形状其 `[prop]stroke` 也会被设置为 `[prop]currentColor`。这意味着图标将使用与文本相同的颜色，并且可以像文本一样进行样式设置：
 
 ```css
 svg {
@@ -99,14 +99,14 @@ svg {
 }
 ```
 
-## Mixing palette and currentColor
+## 混合调色板与 currentColor
 
-Icons that mix `[prop]currentColor` and hardcoded palette are not allowed.
+不允许混合使用 `[prop]currentColor` 和硬编码调色板的图标。
 
-Such icons cannot be used in a stylesheet. In stylesheet monotone icons are used as masks, icons with palette are used as background. When the icon component detects `[prop]currentColor` in the icon, it assumes that the icon is monotone and uses it as a mask, displaying it incorrectly.
+此类图标无法在样式表中使用。在样式表中，单色图标被用作遮罩，而带调色板的图标被用作背景。当图标组件在图标中检测到 `[prop]currentColor` 时，它会假定该图标是单色的并将其用作遮罩，从而导致显示错误。
 
-Also such icons assume that `[prop]currentColor` is either light or dark or cannot be a certain hue. It is just a bad design.
+此外，此类图标还假定 `[prop]currentColor` 只能是浅色或深色，或者不能是某种特定的色调。这纯粹是一种糟糕的设计。
 
-## Code
+## 代码
 
-Palette is parsed using the `[func]parseColors()` function from [Iconify Tools](/docs/libraries/tools/index.md).
+调色板使用 [Iconify Tools](/docs/libraries/tools/index.md) 中的 `[func]parseColors()` 函数进行解析。

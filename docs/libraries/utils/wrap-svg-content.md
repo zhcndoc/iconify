@@ -1,5 +1,5 @@
 ```yaml
-title: wrapSVGContent() in Iconify Utils
+title: Iconify Utils 中的 wrapSVGContent()
 functions:
   mergeDefsAndContent: './merge-defs-and-content.md'
   splitSVGDefs: './split-svg-defs.md'
@@ -10,26 +10,26 @@ functions:
 
 # wrapSVGContent()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]wrapSVGContent()` wraps icon body in custom code. 
+函数 `[func]wrapSVGContent()` 使用自定义代码包裹图标主体。 
 
-It is used by `[func]iconToSVG()` to apply flip and rotation to icon,
-by `[func]buildParsedSVG()` and `[func]convertParsedSVG()` to move presentational
-attributes from `[tag]svg` element to a group element.
+它被 `[func]iconToSVG()` 用于对图标应用翻转和旋转，
+被 `[func]buildParsedSVG()` 和 `[func]convertParsedSVG()` 用于将表现层
+属性从 `[tag]svg` 元素移动到组元素。
 
-## Usage
+## 用法
 
-This function has the following parameters:
+此函数具有以下参数：
 
-- `[prop]body`, `[type]string`. Icon content.
-- `[prop]start`, `[type]string`. Start of wrapper, such as `[tag]<g>`.
-- `[prop]end`, `[type]string`. End of wrapper, such as `[tag]</g>`.
+- `[prop]body`，`[type]string`。图标内容。
+- `[prop]start`，`[type]string`。包装器的起始部分，例如 `[tag]<g>`。
+- `[prop]end`，`[type]string`。包装器的结束部分，例如 `[tag]</g>`。
 
-This function extracts definitions from icon content, merges the rest of icon as `[str]start + content + end`,
-merges it with previously extracted definitions.
+此函数从图标内容中提取定义，将图标的其余部分合并为 `[str]start + content + end`，
+并将其与之前提取的定义合并。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/split-svg-defs.ts

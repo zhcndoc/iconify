@@ -1,18 +1,18 @@
 ```yaml
-title: FullIconifyIcon Type
+title: FullIconifyIcon 类型
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
 functions:
   defaultIconProps: './default-icon-props.md'
 ```
 
-# FullIconifyIcon type
+# FullIconifyIcon 类型
 
-`[type]FullIconifyIcon` type is used in [Iconify Utils](./index.md) to handle icon data.
+`[type]FullIconifyIcon` 类型用于 [Iconify Utils](./index.md) 中处理图标数据。
 
-You can find this type in `[file]src/icon/index.ts` of [Iconify Utils source code](https://github.com/iconify/iconify/tree/main/packages/utils).
+你可以在 [Iconify Utils 源代码](https://github.com/iconify/iconify/tree/main/packages/utils) 的 `[file]src/icon/index.ts` 文件中找到此类型。
 
-This type is identical to `[type]IconifyIcon`, except that all properties are mandatory.
+此类型与 `[type]IconifyIcon` 相同，区别在于所有属性均为必填项。
 
 ```ts
 import type { IconifyIcon } from '@iconify/types';
@@ -20,9 +20,9 @@ import type { IconifyIcon } from '@iconify/types';
 export type FullIconifyIcon = Required<IconifyIcon>;
 ```
 
-See `[type]IconifyIcon` type for details.
+有关详细信息，请参阅 `[type]IconifyIcon` 类型。
 
-## Example
+## 示例
 
 ```json
 {
@@ -37,9 +37,9 @@ See `[type]IconifyIcon` type for details.
 }
 ```
 
-## Usage
+## 用法
 
-To convert `[type]IconifyIcon` to `[type]FullIconifyIcon`, merge `[func]defaultIconProps` with your data:
+要将 `[type]IconifyIcon` 转换为 `[type]FullIconifyIcon`，请将 `[func]defaultIconProps` 与你的数据合并：
 
 ```yaml
 src: libraries/utils/full-iconify-icon.ts

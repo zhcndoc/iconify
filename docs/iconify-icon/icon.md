@@ -1,15 +1,15 @@
 ```yaml
-title: Icon Attribute in Iconify Icon Web Component
+title: Iconify Icon Web 组件中的 Icon 属性
 navigation: './index.md'
 functions:
   addIcon: './add-icon.md'
 ```
 
-# Icon attribute
+# Icon 属性
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md).
+本教程是 [Iconify Icon Web 组件教程](./index.md) 的一部分。
 
-When using [Iconify icon components](../icon-components/index.md), you can pass icon data to component instead of icon name, like this:
+在使用 [Iconify 图标组件](../icon-components/index.md) 时，你可以直接将图标数据传递给组件，而不是使用图标名称，如下所示：
 
 ```jsx
 import { Icon } from '@iconify/react';
@@ -20,14 +20,14 @@ function renderLeftArrow() {
 }
 ```
 
-Unfortunately, the same syntax is not available for the web component.
-Attributes in HTML elements cannot be complex objects, making it harder to pass icon data to a web component.
+遗憾的是，Web 组件不支持相同的语法。
+HTML 元素中的特性（attribute）不能是复杂对象，这使得将图标数据传递给 Web 组件变得更加困难。
 
-How to solve this?
+如何解决这个问题？
 
-## Assigning icon name
+## 指定图标名称
 
-Best and easiest solution is to assign icon name to icon using `[func]addIcon()` function:
+最好且最简单的解决方案是使用 `[func]addIcon()` 函数为图标分配名称：
 
 ```js
 import { addIcon } from 'iconify-icon';
@@ -40,9 +40,9 @@ function renderLeftArrow() {
 }
 ```
 
-## Serialising data
+## 序列化数据
 
-Web component also supports serialised objects for `[prop]icon` attribute:
+Web 组件还支持为 `[prop]icon` 特性传递序列化后的对象：
 
 ```js
 import arrowLeft from '@iconify-icons/bi/arrow-left';
@@ -54,7 +54,7 @@ function renderLeftArrow() {
 }
 ```
 
-Or this if you need to render HTML:
+或者，如果你需要渲染 HTML，可以使用以下方式：
 
 ```js
 import arrowLeft from '@iconify-icons/bi/arrow-left';
@@ -81,9 +81,9 @@ function renderLeftArrow() {
 }
 ```
 
-## Using property
+## 使用属性（Property）
 
-Instead of setting attribute, you can also set property, which accepts objects:
+除了设置特性（attribute），你还可以直接设置属性（property），它支持接收对象：
 
 ```js
 import arrowLeft from '@iconify-icons/bi/arrow-left';

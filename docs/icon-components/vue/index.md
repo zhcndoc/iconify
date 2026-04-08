@@ -36,32 +36,32 @@ replacements:
     replace: Vue
 ```
 
-Please be aware that this component is not designed for server side rendering.
-If you are using SSR, consider switching to [Iconify Icon web component](/docs/iconify-icon/index.md).
+请注意，此组件并非专为服务端渲染设计。
+如果您正在使用 SSR，请考虑切换到 [Iconify Icon Web 组件](/docs/iconify-icon/index.md)。
 
-## Installation
+## 安装
 
-If you are using NPM:
+如果您使用 NPM：
 
 ```bash
 npm install --save-dev @iconify/vue@3
 ```
 
-If you are using Yarn:
+如果您使用 Yarn：
 
 ```bash
 yarn add --dev @iconify/vue@3
 ```
 
-## Usage
+## 使用方法
 
-Install `[npm]@iconify/vue@3` and import component from it (component is exported as named export):
+安装 `[npm]@iconify/vue@3` 并从中导入组件（该组件以命名导出形式提供）：
 
 ```js
 import { Icon } from "@iconify/vue";
 ```
 
-Then in template use `[var]Icon` component with icon name as `[prop]icon` parameter:
+然后在模板中使用 `[var]Icon` 组件，并将图标名称作为 `[prop]icon` 参数传入：
 
 ```jsx
 <Icon icon="mdi-light:home" />
@@ -69,37 +69,37 @@ Then in template use `[var]Icon` component with icon name as `[prop]icon` parame
 
 ### Nuxt.js {#ssr}
 
-Component is compatible with Nuxt.js.
+该组件与 Nuxt.js 兼容。
 
-The component does not retrieve icon data until it is mounted.
-For server side rendering it means generated HTML will not include SVGs,
-icons will be rendered only on the client side after hydration is complete.
+该组件在挂载前不会获取图标数据。
+对于服务端渲染而言，这意味着生成的 HTML 将不包含 SVG，
+图标仅在水合（hydration）完成后于客户端渲染。
 
-If you do want to render SVGs on the server side,
-provide [icon data](/docs/types/iconify-icon.md) as a parameter instead of icon name
-or [use a different icon component](/docs/usage/index.md).
+如果您确实希望在服务端渲染 SVG，
+请提供 [图标数据](/docs/types/iconify-icon.md) 作为参数，而非图标名称，
+或 [使用其他图标组件](/docs/usage/index.md)。
 
-#### SSR attribute
+#### SSR 属性
 
-In version 4.1.2 new boolean attribute was added: `[prop]ssr`.
+在 4.1.2 版本中新增了一个布尔属性：`[prop]ssr`。
 
-If enabled, it will render icon immediately:
+启用后，它将立即渲染图标：
 
 ```vue
 <Icon icon="mdi:home" :ssr="true" />
 ```
 
-It is safe to use without SSR because there is no hydration to break.
+在非 SSR 环境下使用也是安全的，因为不存在水合中断的问题。
 
-If you are using SSR, such as Nuxt, make sure icon data is available on both server and client sides.
+如果您正在使用 SSR（例如 Nuxt），请确保图标数据在服务端和客户端均可用。
 
-## Properties
+## 属性
 
-You can pass any custom properties to component.
+您可以向组件传递任意自定义属性。
 
-Required properties:
+必需属性：
 
-- `[prop]icon`, `[type]IconifyIcon | string` icon name or icon data.
+- `[prop]icon`，`[type]IconifyIcon | string` 图标名称或图标数据。
 
 ```yaml
 include: icon-components/component-optional-props
@@ -114,17 +114,17 @@ replacements:
     replace: verticalFlip
 ```
 
-See below for more information on each optional property.
+有关每个可选属性的详细信息，请参见下文。
 
-In addition to the properties mentioned above, the icon component accepts any other properties and events. All other properties and events will be passed to generated SVG element, so you can do stuff like setting the inline style, add title, add `[prop]onClick` event and so on.
+除上述属性外，图标组件还接受任何其他属性和事件。所有其他属性和事件都将传递给生成的 SVG 元素，因此您可以执行设置内联样式、添加标题、绑定 `[prop]onClick` 事件等操作。
 
-## Icon
+## 图标
 
 ```yaml
 include: icon-components/components/intro-icon
 ```
 
-## Color
+## 颜色
 
 ```yaml
 include: icon-components/components/intro-color
@@ -134,9 +134,9 @@ include: icon-components/components/intro-color
 <Icon icon="mdi:home" style="color: red" />
 ```
 
-For various ways to set color, see [how to change icon color in Iconify for Vue](./color.md).
+有关设置颜色的各种方法，请参阅 [如何在 Iconify for Vue 中更改图标颜色](./color.md)。
 
-## Dimensions
+## 尺寸
 
 ```yaml
 include: icon-components/components/intro-size
@@ -146,57 +146,57 @@ include: icon-components/components/intro-size
 <Icon icon="mdi:home" style="font-size: 24px;" />
 ```
 
-For various ways to change icon dimensions, see [how to change icon dimensions in Iconify for Vue](./dimensions.md).
+有关更改图标尺寸的各种方法，请参阅 [如何在 Iconify for Vue 中更改图标尺寸](./dimensions.md)。
 
-## Transformations
+## 变换
 
 ```yaml
 include: icon-components/components/intro-transform
 ```
 
-For more details see [how to transform icon in Iconify for Vue](./transform.md).
+更多详情请参阅 [如何在 Iconify for Vue 中变换图标](./transform.md)。
 
-## Load event
+## 加载事件
 
 `include icon-components/components/onload-event`
 
-## Functions {#functions}
+## 函数 {#functions}
 
 ```yaml
 include: icon-components/components/functions-list/header
 ```
 
-### Check available icons {#getting-icons}
+### 检查可用图标 {#getting-icons}
 
 ```yaml
 include: icon-components/components/functions-list/getting-icons
 ```
 
-### Adding icons {#adding-icons}
+### 添加图标 {#adding-icons}
 
 ```yaml
 include: icon-components/components/functions-list/adding-icons
 ```
 
-### Custom loaders {#custom-loaders}
+### 自定义加载器 {#custom-loaders}
 
 ```yaml
 include: icon-components/components/functions-list/custom-loaders
 ```
 
-### Helper functions {#helper}
+### 辅助函数 {#helper}
 
 ```yaml
 include: icon-components/components/functions-list/helpers
 ```
 
-### API functions {#api}
+### API 函数 {#api}
 
 ```yaml
 include: icon-components/components/functions-list/api
 ```
 
-### Internal API functions {#internal}
+### 内部 API 函数 {#internal}
 
 ```yaml
 include: icon-components/components/functions-list/internal

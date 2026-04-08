@@ -1,26 +1,26 @@
 ```yaml
-title: 'Iconify for Ember Function: disableCache'
+title: 'Iconify for Ember 函数：disableCache'
 functions:
   enableCache: './enable-cache.md'
   addIcon: './add-icon.md'
   addCollection: './add-collection.md'
 ```
 
-# Iconify for Ember function: disableCache
+# Iconify for Ember 函数：disableCache
 
-This tutorial is part of [Iconify for Ember functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Ember 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/cache/intro-disable`
 
-## Usage
+## 用法
 
 `include icon-components/functions/cache/props`
 
-## Storage types
+## 存储类型
 
 `include icon-components/functions/cache/storage-types`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/disable-cache.js
@@ -29,7 +29,7 @@ replacements:
     replace: '@iconify/ember/components/iconify-icon'
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/common/disable-cache2.js
@@ -38,6 +38,6 @@ replacements:
     replace: '@iconify/ember/components/iconify-icon'
 ```
 
-## Notes
+## 注意事项
 
 `include icon-components/functions/cache/notes`

@@ -1,14 +1,14 @@
-API providers allow using icons from multiple API servers in the same document. For example, you can use default Iconify icons and custom icons from IconScout or Icons8 or custom API.
+API 提供商允许在同一文档中使用来自多个 API 服务器的图标。例如，您可以使用默认的 Iconify 图标，以及来自 IconScout、Icons8 或自定义 API 的自定义图标。
 
 <namespaces-animation></namespaces-animation>
 
-To support providers, the syntax for icon names has been extended. Icon names in Iconify icon components have 3 parts:
+为了支持提供商，图标名称的语法已进行扩展。Iconify 图标组件中的图标名称包含 3 个部分：
 
 <namespaces-name></namespaces-name>
 
-All parts are separated by `[str]:`, provider is optional and can be skipped if empty.
+所有部分均由 `[str]:` 分隔，提供商部分是可选的，如果为空则可以省略。
 
-Examples:
+示例：
 
-- `[icon]@my-icons:line-24:home`: icon is retrieved from provider `[str]my-icons`. Icon name for that provider is `[icon]line-24:home`.
-- `[icon]mdi-light:home`: icon does not have provider, so provider is empty. Empty value is used for public Iconify API.
+- `[icon]@my-icons:line-24:home`：图标从提供商 `[str]my-icons` 获取。该提供商对应的图标名称为 `[icon]line-24:home`。
+- `[icon]mdi-light:home`：图标未指定提供商，因此提供商部分为空。空值将用于公共 Iconify API。

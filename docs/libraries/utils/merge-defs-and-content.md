@@ -1,5 +1,5 @@
 ```yaml
-title: mergeDefsAndContent() in Iconify Utils
+title: Iconify Utils 中的 mergeDefsAndContent()
 functions:
   splitSVGDefs: './split-svg-defs.md'
   wrapSVGContent: './wrap-svg-content.md'
@@ -10,25 +10,25 @@ functions:
 
 # mergeDefsAndContent()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]splitSVGDefs()` merges definitions and other SVG content in a string.
+函数 `[func]splitSVGDefs()` 将定义和其他 SVG 内容合并为一个字符串。
 
-This function is used by `[func]wrapSVGContent()` to wrap icon content,
-which is used by `[func]iconToSVG()` to apply flip and rotation to icon,
-by `[func]buildParsedSVG()` and `[func]convertParsedSVG()` to move presentational
-attributes from `[tag]svg` element to a group element.
+此函数被 `[func]wrapSVGContent()` 用于包装图标内容，
+而 `[func]wrapSVGContent()` 又被 `[func]iconToSVG()` 用于对图标应用翻转和旋转，
+并被 `[func]buildParsedSVG()` 和 `[func]convertParsedSVG()` 用于将表现
+属性从 `[tag]svg` 元素移至组元素。
 
-## Usage
+## 用法
 
-This function has the following parameters:
+此函数包含以下参数：
 
-- `[prop]defs`, `[type]string`. Definitions.
-- `[prop]content`, `[type]string`. Icon content.
+- `[prop]defs`，`[type]string` 类型。定义。
+- `[prop]content`，`[type]string` 类型。图标内容。
 
-This function returns merged icon as a string.
+此函数以字符串形式返回合并后的图标。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/split-svg-defs.ts

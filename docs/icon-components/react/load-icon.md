@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify for React Function: loadIcon'
+title: 'Iconify for React 函数：loadIcon'
 types:
   IconifyIconName: './icon-name.md'
   FullIconifyIcon: '/docs/libraries/utils/full-iconify-icon.md'
@@ -7,32 +7,32 @@ functions:
   loadIcons: './load-icons.md'
 ```
 
-# Iconify for React function: loadIcon
+# Iconify for React 函数：loadIcon
 
-This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
+本教程是 [Iconify for React 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/load-icon/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/load-icon/props`
 
-## IconifyIconName type
+## IconifyIconName 类型
 
 `include types/iconify-icon-name`
 
-## Examples
+## 示例
 
-Using `[type]Promise` syntax:
+使用 `[type]Promise` 语法：
 
 ```yaml
 src: icon-components/common/load-icon.js
 ```
 
-Async/await syntax:
+Async/await 语法：
 
 ```yaml
 src: icon-components/common/load-icon-async.js
 ```
 
-If you want to load multiple icons, see `[func]loadIcons()`.
+如需加载多个图标，请参阅 `[func]loadIcons()`。

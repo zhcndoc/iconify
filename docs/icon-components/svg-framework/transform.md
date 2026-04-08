@@ -1,63 +1,63 @@
 ```yaml
-title: Transforming Icons in Iconify SVG Framework
+title: 在 Iconify SVG 框架中变换图标
 ```
 
-# Transformations
+# 变换
 
-This tutorial is part of [Iconify SVG Framework tutorial](./index.md).
+本教程是 [Iconify SVG 框架教程](./index.md) 的一部分。
 
 `include icon-components/transform-intro`
 
-## CSS vs Iconify transformations {#css}
+## CSS 与 Iconify 变换 {#css}
 
 `include icon-components/transform-compare`
 
-Example:
+示例：
 
 ```yaml
 src: icon-components/common/rotate-comparison.html
 demo: true
-demoHint: Using box-shadow to show icon dimensions
+demoHint: 使用 box-shadow 显示图标尺寸
 class: highlight-box
 ```
 
-In example above, first icon is rotated using `[attr]data-rotate` attribute, second icon is rotated using CSS. First icon kept its 1em height, second icon became taller than it should be.
+在上面的示例中，第一个图标使用 `[attr]data-rotate` 属性进行旋转，第二个图标使用 CSS 进行旋转。第一个图标保持了 1em 的高度，而第二个图标变得比预期更高。
 
-Sometimes you do want behaviour that CSS transformations provide. Then you can still use CSS transformations by adding it to inline style.
+有时你确实需要 CSS 变换所提供的行为。此时，你仍然可以通过将其添加到内联样式中来使用 CSS 变换。
 
-## Flip
+## 翻转
 
-You can flip icon horizontally and/or vertically.
+你可以水平或垂直翻转图标。
 
-To do that, add `[attr]data-flip` attribute with comma separated values. Possible values:
+为此，请添加带有逗号分隔值的 `[attr]data-flip` 属性。可能的值包括：
 
-- `[str]horizontal`: flip icon horizontally.
-- `[str]vertical`: flip icon vertically.
+- `[str]horizontal`：水平翻转图标。
+- `[str]vertical`：垂直翻转图标。
 
-Example:
+示例：
 
 ```yaml
 src: icon-components/common/flip.html
 demo: true
 ```
 
-## Rotation
+## 旋转
 
-You can rotate icon by `[num]90`, `[num]180` and `[num]270` degrees.
+你可以将图标旋转 `[num]90`、`[num]180` 和 `[num]270` 度。
 
-To do that, add `[attr]data-rotate` attribute. Possible values:
+为此，请添加 `[attr]data-rotate` 属性。可能的值包括：
 
-- `[str]90deg`, `[str]1`: rotate by `[num]90` degrees.
-- `[str]180deg`, `[str]2`: rotate by `[num]180` degrees.
-- `[str]270deg`, `[str]3`: rotate by `[num]270` degrees.
+- `[str]90deg`、`[str]1`：旋转 `[num]90` 度。
+- `[str]180deg`、`[str]2`：旋转 `[num]180` 度。
+- `[str]270deg`、`[str]3`：旋转 `[num]270` 度。
 
-Example:
+示例：
 
 ```yaml
 src: icon-components/common/rotate.html
 demo: true
 ```
 
-## Rotate and flip
+## 旋转与翻转
 
-You can use both rotation and flip on an icon. The icon is flipped first, then rotated.
+你可以在图标上同时使用旋转和翻转。图标会先进行翻转，然后再进行旋转。

@@ -1,27 +1,27 @@
 ```yaml
-title: compareColors() in Iconify Utils
+title: Iconify Utils 中的 compareColors()
 types:
   Color: './color.md'
 ```
 
 # compareColors()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]compareColors()` compares two `[type]Color` objects, returning `true` if colors are identical.
+函数 `[func]compareColors()` 用于比较两个 `[type]Color` 对象，若颜色相同则返回 `true`。
 
-This function can be used to parse colors in SVG. When the same color is represented with different methods, this function can help find duplicate colors.
+此函数可用于解析 SVG 中的颜色。当同一种颜色以不同方式表示时，此函数可帮助找出重复的颜色。
 
-## Usage
+## 用法
 
-Function has two parameters:
+该函数包含两个参数：
 
-- `[prop]color1`, `[type]Color`. First color.
-- `[prop]color2`, `[type]Color`. Second color.
+- `[prop]color1`，`[type]Color`。第一个颜色。
+- `[prop]color2`，`[type]Color`。第二个颜色。
 
-Function returns `true` if colors are identical, `false` if not.
+若颜色相同，函数返回 `true`，否则返回 `false`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/compare-colors.ts

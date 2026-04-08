@@ -1,14 +1,14 @@
 ```yaml
-title: Vertical Alignment in Iconify Icon Web Component
+title: Iconify Icon Web 组件中的垂直对齐
 ```
 
-# Vertical alignment
+# 垂直对齐
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md).
+本教程是 [Iconify Icon Web 组件教程](./index.md) 的一部分。
 
 `include icon-components/vertical-align-intro`
 
-## Inline attribute
+## 内联属性
 
 `include icon-components/components/inline-basic`
 

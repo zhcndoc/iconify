@@ -1,3 +1,3 @@
-SVG do not behave like other images. When you set a wrong width/height ratio for other image formats, images get stretched. When you do that for SVG, bounding box is changed and the image is aligned inside that bounding box.
+SVG 的行为与其他图像不同。当为其他图像格式设置错误的宽高比时，图像会被拉伸。但对 SVG 进行相同操作时，其边界框会发生改变，图像会在该边界框内对齐。
 
-In an example above, one icon is too wide and another icon is too tall. The browser will move icons to center instead of stretching icon.
+在上面的示例中，一个图标太宽，另一个图标太高。浏览器会将图标居中，而不是拉伸图标。

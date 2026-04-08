@@ -1,24 +1,24 @@
 ```yaml
-title: 'Iconify Type: IconifyIconName'
+title: 'Iconify 类型：IconifyIconName'
 ```
 
-# IconifyIconName type
+# IconifyIconName 类型
 
 `include types/iconify-icon-name`
 
-## API providers
+## API 提供商
 
 `include icon-components/api-providers-short`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/iconify/icon-name.json
 title: 'md:home'
-hint: Because prefix does not contain hyphen, icon can also be referred as 'md-home'
+hint: 因为前缀不包含连字符，该图标也可以引用为 'md-home'
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/iconify/icon-name2.json

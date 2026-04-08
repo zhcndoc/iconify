@@ -1,5 +1,5 @@
 ```yaml
-title: Convert icon to string in icon set
+title: 将图标集中的图标转换为字符串
 types:
   IconSet: './index.md'
   IconifyIconCustomisations: '../../utils/icon-customisations.md'
@@ -7,22 +7,22 @@ types:
 
 # toString()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]toString()` exports icon as string.
+函数 `[func]toString()` 将图标导出为字符串。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]name`, `[type]string`. Icon name.
-- `[prop]customisations`, `[type]IconifyIconCustomisations`. Optional list of customisations.
+- `[prop]name`，`[type]string`。图标名称。
+- `[prop]customisations`，`[type]IconifyIconCustomisations`。可选的自定义配置列表。
 
-Function returns rendered icon as `[type]string` on success, `[type]null` if icon does not exist.
+函数在成功时返回渲染后的图标 `[type]string`，如果图标不存在则返回 `[type]null`。
 
-## Customisations
+## 自定义配置
 
-If `[prop]customisations` is not set, default value is:
+如果未设置 `[prop]customisations`，则默认值为：
 
 ```json
 {
@@ -31,9 +31,9 @@ If `[prop]customisations` is not set, default value is:
 }
 ```
 
-which results in `[prop]width` and `[prop]height` of icon matching `[prop]viewBox` (see example below).
+这将使图标的 `[prop]width` 和 `[prop]height` 与 `[prop]viewBox` 匹配（见下方示例）。
 
-If you want to use `[num]1em` height, use the following `[prop]customisations`:
+如果您想使用 `[num]1em` 的高度，请使用以下 `[prop]customisations`：
 
 ```json
 {
@@ -41,7 +41,7 @@ If you want to use `[num]1em` height, use the following `[prop]customisations`:
 }
 ```
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/to-string.ts

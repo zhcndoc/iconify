@@ -1,23 +1,23 @@
 ```yaml
-title: Getting Git repository hash
+title: 获取 Git 仓库哈希值
 functions:
   downloadGitRepo: './git.md'
 ```
 
-# Getting Git repository hash
+# 获取 Git 仓库哈希值
 
-This tutorial is part of [package functions documentation](./index.md) in [Iconify Tools](../index.md).
+本教程是 [Iconify Tools](../index.md) 中[包函数文档](./index.md)的一部分。
 
-Function `[func]getGitRepoHash()` retrieves last commit hash from local Git repository.
+函数 `[func]getGitRepoHash()` 用于从本地 Git 仓库中获取最后一次提交的哈希值。
 
-It is used by `[func]downloadGitRepo()`.
+该函数由 `[func]downloadGitRepo()` 调用。
 
-## Usage
+## 用法
 
-Function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]options`, `[type]DownloadGitRepoOptions`. Options, same as in `[prop]downloadGitRepo()` function (only `[prop]target` property is used).
+- `[prop]options`，`[type]DownloadGitRepoOptions`。选项，与 `[prop]downloadGitRepo()` 函数中的选项相同（仅使用 `[prop]target` 属性）。
 
-Function returns last commit hash as `[type]string`.
+函数以 `[type]string` 类型返回最后一次提交的哈希值。
 
-Function is asynchronous.
+该函数为异步函数。

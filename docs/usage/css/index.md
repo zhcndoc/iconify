@@ -1,43 +1,43 @@
 ```yaml
-title: How to use icons in CSS
+title: 如何在 CSS 中使用图标
 functions:
   getIconsCSS: "/docs/libraries/utils/get-icons-css.md"
   getIconCSS: "/docs/libraries/utils/get-icon-css.md"
 ```
 
-# How to use icons in CSS
+# 如何在 CSS 中使用图标
 
-Using icons in CSS is easy: set icon as background or mask image, use simple `[tag]span` element in HTML to render icon.
+在 CSS 中使用图标非常简单：将图标设置为背景或遮罩图像，并在 HTML 中使用简单的 `[tag]span` 元素来渲染图标。
 
-[Skip to list of available tools](#tools) if you want to skip long explanation of how it all works.
+如果你想跳过关于其工作原理的长篇解释，可以[直接跳转到可用工具列表](#tools)。
 
-## Advantages
+## 优势
 
-There are advantages and disadvantages of using SVG in CSS over [using SVG in HTML](../svg/index.md).
+与[在 HTML 中使用 SVG](../svg/index.md) 相比，在 CSS 中使用 SVG 既有优势也有劣势。
 
-Advantages:
+优势：
 
-- No repeating. Only one entry for each icon.
-- No deep DOM tree.
-- Can use icons from untrusted sources because if there are any scripts in SVG, they are not executed.
+- 无重复。每个图标只需定义一次。
+- 不会产生深层 DOM 树。
+- 可以使用来自不可信来源的图标，因为即使 SVG 中包含脚本，它们也不会被执行。
 
-However, it also has disadvantages:
+然而，它也存在一些劣势：
 
-- You cannot target elements inside icons, such as changing `[prop]stroke-width`.
-- Cannot use animated icons, except for ones with indefinite looping animations. See below.
+- 无法定位图标内部的元素，例如修改 `[prop]stroke-width`。
+- 无法使用带动画的图标，除非是无限循环动画的图标。详见下文。
 
-## How icons are rendered
+## 图标的渲染方式
 
-There are two types of icons:
+图标分为两种类型：
 
-- Icons with hardcoded palette.
-- Monotone icons that change color.
+- 具有固定配色的图标。
+- 可改变颜色的单色图标。
 
-You can use both types in CSS.
+这两种类型都可以在 CSS 中使用。
 
-### Icons with palette
+### 带配色的图标
 
-Icons with hardcoded palette can be rendered as background images:
+具有固定配色的图标可以渲染为背景图像：
 
 ```yaml
 src: usage/css-demo-bg.html
@@ -47,12 +47,12 @@ demoFirst: true
 class: usage-css-demo
 ```
 
-#### Rendering as content {#content}
+#### 渲染为内容 {#content}
 
-Icons with hardcoded palette can also be rendered as content of pseudo-elements.
+具有固定配色的图标也可以渲染为伪元素的内容。
 
-It is similar to using icons as background images, but with a difference: icon's size cannot be controlled with CSS.
-You need to set width and height in SVG in pixels.
+这与将图标用作背景图像类似，但有一个区别：无法通过 CSS 控制图标的尺寸。
+你需要在 SVG 中以像素为单位设置宽度和高度。
 
 ```yaml
 src: usage/css-demo-content.html
@@ -62,11 +62,11 @@ demoFirst: true
 class: usage-css-demo
 ```
 
-There are no clear advantages of rendering icons as content of pseudo-elements instead of background images.
+将图标渲染为伪元素内容而非背景图像并没有明显的优势。
 
-### Monotone icons {#monotone}
+### 单色图标 {#monotone}
 
-Monotone icons can be rendered as mask images with background color set to `[prop]currentColor`:
+单色图标可以渲染为遮罩图像，并将背景颜色设置为 `[prop]currentColor`：
 
 ```yaml
 src: usage/css-demo-mask.html
@@ -76,42 +76,42 @@ demoFirst: true
 class: usage-css-demo
 ```
 
-Using `[prop]currentColor` as background color makes it easy to change icon color by changing text color.
+使用 `[prop]currentColor` 作为背景颜色，可以通过更改文本颜色轻松改变图标颜色。
 
-## Tools
+## 工具
 
-How to generate CSS for icons in the Iconify ecosystem?
+如何在 Iconify 生态系统中为图标生成 CSS？
 
-There are several ways to do it:
+有几种方法可以实现：
 
-- You can use [Iconify API to generate CSS](./no-code/index.md) without writing any code.
-- If you are using Tailwind CSS, you can use [Iconify plugin for Tailwind CSS](./tailwind/index.md).
-- If you are using UnoCSS, it has a [built-in preset for icons](./unocss/index.md).
-- You can use [Iconify Utils to generate CSS](./utils/index.md).
+- 你可以使用 [Iconify API 生成 CSS](./no-code/index.md)，无需编写任何代码。
+- 如果你正在使用 Tailwind CSS，可以使用 [Tailwind CSS 的 Iconify 插件](./tailwind/index.md)。
+- 如果你正在使用 UnoCSS，它内置了[图标预设](./unocss/index.md)。
+- 你可以使用 [Iconify Utils 生成 CSS](./utils/index.md)。
 
-## Custom plugin
+## 自定义插件
 
-Want to build a custom plugin that generates CSS?
+想要构建一个生成 CSS 的自定义插件吗？
 
-[Iconify Utils](/docs/libraries/utils/index.md) package includes all functions you need. Process of generating CSS is simple:
+[Iconify Utils](/docs/libraries/utils/index.md) 包包含了你所需的所有函数。生成 CSS 的过程非常简单：
 
-- Locate icon set file.
-- Read it and parse JSON.
-- Use `[func]getIconsCSS()` or `[func]getIconCSS()` functions to generate CSS.
+- 定位图标集文件。
+- 读取并解析 JSON。
+- 使用 `[func]getIconsCSS()` 或 `[func]getIconCSS()` 函数生成 CSS。
 
-Code samples that should help you:
+以下代码示例可能会对你有所帮助：
 
-- See [Iconify Utils documentation for CSS](./utils/index.md).
-- See `[func]getIconsCSS()` or `[func]getIconCSS()`.
-- Source code for [Iconify for Tailwind CSS](https://github.com/iconify/iconify/tree/main/plugins/tailwind).
+- 参阅 [Iconify Utils 的 CSS 文档](./utils/index.md)。
+- 参阅 `[func]getIconsCSS()` 或 `[func]getIconCSS()`。
+- [Iconify for Tailwind CSS](https://github.com/iconify/iconify/tree/main/plugins/tailwind) 的源代码。
 
-## Animated icons
+## 带动画的图标
 
-Animated icons should not be used in CSS.
+不建议在 CSS 中使用带动画的图标。
 
-Issue is animation timers.
+问题在于动画计时器。
 
-It would be reasonable to expect animation to start when icon is rendered, but that is not the case in CSS.
+通常我们会期望动画在图标渲染时开始，但在 CSS 中并非如此。
 
-In CSS for background and mask images, animation timer starts the first time icon is rendered, then the same timer is used for all instances of icon.
-Animation timer cannot be reset.
+在用于背景和遮罩图像的 CSS 中，动画计时器会在图标首次渲染时启动，随后该计时器将用于该图标的所有实例。
+动画计时器无法重置。

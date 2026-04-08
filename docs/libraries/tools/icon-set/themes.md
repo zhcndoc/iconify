@@ -1,36 +1,36 @@
 ```yaml
-title: Icon set themes
+title: 图标集主题
 types:
   IconSet: './index.md'
 functions:
   checkTheme: './check-theme.md'
 ```
 
-# Themes
+# 主题
 
-Theme properties are part of `[type]IconSet` class in [Iconify Tools](../index.md).
+主题属性是 [Iconify Tools](../index.md) 中 `[type]IconSet` 类的一部分。
 
-Themes are used to quickly place icons in categories based on part of icon name without listing every single icon.
+主题用于根据图标名称的一部分快速将图标归类，而无需逐一列出每个图标。
 
-There are two properties:
+包含两个属性：
 
-- `[prop]prefix` is for prefixes, such as `[str]baseline` in `[str]baseline-home`.
-- `[prop]suffix` is for suffixes, such as `[str]twotone` in `[str]home-twotone`.
+- `[prop]prefix` 用于前缀，例如 `[str]baseline-home` 中的 `[str]baseline`。
+- `[prop]suffix` 用于后缀，例如 `[str]home-twotone` 中的 `[str]twotone`。
 
-You can write to properties directly to update values.
+你可以直接对属性赋值以更新其值。
 
-## Structure
+## 结构
 
-Both are simple objects `[type]Record<string, string>`, where:
+两者均为简单的 `[type]Record<string, string>` 对象，其中：
 
-- key is part of icon name, can be empty string
-- value is title
+- 键为图标名称的一部分，可为空字符串
+- 值为标题
 
-## Examples
+## 示例
 
-Examples below show suffixes. Prefixes work just like suffixes, but compare first part of icon.
+以下示例展示了后缀。前缀的工作方式与后缀相同，只是比较的是图标名称的开头部分。
 
-Example of suffixes list:
+后缀列表示例：
 
 ```json
 {
@@ -39,19 +39,19 @@ Example of suffixes list:
 }
 ```
 
-Prefixes and suffixes should not start or end with `[str]-`.
+前缀和后缀不应以 `[str]-` 开头或结尾。
 
-All icons that end with `[str]-line` belong to `[str]Line` category, all icons that end with `[str]-solid` belong to `[str]Solid` category.
+所有以 `[str]-line` 结尾的图标均属于 `[str]Line` 类别，所有以 `[str]-solid` 结尾的图标均属于 `[str]Solid` 类别。
 
-If icon ends with something else, like `[str]-outline`, it will not belong to `[str]Line` category because icons are checked for `[js]'-' + suffix` (or `[js]prefix + '-'` for prefixes).
+如果图标以其他内容结尾（例如 `[str]-outline`），则它不会属于 `[str]Line` 类别，因为系统会检查图标是否匹配 `[js]'-' + suffix`（对于前缀则是 `[js]prefix + '-'`）。
 
-### Multiple similar items
+### 多个相似项
 
-There can be multiple matching suffixes, such as `[str]24-line` and `[str]line`.
+可能存在多个可匹配的后缀，例如 `[str]24-line` 和 `[str]line`。
 
-There can also be empty suffix (and prefix), which matches icons that do not match other suffixes.
+也可以设置空后缀（和前缀），用于匹配那些不匹配其他后缀的图标。
 
-Example of suffixes:
+后缀示例：
 
 ```json
 {
@@ -61,10 +61,10 @@ Example of suffixes:
 }
 ```
 
-Icon `[str]home-24-line` will belong to `[str]Line 24` suffix, icon `[str]home-20-line` will belong to `[str]Line` suffix, icon `[str]home-solid` will belong to `[str]Other` suffix.
+图标 `[str]home-24-line` 将归入 `[str]Line 24` 后缀，图标 `[str]home-20-line` 将归入 `[str]Line` 后缀，图标 `[str]home-solid` 将归入 `[str]Other` 后缀。
 
-Order of suffixes and prefixes does not matter. They are sorted by length (longest first) before matching icons to make sure icons are placed in correct theme regardless of order.
+后缀和前缀的顺序无关紧要。在匹配图标前，它们会按长度进行排序（最长者优先），以确保无论定义顺序如何，图标都能被正确归类到对应的主题中。
 
-## Finding icons
+## 查找图标
 
-To find which icons belong to which theme, use `[func]checkTheme()` function.
+要查找哪些图标属于哪个主题，请使用 `[func]checkTheme()` 函数。

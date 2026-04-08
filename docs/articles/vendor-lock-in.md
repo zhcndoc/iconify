@@ -1,87 +1,87 @@
 ```yaml
-title: Vendor lock-in and icons
+title: 供应商锁定与图标
 replacements:
   - code: "60k"
     value: "${counters.icons-short}"
   - code: "70 icon sets"
-    value: "${counters.sets} icon sets"
+    value: "${counters.sets} 个图标集"
 ```
 
-# Vendor lock-in
+# 供应商锁定
 
-What is vendor lock-in?
+什么是供应商锁定？
 
-Vendor lock-in is when someone is essentially forced to continue using a product or service regardless of quality, because switching away from that product or service is not practical.
+供应商锁定是指用户实际上被迫继续使用某款产品或服务，而不论其质量如何，因为切换到其他产品或服务并不现实。
 
-## Icon sets
+## 图标集
 
-Most icon sets have their own icon components or fonts with stylesheets.
+大多数图标集都有自己的图标组件或带有样式表的字体。
 
-When using those components or fonts, you no longer have freedom to choose icons, you are only limited to icons provided by your chosen vendor.
+使用这些组件或字体时，你将不再拥有自由选择图标的权利，只能局限于所选供应商提供的图标。
 
-Issues:
+问题：
 
-- Cannot easily use your own icons. If available icons don't cover all your use cases, you'll need to use different method to add custom icons. For most developers that is not an easy task.
-- Cannot easily switch to another icon set. It often requires rewriting a lot of code, matching old icons to new. Usually, this is a huge task.
+- 无法轻松使用自己的图标。如果现有图标无法覆盖所有使用场景，你将需要使用其他方法来添加自定义图标。对大多数开发者来说，这并非易事。
+- 无法轻松切换到另一个图标集。这通常需要重写大量代码，并将旧图标与新图标进行匹配。通常，这是一项浩大的工程。
 
-You are forced to choose bad icons or spend a lot of time.
+你被迫选择质量不佳的图标，或者花费大量时间。
 
-### Vendor lock-in with customisable software
+### 可定制软件中的供应商锁定
 
-Worst case of vendor lock-in, is when you are working with customisable software, who's authors made a choice to use a specific icon set or icon font. Very common cases are popular forum and blogging software packages.
+最糟糕的供应商锁定情况发生在你使用可定制软件时，其作者选择使用特定的图标集或图标字体。常见的情况包括流行的论坛和博客软件包。
 
-Forums and blogging software have:
+论坛和博客软件通常具有：
 
-- Customisable themes.
-- Plug-ins, which can include templates.
+- 可定制的主题。
+- 插件，其中可能包含模板。
 
-Unless you are designing theme only for yourself, as a theme designer you need to make sure it works with third party plug-ins. Third party plug-ins are designed to work with whatever default theme software package offers. So, even if you want to change icon set in your theme, you still need to keep default icon set or third party plugins might not work.
+除非你仅为自己设计主题，否则作为主题设计师，你需要确保主题能与第三方插件兼容。第三方插件的设计初衷是适配软件包提供的任何默认主题。因此，即使你想在主题中更换图标集，你仍然需要保留默认图标集，否则第三方插件可能无法正常工作。
 
-This very specific vendor lock-in is one of reasons why Iconify was created. After years of frustration of working with one very popular icon font, I wanted to find a solution to vendor lock-in for forum software, but at that moment there were none. See [about Iconify](https://iconify.design/about/).
+这种非常具体的供应商锁定正是创建 Iconify 的原因之一。在与某款非常流行的图标字体打交道多年并深感挫败后，我想为论坛软件找到一种解决供应商锁定问题的方案，但当时并没有现成的方案。请参阅 [关于 Iconify](https://iconify.design/about/)。
 
 ## Iconify
 
-When using Iconify, doesn't it lock-in to Iconify?
+使用 Iconify 时，难道不会锁定在 Iconify 上吗？
 
-Sort of, but it is a technology lock-in, not vendor lock-in and there are huge differences. See below.
+某种程度上是的，但这是技术锁定，而非供应商锁定，两者存在巨大差异。详见下文。
 
-Iconify was designed to be as flexible as possible, the only way you can get more freedom is directly embed SVG files one by one, without any specific icon set. Working with SVG is not easy for most developers and it is very time consuming.
+Iconify 的设计初衷是尽可能灵活。想要获得更高自由度的唯一方法是直接逐个嵌入 SVG 文件，而不依赖任何特定的图标集。但对大多数开发者而言，处理 SVG 并不容易，且非常耗时。
 
-### Icons
+### 图标
 
-One big difference is choice of icons. When using any icon set, you are limited to that icon set.
+一个巨大的差异在于图标的选择。使用任何图标集时，你都受限于该图标集。
 
-When using Iconify, you can use over 70 icon sets.
+使用 Iconify 时，你可以使用超过 70 个图标集。
 
-### Custom icons
+### 自定义图标
 
-Most icon components support custom icon loaders, making it easy to use Iconify with custom icons.
+大多数图标组件都支持自定义图标加载器，这使得将 Iconify 与自定义图标结合使用变得非常容易。
 
-Iconify also offers open source tools for cleaning up and optimising icons. Same tools that are used by Iconify scripts to keep icon sets up to date.
+Iconify 还提供了用于清理和优化图标的开源工具。这些工具与 Iconify 脚本用于保持图标集更新的工具完全相同。
 
 ### API
 
-Some icon components get icon data from Iconify API. Doesn't that lock-in users to third party services?
+某些图标组件从 Iconify API 获取图标数据。这难道不会将用户锁定在第三方服务上吗？
 
-No.
+不会。
 
-API is open source, you can host your own API, where you have full control over available icon sets and over servers.
+该 API 是开源的，你可以自行托管 API，从而完全掌控可用的图标集和服务器。
 
-Icon components can be easily configured to use your Iconify API servers. You can also build custom version of icon components that have your servers pre-configured.
+图标组件可以轻松配置为使用你自己的 Iconify API 服务器。你还可以构建预配置了你服务器的图标组件自定义版本。
 
-Everything is open source!
+一切都是开源的！
 
-### Components
+### 组件
 
-Icon data is available for everyone. You are not forced to use Iconify icon components.
+图标数据对所有人开放。你并非被迫使用 Iconify 的图标组件。
 
-- There are [many ways to use icons, including third party components](/docs/usage/index.md).
-- You can create your own components that use [icon data from Iconify](/docs/icons/index.md). [All types are documented](/docs/types/index.md), [tools for working with data are open source](/docs/libraries/utils/index.md).
+- 有[多种使用图标的方法，包括第三方组件](/docs/usage/index.md)。
+- 你可以创建自己的组件来使用 [Iconify 的图标数据](/docs/icons/index.md)。[所有类型均有文档说明](/docs/types/index.md)，[处理数据的工具也是开源的](/docs/libraries/utils/index.md)。
 
-Furthermore, third party icon components are very welcome... as long as it is high quality and maintained!
+此外，我们非常欢迎第三方图标组件……只要它们质量高且有人维护！
 
-## Freedom to choose
+## 自由选择
 
-With Iconify you are free to do whatever you want.
+使用 Iconify，你可以自由地做任何你想做的事。
 
-Theme designers can choose from hundreds of thousands of icons or add their own icons, without worrying about compatibility with third party plug-ins.
+主题设计师可以从数十万个图标中进行选择，或添加自己的图标，而无需担心与第三方插件的兼容性问题。

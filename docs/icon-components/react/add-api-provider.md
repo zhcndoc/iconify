@@ -1,22 +1,22 @@
 ```yaml
-title: 'Iconify for React Function: addAPIProvider'
+title: 'Iconify for React 函数：addAPIProvider'
 ```
 
-# Iconify for React function: addAPIProvider
+# Iconify for React 函数：addAPIProvider
 
-This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
+本教程是 [Iconify for React 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/add-api-provider/intro`
 
-## API providers
+## API 提供商
 
 `include icon-components/api-providers`
 
-## Usage
+## 用法
 
 `include icon-components/functions/add-api-provider/props`
 
-## Example
+## 示例
 
 ```yaml
 src: icon-components/common/add-api-provider.jsx

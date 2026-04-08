@@ -1,5 +1,5 @@
 ```yaml
-title: "Iconify for Vue Functions: setCustomIconLoader and setCustomIconsLoader"
+title: "Iconify for Vue 函数：setCustomIconLoader 和 setCustomIconsLoader"
 types:
   IconifyJSON: "../../types/iconify-json.md"
   IconifyIcon: "../../types/iconify-icon.md"
@@ -7,17 +7,17 @@ functions:
   loadIcon: "./load-icon.md"
 ```
 
-# Custom icon loaders
+# 自定义图标加载器
 
-This tutorial is part of [Iconify for Vue tutorial](./index.md).
+本教程是 [Iconify for Vue 教程](./index.md) 的一部分。
 
 `include icon-components/functions/set-loaders/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/set-loaders/props`
 
-## Example
+## 示例
 
 ```yaml
 src: icon-components/common/set-loader.js
@@ -26,4 +26,4 @@ replacements:
     replace: "@iconify/vue"
 ```
 
-Make sure loader is set before any icons are rendered, otherwise component might attempt to load icon from API and fail to render it.
+请确保在渲染任何图标之前设置加载器，否则组件可能会尝试从 API 加载图标，从而导致渲染失败。

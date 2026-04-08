@@ -1,26 +1,26 @@
 ```yaml
-title: toBoolean() in Iconify Utils
+title: Iconify Utils 中的 toBoolean()
 types:
   IconCustomisations: './icon-customisations.md'
 ```
 
 # toBoolean()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]toBoolean()` converts strings to boolean. It is used to parse various possible component property values to use them in `[type]IconCustomisations` properties.
+函数 `[func]toBoolean()` 将字符串转换为布尔值。它用于解析各种可能的组件属性值，以便在 `[type]IconCustomisations` 属性中使用它们。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]name`, `[type]string`. Property name.
-- `[prop]value`, `[type]unknown`. Value to parse.
-- `[prop]defaultValue`, `[type]boolean`. Value to return if `[prop]value` cannot be parsed.
+- `[prop]name`，`[type]string`。属性名称。
+- `[prop]value`，`[type]unknown`。要解析的值。
+- `[prop]defaultValue`，`[type]boolean`。当 `[prop]value` 无法解析时返回的值。
 
-Function returns `[type]boolean` value.
+函数返回 `[type]boolean` 值。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/to-boolean.ts

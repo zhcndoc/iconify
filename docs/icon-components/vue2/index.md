@@ -37,29 +37,29 @@ replacements:
 
 `include notices/vue2`
 
-## Installation
+## 安装
 
-If you are using NPM:
+如果您使用的是 NPM：
 
 ```bash
 npm install --save-dev @iconify/vue2@1
 ```
 
-If you are using Yarn:
+如果您使用的是 Yarn：
 
 ```bash
 yarn add --dev @iconify/vue2@1
 ```
 
-## Usage
+## 使用方法
 
-Install `[npm]@iconify/vue2@1` and import component from it (component is exported as named export):
+安装 `[npm]@iconify/vue2@1` 并从中导入组件（该组件作为命名导出）：
 
 ```js
 import { Icon } from "@iconify/vue2";
 ```
 
-Then in template use `[var]Icon` component with icon name as `[prop]icon` parameter:
+然后在模板中使用 `[var]Icon` 组件，并将图标名称作为 `[prop]icon` 参数传入：
 
 ```jsx
 <Icon icon="mdi-light:home" />
@@ -67,23 +67,23 @@ Then in template use `[var]Icon` component with icon name as `[prop]icon` parame
 
 ### Nuxt.js {#ssr}
 
-Component is compatible with Nuxt.js.
+该组件与 Nuxt.js 兼容。
 
-The component does not retrieve icon data until it is mounted.
-For server side rendering it means generated HTML will not include SVGs,
-icons will be rendered only on the client side after hydration is complete.
+该组件在挂载之前不会获取图标数据。
+对于服务端渲染，这意味着生成的 HTML 将不包含 SVG，
+图标仅在水合（hydration）完成后在客户端渲染。
 
-If you do want to render SVGs on the server side,
-provide [icon data](/docs/types/iconify-icon.md) as a parameter instead of icon name
-or [use a different icon component](/docs/usage/index.md).
+如果您确实希望在服务端渲染 SVG，
+请提供 [图标数据](/docs/types/iconify-icon.md) 作为参数，而不是图标名称
+或 [使用其他图标组件](/docs/usage/index.md)。
 
-## Properties
+## 属性
 
-You can pass any custom properties to component.
+您可以向组件传递任何自定义属性。
 
-Required properties:
+必需属性：
 
-- `[prop]icon`, `[type]IconifyIcon | string` icon name or icon data.
+- `[prop]icon`，`[type]IconifyIcon | string` 图标名称或图标数据。
 
 ```yaml
 include: icon-components/component-optional-props
@@ -98,17 +98,17 @@ replacements:
     replace: verticalFlip
 ```
 
-See below for more information on each optional property.
+有关每个可选属性的更多信息，请参见下文。
 
-In addition to the properties mentioned above, the icon component accepts any other properties and events. All other properties and events will be passed to generated SVG element, so you can do stuff like setting the inline style, add title, add `[prop]onClick` event and so on.
+除了上述属性外，图标组件还接受任何其他属性和事件。所有其他属性和事件都将传递给生成的 SVG 元素，因此您可以执行设置内联样式、添加标题、添加 `[prop]onClick` 事件等操作。
 
-## Icon
+## 图标
 
 ```yaml
 include: icon-components/components/intro-icon
 ```
 
-## Color
+## 颜色
 
 ```yaml
 include: icon-components/components/intro-color
@@ -118,9 +118,9 @@ include: icon-components/components/intro-color
 <Icon icon="mdi:home" style="color: red" />
 ```
 
-For various ways to set color, see [how to change icon color in Iconify for Vue](./color.md).
+有关设置颜色的各种方法，请参阅 [如何在 Iconify for Vue 中更改图标颜色](./color.md)。
 
-## Dimensions
+## 尺寸
 
 ```yaml
 include: icon-components/components/intro-size
@@ -130,51 +130,51 @@ include: icon-components/components/intro-size
 <Icon icon="mdi:home" style="font-size: 24px;" />
 ```
 
-For various ways to change icon dimensions, see [how to change icon dimensions in Iconify for Vue](./dimensions.md).
+有关更改图标尺寸的各种方法，请参阅 [如何在 Iconify for Vue 中更改图标尺寸](./dimensions.md)。
 
-## Transformations
+## 变换
 
 ```yaml
 include: icon-components/components/intro-transform
 ```
 
-For more details see [how to transform icon in Iconify for Vue](./transform.md).
+有关更多详细信息，请参阅 [如何在 Iconify for Vue 中变换图标](./transform.md)。
 
 ## onLoad
 
 `include icon-components/components/onload`
 
-## Functions {#functions}
+## 函数 {#functions}
 
 ```yaml
 include: icon-components/components/functions-list/header
 ```
 
-### Check available icons {#getting-icons}
+### 检查可用图标 {#getting-icons}
 
 ```yaml
 include: icon-components/components/functions-list/getting-icons
 ```
 
-### Adding icons {#adding-icons}
+### 添加图标 {#adding-icons}
 
 ```yaml
 include: icon-components/components/functions-list/adding-icons
 ```
 
-### Helper functions {#helper}
+### 辅助函数 {#helper}
 
 ```yaml
 include: icon-components/components/functions-list/helpers
 ```
 
-### API functions {#api}
+### API 函数 {#api}
 
 ```yaml
 include: icon-components/components/functions-list/api
 ```
 
-### Internal API functions {#internal}
+### 内部 API 函数 {#internal}
 
 ```yaml
 include: icon-components/components/functions-list/internal

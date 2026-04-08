@@ -1,28 +1,28 @@
 ```yaml
-title: "Iconify Icon Web Component Function: disableCache"
+title: "Iconify Icon Web 组件函数：disableCache"
 functions:
   enableCache: "./enable-cache.md"
   addIcon: "./add-icon.md"
   addCollection: "./add-collection.md"
 ```
 
-# Web component function: disableCache
+# Web 组件函数：disableCache
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md#functions).
+本教程是 [Iconify Icon Web 组件教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/cache/deprecated`
 
 `include icon-components/functions/cache/intro-disable`
 
-## Usage
+## 用法
 
 `include icon-components/functions/cache/props`
 
-## Storage types
+## 存储类型
 
 `include icon-components/functions/cache/storage-types`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/disable-cache.js
@@ -31,7 +31,7 @@ replacements:
     replace: "iconify-icon"
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/common/disable-cache2.js
@@ -40,6 +40,6 @@ replacements:
     replace: "iconify-icon"
 ```
 
-## Notes
+## 注意事项
 
 `include icon-components/functions/cache/notes`

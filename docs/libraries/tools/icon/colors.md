@@ -1,5 +1,5 @@
 ```yaml
-title: Changing colors in SVG
+title: 在 SVG 中更改颜色
 types:
   SVG: '../svg/index.md'
   IconSet: '../icon-set/index.md'
@@ -9,55 +9,55 @@ functions:
   colorToString: '../../utils/color-to-string.md'
 ```
 
-# Parsing colors in SVG
+# 解析 SVG 中的颜色
 
-This function is part of [icon manipulation functions](./index.md) in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 [图标操作函数](./index.md) 的一部分。
 
-Function `[func]parseColors()` parses colors in SVG.
+函数 `[func]parseColors()` 用于解析 SVG 中的颜色。
 
-It can:
+它可以：
 
-- Find all colors.
-- Replace colors.
-- Add missing default color.
+- 查找所有颜色。
+- 替换颜色。
+- 添加缺失的默认颜色。
 
-Function parses colors in:
+该函数会解析以下位置的颜色：
 
-- Stylesheets.
-- Inline styles.
-- Shapes, including gradients and filters.
-- SVG animations that animate one of color attributes.
+- 样式表。
+- 内联样式。
+- 形状，包括渐变和滤镜。
+- 对颜色属性进行动画处理的 SVG 动画。
 
-Function does not parse colors in:
+该函数不会解析以下位置的颜色：
 
-- Masks.
+- 遮罩。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]svg`, `[type]SVG`. Icon instance.
-- `[prop]options`, `[type]object`. Options.
+- `[prop]svg`，`[type]SVG`。图标实例。
+- `[prop]options`，`[type]object`。选项。
 
-Function returns array of colors.
+函数返回颜色数组。
 
-## Colors
+## 颜色
 
-Colors used in callback and returned by function can be two types:
+回调函数中使用以及函数返回的颜色可以是以下两种类型：
 
-- `[type]Color` object, same as in [Iconify Utils](../../utils/index.md).
-- `[type]string`. Value is a string if color cannot be parsed.
+- `[type]Color` 对象，与 [Iconify Utils](../../utils/index.md) 中的相同。
+- `[type]string`。如果颜色无法解析，则值为字符串。
 
-## Options
+## 选项
 
-The `[prop]options` object has the following properties:
+`[prop]options` 对象包含以下属性：
 
-- `[prop]defaultColor`, `[type]Color | string`. Default color to add to shapes that use system default color. See below.
-- `[prop]callback`, `[type]function`. Callback to call for each color. See below.
+- `[prop]defaultColor`，`[type]Color | string`。添加到使用系统默认颜色的形状上的默认颜色。见下文。
+- `[prop]callback`，`[type]function`。为每种颜色调用的回调函数。见下文。
 
-### Default color
+### 默认颜色
 
-Some icons use system color. Example:
+某些图标使用系统颜色。例如：
 
 ```xml
 <svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" width="1200" height="400">
@@ -65,11 +65,11 @@ Some icons use system color. Example:
 </svg>
 ```
 
-In that icon path uses default fill. In Iconify all icons should use colors set by `[prop]color` attribute, which means shapes should use `[str]currentColor` for fill.
+在该图标中，路径使用了默认填充。在 Iconify 中，所有图标都应使用由 `[prop]color` 属性设置的颜色，这意味着形状应使用 `[str]currentColor` 进行填充。
 
-If you set `[prop]defaultColor` option, parser will automatically set color for shapes that use default color.
+如果设置了 `[prop]defaultColor` 选项，解析器将自动为使用默认颜色的形状设置颜色。
 
-Example:
+示例：
 
 ```yaml
 src: libraries/tools/icon/color-default.ts
@@ -79,24 +79,24 @@ extra:
     title: 'Result:'
 ```
 
-### Replacing colors
+### 替换颜色
 
-With `[prop]callback` option you can replace colors.
+通过 `[prop]callback` 选项，您可以替换颜色。
 
-Callback has the following parameters:
+回调函数包含以下参数：
 
-- `[prop]attr`, `[type]string`. Attribute where color is used, such as `[str]fill` or `[str]stroke`.
-- `[prop]colorStr`, `[type]string`. Color value as string.
-- `[prop]color`, `[type]Color | null`. Parsed color value. If color can be parsed, callback will have `[type]Color` value. If color cannot be parsed, callback will have `[type]null` value.
-- `[prop]tagName`, `[type]string`. Optional parameter. Name of tag where color is found. If color is found in stylesheet, parameter will be `[type]undefined`.
+- `[prop]attr`，`[type]string`。使用颜色的属性，例如 `[str]fill` 或 `[str]stroke`。
+- `[prop]colorStr`，`[type]string`。字符串形式的颜色值。
+- `[prop]color`，`[type]Color | null`。解析后的颜色值。如果颜色可解析，回调将收到 `[type]Color` 值。如果颜色不可解析，回调将收到 `[type]null` 值。
+- `[prop]tagName`，`[type]string`。可选参数。找到颜色的标签名称。如果在样式表中找到颜色，该参数将为 `[type]undefined`。
 
-Callback should return:
+回调函数应返回：
 
-- `[type]Color` or `[type]string` to set new color. If you do not want to change color, return color passed to callback (either `[prop]colorStr` or non-null `[prop]color` object).
-- `[str]remove` to remove the current element. This is used to remove stuff like white background rectangle left by some editors.
-- `[str]unset` to remove color.
+- `[type]Color` 或 `[type]string` 以设置新颜色。如果您不想更改颜色，请返回传递给回调的颜色（`[prop]colorStr` 或非空的 `[prop]color` 对象）。
+- `[str]remove` 以移除当前元素。这用于移除某些编辑器留下的白色背景矩形等内容。
+- `[str]unset` 以移除颜色。
 
-Example
+示例
 
 ```yaml
 src: libraries/tools/icon/colors.ts

@@ -1,5 +1,5 @@
 ```yaml
-title: defaultIconCustomisations in Iconify Utils
+title: Iconify Utils 中的 defaultIconCustomisations
 types:
   FullIconifyIconCustomisations: './icon-customisations.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
@@ -11,15 +11,15 @@ functions:
 
 # defaultIconCustomisations
 
-This constant is part of [Iconify Utils package](./index.md).
+此常量属于 [Iconify Utils 包](./index.md)。
 
-Constant `[func]defaultIconCustomisations` is used for default `[type]FullIconifyIconCustomisations` values.
+常量 `[func]defaultIconCustomisations` 用于提供默认的 `[type]FullIconifyIconCustomisations` 值。
 
-It is merged from 2 parts:
+它由两部分合并而成：
 
 ### defaultIconSizeCustomisations
 
-Constant `[func]defaultIconSizeCustomisations` represents size customisations: `[prop]width` and `[prop]height`:
+常量 `[func]defaultIconSizeCustomisations` 表示尺寸自定义项：`[prop]width` 和 `[prop]height`：
 
 ```js
 const defaultIconSizeCustomisations = {
@@ -30,7 +30,7 @@ const defaultIconSizeCustomisations = {
 
 ### defaultIconTransformations
 
-Constant `[func]defaultIconTransformations` represents transformations:
+常量 `[func]defaultIconTransformations` 表示变换：
 
 ```js
 const defaultIconTransformations = {
@@ -40,15 +40,15 @@ const defaultIconTransformations = {
 };
 ```
 
-Default values for transformations are shared with `[type]IconifyIcon` type.
+变换的默认值与 `[type]IconifyIcon` 类型共享。
 
-## Usage
+## 用法
 
 ```yaml
 src: libraries/utils/default-icon-customisations.ts
 title: 'example.ts'
 ```
 
-Usually it is used with `[func]mergeCustomisations()` function.
+通常它与 `[func]mergeCustomisations()` 函数一起使用。
 
-It is also used in functions that require only partial customisations, such as `[func]iconToSVG()`, but internally actually uses full customisations.
+它也用于只需要部分自定义项的函数中，例如 `[func]iconToSVG()`，但其内部实际上使用的是完整自定义项。

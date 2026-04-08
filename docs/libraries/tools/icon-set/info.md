@@ -9,18 +9,18 @@ functions:
 
 # info
 
-This property is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此属性属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Property `[prop]info` contains icon set information in `[type]IconifyInfo` format.
-It includes icon set name, license, author information and some other data relevant when displaying an icon set.
+`[prop]info` 属性以 `[type]IconifyInfo` 格式包含图标集信息。
+它包括图标集名称、许可证、作者信息以及在显示图标集时相关的其他一些数据。
 
-If an icon set does not have the information block, value is `[type]null`.
+如果图标集没有信息块，则值为 `[type]null`。
 
-You can write to property directly to update value.
+您可以直接写入该属性以更新其值。
 
-## Value
+## 值
 
-Value is used when exporting icon set using `[func]export()` function.
+该值在使用 `[func]export()` 函数导出图标集时使用。
 
-Icons count in `[prop]info` property is automatically updated when running `[func]export()` function,
-so no need to update it manually.
+运行 `[func]export()` 函数时，`[prop]info` 属性中的图标数量会自动更新，
+因此无需手动更新。

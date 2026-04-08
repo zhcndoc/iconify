@@ -9,50 +9,47 @@ types:
 
 # getIconContentCSS()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]getIconContentCSS()` generates stylesheet to render an icon as content of pseudo-element.
+函数 `[func]getIconContentCSS()` 用于生成样式表，将图标渲染为伪元素的内容。
 
-It generates code only for one icon. To generate code for multiple icons at the same time, see `[func]getIconsContentCSS()`.
+它仅为单个图标生成代码。若要同时为多个图标生成代码，请参阅 `[func]getIconsContentCSS()`。
 
-If, instead of using icon as content of a pseudo-element,
-you want to use icon as a background or mask image, see `[func]getIconCSS()`.
+如果您不想将图标用作伪元素的内容，而是想将其用作背景或遮罩图像，请参阅 `[func]getIconCSS()`。
 
-To use icon in HTML, all you need to do is create any element,
-such as `[tag]span` with class name that you passed in `[prop]iconSelector` option.
+要在 HTML 中使用该图标，您只需创建任意元素（例如带有您在 `[prop]iconSelector` 选项中传入的类名的 `[tag]span`）即可。
 
-## Color and size
+## 颜色与尺寸
 
-When using icon as content of pseudo-element, `[prop]currentColor` cannot be used, so icon must have a hardcoded color.
+当将图标用作伪元素的内容时，无法使用 `[prop]currentColor`，因此图标必须具有硬编码的颜色。
 
-Icon also must have fixed dimensions, which cannot be changed in CSS.
+图标还必须具有固定的尺寸，且无法在 CSS 中更改。
 
-If you want to use an icon with `[prop]currentColor` in CSS or want to resize icon using CSS,
-you should use `[func]getIconCSS()` instead.
+如果您想在 CSS 中使用带有 `[prop]currentColor` 的图标，或希望通过 CSS 调整图标大小，则应改用 `[func]getIconCSS()`。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]icon`, `[type]IconifyIcon`. Icon data.
-- `[prop]options`. Options object.
+- `[prop]icon`，`[type]IconifyIcon`。图标数据。
+- `[prop]options`。选项对象。
 
-Function returns `[type]string` with stylesheet for icon.
+函数返回包含图标样式表的 `[type]string`。
 
-## Options
+## 选项
 
-The `[prop]options` object has the following properties:
+`[prop]options` 对象包含以下属性：
 
-- `[prop]height`, `[type]number`. Icon height. Required.
-- `[prop]width`, `[type]number`. Icon width, optional. If not set, it is calculated using icon's width/height ratio and `[prop]height` option.
-- `[prop]color`, `[type]string`. Color to replace `[prop]currentColor` with. This should be used to change color of monotone icon, otherwise icon will be rendered black.
-- `[prop]iconSelector`, `[type]string`. Selector for icon, defaults to `[str].icon::after`.
-- `[prop]format`. Stylesheet formatting option. Matches options used in Sass. Supported values: `[str]expanded`, `[str]compact`, `[str]compressed`.
-- `[prop]rules`, `[type]Record<string, string>`. Extra rules to add to CSS. 
+- `[prop]height`，`[type]number`。图标高度。必填。
+- `[prop]width`，`[type]number`。图标宽度，可选。如果未设置，将根据图标的宽高比和 `[prop]height` 选项计算得出。
+- `[prop]color`，`[type]string`。用于替换 `[prop]currentColor` 的颜色。应用于更改单色图标的颜色，否则图标将渲染为黑色。
+- `[prop]iconSelector`，`[type]string`。图标的选择器，默认为 `[str].icon::after`。
+- `[prop]format`。样式表格式化选项。与 Sass 中使用的选项匹配。支持的值：`[str]expanded`、`[str]compact`、`[str]compressed`。
+- `[prop]rules`，`[type]Record<string, string>`。要添加到 CSS 中的额外规则。 
 
-## Result
+## 结果
 
-Example of generated stylesheet:
+生成的样式表示例：
 
 ```css
 .icon::after {
@@ -60,19 +57,19 @@ Example of generated stylesheet:
 }
 ```
 
-That code can be used in HTML with any element, such as `[tag]span` with class name that you passed in `[prop]iconSelector` option:
+该代码可在 HTML 中与任意元素配合使用，例如带有您在 `[prop]iconSelector` 选项中传入的类名的 `[tag]span`：
 
 ```html
 <span class="icon"></span>
 ```
 
-## Color option
+## 颜色选项
 
 ```yaml
 include: libraries/utils/css-color-content
 ```
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/get-icon-content-css.ts

@@ -1,26 +1,26 @@
 ```yaml
-title: 'Iconify Icon Web Component with React'
+title: '在 React 中使用 Iconify Icon Web 组件'
 ```
 
-# Iconify Icon web component with React
+# 在 React 中使用 Iconify Icon Web 组件
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md).
+本教程是 [Iconify Icon Web 组件教程](./index.md) 的一部分。
 
-Iconify icon web component works well with React, but there are few problems:
+Iconify 图标 Web 组件与 React 配合良好，但存在几个问题：
 
-- When using web components in React, you need to use `[prop]class` instead of `[prop]className` to pass class name.
-- Property `[prop]icon` can only be a string.
-- No JSX hints.
+- 在 React 中使用 Web 组件时，需要使用 `[prop]class` 而不是 `[prop]className` 来传递类名。
+- `[prop]icon` 属性只能是字符串。
+- 没有 JSX 提示。
 
-## Iconify Icon for React
+## 适用于 React 的 Iconify Icon
 
-These problems are solved by Iconify Icon for React.
+这些问题可以通过适用于 React 的 Iconify Icon 来解决。
 
-It is a wrapper for web component that provides support for `[prop]className`, allows to use objects with `[prop]icon` and provides typings for React component.
+它是 Web 组件的封装，提供了对 `[prop]className` 的支持，允许在 `[prop]icon` 中使用对象，并为 React 组件提供类型定义。
 
-## Installation
+## 安装
 
-Instead of `[npm]iconify-icon` package, install `[npm]@iconify-icon/react` package:
+请安装 `[npm]@iconify-icon/react` 包，而不是 `[npm]iconify-icon` 包：
 
 ```bash
 npm install --save-dev @iconify-icon/react
@@ -30,9 +30,9 @@ npm install --save-dev @iconify-icon/react
 yarn add --dev @iconify-icon/react
 ```
 
-## Usage
+## 使用方法
 
-Import `[prop]Icon` component from `[npm]@iconify-icon/react`, set icon in `[prop]icon` property:
+从 `[npm]@iconify-icon/react` 导入 `[prop]Icon` 组件，并在 `[prop]icon` 属性中设置图标：
 
 ```jsx
 import React from 'react';
@@ -48,9 +48,9 @@ export function Alert() {
 }
 ```
 
-### Usage with objects
+### 使用对象
 
-You can pass objects in `[prop]icon` property:
+你可以在 `[prop]icon` 属性中传递对象：
 
 ```jsx
 import React from 'react';
@@ -67,9 +67,9 @@ export function Alert() {
 }
 ```
 
-### Functions
+### 函数
 
-All other functions, listed in [Iconify Icon web component tutorial](./index.md#functions), are available. You can import them directly from `[npm]@iconify-icon/react` package:
+[Iconify Icon Web 组件教程](./index.md#functions) 中列出的所有其他函数均可用。你可以直接从 `[npm]@iconify-icon/react` 包中导入它们：
 
 ```jsx
 import React from 'react';
@@ -91,4 +91,4 @@ export function Alert() {
 }
 ```
 
-See [Iconify Icon web component](./index.md) for list of all attributes, functions and usage examples. `[npm]@iconify-icon/react` is only a wrapper for `[npm]iconify-icon`, not a different component, it supports all the same properties and functions.
+有关所有属性、函数和使用示例的列表，请参阅 [Iconify Icon Web 组件](./index.md)。`[npm]@iconify-icon/react` 仅仅是 `[npm]iconify-icon` 的封装，并非不同的组件，它支持所有相同的属性和函数。

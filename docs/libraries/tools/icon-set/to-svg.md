@@ -9,27 +9,27 @@ functions:
 
 # toSVG()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]toSVG()` exports icon as `[type]SVG` instance.
+函数 `[func]toSVG()` 将图标导出为 `[type]SVG` 实例。
 
-It is used to process icon using functions that work with `[type]SVG` instances.
+它用于配合处理 `[type]SVG` 实例的函数来对图标进行处理。
 
-### Important notice
+### 重要提示
 
-`[type]SVG` instance is not synchronised with an icon set.
+`[type]SVG` 实例与图标集不同步。
 
-After changing icon, you need to update entry in `[type]IconSet` using `[func]fromSVG()` method.
+修改图标后，您需要使用 `[func]fromSVG()` 方法更新 `[type]IconSet` 中的条目。
 
-## Usage
+## 用法
 
-The function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]name`, `[type]string`. Icon name.
+- `[prop]name`，`[type]string` 类型。图标名称。
 
-Function returns `[type]SVG` instance on success, `[type]null` on error.
+函数在成功时返回 `[type]SVG` 实例，出错时返回 `[type]null`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/to-svg.ts

@@ -6,39 +6,39 @@ types:
 
 # stringToColor()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]stringToColor()` converts string to `[type]Color` object, returns `null` on error.
+函数 `[func]stringToColor()` 将字符串转换为 `[type]Color` 对象，出错时返回 `null`。
 
-This function can be used to validate user input. It supports color keywords, hexadecimal colors, RGB, HSL, LAB and LCH colors. Variables are not supported because this is meant for parsing SVGs, which should not reference any external variables.
+此函数可用于验证用户输入。它支持颜色关键字、十六进制颜色、RGB、HSL、LAB 和 LCH 颜色。不支持变量，因为该函数旨在解析 SVG，而 SVG 不应引用任何外部变量。
 
-## Usage
+## 用法
 
-Function has one parameter:
+函数包含一个参数：
 
-- `[prop]value`, `[type]string`. Color string.
+- `[prop]value`，`[type]string` 类型。颜色字符串。
 
-Function returns `[type]Color` object on success, `null` on error.
+函数成功时返回 `[type]Color` 对象，出错时返回 `null`。
 
-## Possible values
+## 可能的值
 
-Colors that function can convert:
+函数可转换的颜色：
 
-- Keywords, such as `[str]red`.
-- Hexadecimal colors, such as `[str]#ff0000`, also in short form and with alpha.
-- Few functional notations:
-  - RGB: `[str]rgba(255, 0, 0, 1)`.
-  - HSL: `[str]hsla(0, 50%, 50%, 1)`.
-  - LAB: `[str]lab(50% 86 40 / 1)`.
-  - LCH: `[str]lch(50% 86 40 / 1)`.
-- Several special keywords:
+- 关键字，例如 `[str]red`。
+- 十六进制颜色，例如 `[str]#ff0000`，也支持简写形式和带 Alpha 通道的格式。
+- 几种函数表示法：
+  - RGB：`[str]rgba(255, 0, 0, 1)`。
+  - HSL：`[str]hsla(0, 50%, 50%, 1)`。
+  - LAB：`[str]lab(50% 86 40 / 1)`。
+  - LCH：`[str]lch(50% 86 40 / 1)`。
+- 几个特殊关键字：
   - `[str]transparent`
   - `[str]none`
   - `[str]currentColor`
 
-See `[type]Color` type description for details.
+详情请参阅 `[type]Color` 类型说明。
 
-## Examples
+## 示例
 
 ```yaml
 src: libraries/utils/string-to-color.ts

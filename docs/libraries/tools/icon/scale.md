@@ -5,22 +5,22 @@ types:
   IconSet: '../icon-set/index.md'
 ```
 
-# Scaling SVG
+# 缩放 SVG
 
-This function is part of [icon manipulation functions](./index.md) in [Iconify Tools](../index.md).
+此函数是 [Iconify Tools](../index.md) 中[图标操作函数](./index.md)的一部分。
 
-Function `[func]scaleSVG()` changes icon size.
+函数 `[func]scaleSVG()` 用于更改图标大小。
 
-For most icons this function is not needed, you can change size by changing `[prop]width` and `[prop]height` properties, but it is available anyway.
+对于大多数图标，无需使用此函数，您可以通过修改 `[prop]width` 和 `[prop]height` 属性来调整大小，但该函数依然可用。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]svg`, `[type]SVG`. Icon instance.
-- `[prop]scale`, `[type]number`. Amount to multiply icon dimensions by.
+- `[prop]svg`，`[type]SVG`。图标实例。
+- `[prop]scale`，`[type]number`。图标尺寸需乘以的倍数。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon/scale.ts

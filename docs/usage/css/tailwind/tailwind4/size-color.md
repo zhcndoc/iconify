@@ -1,5 +1,5 @@
 ```yaml
-title: Changing icon size and color in Iconify for Tailwind CSS
+title: 在 Tailwind CSS 的 Iconify 中更改图标大小和颜色
 types:
   IconifyJSON: "/docs/types/iconify-json.md"
   IconifyInfo: "/docs/types/iconify-info.md"
@@ -7,39 +7,38 @@ functions:
   addIconSelectors: "./index.md"
 ```
 
-# Changing icon size and color in Iconify for Tailwind CSS
+# 在 Tailwind CSS 的 Iconify 中更改图标大小和颜色
 
-This documentation explains how to change icon size and color for [Iconify plugin for Tailwind CSS 4](./index.md).
+本文档说明了如何为 [Tailwind CSS 4 的 Iconify 插件](./index.md) 更改图标的大小和颜色。
 
-## Icon color
+## 图标颜色
 
-There are two types of icons:
+图标分为两种类型：
 
-- Icons with hardcoded palette.
-- Monotone icons.
+- 具有硬编码调色板的图标。
+- 单色图标。
 
-See [how monotone icons work in CSS](../../index.md#monotone) (html syntax in linked tutorial is different - tutorial is not specific to this plugin).
+请参阅 [CSS 中单色图标的工作原理](../../index.md#monotone)（链接教程中的 HTML 语法有所不同 - 该教程并非专为此插件编写）。
 
-### Dynamic selectors
+### 动态选择器
 
-When using dynamic selectors plugin, it automatically sets rendering mode for each icon. You cannot control it.
+使用动态选择器插件时，它会自动为每个图标设置渲染模式。你无法手动控制。
 
-- Icons with hardcoded palette will be rendered as background images, keeping icon's color.
-- Monotone icons will be rendered as mask images, so icon is rendered with text color.
+- 具有硬编码调色板的图标将作为背景图像渲染，保留图标的原始颜色。
+- 单色图标将作为遮罩图像渲染，因此图标会使用文本颜色进行渲染。
 
-For example, `[str]icon-[mdi-light--home]` will be rendered as a mask image because that icon is a monotone icon.
+例如，`[str]icon-[mdi-light--home]` 将作为遮罩图像渲染，因为该图标是单色图标。
 
-### Clean selectors
+### 纯净选择器
 
-When using clean selectors, you need to specify how you want icon to be rendered by adding either:
+使用纯净选择器时，你需要通过添加以下类名之一来指定图标的渲染方式：
 
-- `[str]iconify` class name to render icon as a mask image, so icon is rendered with text color.
-- `[str]iconify-color` class name to render icon as a background image.
+- `[str]iconify` 类名，将图标作为遮罩图像渲染，使图标使用文本颜色。
+- `[str]iconify-color` 类名，将图标作为背景图像渲染。
 
-#### Setting a default rendering mode
+#### 设置默认渲染模式
 
-Optionally you can set one of these modes as default. The following code allows you to skip adding the
-`[str]iconify` class when using any icon from the `mdi` icon set.
+你可以选择将其中一种模式设置为默认值。以下代码允许你在使用 `mdi` 图标集中的任何图标时，省略添加 `[str]iconify` 类。
 
 ```css
 [class*="mdi--"]:not([class*="iconify-color"]) {
@@ -47,54 +46,53 @@ Optionally you can set one of these modes as default. The following code allows 
   }
 ```
 
-#### Monotone icons
+#### 单色图标
 
-To change the color of monotone icons, render them as mask images and change text color:
+要更改单色图标的颜色，请将其作为遮罩图像渲染并更改文本颜色：
 
 ```html
 <span class="iconify mdi-light--home text-blue-600"></span>
 ```
 
-#### Icons with palette
+#### 带调色板的图标
 
-Icons with hardcoded palette currently cannot be customised.
+目前无法自定义具有硬编码调色板的图标。
 
 ```html
 <span class="iconify-color twemoji--winking-face"></span>
 ```
 
-Custom colors are possible though if you use [plugin for Tailwind CSS 3](../iconify/customise.md).
-It uses JavaScript for configuration, which opens a lot more possibilities than CSS configuration Tailwind CSS 4.
+不过，如果你使用 [Tailwind CSS 3 的插件](../iconify/customise.md)，则可以实现自定义颜色。
+它使用 JavaScript 进行配置，这比 Tailwind CSS 4 的 CSS 配置提供了更多的可能性。
 
-## Icon size
+## 图标大小
 
-By default, icons are rendered as `[num]1em` x `[num]1em` square.
+默认情况下，图标渲染为 `[num]1em` x `[num]1em` 的正方形。
 
-To change icon size, you can change font size:
+要更改图标大小，你可以更改字体大小：
 
 ```html
 <span class="iconify mdi-light--home text-2xl"></span>
 ```
 
-Because common selectors, which contain size, are treated as Tailwind components,
-you can also set width/height to resize icon:
+因为包含尺寸的通用选择器被视为 Tailwind 组件，
+你也可以通过设置宽度/高度来调整图标大小：
 
 ```html
 <span class="iconify mdi-light--home w-12 h-12"></span>
 ```
 
-Make sure width and height are identical (see `[prop]square` option below).
-Some browsers (Safari) fail to keep proportions when using SVG as a mask image,
-so using different width and height values might result in unexpected user experience for some users.
+确保宽度和高度相同（请参阅下方的 `[prop]square` 选项）。
+某些浏览器（如 Safari）在使用 SVG 作为遮罩图像时无法保持比例，
+因此使用不同的宽度和高度值可能会导致部分用户获得意外的体验。
 
-Additionally, you can change default size by using `[prop]scale` option.
+此外，你可以通过使用 `[prop]scale` 选项来更改默认大小。
 
-### Non-square icons
+### 非正方形图标
 
-By default, all icons are rendered as square icons. This makes it easy to resize icons.
+默认情况下，所有图标都渲染为正方形图标。这使得调整图标大小变得很容易。
 
-However, if you want to render non-square icons as is, you can disable this
-behavior by changing option `[prop]square` to `false`:
+但是，如果你想按原样渲染非正方形图标，可以通过将 `[prop]square` 选项更改为 `false` 来禁用此行为：
 
 ```css
 @plugin "@iconify/tailwind4" {
@@ -102,14 +100,14 @@ behavior by changing option `[prop]square` to `false`:
 }
 ```
 
-However, be aware that this might make resizing icon a bit more complex.
-If you are setting `[prop]width` and `[prop]height`, make sure width/height ratio matches icon's ratio.
+但请注意，这可能会使调整图标大小变得稍微复杂一些。
+如果你正在设置 `[prop]width` 和 `[prop]height`，请确保宽高比与图标的原始比例匹配。
 
-### Scaling icon
+### 缩放图标
 
-Option `[prop]scale` changes default icon size from `[num]1em`.
+选项 `[prop]scale` 会更改默认的 `[num]1em` 图标大小。
 
-The following configuration
+以下配置
 
 ```css
 @plugin "@iconify/tailwind4" {
@@ -117,6 +115,6 @@ The following configuration
 }
 ```
 
-changes default size to `[num]1.2em` x `[num]1.2em` square.
+会将默认大小更改为 `[num]1.2em` x `[num]1.2em` 的正方形。
 
-You can use font size to further resize icons, like in the example above, but icons will be 1.2 times bigger.
+你可以像上面的示例一样使用字体大小进一步调整图标大小，但图标会放大 1.2 倍。

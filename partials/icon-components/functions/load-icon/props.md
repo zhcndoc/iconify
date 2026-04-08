@@ -1,5 +1,5 @@
-The function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]icon`, `[type]string | IconifyIconName`. Name of the icon to load.
+- `[prop]icon`，`[type]string | IconifyIconName`。要加载的图标名称。
 
-The function returns `[type]Promise` instance, which returns `[type]FullIconifyIcon` data for icon on success.
+该函数返回一个 `[type]Promise` 实例，成功时将返回图标的 `[type]FullIconifyIcon` 数据。

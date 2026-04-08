@@ -1,5 +1,5 @@
-What happens when only one dimension is set?
+当仅设置一个维度时会发生什么？
 
-- If width is not set, but height is set, width is calculated using icon's width/height ratio.
-- If height is not set, but width is set, height is calculated using icon's height/width ratio.
-- If no dimensions are set in attributes, height is set to `[str]1em` and width is calculated using icon's width/height ratio. Then icon behaves like a text and can be resized using `[prop]font-size` in stylesheet.
+- 如果未设置宽度但设置了高度，则宽度将根据图标的宽高比进行计算。
+- 如果未设置高度但设置了宽度，则高度将根据图标的高宽比进行计算。
+- 如果属性中未设置任何尺寸，则高度将设置为 `[str]1em`，宽度将根据图标的宽高比进行计算。此时图标的表现类似于文本，可通过样式表中的 `[prop]font-size` 来调整其大小。

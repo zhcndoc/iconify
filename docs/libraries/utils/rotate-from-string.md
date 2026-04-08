@@ -1,25 +1,25 @@
 ```yaml
-title: rotateFromString() in Iconify Utils
+title: Iconify Utils 中的 rotateFromString()
 types:
   IconCustomisations: './icon-customisations.md'
 ```
 
 # rotateFromString()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]rotateFromString()` cleans up various possible values for ration passed by user to valid `[prop]rotate` property of `[type]IconCustomisations` type.
+函数 `[func]rotateFromString()` 用于清理用户传入的各种可能的旋转值，并将其转换为 `[type]IconCustomisations` 类型中有效的 `[prop]rotate` 属性值。
 
-## Usage
+## 用法
 
-Function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]value`, `[type]string`. Value to parse.
-- `[prop]defaultValue`, `[type]number`. Value to return if `[prop]value` cannot be parsed.
+- `[prop]value`，`[type]string`。要解析的值。
+- `[prop]defaultValue`，`[type]number`。当 `[prop]value` 无法解析时返回的值。
 
-Function returns `[type]number` value in `[num]0` to `[num]3` range.
+函数返回 `[type]number` 类型的值，范围在 `[num]0` 到 `[num]3` 之间。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/rotate-from-string.ts

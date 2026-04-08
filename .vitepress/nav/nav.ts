@@ -1,19 +1,19 @@
 import type { DefaultTheme } from "vitepress";
 
 const DocumentationNav: DefaultTheme.NavItemWithLink[] = [
-  { text: "Documentation", link: "/docs/" },
+  { text: "文档", link: "/docs/" },
   {
-    text: "Icons and Icon Sets",
+    text: "图标与图标集",
     link: "/docs/icons/",
     activeMatch: "^/docs/icons/",
   },
   {
-    text: "How to Use Icons",
+    text: "如何使用图标",
     link: "/docs/usage/",
     activeMatch: "^/docs/(usage|design|iconify-icon|icon-components)/",
   },
   {
-    text: "Libraries for Developers",
+    text: "开发者库",
     link: "/docs/libraries/",
     activeMatch: "^/docs/(libraries|types)/",
   },
@@ -21,40 +21,45 @@ const DocumentationNav: DefaultTheme.NavItemWithLink[] = [
 ];
 
 const AboutNav: DefaultTheme.NavItemWithLink[] = [
-  { text: "About Iconify", link: "/about/" },
-  { text: "Support", link: "/support/" },
-  { text: "History", link: "/about/history" },
-  { text: "Privacy", link: "/privacy/" },
+  { text: "关于 Iconify", link: "/about/" },
+  { text: "支持", link: "/support/" },
+  { text: "历史", link: "/about/history" },
+  { text: "隐私", link: "/privacy/" },
 ];
 
 export const Nav: DefaultTheme.NavItem[] = [
   {
-    text: "News",
+    text: "新闻",
     link: "/news/",
     activeMatch: "^/news/",
   },
   {
-    text: "Icons",
+    text: "图标集",
     link: "https://icon-sets.iconify.design/",
     target: "_blank",
   },
   {
-    text: "Docs",
+    text: "文档",
     items: DocumentationNav,
     activeMatch: "^/docs/",
   },
   {
-    text: "Blog",
+    text: "博客",
     link: "/docs/articles/",
     activeMatch: "^/docs/articles/",
   },
   {
-    text: "Sponsor",
+    text: "赞助",
     link: "/sponsors/",
   },
   {
-    text: "About",
+    text: "关于",
     items: AboutNav,
     activeMatch: "^/(about|support|privacy)/",
   },
+  {
+    text: "简中文档",
+    link: "https://www.zhcndoc.com",
+    target: "_blank",
+  }
 ];

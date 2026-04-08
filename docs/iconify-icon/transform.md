@@ -1,39 +1,39 @@
 ```yaml
-title: Transforming Icon in Iconify Icon Web Component
+title: 在 Iconify Icon Web 组件中变换图标
 ```
 
-# Transformations
+# 变换
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md).
+本教程是 [Iconify Icon Web 组件教程](./index.md) 的一部分。
 
 `include icon-components/transform-intro`
 
-## CSS vs Iconify transformations {#css}
+## CSS 与 Iconify 变换 {#css}
 
 `include icon-components/transform-compare`
 
-Example:
+示例：
 
 ```yaml
 src: icon-components/icon/rotate-comparison.html
 demo: true
-demoHint: Using box-shadow to show icon dimensions
+demoHint: 使用 box-shadow 显示图标尺寸
 class: highlight-box
 ```
 
 `include icon-components/transform-compare-footer`
 
-## Flip
+## 翻转
 
 `include icon-components/components/transform-flip`
 
 ```yaml
 src: icon-components/icon/flip.html
-hint: Using "flip" attribute
+hint: 使用 "flip" 属性
 demo: true
 ```
 
-## Rotation
+## 旋转
 
 `include icon-components/components/transform-rotate`
 
@@ -42,6 +42,6 @@ src: icon-components/icon/rotate.html
 demo: true
 ```
 
-## Rotate and flip
+## 旋转与翻转
 
 `include icon-components/components/transform-footer`

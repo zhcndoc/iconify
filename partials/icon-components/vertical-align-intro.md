@@ -1,7 +1,7 @@
-When an icon is rendered in text, by default it is aligned at baseline, as any other images.
+当图标在文本中渲染时，默认情况下它会像其他图像一样与基线对齐。
 
-Emojis and icon fonts are rendered slightly below baseline, like any text.
+表情符号和图标字体的渲染位置会略低于基线，就像普通文本一样。
 
-If you want to render icon in text, you probably want to add `[prop]vertical-align` to each icon to render it slightly below baseline, to make it fit in text, similar to emojis and icon fonts:
+如果要在文本中渲染图标，你可能希望为每个图标添加 `[prop]vertical-align`，使其渲染位置略低于基线，从而更好地融入文本，效果类似于表情符号和图标字体：
 
 `include icon-components/vertical-align-demo`

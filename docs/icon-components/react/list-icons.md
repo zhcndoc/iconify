@@ -1,24 +1,24 @@
 ```yaml
-title: 'Iconify for React Function: listIcons'
+title: 'Iconify for React 函数：listIcons'
 ```
 
-# Iconify for React function: listIcons
+# Iconify for React 函数：listIcons
 
-This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
+本教程属于 [Iconify for React 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/list-icons/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/list-icons/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/list-icons.js
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/common/list-icons2.js

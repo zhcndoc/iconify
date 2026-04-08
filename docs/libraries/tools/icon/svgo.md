@@ -1,5 +1,5 @@
 ```yaml
-title: Optimising SVG
+title: 优化 SVG
 functions:
   cleanupSVG: './cleanup.md'
 types:
@@ -7,42 +7,41 @@ types:
   IconSet: '../icon-set/index.md'
 ```
 
-# Optimising icon with SVGO
+# 使用 SVGO 优化图标
 
-This function is part of [icon manipulation functions](./index.md) in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 [图标操作函数](./index.md) 的一部分。
 
-Function `[func]runSVGO()` optimises icon using popular SVG optimisation tool SVGO.
+函数 `[func]runSVGO()` 使用流行的 SVG 优化工具 SVGO 来优化图标。
 
-It is meant to be used on icons that have already been processed with `[func]cleanupSVG()`, which does most of the cleanup.
+它旨在用于已经通过 `[func]cleanupSVG()` 处理过的图标，该函数会完成大部分的清理工作。
 
-This function is used to do advanced stuff that SVGO is good at: converting transformations,
-cleaning up numbers, removing unused SVG elements, and so on.
+此函数用于执行 SVGO 擅长的高级操作：转换变换、清理数值、移除未使用的 SVG 元素等。
 
-## Plugins
+## 插件
 
-By default, function uses a pre-configured list of SVGO plugins, which excludes some bugged plugins.
+默认情况下，该函数使用预配置的 SVGO 插件列表，其中排除了一些存在缺陷的插件。
 
-If an icon contains SVG animations, plugins that modify shapes are excluded.
+如果图标包含 SVG 动画，则会排除修改形状的插件。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数具有以下参数：
 
-- `[prop]svg`, `[type]SVG`. Icon instance.
-- `[prop]options`, `[type]object`. Options (optional).
+- `[prop]svg`，`[type]SVG`。图标实例。
+- `[prop]options`，`[type]object`。选项（可选）。
 
-## Options
+## 选项
 
-There are two ways to set options:
+设置选项有两种方式：
 
-- Using a custom list of SVGO plugins.
-- Toggle groups of plugins using several options.
+- 使用自定义的 SVGO 插件列表。
+- 通过多个选项切换插件组。
 
-### Custom plugins list
+### 自定义插件列表
 
-You can set custom plugins using `[prop]plugins` property of options. Value is array of plugins, passed directly to SVGO (see SVGO documentation).
+你可以使用选项的 `[prop]plugins` 属性来设置自定义插件。该值是一个插件数组，将直接传递给 SVGO（请参阅 SVGO 文档）。
 
-Example:
+示例：
 
 ```ts
 runSVGO(svg, {
@@ -51,42 +50,42 @@ runSVGO(svg, {
 });
 ```
 
-### Plugin options
+### 插件选项
 
-You can also pick from a preset list of plugins by setting these options:
+你也可以通过设置以下选项从预设的插件列表中进行选择：
 
-- `[prop]animated`, `[type]boolean`. If `true`, SVGO plugins that are known to bug out with animated icons are not used.
-- `[prop]keepShapes`, `[type]boolean`. If `true`, plugins that modify shapes are not used. This is useful if you need to keep shapes as-is, for example, when animating shapes, but it is not as strict as setting `[prop]animated` option.
-- `[prop]cleanupIDs`, `[type]string | false | function`. Custom prefix for rewriting IDs, `false` to disable plugins that change IDs. Can be a callback that returns new ID based on old ID.
+- `[prop]animated`，`[type]boolean`。如果为 `true`，则不会使用已知在处理动画图标时会出现问题的 SVGO 插件。
+- `[prop]keepShapes`，`[type]boolean`。如果为 `true`，则不会使用修改形状的插件。如果你需要保持形状原样（例如在对形状进行动画处理时），这会很有用，但它不如设置 `[prop]animated` 选项那么严格。
+- `[prop]cleanupIDs`，`[type]string | false | function`。用于重写 ID 的自定义前缀，设置为 `false` 可禁用更改 ID 的插件。也可以是一个回调函数，根据旧 ID 返回新 ID。
 
-These options cannot be used together with `[prop]plugins` option.
+这些选项不能与 `[prop]plugins` 选项同时使用。
 
-### Other options
+### 其他选项
 
-Options that can be used with any options listed above:
+可与上述任何选项配合使用的选项：
 
-- `[prop]multipass`, `[type]boolean`. If `true`, plugins are ran multiple times for better optimisation. Enabled by default.
+- `[prop]multipass`，`[type]boolean`。如果为 `true`，插件将运行多次以获得更好的优化效果。默认启用。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon/svgo.ts
 title: 'svgo.ts'
 extra:
   - src: libraries/tools/icon/svgo.svg
-    title: 'Result:'
+    title: '结果：'
 ```
 
-That example shows running SVGO on icon that has not been cleaned up and validated. Not all useless attributes have been removed, and SVGO doesn't check for some content that should not be in icon, such as text, raster images and events.
+该示例展示了在未经清理和验证的图标上运行 SVGO 的情况。并非所有无用属性都已被移除，且 SVGO 不会检查图标中不应包含的某些内容，例如文本、光栅图像和事件。
 
-Therefore, all icons must be cleaned up after loading.
+因此，所有图标在加载后都必须进行清理。
 
-Same code with clean up:
+带有清理操作的相同代码：
 
 ```yaml
 src: libraries/tools/icon/svgo2.ts
 title: 'svgo.ts'
 extra:
   - src: libraries/tools/icon/svgo2.svg
-    title: 'Result:'
+    title: '结果：'
 ```

@@ -1,5 +1,5 @@
 ```yaml
-title: Using Iconify for Tailwind CSS
+title: 在 Tailwind CSS 中使用 Iconify
 types:
   IconifyJSON: "/docs/types/iconify-json.md"
   IconifyInfo: "/docs/types/iconify-info.md"
@@ -7,36 +7,36 @@ functions:
   addIconSelectors: "../iconify/index.md"
 ```
 
-# Using Iconify plugin for Tailwind CSS
+# 在 Tailwind CSS 中使用 Iconify 插件
 
-[Iconify plugin for Tailwind CSS package](../index.md) has several plugins.
-This documentation covers `[func]addDynamicIconSelectors` plugin.
+[Iconify Tailwind CSS 插件包](../index.md) 包含多个插件。
+本文档介绍 `[func]addDynamicIconSelectors` 插件。
 
-This plugin for Tailwind 3, which can also be used with Tailwind 4 but requires creating a config file.
+此插件适用于 Tailwind 3，也可用于 Tailwind 4，但需要创建配置文件。
 
-For newer Tailwind 4 plugin, see [Tailwind 4 plugin documentation](../tailwind4/index.md).
+如需了解较新的 Tailwind 4 插件，请参阅 [Tailwind 4 插件文档](../tailwind4/index.md)。
 
-## The Difference
+## 区别
 
-What makes this plugin different from `[func]addIconSelectors()`?
+此插件与 `[func]addIconSelectors()` 有何不同？
 
-It is easier to use.
+它更易于使用。
 
-- No need to configure plugin.
-- One class name per icon.
+- 无需配置插件。
+- 每个图标对应一个类名。
 
-Downsides:
+缺点：
 
-- Less compact CSS.
-- Weird selectors (caused by Tailwind CSS plugin system limitations).
+- CSS 不够紧凑。
+- 选择器较为奇怪（由 Tailwind CSS 插件系统的限制导致）。
 
 ## HTML
 
-To use icons in HTML, all you have to do is create `[tag]span` element with a class name that contains icon name.
+要在 HTML 中使用图标，只需创建一个包含图标名称的类名的 `[tag]span` 元素。
 
-Syntax of class names is this: `[str]icon-[{prefix}--{name}]`, where `[str]{prefix}` is icon set prefix, `[str]{name}` is icon name.
+类名的语法为：`[str]icon-[{prefix}--{name}]`，其中 `[str]{prefix}` 是图标集前缀，`[str]{name}` 是图标名称。
 
-Examples:
+示例：
 
 ```html
 <span class="icon-[ph--alarm-duotone]"></span>
@@ -44,18 +44,17 @@ Examples:
 <span class="icon-[carbon--edit-off]"></span>
 ```
 
-Make sure prefix and icon name are separated with two hyphens: `[str]--`.
+请确保前缀和图标名称之间用两个连字符分隔：`[str]--`。
 
-Why such a complex syntax?
-It is because of Tailwind CSS limitations.
-It can handle dynamic class names only if they are created in format `[str]rule-[value]`.
+为什么语法如此复杂？
+这是由于 Tailwind CSS 的限制。
+它只能处理以 `[str]rule-[value]` 格式创建的动态类名。
 
-## Usage
+## 使用方法
 
-To add plugin to Tailwind CSS, you need to open `[file]tailwind.config.js`, import `[func]addDynamicIconSelectors`
-from `[npm]@iconify/tailwind` and add it to a list of plugins.
+要将插件添加到 Tailwind CSS，你需要打开 `[file]tailwind.config.js`，从 `[npm]@iconify/tailwind` 导入 `[func]addDynamicIconSelectors`，并将其添加到插件列表中。
 
-### Basic usage
+### 基本用法
 
 ```js
 const { addDynamicIconSelectors } = require("@iconify/tailwind");
@@ -64,27 +63,27 @@ const { addDynamicIconSelectors } = require("@iconify/tailwind");
 module.exports = {
   content: ["./src/*.html"],
   plugins: [
-    // Iconify plugin
+    // Iconify 插件
     addDynamicIconSelectors(),
   ],
 };
 ```
 
-#### Color
+#### 颜色
 
-To change icon color, change text color. See [how monotone icons work in CSS](../../index.md#monotone).
+要更改图标颜色，请更改文本颜色。请参阅 [CSS 中单色图标的工作原理](../../index.md#monotone)。
 
-#### Size
+#### 尺寸
 
-See [icon size documentation](./size.md).
+请参阅 [图标尺寸文档](./size.md)。
 
-### Advanced usage
+### 高级用法
 
-Plugin accepts options to customise plugin behavior.
+插件接受选项以自定义插件行为。
 
-If you need to, you can create several instances of plugin with different options.
+如果需要，你可以使用不同的选项创建多个插件实例。
 
-You must use a different value for `[prop]prefix` option for each plugin instance!
+每个插件实例必须为 `[prop]prefix` 选项使用不同的值！
 
 ```js
 const { addDynamicIconSelectors } = require("@iconify/tailwind");
@@ -93,54 +92,54 @@ const { addDynamicIconSelectors } = require("@iconify/tailwind");
 module.exports = {
   content: ["./src/*.html"],
   plugins: [
-    // Iconify plugin
+    // Iconify 插件
     addDynamicIconSelectors({
-      // Prefix for selectors, must be different for each addDynamicIconSelectors()
+      // 选择器的前缀，每个 addDynamicIconSelectors() 必须不同
       prefix: "icon",
-      // Removes redundant rules
+      // 移除冗余规则
       overrideOnly: false,
-      // Icon height, 0 to disable size
+      // 图标高度，设为 0 可禁用尺寸
       scale: 1,
-      // Custom icon sets
+      // 自定义图标集
       iconSets: {},
-      // Callback to customise icons (such as change stroke-width, color, etc...).
-      // First param is content, second is icon name, third is icon set prefix.
-      // Function should return modified content.
+      // 用于自定义图标的回调函数（例如更改描边宽度、颜色等）。
+      // 第一个参数是内容，第二个是图标名称，第三个是图标集前缀。
+      // 函数应返回修改后的内容。
       customise: (content, name, prefix) => content,
     }),
   ],
 };
 ```
 
-## Options
+## 选项
 
-Plugin options:
+插件选项：
 
-- `[prop]prefix`, `[type]string` - prefix for dynamic class names.
-- `[prop]overrideOnly`, `[type]boolean` - if enabled, removes duplicate CSS.
-- `[prop]iconSets` - icon sets as an object, it can be used for location of icon sets or custom icon sets.
-- `[prop]scale` - scales icons. See below.
-- `[prop]customise` - callback to customise icon. You can use it to [change stroke width, color](./customise.md) and so on.
+- `[prop]prefix`，`[type]string` - 动态类名的前缀。
+- `[prop]overrideOnly`，`[type]boolean` - 如果启用，将移除重复的 CSS。
+- `[prop]iconSets` - 以对象形式提供的图标集，可用于指定图标集位置或自定义图标集。
+- `[prop]scale` - 缩放图标。见下文。
+- `[prop]customise` - 用于自定义图标的回调函数。你可以使用它来[更改描边宽度、颜色](./customise.md)等。
 
-Default values for all options are shown in code sample above.
+所有选项的默认值已在上面的代码示例中显示。
 
 ### prefix
 
-Option `[prop]prefix` sets prefix for dynamic class names.
+选项 `[prop]prefix` 设置动态类名的前缀。
 
-Default value is `[str]icon`.
+默认值为 `[str]icon`。
 
-For example, if you set it to `[str]icon-hover`, like in a code sample above, you can use icons as `[str]icon-hover-[mdi-light--home]`.
+例如，如果你将其设置为 `[str]icon-hover`（如上面的代码示例所示），你可以使用 `[str]icon-hover-[mdi-light--home]` 来调用图标。
 
-Value must not include `[str]-` at the end. Class names will always have `[str]-` added after prefix. That's how Tailwind CSS dynamic class names work.
+值末尾不能包含 `[str]-`。类名始终会在前缀后自动添加 `[str]-`。这就是 Tailwind CSS 动态类名的工作原理。
 
-You can use multiple instances of plugin with different `[prop]prefix` values to support different configuration options, like in the example below.
+你可以使用具有不同 `[prop]prefix` 值的多个插件实例来支持不同的配置选项，如下例所示。
 
 ### overrideOnly
 
-If enabled, generated CSS will include only rules that override icons.
+如果启用，生成的 CSS 将仅包含覆盖图标的规则。
 
-For example, with configuration in code example above, plugin will generate the following CSS for `[str]icon-hover-[mdi-light--arrow-right]`:
+例如，使用上面代码示例中的配置，插件将为 `[str]icon-hover-[mdi-light--arrow-right]` 生成以下 CSS：
 
 ```css
 .icon-hover-\[mdi-light--arrow-right\] {
@@ -148,59 +147,58 @@ For example, with configuration in code example above, plugin will generate the 
 }
 ```
 
-This can be used in combination with default selectors to swap icon on hover without duplicating CSS:
+这可以与默认选择器结合使用，在悬停时切换图标而无需重复 CSS：
 
 ```yaml
 src: usage/tailwind/override.js
 hint: "tailwind.config.js"
 extra:
   - src: usage/tailwind/override.html
-    title: "Usage example:"
+    title: "使用示例："
 ```
 
 ### iconSets
 
-With `[prop]iconSets` you can use custom files for icon sets.
+通过 `[prop]iconSets`，你可以为图标集使用自定义文件。
 
-See [custom icon sets documentation](./icon-sets.md).
+请参阅 [自定义图标集文档](./icon-sets.md)。
 
 ### scale
 
-See [icon size documentation](./size.md).
+请参阅 [图标尺寸文档](./size.md)。
 
-### Customise option
+### customise 选项
 
-Customise option can be used to customise icons.
+customise 选项可用于自定义图标。
 
-You can change icon color, stroke width, animation duration and so on.
+你可以更改图标颜色、描边宽度、动画持续时间等。
 
-See [customise option documentation](./customise.md) for details and usage examples.
+有关详细信息和使用示例，请参阅 [customise 选项文档](./customise.md)。
 
-## Issues
+## 常见问题
 
-If everything is done correctly, icons should work.
+如果一切操作正确，图标应该能正常工作。
 
-Possible issues:
+可能遇到的问题：
 
-### Errors when building CSS
+### 构建 CSS 时出错
 
-If an icon set is missing or icon is missing, the plugin will throw errors.
+如果缺少图标集或图标，插件将抛出错误。
 
-See error message. If the plugin cannot find an icon set, install dependency. If the plugin cannot find icon, you are using the wrong icon name.
+请查看错误信息。如果插件找不到图标集，请安装依赖项。如果插件找不到图标，说明你使用了错误的图标名称。
 
-### Selectors do not work
+### 选择器不生效
 
-You have added class names, built your CSS, but icons do not work?
+你已添加类名并构建了 CSS，但图标不生效？
 
-First, make sure the class name is correct. If it is correct, most likely Tailwind CSS is not seeing your class names.
-If you are familiar with Tailwind CSS, the process of fixing it is exactly the same as any other missing class name:
+首先，请确保类名正确。如果正确，很可能是 Tailwind CSS 未检测到你的类名。
+如果你熟悉 Tailwind CSS，修复此问题的过程与处理任何其他缺失类名的过程完全相同：
 
-- You can check if your files are scanned.
-- You can add it to `[prop]safelist` in config.
+- 你可以检查文件是否已被扫描。
+- 你可以在配置中将其添加到 `[prop]safelist`。
 
-## Multiple instances
+## 多个实例
 
-You can add plugin to the plugin list in Tailwind CSS config multiple times, with different options.
+你可以在 Tailwind CSS 配置的插件列表中多次添加该插件，并设置不同的选项。
 
-Each `[func]addDynamicIconSelectors()` entry in the plugin list should have different `[prop]prefix` option
-to avoid conflicts. The default value for `[prop]prefix` is `[str]icon`.
+插件列表中的每个 `[func]addDynamicIconSelectors()` 条目都应具有不同的 `[prop]prefix` 选项，以避免冲突。`[prop]prefix` 的默认值为 `[str]icon`。

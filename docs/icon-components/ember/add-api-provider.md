@@ -1,29 +1,29 @@
 ```yaml
-title: 'Iconify for Ember Function: addAPIProvider'
+title: 'Iconify for Ember 函数：addAPIProvider'
 ```
 
-# Iconify for Ember function: addAPIProvider
+# Iconify for Ember 函数：addAPIProvider
 
-This tutorial is part of [Iconify for Ember functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Ember 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/add-api-provider/intro`
 
-## API providers
+## API 提供商
 
 `include icon-components/api-providers`
 
-## Usage
+## 用法
 
 `include icon-components/functions/add-api-provider/props`
 
-## Example
+## 示例
 
 ```yaml
 src: icon-components/ember/add-api-provider.js
-title: Adding API provider in JavaScript
+title: 在 JavaScript 中添加 API 提供商
 extra:
   - src: icon-components/ember/add-api-provider.hbs
-    title: Usage in template
+    title: 在模板中使用
 ```
 
 `include icon-components/functions/add-api-provider/footer`

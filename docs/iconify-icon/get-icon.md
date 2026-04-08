@@ -1,20 +1,20 @@
 ```yaml
-title: 'Iconify Icon Web Component Function: getIcon'
+title: 'Iconify Icon Web 组件函数：getIcon'
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
 ```
 
-# Web component function: getIcon
+# Web 组件函数：getIcon
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md#functions).
+本教程属于 [Iconify Icon Web 组件教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/get-icon/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/get-icon/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/get-icon.js
@@ -26,7 +26,7 @@ replacements:
     replace: 'iconify-icon'
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/common/get-icon2.js
@@ -38,7 +38,7 @@ replacements:
     replace: 'iconify-icon'
 ```
 
-Example with bad icon name, returns `null`:
+图标名称错误的示例，返回 `null`：
 
 ```yaml
 src: icon-components/common/get-icon-null.js

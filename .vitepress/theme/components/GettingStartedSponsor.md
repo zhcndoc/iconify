@@ -2,17 +2,17 @@
 import heart from '/assets/svg/heart.svg?raw'
 </script>
 
-## Support Iconify
+## 支持 Iconify
 
 <section class="intro-sponsor">
     <div v-html="heart"></div>
     <div>
         <p>
-            Iconify is an open source project, not backed by a large company.
+            Iconify 是一个开源项目，没有大型公司支持。
         </p>
         <p>
-            If you are using Iconify in your projects,
-            <a href="/sponsors/">please consider supporting Iconify development</a>.
+            如果您在项目中使用 Iconify，
+            <a href="/sponsors/">请考虑支持 Iconify 的发展</a>。
         </p>
     </div>
 </section>

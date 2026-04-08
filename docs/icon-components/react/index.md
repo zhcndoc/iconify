@@ -1,5 +1,5 @@
 ```yaml
-title: Iconify for React
+title: Iconify 适用于 React
 replacements:
   - code: "60,000"
     value: "${counters.icons}"
@@ -26,46 +26,46 @@ functions:
   setCustomIconsLoader: "./custom-loaders.md"
 ```
 
-# Iconify for React
+# Iconify 适用于 React
 
 ```yaml
 include: icon-components/components/intro
 ```
 
-## Installation
+## 安装
 
-If you are using NPM:
+如果您使用 NPM：
 
 ```bash
 npm install --save-dev @iconify/react@2
 ```
 
-If you are using Yarn:
+如果您使用 Yarn：
 
 ```bash
 yarn add --dev @iconify/react@2
 ```
 
-### Version 4
+### 版本 4
 
-As of version 5, the component is a modern functional component that uses React hooks.
+从版本 5 开始，该组件是一个使用 React hooks 的现代函数式组件。
 
-If you want to use the icon component with an older version of React,
-you can install version 4 using `[npm]@legacy` tag:
+如果您想在较旧版本的 React 中使用该图标组件，
+您可以使用 `[npm]@legacy` 标签安装版本 4：
 
 ```bash
 npm install --save-dev @iconify/react@legacy
 ```
 
-## Usage
+## 使用方法
 
-Install `[npm]@iconify/react@2` and import `[var]Icon` component from it:
+安装 `[npm]@iconify/react@2` 并从中导入 `[var]Icon` 组件：
 
 ```js
 import { Icon } from "@iconify/react";
 ```
 
-Then use `[var]Icon` component with icon name as `[prop]icon` parameter:
+然后将图标名称作为 `[prop]icon` 参数传递给 `[var]Icon` 组件：
 
 ```jsx
 <Icon icon="mdi-light:home" />
@@ -77,48 +77,48 @@ include: icon-components/components/intro-online
 
 ### Next.js {#ssr}
 
-Component is compatible with the latest Next.js.
+该组件与最新版的 Next.js 兼容。
 
-Unfortunately, Next.js currently does not support `[func]useState` in components,
-making it impossible to use the same stateful components on server and client,
-so the icon component is a client-only component.
-SVG will not be rendered on server.
+遗憾的是，Next.js 目前不支持在组件中使用 `[func]useState`，
+导致无法在服务器端和客户端使用相同的有状态组件，
+因此该图标组件仅为客户端组件。
+SVG 不会在服务器端渲染。
 
-Additionally, to avoid hydration errors, component renders SVG only after it is mounted,
-which can sometimes cause a tiny delay.
-If you are using Next.js or similar framework,
-consider switching to [Iconify Icon web component](/docs/iconify-icon/index.md).
+此外，为了避免水合错误，组件仅在挂载后才会渲染 SVG，
+这有时会导致微小的延迟。
+如果您正在使用 Next.js 或类似框架，
+建议考虑切换到 [Iconify Icon Web 组件](/docs/iconify-icon/index.md)。
 
-If you do want to render SVGs without a delay,
-provide [icon data](/docs/types/iconify-icon.md) as parameter instead of icon name
-or use a different way to render icons, such as:
+如果您确实希望无延迟地渲染 SVG，
+请提供 [图标数据](/docs/types/iconify-icon.md) 作为参数，而不是图标名称，
+或使用其他方式渲染图标，例如：
 
-- [Iconify Icon web component](/docs/iconify-icon/index.md)
+- [Iconify Icon Web 组件](/docs/iconify-icon/index.md)
 - [Unplugin Icons](/docs/usage/svg/unplugin/index.md)
-- [Tailwind CSS with Iconify plugin](/docs/usage/css/tailwind/iconify/index.md)
-- [UnoCSS with icons preset](/docs/usage/css/unocss/index.md)
+- [带有 Iconify 插件的 Tailwind CSS](/docs/usage/css/tailwind/iconify/index.md)
+- [带有图标预设的 UnoCSS](/docs/usage/css/unocss/index.md)
 
-## Properties
+## 属性
 
-You can pass any custom properties to `[var]Icon`.
+您可以向 `[var]Icon` 传递任何自定义属性。
 
-Required properties:
+必需属性：
 
-- `[prop]icon`, `[type]IconifyIcon | string` icon name or icon data.
+- `[prop]icon`，`[type]IconifyIcon | string` 图标名称或图标数据。
 
 `include icon-components/component-optional-props`
 
-See below for more information on each optional property.
+有关每个可选属性的更多信息，请参见下文。
 
-In addition to the properties mentioned above, the icon component accepts any other properties and events. All other properties and events will be passed to generated SVG element, so you can do stuff like assigning `[prop]onClick` event, setting the inline style, add title and so on.
+除了上述属性外，该图标组件还接受任何其他属性和事件。所有其他属性和事件都将传递给生成的 SVG 元素，因此您可以执行诸如分配 `[prop]onClick` 事件、设置内联样式、添加标题等操作。
 
-## Icon
+## 图标
 
 ```yaml
 include: icon-components/components/intro-icon
 ```
 
-## Color
+## 颜色
 
 ```yaml
 include: icon-components/components/intro-color
@@ -128,9 +128,9 @@ include: icon-components/components/intro-color
 <Icon icon="mdi:home" style={{ color: "red" }} />
 ```
 
-For various ways to set color, see [how to change icon color in Iconify for React](./color.md).
+有关设置颜色的各种方法，请参阅 [如何在 Iconify for React 中更改图标颜色](./color.md)。
 
-## Dimensions
+## 尺寸
 
 ```yaml
 include: icon-components/components/intro-size
@@ -140,57 +140,57 @@ include: icon-components/components/intro-size
 <Icon icon="mdi:home" style={{ fontSize: "24px" }} />
 ```
 
-For various ways to change icon dimensions, see [how to change icon dimensions in Iconify for React](./dimensions.md).
+有关更改图标尺寸的各种方法，请参阅 [如何在 Iconify for React 中更改图标尺寸](./dimensions.md)。
 
-## Transformations
+## 变换
 
 ```yaml
 include: icon-components/components/intro-transform
 ```
 
-For more details see [how to transform icon in Iconify for React](./transform.md).
+有关更多详细信息，请参阅 [如何在 Iconify for React 中变换图标](./transform.md)。
 
 ## onLoad
 
 `include icon-components/components/onload`
 
-## Functions {#functions}
+## 函数 {#functions}
 
 ```yaml
 include: icon-components/components/functions-list/header
 ```
 
-### Check available icons {#getting-icons}
+### 检查可用图标 {#getting-icons}
 
 ```yaml
 include: icon-components/components/functions-list/getting-icons
 ```
 
-### Adding icons {#adding-icons}
+### 添加图标 {#adding-icons}
 
 ```yaml
 include: icon-components/components/functions-list/adding-icons
 ```
 
-### Custom loaders {#custom-loaders}
+### 自定义加载器 {#custom-loaders}
 
 ```yaml
 include: icon-components/components/functions-list/custom-loaders
 ```
 
-### Helper functions {#helper}
+### 辅助函数 {#helper}
 
 ```yaml
 include: icon-components/components/functions-list/helpers
 ```
 
-### API functions {#api}
+### API 函数 {#api}
 
 ```yaml
 include: icon-components/components/functions-list/api
 ```
 
-### Internal API functions {#internal}
+### 内部 API 函数 {#internal}
 
 ```yaml
 include: icon-components/components/functions-list/internal

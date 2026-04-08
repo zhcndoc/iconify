@@ -1,34 +1,34 @@
 ```yaml
-title: Downloading binary file
+title: 下载二进制文件
 functions:
   downloadGitHubRepo: './github.md'
   downloadNPMPackage: './npm.md'
   sendAPIQuery: './api-query.md'
 ```
 
-# Download binary file
+# 下载二进制文件
 
-This tutorial is part of [package functions documentation](./index.md) in [Iconify Tools](../index.md).
+本教程属于 [Iconify Tools](../index.md) 中的 [包函数文档](./index.md) 的一部分。
 
-Function `[func]downloadFile()` is a wrapper for `[func]fetch` that downloads binary file.
+函数 `[func]downloadFile()` 是 `[func]fetch` 的包装器，用于下载二进制文件。
 
-It is used by functions that retrieve archives in download functions, such as `[func]downloadGitHubRepo()` and `[func]downloadNPMPackage()`.
+它被用于下载函数中检索归档文件的函数，例如 `[func]downloadGitHubRepo()` 和 `[func]downloadNPMPackage()`。
 
-To retrieve text files, see `[func]sendAPIQuery()`.
+如需检索文本文件，请参阅 `[func]sendAPIQuery()`。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]query`, `[type]APIQueryParams`. URI and parameters.
-- `[prop]filename`, `[type]string`. Where to store file.
+- `[prop]query`，`[type]APIQueryParams`。URI 和参数。
+- `[prop]filename`，`[type]string`。文件存储路径。
 
-Function is asynchronous. That means you need to handle it as `[class]Promise` instance, usually by adding `[js]await` before function call.
+该函数是异步的。这意味着你需要将其作为 `[class]Promise` 实例进行处理，通常是在函数调用前添加 `[js]await`。
 
 ### APIQueryParams
 
-`[type]APIQueryParams` object has the following properties:
+`[type]APIQueryParams` 对象包含以下属性：
 
-- `[prop]uri`, `[type]string`. Base URI.
-- `[prop]params`, `[type]URLSearchParams`. Optional parameters.
-- `[prop]header`, `[type]Record<string, string>`. Optional headers.
+- `[prop]uri`，`[type]string`。基础 URI。
+- `[prop]params`，`[type]URLSearchParams`。可选参数。
+- `[prop]header`，`[type]Record<string, string>`。可选请求头。

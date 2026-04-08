@@ -1,44 +1,44 @@
 ```yaml
-title: Sending API Query
+title: 发送 API 查询
 functions:
   importFromFigma: '../import/figma/index.md'
   downloadGitHubRepo: './github.md'
   downloadFile: './download-file.md'
 ```
 
-# Sending API query
+# 发送 API 查询
 
-This tutorial is part of [package functions documentation](./index.md) in [Iconify Tools](../index.md).
+本教程是 [Iconify Tools](../index.md) 中 [包函数文档](./index.md) 的一部分。
 
-Function `[func]sendAPIQuery()` is a wrapper for `[func]fetch` with caching.
+函数 `[func]sendAPIQuery()` 是带有缓存功能的 `[func]fetch` 的封装。
 
-It is used by functions that retrieve text data from remote sources, such as `[func]importFromFigma()` and `[func]downloadGitHubRepo()`.
+它被用于从远程源检索文本数据的函数，例如 `[func]importFromFigma()` 和 `[func]downloadGitHubRepo()`。
 
-To retrieve binary files, see `[func]downloadFile()`.
+如需检索二进制文件，请参阅 `[func]downloadFile()`。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数具有以下参数：
 
-- `[prop]query`, `[type]APIQueryParams`. URI and parameters.
-- `[prop]cache`, `[type]APICacheOptions`. Cache options.
+- `[prop]query`，`[type]APIQueryParams`。URI 和参数。
+- `[prop]cache`，`[type]APICacheOptions`。缓存选项。
 
-Function returns:
+函数返回：
 
-- Content as `[type]string` on success.
-- Error as `[type]number` on error.
+- 成功时返回 `[type]string` 类型的内容。
+- 失败时返回 `[type]number` 类型的错误。
 
-Function is asynchronous. That means you need to handle it as `[class]Promise` instance, usually by adding `[js]await` before function call.
+该函数是异步的。这意味着你需要将其作为 `[class]Promise` 实例进行处理，通常是在函数调用前添加 `[js]await`。
 
 ### APIQueryParams
 
-`[type]APIQueryParams` object has the following properties:
+`[type]APIQueryParams` 对象具有以下属性：
 
-- `[prop]uri`, `[type]string`. Base URI.
-- `[prop]params`, `[type]URLSearchParams`. Optional parameters.
-- `[prop]header`, `[type]Record<string, string>`. Optional headers.
+- `[prop]uri`，`[type]string`。基础 URI。
+- `[prop]params`，`[type]URLSearchParams`。可选参数。
+- `[prop]header`，`[type]Record<string, string>`。可选请求头。
 
-Example:
+示例：
 
 ```js
 const params = {
@@ -54,32 +54,32 @@ const params = {
 
 ### APICacheOptions
 
-`[type]APICacheOptions` object has the following properties:
+`[type]APICacheOptions` 对象具有以下属性：
 
-- `[prop]dir`, `[type]string`. Directory where cache should be stored.
-- `[prop]ttl`, `[type]number`. How long can data be cached, in seconds.
+- `[prop]dir`，`[type]string`。缓存应存储的目录。
+- `[prop]ttl`，`[type]number`。数据可缓存的时长，单位为秒。
 
-## Cache management
+## 缓存管理
 
-If `[prop]cache` property is not set, data is not cached.
+如果未设置 `[prop]cache` 属性，则数据不会被缓存。
 
-If `[prop]cache` property is set, function will generate unique hash for query, will check if file with that hash already exists, if it has not expired. On success it will return cached data instead of fetching new data.
+如果设置了 `[prop]cache` 属性，函数将为查询生成唯一的哈希值，并检查具有该哈希值的文件是否已存在且未过期。如果成功，它将返回缓存的数据，而不是获取新数据。
 
-You can purge cache at any time using `[func]clearAPICache()` function:
+你可以随时使用 `[func]clearAPICache()` 函数清除缓存：
 
 ```ts
 import { clearAPICache } from '@iconify/tools/lib/download/api/cache';
 
 const cacheDir = 'cache';
 
-// Asynchronous function, so wrapping it in anonymous async function.
-// Not needed for Node 17+ that supports top level await.
+// 异步函数，因此将其包装在匿名异步函数中。
+// 对于支持顶层 await 的 Node 17+ 版本则不需要。
 (async () => {
 	await clearAPICache(cacheDir);
 })();
 ```
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/package/api.ts

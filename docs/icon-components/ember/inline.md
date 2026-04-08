@@ -1,16 +1,16 @@
 ```yaml
-title: Vertical Alignment in Iconify for Ember
+title: Iconify for Ember 中的垂直对齐
 ```
 
-# Vertical alignment
+# 垂直对齐
 
-This tutorial is part of [Iconify for Ember tutorial](./index.md).
+本教程是 [Iconify for Ember 教程](./index.md) 的一部分。
 
 `include icon-components/vertical-align-intro`
 
-## Inline attribute
+## inline 属性
 
-Instead of adding `[prop]vertical-align` to each icon, icon component has a property `[prop]inline`. Adding `[prop]inline` property to icon component is identical to setting `[html]style="vertical-align: -0.125em"`:
+无需为每个图标添加 `[prop]vertical-align`，图标组件提供了一个 `[prop]inline` 属性。为图标组件添加 `[prop]inline` 属性等同于设置 `[html]style="vertical-align: -0.125em"`：
 
 ```yaml
 src: icon-components/ember/inline.hbs

@@ -1,5 +1,5 @@
-The first parameter can be one of the following:
+第一个参数可以是以下之一：
 
-- `[str]local` for `[prop]localStorage`.
-- `[str]session` for `[prop]sessionStorage`.
-- `[str]all` for both `[prop]localStorage` and `[prop]sessionStorage`.
+- `[str]local` 对应 `[prop]localStorage`。
+- `[str]session` 对应 `[prop]sessionStorage`。
+- `[str]all` 对应 `[prop]localStorage` 和 `[prop]sessionStorage` 两者。

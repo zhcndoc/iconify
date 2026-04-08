@@ -2,12 +2,12 @@
 import type { DefaultTheme } from 'vitepress'
 
 export const NewsSidebar: DefaultTheme.SidebarItem[] = [
-  { text: 'Year 2026', link: '/news/2026.md' },
-  { text: 'Year 2025', link: '/news/2025.md' },
-  { text: 'Year 2024', link: '/news/2024.md' },
-  { text: 'Year 2023', link: '/news/2023.md' },
-  { text: 'Year 2022', link: '/news/2022.md' },
-  { text: 'Year 2021', link: '/news/2021.md' },
-  { text: 'Year 2020', link: '/news/2020.md' },
-  { text: 'Year 2019', link: '/news/2019.md' },
+  { text: '2026 年', link: '/news/2026.md' },
+  { text: '2025 年', link: '/news/2025.md' },
+  { text: '2024 年', link: '/news/2024.md' },
+  { text: '2023 年', link: '/news/2023.md' },
+  { text: '2022 年', link: '/news/2022.md' },
+  { text: '2021 年', link: '/news/2021.md' },
+  { text: '2020 年', link: '/news/2020.md' },
+  { text: '2019 年', link: '/news/2019.md' },
 ]

@@ -1,5 +1,5 @@
 ```yaml
-title: convertParsedSVG() in Iconify Utils
+title: Iconify Utils 中的 convertParsedSVG()
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
   SVGViewBox: './get-svg-viewbox.md'
@@ -11,30 +11,30 @@ functions:
 
 # convertParsedSVG()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]convertParsedSVG()` converts result of `[func]parseSVGContent()` to `[type]IconifyIcon`.
+函数 `[func]convertParsedSVG()` 将 `[func]parseSVGContent()` 的结果转换为 `[type]IconifyIcon`。
 
-Function also does basic validation and cleanup of `[tag]svg` attributes.
+该函数还会对 `[tag]svg` 属性进行基本的验证和清理。
 
-Result can be used by various functions and icon components that use `[type]IconifyIcon` type.
+转换结果可供使用 `[type]IconifyIcon` 类型的各种函数和图标组件使用。
 
-## Usage
+## 用法
 
-This function has the following parameter:
+此函数包含以下参数：
 
-- `[prop]data`, `[type]object`. Result of `[func]buildParsedSVG()` function.
+- `[prop]data`，`[type]object` 类型。`[func]buildParsedSVG()` 函数的返回结果。
 
-This function returns data with type `[type]IconifyIcon`, `[type]undefined` on error.
+此函数返回 `[type]IconifyIcon` 类型的数据，出错时返回 `[type]undefined`。
 
 ## Iconify Tools
 
-This function is very basic. For advanced parsing and clean up, use [Iconify Tools](../tools/index.md).
+此函数功能较为基础。如需高级解析和清理功能，请使用 [Iconify Tools](../tools/index.md)。
 
-## Example
+## 示例
 
-Example using `[func]parseSVGContent()` with `[func]convertParsedSVG()` to get icon data in `[type]IconifyIcon` format,
-which can be used by various icon components:
+以下示例展示了如何结合使用 `[func]parseSVGContent()` 和 `[func]convertParsedSVG()` 来获取 `[type]IconifyIcon` 格式的图标数据，
+该数据可供各种图标组件使用：
 
 ```yaml
 src: libraries/utils/convert-parsed-svg.ts

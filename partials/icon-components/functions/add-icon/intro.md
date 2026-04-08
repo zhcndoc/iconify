@@ -1,1 +1,1 @@
-Function `[func]addIcon()` adds one icon to the component's icon data storage.
+函数 `[func]addIcon()` 向组件的图标数据存储中添加一个图标。

@@ -1,38 +1,38 @@
 ```yaml
-title: 'Iconify SVG Framework Function: getIcon'
+title: 'Iconify SVG 框架函数：getIcon'
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
 ```
 
-# SVG framework function: getIcon
+# SVG 框架函数：getIcon
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#getting-icons).
+本教程是 [Iconify SVG 框架函数教程](./functions.md#getting-icons) 的一部分。
 
 `include icon-components/functions/get-icon/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/get-icon/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/iconify/get-icon.js
 extra:
   - src: icon-components/iconify/get-icon.json
-    title: 'Result:'
+    title: '结果：'
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/iconify/get-icon2.js
 extra:
   - src: icon-components/iconify/get-icon2.json
-    title: 'Result:'
+    title: '结果：'
 ```
 
-Example with bad icon name, returns `null`:
+使用错误图标名称的示例，返回 `null`：
 
 ```js
 // null

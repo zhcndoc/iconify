@@ -1,21 +1,21 @@
 ```yaml
-title: 'Iconify for Ember Function: iconExists'
+title: 'Iconify for Ember 函数：iconExists'
 functions:
   getIcon: './get-icon.md'
   loadIcons: './load-icons.md'
 ```
 
-# Iconify for Ember function: iconExists
+# Iconify for Ember 函数：iconExists
 
-This tutorial is part of [Iconify for Ember functions tutorial](./index.md#functions).
+本教程是 [Iconify for Ember 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/icon-exists/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/icon-exists/props`
 
-## Example
+## 示例
 
 ```js
 import { iconExists } from '@iconify/ember/components/iconify-icon';

@@ -1,33 +1,33 @@
 ```yaml
-title: "Iconify for React Function: enableCache"
+title: "Iconify for React 函数：enableCache"
 functions:
   disableCache: "./disable-cache.md"
   addIcon: "./add-icon.md"
   addCollection: "./add-collection.md"
 ```
 
-# Iconify for React function: enableCache
+# Iconify for React 函数：enableCache
 
-This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
+本教程属于 [Iconify for React 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/cache/deprecated`
 
 `include icon-components/functions/cache/intro-enable`
 
-## Usage
+## 用法
 
 `include icon-components/functions/cache/props`
 
-## Storage types
+## 存储类型
 
 `include icon-components/functions/cache/storage-types`
 
-## Example
+## 示例
 
 ```yaml
 src: icon-components/common/enable-cache.js
 ```
 
-## Notes
+## 注意事项
 
 `include icon-components/functions/cache/notes`

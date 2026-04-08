@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify Icon Web Component Function: addIcon'
+title: 'Iconify 图标 Web 组件函数：addIcon'
 types:
   IconifyJSON: '../types/iconify-json.md'
   IconifyIcon: '../types/iconify-icon.md'
@@ -7,17 +7,17 @@ functions:
   addCollection: './add-collection.md'
 ```
 
-# Web component function: addIcon
+# Web 组件函数：addIcon
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md#functions).
+本教程属于 [Iconify Icon Web 组件教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/add-icon/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/add-icon/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/add-icon.js
@@ -28,11 +28,11 @@ replacements:
 
 `include icon-components/functions/add-icon/notes`
 
-## API provider
+## API 提供商
 
 `include icon-components/functions/add-icon/provider`
 
-Example:
+示例：
 
 ```yaml
 src: icon-components/common/add-icon2.js
@@ -41,13 +41,13 @@ replacements:
     replace: 'iconify-icon'
 ```
 
-Code above adds the following icon:
+上述代码添加了以下图标：
 
-- `[prop]provider` is `[str]custom`.
-- `[prop]prefix` is `[str]md`.
-- `[prop]name` is `[str]test`.
+- `[prop]provider` 为 `[str]custom`。
+- `[prop]prefix` 为 `[str]md`。
+- `[prop]name` 为 `[str]test`。
 
-In HTML this icon can be used like this:
+在 HTML 中，可以像这样使用该图标：
 
 ```html
 <iconify-icon icon="@custom:md:test"></iconify-icon>
@@ -55,6 +55,6 @@ In HTML this icon can be used like this:
 
 `include icon-components/functions/add-icon/custom`
 
-## One icon
+## 单个图标
 
 `include icon-components/functions/add-icon/footer`

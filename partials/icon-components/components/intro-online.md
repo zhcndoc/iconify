@@ -6,11 +6,11 @@ replacements:
     value: '${counters.sets}+'
 ```
 
-Component will automatically retrieve data for `[icon]mdi-light:home` from Iconify API and render it. There are over 60,000 icons available on Iconify API from various free and open source icon sets, including all the most popular icon sets.
+组件将自动从 Iconify API 获取 `[icon]mdi-light:home` 的数据并进行渲染。Iconify API 上提供了超过 60,000 个图标，涵盖各种免费和开源的图标集，包括所有最受欢迎的图标集。
 
-Availability of Iconify API is the biggest feature that makes Iconify components different from alternatives.
+Iconify API 的可用性是使 Iconify 组件区别于其他替代方案的最大特性。
 
-API sends data for icons on demand. Loading icons on demand has massive advantages over other methods:
+API 按需发送图标数据。按需加载图标相比其他方法具有巨大优势：
 
-- There can be an unlimited number of icons, giving you more choices. Icons you do not use are not loaded.
-- No useless data. Icon sets usually have thousands of icons. Instead of bundling all icons, component retrieves only icons you use.
+- 图标数量可以是无限的，为您提供更多选择。您未使用的图标不会被加载。
+- 没有无用数据。图标集通常包含数千个图标。组件不会打包所有图标，而是仅检索您使用的图标。

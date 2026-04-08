@@ -5,24 +5,24 @@ types:
   IconSet: './index.md'
 ```
 
-There are 3 types of icon items in `[type]IconSet`: `[str]icon`, `[str]variation`, `[str]alias`.
+`[type]IconSet` 中包含 3 种类型的图标项：`[str]icon`、`[str]variation`、`[str]alias`。
 
-`[str]icon` represents a full unique icon.
+`[str]icon` 表示一个完整的唯一图标。
 
-`[str]variation` represents variation of another icon. It has the following properties:
+`[str]variation` 表示另一个图标的变体。它具有以下属性：
 
-- `[prop]parent`, `[type]string`. Name of parent icon.
+- `[prop]parent`，`[type]string`。父图标的名称。
 
-and at least one of the transformations:
+以及至少以下变换之一：
 
-- `[prop]rotate` rotation by `[num]90`, `[num]180` or `[num]270` degrees.
-- `[prop]hFlip` horizontal flip.
-- `[prop]vFlip` vertical flip.
+- `[prop]rotate` 旋转 `[num]90`、`[num]180` 或 `[num]270` 度。
+- `[prop]hFlip` 水平翻转。
+- `[prop]vFlip` 垂直翻转。
 
-Variations make it easy to create clones of icons, such as `[icon]arrow-left` after creating `[icon]arrow-right`.
+变体使得创建图标克隆变得很容易，例如在创建 `[icon]arrow-right` 之后创建 `[icon]arrow-left`。
 
-`[str]alias` is an alternative name for icon. It has the following property:
+`[str]alias` 是图标的别名。它具有以下属性：
 
-- `[prop]parent`, `[type]string`. Name of parent icon.
+- `[prop]parent`，`[type]string`。父图标的名称。
 
-Aliases can be created to have different name for icon. If you have renamed some icon, alias can be used to allow users to use old name.
+可以创建别名来为图标提供不同的名称。如果您重命名了某个图标，可以使用别名来允许用户继续使用旧名称。

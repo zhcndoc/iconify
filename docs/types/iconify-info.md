@@ -1,52 +1,52 @@
 ```yaml
-title: Iconify Info Type
+title: Iconify Info 类型
 ```
 
-# IconifyInfo type
+# IconifyInfo 类型
 
-All Iconify libraries share common object structures. They are described as types in `[npm]@iconify/types` NPM package.
+所有 Iconify 库都共享通用的对象结构。它们在 `[npm]@iconify/types` NPM 包中被定义为类型。
 
-For description of types and short explanation of TypeScript see [types documentation](./index.md).
+有关类型的描述和 TypeScript 的简要说明，请参阅[类型文档](./index.md)。
 
-This article describes `[type]IconifyAlias` type.
+本文介绍了 `[type]IconifyAlias` 类型。
 
-## Structure
+## 结构
 
-Type `[type]IconifyInfo` is used for information about icon set.
+类型 `[type]IconifyInfo` 用于描述图标集的相关信息。
 
-It has the following mandatory properties:
+它具有以下必需属性：
 
-- `[prop]name`, `[type]string`. Icon set name.
-- `[prop]author`, `[type]object`. Author information (see below).
-- `[prop]license`, `[type]object`. License information (see below).
+- `[prop]name`，`[type]string`。图标集名称。
+- `[prop]author`，`[type]object`。作者信息（见下文）。
+- `[prop]license`，`[type]object`。许可证信息（见下文）。
 
-Then it has many optional properties, most of these properties are intended for displaying icon set data in list of icon sets:
+此外，它还包含许多可选属性，其中大多数属性用于在图标集列表中展示图标集数据：
 
-- `[prop]total`, `[type]number`. Number of icons in an icon set (see below).
-- `[prop]version`, `[type]string`. Version string.
-- `[prop]samples`, `[type]string[]`. Array of icon names to show as samples.
-- `[prop]height`, `[type]number | number[]`. Icon grid. If an icon set has mix of icons with different height values, such as half of icons are `[num]16` pixels high, half are `[num]24` pixels high, value can be an array.
-- `[prop]displayHeight`, `[type]number`. Height to use when showing samples. Value should be between `[num]16` and `[num]24`.
-- `[prop]category`, `[type]string`. Category in icon sets list.
-- `[prop]tags`, `[type]string[]`. List of tags, which can be used to filter icon sets (added in version 2).
-- `[prop]palette`, `[type]boolean`. Set to `true` if all icons use hardcoded colors, set to `false` if all icons use `[attr]currentColor`.
+- `[prop]total`，`[type]number`。图标集中的图标数量（见下文）。
+- `[prop]version`，`[type]string`。版本字符串。
+- `[prop]samples`，`[type]string[]`。要作为示例展示的图标名称数组。
+- `[prop]height`，`[type]number | number[]`。图标网格尺寸。如果图标集混合了不同高度的图标，例如一半图标高 `[num]16` 像素，另一半高 `[num]24` 像素，则该值可以是数组。
+- `[prop]displayHeight`，`[type]number`。展示示例时使用的高度。值应介于 `[num]16` 和 `[num]24` 之间。
+- `[prop]category`，`[type]string`。图标集列表中的分类。
+- `[prop]tags`，`[type]string[]`。标签列表，可用于筛选图标集（在版本 2 中添加）。
+- `[prop]palette`，`[type]boolean`。如果所有图标均使用硬编码颜色，则设置为 `true`；如果所有图标均使用 `[attr]currentColor`，则设置为 `false`。
 
-## Author
+## 作者
 
-`[prop]author` property is an object with following properties:
+`[prop]author` 属性是一个对象，包含以下属性：
 
-- `[prop]name`, `[type]string`. Author name, mandatory.
-- `[prop]url`, `[type]string`. Optional link to icon set website. Usually links to GitHub repository.
+- `[prop]name`，`[type]string`。作者名称，必填。
+- `[prop]url`，`[type]string`。指向图标集网站的可选链接。通常指向 GitHub 仓库。
 
-## License
+## 许可证
 
-`[prop]license` property is an object with following properties:
+`[prop]license` 属性是一个对象，包含以下属性：
 
-- `[prop]title`, `[type]string`. Human readable license, mandatory.
-- `[prop]spdx`, `[type]string`. Optional SPDX license identifier.
-- `[prop]url`, `[type]string`. Optional link to license file.
+- `[prop]title`，`[type]string`。人类可读的许可证名称，必填。
+- `[prop]spdx`，`[type]string`。可选的 SPDX 许可证标识符。
+- `[prop]url`，`[type]string`。指向许可证文件的可选链接。
 
-## Examples
+## 示例
 
 ```json
 {

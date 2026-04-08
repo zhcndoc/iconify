@@ -1,43 +1,43 @@
 ```yaml
-title: Icon keywords
+title: 图标关键词
 ```
 
-# Icon keywords
+# 图标关键词
 
-API query `[url]/keywords` is intended to be used for suggesting search queries.
+API 查询 `[url]/keywords` 旨在用于提供搜索查询建议。
 
-## Query
+## 查询
 
-API query is `[url]/keywords`.
+API 查询地址为 `[url]/keywords`。
 
-There are two variations of this query, depending on passed parameters.
+根据传递的参数，此查询有两种变体。
 
-You must set one of the following parameters:
+您必须设置以下参数之一：
 
-- `[prop]prefix`, `[type]string`. Keyword prefix. API returns all keywords that start with requested keyword.
-- `[prop]keyword`, `[type]keyword`. Partial keyword. API returns all keywords that start or end with requested keyword.
+- `[prop]prefix`，`[type]string`。关键词前缀。API 返回所有以请求关键词开头的关键词。
+- `[prop]keyword`，`[type]keyword`。部分关键词。API 返回所有以请求关键词开头或结尾的关键词。
 
-If you set both `[prop]prefix` and `[prop]keyword` parameters, `[prop]keyword` parameter will be ignored.
+如果同时设置了 `[prop]prefix` 和 `[prop]keyword` 参数，`[prop]keyword` 参数将被忽略。
 
-### Keyword
+### 关键词
 
-This is a very basic function. It can handle only one keyword, not multiple keywords.
+这是一个非常基础的功能。它一次只能处理一个关键词，不能处理多个关键词。
 
-Keyword requirements:
+关键词要求：
 
-- Can contain only letters `[str]a` - `[str]z`, numbers and `[str]-`.
-- If it contains `[str]-`, only last part after `[str]-` is checked, the rest is ignored.
-- Must be at least 2 characters long.
+- 只能包含字母 `[str]a` - `[str]z`、数字和 `[str]-`。
+- 如果包含 `[str]-`，则仅检查 `[str]-` 之后的最后一部分，其余部分将被忽略。
+- 长度必须至少为 2 个字符。
 
-## Response
+## 响应
 
-Response is an object, which contains all properties passed in query and the following properties:
+响应是一个对象，包含查询中传递的所有属性以及以下属性：
 
-- `[prop]invalid`, `[type]boolean`. Set to `[bool]true` if keyword is invalid.
-- `[prop]exists`, `[type]boolean`. Set to `[bool]true` if keyword exists as full keyword (with nothing or `[str]-` before and after it in icon name).
-- `[prop]matches`, [type]string[]`. List of matches.
+- `[prop]invalid`，`[type]boolean`。如果关键词无效，则设置为 `[bool]true`。
+- `[prop]exists`，`[type]boolean`。如果关键词作为完整关键词存在（在图标名称中其前后无内容或为 `[str]-`），则设置为 `[bool]true`。
+- `[prop]matches`，`[type]string[]`。匹配项列表。
 
-## Examples
+## 示例
 
 ```yaml
 hint: /keywords?prefix=hom&pretty=1
@@ -49,9 +49,9 @@ hint: /keywords?keyword=home&pretty=1
 src: api/keywords-home.json
 ```
 
-### Error response
+### 错误响应
 
-If no matches found or keyword is too short, correct response is returns with `[prop]matches` object being empty:
+如果未找到匹配项或关键词过短，将返回正确的响应，其中 `[prop]matches` 对象为空：
 
 ```json
 {
@@ -61,7 +61,7 @@ If no matches found or keyword is too short, correct response is returns with `[
 }
 ```
 
-If keyword is invalid, response includes `[prop]invalid` property set to `[bool]true`:
+如果关键词无效，响应将包含设置为 `[bool]true` 的 `[prop]invalid` 属性：
 
 ```json
 {
@@ -72,25 +72,25 @@ If keyword is invalid, response includes `[prop]invalid` property set to `[bool]
 }
 ```
 
-If search engine is disabled, `[url]/keywords` route is not handled, server returns `[num]404` HTTP error.
+如果搜索引擎被禁用，`[url]/keywords` 路由将不被处理，服务器将返回 `[num]404` HTTP 错误。
 
-## Type
+## 类型
 
-Type for API response:
+API 响应的类型：
 
 ```ts
 /**
- * Parameters for `/keywords` query
+ * `/keywords` 查询的参数
  *
- * One of `prefix` or `keyword` parameters must be set
+ * 必须设置 `prefix` 或 `keyword` 参数之一
  */
 export interface APIv3KeywordsPrefixQuery {
-	// Prefix to test: matches for 'foo' include 'foobar', but not 'barfoo'
+	// 要测试的前缀：'foo' 的匹配项包括 'foobar'，但不包括 'barfoo'
 	prefix: string;
 }
 
 export interface APIv3KeywordsFullQuery {
-	// Keyword to test: matches for 'foo' include 'foobar' and 'barfoo'
+	// 要测试的关键词：'foo' 的匹配项包括 'foobar' 和 'barfoo'
 	keyword: string;
 }
 
@@ -99,18 +99,18 @@ export type APIv3KeywordsQuery =
 	| APIv3KeywordsFullQuery;
 
 /**
- * Response for /keywords query
+ * /keywords 查询的响应
  *
- * Includes request + response
+ * 包含请求 + 响应
  */
 export type APIv3KeywordsResponse = APIv3KeywordsQuery & {
-	// Set to true if keyword is invalid
+	// 如果关键词无效，则设置为 true
 	invalid?: true;
 
-	// True if partial keyword exists as is
+	// 如果部分关键词原样存在，则为 true
 	exists: boolean;
 
-	// Keywords that contain partial keyword
+	// 包含部分关键词的关键词列表
 	matches: string[];
 };
 ```

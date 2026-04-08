@@ -1,9 +1,9 @@
-You can rotate icon by `[num]90`, `[num]180` and `[num]270` degrees.
+您可以将图标旋转 `[num]90`、`[num]180` 和 `[num]270` 度。
 
-To do that, add `[attr]rotate` attribute. Possible values:
+为此，请添加 `[attr]rotate` 属性。可选值如下：
 
-- `[str]90deg`, `[str]1`: rotate by `[num]90` degrees.
-- `[str]180deg`, `[str]2`: rotate by `[num]180` degrees.
-- `[str]270deg`, `[str]3`: rotate by `[num]270` degrees.
+- `[str]90deg`、`[str]1`：旋转 `[num]90` 度。
+- `[str]180deg`、`[str]2`：旋转 `[num]180` 度。
+- `[str]270deg`、`[str]3`：旋转 `[num]270` 度。
 
-Example:
+示例：

@@ -6,17 +6,17 @@ import { LibrariesSidebar } from "./libraries";
 import { APISidebar } from "./api";
 
 export const DocumentationSidebar: SidebarItem[] = [
-  { text: "Usage", collapsed: true, items: UsageSidebar, link: "/docs/usage/" },
-  { text: "Icons", collapsed: true, items: IconsSidebar, link: "/docs/icons/" },
+  { text: "用法", collapsed: true, items: UsageSidebar, link: "/docs/usage/" },
+  { text: "图标", collapsed: true, items: IconsSidebar, link: "/docs/icons/" },
   {
-    text: "Libraries",
+    text: "Iconify 库",
     collapsed: true,
     items: LibrariesSidebar,
     link: "/docs/libraries/",
   },
   { text: "API", collapsed: true, items: APISidebar, link: "/docs/api/" },
   {
-    text: "Articles / Blog",
+    text: "文章 / 博客",
     collapsed: true,
     items: ArticlesSidebar,
     link: "/docs/articles/",

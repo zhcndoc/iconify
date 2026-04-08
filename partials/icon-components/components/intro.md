@@ -6,13 +6,13 @@ replacements:
     value: '${counters.sets}+'
 ```
 
-Iconify offers native icon components for several popular UI frameworks.
+Iconify 为多个流行的 UI 框架提供了原生图标组件。
 
-Iconify for React is one of such components.
+Iconify for React 就是其中之一。
 
-Yet another icon component? What are the advantages over other icon components?
+又一个图标组件？与其他图标组件相比有什么优势？
 
-- One syntax for over 60,000 icons from 80+ icon sets.
-- Renders SVG. Many components simply render icon fonts, which look ugly. Iconify uses only pixel perfect SVG.
-- Loads icons on demand. No need to bundle icons, component will automatically load icon data for icons that you use from Iconify API.
+- 一种语法即可使用来自 80 多个图标集的 60,000 多个图标。
+- 渲染 SVG。许多组件仅渲染图标字体，效果往往不佳。Iconify 仅使用像素级精确的 SVG。
+- 按需加载图标。无需将图标打包，组件会自动从 Iconify API 加载你使用的图标数据。
 

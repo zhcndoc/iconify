@@ -1,5 +1,5 @@
 ```yaml
-title: buildParsedSVG() in Iconify Utils
+title: Iconify Utils 中的 buildParsedSVG()
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
   SVGViewBox: './get-svg-viewbox.md'
@@ -11,39 +11,38 @@ functions:
 
 # buildParsedSVG()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]buildParsedSVG()` parses result of `[func]parseSVGContent()`.
+函数 `[func]buildParsedSVG()` 用于解析 `[func]parseSVGContent()` 的结果。
 
-It validates and cleans up `[tag]svg` attributes, extracts and validates `[prop]viewBox` and returns data
-as a list of attributes for `[tag]svg` element and content.
+它会验证并清理 `[tag]svg` 属性，提取并验证 `[prop]viewBox`，然后将数据作为 `[tag]svg` 元素的属性列表和内容返回。
 
-Result can be used by functions like `[func]iconToHTML()` to generate SVG or to generate various components.
+该结果可被 `[func]iconToHTML()` 等函数使用，以生成 SVG 或各种组件。
 
-## Usage
+## 用法
 
-This function has the following parameter:
+该函数具有以下参数：
 
-- `[prop]data`, `[type]object`. Result of `[func]buildParsedSVG()` function.
+- `[prop]data`，`[type]object`。`[func]buildParsedSVG()` 函数的结果。
 
-This function returns data with type `[type]ParsedSVGContent`, `[type]undefined` on error. See below.
+该函数返回类型为 `[type]ParsedSVGContent` 的数据，出错时返回 `[type]undefined`。详见下文。
 
-## Result {#build-result}
+## 返回值 {#build-result}
 
-The result is an object with the following properties:
+返回值是一个包含以下属性的对象：
 
-- `[prop]body`, `[type]string`. Icon content.
-- `[prop]attributes`, `[type]object`. Attributes for `[tag]svg` element.
-- `[prop]viewBox`, `[type]SVGViewBox`. `[prop]viewBox` as array of numbers.
+- `[prop]body`，`[type]string`。图标内容。
+- `[prop]attributes`，`[type]object`。`[tag]svg` 元素的属性。
+- `[prop]viewBox`，`[type]SVGViewBox`。以数字数组形式表示的 `[prop]viewBox`。
 
-List of attributes in the result does not include `[prop]xmlns` because it is identical in all SVG.
-It always includes `[prop]viewBox`, usually includes `[prop]width` and `[prop]height`.
+结果中的属性列表不包含 `[prop]xmlns`，因为它在所有 SVG 中都是相同的。
+它始终包含 `[prop]viewBox`，通常包含 `[prop]width` 和 `[prop]height`。
 
-You can use `[func]iconToHTML()` to convert the result to string.
+您可以使用 `[func]iconToHTML()` 将结果转换为字符串。
 
-## Example
+## 示例
 
-Example using `[func]parseSVGContent()` with `[func]buildParsedSVG()` and `[func]iconToHTML()` to clean up icon:
+结合使用 `[func]parseSVGContent()`、`[func]buildParsedSVG()` 和 `[func]iconToHTML()` 来清理图标的示例：
 
 ```yaml
 src: libraries/utils/build-parsed-svg.ts

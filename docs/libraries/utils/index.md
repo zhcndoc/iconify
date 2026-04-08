@@ -7,37 +7,37 @@ types:
 
 # Iconify Utils
 
-Iconify Utils is a set of reusable functions that are used by various Iconify icon components and related packages:
+Iconify Utils 是一组可复用的函数，供各类 Iconify 图标组件及相关包使用：
 
-- Parsing Iconify icon sets in `[type]IconifyJSON` format.
-- Exporting icons from `[type]IconifyIcon` format (can be extracted from an icon set) as SVG.
-- Basic parser for SVG.
-- Parsing and validating icon names.
-- Parsing and validating basic colors.
-- Parsing emoji sequences, generating regular expressions to find emojis in text.
+- 解析 `[type]IconifyJSON` 格式的 Iconify 图标集。
+- 将 `[type]IconifyIcon` 格式（可从图标集中提取）的图标导出为 SVG。
+- SVG 基础解析器。
+- 解析并验证图标名称。
+- 解析并验证基础颜色。
+- 解析表情符号序列，生成用于在文本中查找表情符号的正则表达式。
 
-Library is written in TypeScript, is available as ES modules for modern development and CommonJS for older scripts.
+该库采用 TypeScript 编写，提供适用于现代开发的 ES 模块，以及适用于旧版脚本的 CommonJS 模块。
 
-## Installation
+## 安装
 
-To install library run:
+要安装该库，请运行：
 
 ```sh
 npm install @iconify/utils --save
 ```
 
-## Examples
+## 示例
 
-Documentation for each function below includes code samples.
+下方每个函数的文档均包含代码示例。
 
-In addition to that, [there are several bigger code samples for specific commonly used tasks](./examples/index.md) to help you figure out what functions to use.
+此外，[还有几个针对特定常用任务的更完整代码示例](./examples/index.md)，可帮助您了解应使用哪些函数。
 
-## Functions
+## 函数
 
 `include libraries/utils/functions-list`
 
-## Advanced usage {#advanced}
+## 高级用法 {#advanced}
 
-Iconify Utils can do only basic parsing of `[type]IconifyJSON` and `[type]IconifyIcon` data. It is not meant for more complex stuff.
+Iconify Utils 仅能对 `[type]IconifyJSON` 和 `[type]IconifyIcon` 数据进行基础解析。它并非用于处理更复杂的内容。
 
-For more complex stuff, such as importing icons, validating icon code, changing palette, cleaning up, exporting to various formats, see [Iconify Tools package](../tools/index.md).
+对于更复杂的需求，例如导入图标、验证图标代码、更改调色板、清理以及导出为各种格式，请参阅 [Iconify Tools 包](../tools/index.md)。

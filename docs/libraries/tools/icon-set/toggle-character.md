@@ -1,5 +1,5 @@
 ```yaml
-title: Assign character to icon in icon set
+title: 在图标集中为图标分配字符
 types:
   IconSet: './index.md'
   IconifyJSON: '/docs/types/iconify-json.md'
@@ -10,31 +10,31 @@ functions:
 
 # toggleCharacter()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]toggleCharacter()` adds character to icon or removes it.
+`[func]toggleCharacter()` 函数用于向图标添加字符或从中移除字符。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]iconName`, `[type]string`. Icon name.
-- `[prop]char`, `[type]string`. Character as hexadecimal string, such as `[str]f001`.
-- `[prop]add`, `[type]boolean`. If `true`, character will be added to icon. If `false`, character will be removed from icon.
+- `[prop]iconName`，`[type]string` 类型。图标名称。
+- `[prop]char`，`[type]string` 类型。十六进制字符串格式的字符，例如 `[str]f001`。
+- `[prop]add`，`[type]boolean` 类型。如果为 `true`，则将字符添加到图标；如果为 `false`，则从图标中移除字符。
 
-Function returns `true` on success, `false` on failure.
+函数执行成功时返回 `true`，失败时返回 `false`。
 
-## Character map
+## 字符映射
 
-What is the purpose of characters map?
+字符映射的作用是什么？
 
-It is used to generate icon fonts. Each icon in an icon font has a character assigned to it. Even when using ligatures, ligatures point to a character, so character is needed.
+它用于生成图标字体。图标字体中的每个图标都会分配一个字符。即使使用连字，连字也会指向一个字符，因此字符是必需的。
 
-## How to find all characters? {#chars}
+## 如何查找所有字符？ {#chars}
 
-You can get list of all assigned characters by using `[func]chars()` method.
+你可以通过使用 `[func]chars()` 方法来获取所有已分配字符的列表。
 
-If you want to know characters assigned to an icon, use code like this:
+如果你想查看分配给某个图标的字符，可以使用如下代码：
 
 ```ts
 const item = iconSet.entries['some-icon'];
@@ -42,9 +42,9 @@ const item = iconSet.entries['some-icon'];
 console.log(item.chars);
 ```
 
-It is safe to modify characters directly in `[func]entries` property.
+直接在 `[func]entries` 属性中修改字符是安全的。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/chars.ts

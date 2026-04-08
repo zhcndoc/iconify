@@ -4,39 +4,39 @@ import type { SidebarItem } from './sidebar-item'
 
 export const GlobalSidebar: SidebarItem[] = [
   {
-    text: 'Getting Started',
+    text: '快速开始',
     link: '/getting-started/',
   },
   {
-    text: 'News',
+    text: '新闻',
     collapsed: true,
     items: NewsSidebar,
     link: '/news/',
   },
   {
-    text: 'Documentation',
+    text: '文档',
     collapsed: true,
     items: DocumentationSidebar,
     link: '/docs/',
   },
   {
-    text: 'Sponsor Iconify',
+    text: '赞助 Iconify',
     link: '/sponsors/',
   },
   {
-    text: 'About Iconify',
+    text: '关于 Iconify',
     link: '/about/',
   },
   {
-    text: 'Iconify Support',
+    text: 'Iconify 支持',
     link: '/support/',
   },
   {
-    text: 'History',
+    text: '历史',
     link: '/about/history',
   },
   {
-    text: 'Privacy',
+    text: '隐私',
     link: '/privacy/',
   },
 ]

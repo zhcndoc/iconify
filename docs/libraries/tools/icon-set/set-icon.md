@@ -1,5 +1,5 @@
 ```yaml
-title: Add icon to icon set
+title: 向图标集添加图标
 types:
   IconSet: './index.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
@@ -12,20 +12,20 @@ functions:
 
 # setIcon()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]setIcon()` adds new icon to icon set or overwrites existing item.
+函数 `[func]setIcon()` 用于向图标集添加新图标或覆盖现有项。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]name`, `[type]string`. Icon name.
-- `[prop]icon`, `[type]ResolvedIconifyIcon`. Icon data, same as `[type]IconifyIcon`, but with other optional properties.
+- `[prop]name`，`[type]string` 类型。图标名称。
+- `[prop]icon`，`[type]ResolvedIconifyIcon` 类型。图标数据，与 `[type]IconifyIcon` 相同，但包含其他可选属性。
 
-Function returns a simple `true` on success, `false` on failure.
+函数在成功时返回简单的 `true`，失败时返回 `false`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/export.ts

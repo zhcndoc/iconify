@@ -1,5 +1,5 @@
 ```yaml
-title: colorToString() in Iconify Utils
+title: Iconify Utils 中的 colorToString()
 types:
   Color: './color.md'
 functions:
@@ -8,23 +8,23 @@ functions:
 
 # colorToString()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]colorToString()` convert `[type]Color` objects to `[type]string`.
+函数 `[func]colorToString()` 将 `[type]Color` 对象转换为 `[type]string`。
 
-It is the opposite of `[func]stringToColor()`.
+它是 `[func]stringToColor()` 的反向操作。
 
-Converting color from string using `[func]stringToColor()`, then back to string using this function can be used to validate and clean up color strings.
+使用 `[func]stringToColor()` 将颜色从字符串转换，再使用此函数转回字符串，可用于验证和清理颜色字符串。
 
-## Usage
+## 用法
 
-Function has one parameter:
+该函数包含一个参数：
 
-- `[prop]color`, `[type]Color`. Color object to conver.
+- `[prop]color`，`[type]Color`。要转换的颜色对象。
 
-Function returns `[type]string`.
+函数返回 `[type]string`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/color-to-string.ts

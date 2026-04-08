@@ -9,21 +9,21 @@ replacements:
 
 # Astro Icon
 
-Astro Icon is a simple icon component for [Astro](https://astro.build/).
+Astro Icon 是一个用于 [Astro](https://astro.build/) 的简单图标组件。
 
-With Astro Icon, you can easily use [over 60,000 open source icons](/docs/icons/icon-data.md) and custom icons with minimal code.
+借助 Astro Icon，你可以轻松使用[超过 60,000 个开源图标](/docs/icons/icon-data.md)和自定义图标，且只需极少的代码。
 
-## Installation
+## 安装
 
-Install `[npm]astro-icon`:
+安装 `[npm]astro-icon`：
 
 ```sh
 npm i -D astro-icon
 ```
 
-## Usage
+## 用法
 
-Astro Icon can inline SVG directly in your HTML:
+Astro Icon 可以直接在你的 HTML 中内联 SVG：
 
 ```astro
 ---
@@ -33,6 +33,6 @@ import { Icon } from 'astro-icon/components'
 <Icon name="mdi:home" />
 ```
 
-It can also generate SVG sprites.
+它还可以生成 SVG 精灵图。
 
-See [Astro Icon readme](https://github.com/natemoo-re/astro-icon) for more details.
+有关更多详细信息，请参阅 [Astro Icon 自述文件](https://github.com/natemoo-re/astro-icon)。

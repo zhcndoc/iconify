@@ -7,21 +7,21 @@ types:
 
 # export()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]export()` exports icon set as `[type]IconifyJSON` object.
+函数 `[func]export()` 将图标集导出为 `[type]IconifyJSON` 对象。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]validate`, `[type]boolean`. Optional. If enabled, icons will be validated before export.
+- `[prop]validate`，`[type]boolean` 类型。可选。如果启用，将在导出前验证图标。
 
-Function returns `[type]IconifyJSON` object.
+函数返回 `[type]IconifyJSON` 对象。
 
-Result includes all metadata. If icon set has information property, export will automatically update total number of icons in info block.
+结果包含所有元数据。如果图标集包含 information 属性，导出时将自动更新信息块中的图标总数。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/export.ts

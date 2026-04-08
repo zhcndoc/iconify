@@ -1,22 +1,22 @@
 ```yaml
-title: 'Iconify for Svelte Function: addAPIProvider'
+title: 'Iconify for Svelte 函数：addAPIProvider'
 ```
 
-# Iconify for Svelte function: addAPIProvider
+# Iconify for Svelte 函数：addAPIProvider
 
-This tutorial is part of [Iconify for Svelte functions tutorial](./index.md#functions).
+本教程是 [Iconify for Svelte 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/add-api-provider/intro`
 
-## API providers
+## API 提供商
 
 `include icon-components/api-providers`
 
-## Usage
+## 用法
 
 `include icon-components/functions/add-api-provider/props`
 
-## Example
+## 示例
 
 ```yaml
 src: icon-components/common/add-api-provider.svelte

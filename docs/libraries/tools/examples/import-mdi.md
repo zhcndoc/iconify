@@ -1,48 +1,48 @@
 ```yaml
-title: Converting SVG set to Iconify JSON with Iconify Tools
+title: 使用 Iconify Tools 将 SVG 集合转换为 Iconify JSON
 ```
 
-# Converting SVG set to Iconify JSON
+# 将 SVG 集合转换为 Iconify JSON
 
-This example shows how to convert directory full of SVG files to Iconify JSON format.
+本示例展示了如何将包含大量 SVG 文件的目录转换为 Iconify JSON 格式。
 
-As a source, this example uses Material Design icons from [Templarian/MaterialDesign-SVG](https://github.com/Templarian/MaterialDesign-SVG) repository that is also available as `[npm]@mdi/svg` NPM package.
+作为数据源，本示例使用了来自 [Templarian/MaterialDesign-SVG](https://github.com/Templarian/MaterialDesign-SVG) 仓库的 Material Design 图标，该仓库也可作为 `[npm]@mdi/svg` NPM 包获取。
 
-Install dependencies:
+安装依赖：
 
 ```bash
 npm install @iconify/tools @mdi/svg --save
 ```
 
-Then create file `[file]convert-mdi.ts` and put this content:
+然后创建文件 `[file]convert-mdi.ts` 并填入以下内容：
 
 ```yaml
 src: libraries/tools/examples/convert-mdi.ts
 title: 'convert-mdi.ts'
 ```
 
-Assuming that TypeScript is set to compile to `[file]lib`, compile file to JavaScript and run it:
+假设 TypeScript 已配置为编译到 `[file]lib` 目录，将文件编译为 JavaScript 并运行：
 
 ```bash
 node lib/convert-mdi
 ```
 
-If you are not using TypeScript, remove types from code. If should not be hard because there aren't many lines to remove.
+如果您不使用 TypeScript，请从代码中移除类型注解。这应该不难，因为需要删除的行数并不多。
 
-Prepared project is available in [Iconify Tools GitHub repository](https://github.com/iconify/tools/tree/main/%40iconify-demo/create-bundle).
+准备好的项目可在 [Iconify Tools GitHub 仓库](https://github.com/iconify/tools/tree/main/%40iconify-demo/create-bundle) 中获取。
 
-## How does it work?
+## 它是如何工作的？
 
-There are comments in the code above that explain what is going on.
+上述代码中的注释解释了具体过程。
 
-The process is simple:
+流程很简单：
 
-1. `[func]importDirectory()` imports all icons from directory `[str]"svg"` of `[npm]@mdi/svg` package.
-2. `[func]iconSet.forEach()` is used to iterate all icons to:
-   - `[func]toSVG()` is used to get SVG instance that can be manipulated by various functions.
-   - `[func]cleanupSVG()` is used to clean up code (MDI has clean code, so nothing to clean up there, but for other icon sets it is needed).
-   - `[func]parseColors()` is used to change default color to `[str]currentColor`.
-   - `[func]runSVGO()` is used to optimise icon code.
-   - `[func]iconSet.fromSVG()` is used to update icon data in icon set.
-3. Then script handles metadata: adds categories and aliases for all icons.
-4. `[func]iconSet.export()` is used to export icon set to JSON file.
+1. `[func]importDirectory()` 从 `[npm]@mdi/svg` 包的 `[str]"svg"` 目录导入所有图标。
+2. 使用 `[func]iconSet.forEach()` 遍历所有图标以执行以下操作：
+   - 使用 `[func]toSVG()` 获取可通过各种函数进行操作的 SVG 实例。
+   - 使用 `[func]cleanupSVG()` 清理代码（MDI 的代码已经很干净，因此无需清理，但对于其他图标集则是必要的）。
+   - 使用 `[func]parseColors()` 将默认颜色更改为 `[str]currentColor`。
+   - 使用 `[func]runSVGO()` 优化图标代码。
+   - 使用 `[func]iconSet.fromSVG()` 更新图标集中的图标数据。
+3. 然后脚本处理元数据：为所有图标添加分类和别名。
+4. 使用 `[func]iconSet.export()` 将图标集导出为 JSON 文件。

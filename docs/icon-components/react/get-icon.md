@@ -1,20 +1,20 @@
 ```yaml
-title: 'Iconify for React Function: getIcon'
+title: 'Iconify for React 函数：getIcon'
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
 ```
 
-# Iconify for React function: getIcon
+# Iconify for React 函数：getIcon
 
-This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
+本教程属于 [Iconify for React 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/get-icon/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/get-icon/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/get-icon.js
@@ -23,7 +23,7 @@ extra:
     title: 'Result:'
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/common/get-icon2.js
@@ -32,7 +32,7 @@ extra:
     title: 'Result:'
 ```
 
-Example with bad icon name, returns `null`:
+图标名称无效时的示例，返回 `null`：
 
 ```yaml
 src: icon-components/common/get-icon-null.js

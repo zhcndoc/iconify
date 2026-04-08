@@ -1,6 +1,6 @@
-Functions `[func]setCustomIconLoader()` and `[func]setCustomIconsLoader()` are used to define custom icon loaders.
+函数 `[func]setCustomIconLoader()` 和 `[func]setCustomIconsLoader()` 用于定义自定义图标加载器。
 
-What is it for?
+它有什么用途？
 
-- To load icon data from custom sources.
-- To modify icons, such as changing color or stroke width.
+- 从自定义源加载图标数据。
+- 修改图标，例如更改颜色或描边宽度。

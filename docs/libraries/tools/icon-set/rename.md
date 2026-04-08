@@ -1,5 +1,5 @@
 ```yaml
-title: Rename icon in icon set
+title: 重命名图标集中的图标
 types:
   IconSet: './index.md'
   IconifyJSON: '/docs/types/iconify-json.md'
@@ -10,29 +10,29 @@ functions:
 
 # rename()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]rename()` renames icon.
+函数 `[func]rename()` 用于重命名图标。
 
-Function checks aliases and variations that use renamed icon, changes parent icon to new name.
+该函数会检查引用了被重命名图标的别名和变体，并将父图标更新为新名称。
 
-If icon with new name already exists, it will be overwritten.
+如果已存在具有新名称的图标，它将被覆盖。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数具有以下参数：
 
-- `[prop]oldName`, `[type]string`. Old icon name.
-- `[prop]newName`, `[type]string`. New icon name.
+- `[prop]oldName`，`[type]string` 类型。旧图标名称。
+- `[prop]newName`，`[type]string` 类型。新图标名称。
 
-Function returns a simple `true` on success, `false` on failure.
+函数执行成功时返回 `true`，失败时返回 `false`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/rename.ts
 title: 'example.ts'
 extra:
   - src: libraries/tools/icon-set/rename.json
-    title: 'Result:'
+    title: '结果：'
 ```

@@ -1,73 +1,73 @@
 ```yaml
-title: Icon data on demand
+title: 按需加载图标数据
 types:
   IconifyJSON: '../types/iconify-json.md'
 ```
 
-# Icon data on demand
+# 按需加载图标数据
 
-Main feature of [Iconify icon components](../icon-components/index.md) is ability to load icon data on demand.
+[Iconify 图标组件](../icon-components/index.md) 的主要功能是能够按需加载图标数据。
 
-Instead of bundling icons, developer passes icon name to icon component, data for used icons is loaded from Iconify API. This approach has the following advantages:
+开发者无需打包图标，只需将图标名称传递给图标组件，所用图标的数据将从 Iconify API 加载。这种方法具有以下优势：
 
-- Only icons displayed on page are loaded.
-- Easy to use. No bundling required.
-- UI can be made configurable, such as allowing user to choose icons using icon picker.
+- 仅加载页面上显示的图标。
+- 易于使用。无需打包。
+- UI 可配置，例如允许用户通过图标选择器选择图标。
 
-## Process
+## 流程
 
-How does loading icon data on demand work?
+按需加载图标数据是如何工作的？
 
 <icon-loading-process></icon-loading-process>
 
-## Query
+## 查询
 
-To load data for icons, use the following API query: `[url]/{prefix}.json?icons={icons}`, where:
+要加载图标数据，请使用以下 API 查询：`[url]/{prefix}.json?icons={icons}`，其中：
 
-- `[str]{prefix}` is icon set prefix. To request icons from multiple icon sets, send separate queries for each icon set.
-- `[str]{icons}` is list of icon names, separated by comma.
+- `[str]{prefix}` 是图标集前缀。若要请求多个图标集的图标，请为每个图标集发送单独的查询。
+- `[str]{icons}` 是图标名称列表，以逗号分隔。
 
-Response is `[type]IconifyJSON` object.
+响应为 `[type]IconifyJSON` 对象。
 
 ```yaml
 hint: /mdi.json?icons=account-box,account-cash,account,home&pretty=1
 src: api/mdi.json
 ```
 
-### Parameters
+### 参数
 
-Query has one required parameter: `[prop]icons`, described above.
+查询包含一个必需参数：`[prop]icons`，如上所述。
 
-There are also optional parameters:
+此外还有可选参数：
 
-- `[prop]pretty`, `[type]boolean`. Formats response, making it easy to read, like shown in example above.
+- `[prop]pretty`，`[type]boolean` 类型。格式化响应，使其易于阅读，如上方示例所示。
 
-### Error response
+### 错误响应
 
-If icon set is not available, server returns `[num]404` HTTP error.
+如果图标集不可用，服务器将返回 `[num]404` HTTP 错误。
 
-Missing icons are added to `[prop]not_found` property of response.
+缺失的图标将被添加到响应的 `[prop]not_found` 属性中。
 
-## Type
+## 类型
 
-For full description of response, see `[type]IconifyJSON` type documentation.
+有关响应的完整说明，请参阅 `[type]IconifyJSON` 类型文档。
 
-You can import type from `[npm]@iconify/types` package.
+您可以从 `[npm]@iconify/types` 包中导入该类型。
 
-## Limitations
+## 限制
 
-You cannot request data for multiple icon sets in same query. It is one query per icon set.
+您无法在同一查询中请求多个图标集的数据。每个图标集需单独查询。
 
-Number of icons per query is not limited, however be aware that browsers have limit on URL length. [Iconify icon components](../icon-components/index.md) limit URL length to 500. If URL is longer than 500 characters, API query should be split into multiple queries.
+每次查询的图标数量没有限制，但请注意浏览器对 URL 长度有限制。[Iconify 图标组件](../icon-components/index.md) 将 URL 长度限制为 500 个字符。如果 URL 超过 500 个字符，应将 API 查询拆分为多个查询。
 
-## Caching
+## 缓存
 
-To help browser cache responses, it is recommended to have the same URLs for queries. To achive that, sort icon names alphabetically, so instead of `[url]?icons=foo,bar` or `[url]?icons=bar,foo` component always requests `[url]?icons=bar,foo`.
+为了帮助浏览器缓存响应，建议查询使用相同的 URL。为实现这一点，请按字母顺序对图标名称进行排序，因此组件始终请求 `[url]?icons=bar,foo`，而不是 `[url]?icons=foo,bar` 或 `[url]?icons=bar,foo`。
 
-Additionally, cache responses in `[prop]localStorage`.
+此外，将响应缓存在 `[prop]localStorage` 中。
 
-## Checking for update
+## 检查更新
 
-To check if icons were updated since last time, no need to retrieve icons again.
+要检查图标自上次以来是否已更新，无需再次检索图标。
 
-Use [`[url]/last-modified`](./last-modified.md) query. It returns `[prop]lastModified` property of icon set, which you can compare to values in cached responses.
+使用 [`[url]/last-modified`](./last-modified.md) 查询。它返回图标集的 `[prop]lastModified` 属性，您可以将其与缓存响应中的值进行比较。

@@ -1,5 +1,5 @@
 ```yaml
-title: getIconData() in Iconify Utils
+title: Iconify Utils 中的 getIconData()
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
@@ -9,20 +9,20 @@ functions:
 
 # getIconData()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]getIconData()` retrieves data for one icon from icon set.
+函数 `[func]getIconData()` 用于从图标集中检索单个图标的数据。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]data`, `[type]IconifyJSON`. Icon set data.
-- `[prop]name`, `[type]string`. Icon name.
+- `[prop]data`，`[type]IconifyJSON`。图标集数据。
+- `[prop]name`，`[type]string`。图标名称。
 
-Function returns icon data with type `[type]IconifyIcon`, `null` on error.
+函数返回类型为 `[type]IconifyIcon` 的图标数据，出错时返回 `null`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/get-icon.ts

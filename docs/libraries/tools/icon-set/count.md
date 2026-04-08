@@ -1,38 +1,38 @@
 ```yaml
-title: Count icons in icon set
+title: 统计图标集中的图标数量
 types:
   IconSet: './index.md'
 ```
 
 # count()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]count()` counts icons in icon set.
+函数 `[func]count()` 用于统计图标集中的图标数量。
 
-## Usage
+## 用法
 
-Function has no parameters.
+该函数无参数。
 
-Function returns `[type]number` of icons.
+函数返回图标的 `[type]number`（数量）。
 
-## What icons are counted? {#logic}
+## 统计哪些图标？ {#logic}
 
-Counted:
+计入统计的：
 
-- Icons.
-- Variations (see below).
+- 图标。
+- 变体（见下文）。
 
-Not counted:
+不计入统计的：
 
-- Hidden icons and their aliases/variations.
-- Aliases.
+- 隐藏的图标及其别名/变体。
+- 别名。
 
-## Icon types
+## 图标类型
 
 `include libraries/tools/icon-set/icon-types`
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/count.ts

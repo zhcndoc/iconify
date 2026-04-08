@@ -2,23 +2,23 @@
 title: Increasing version number
 ```
 
-# Increasing version number
+# 递增版本号
 
-This tutorial is part of [package functions documentation](./index.md) in [Iconify Tools](../index.md).
+本教程是 [Iconify Tools](../index.md) 中 [包函数文档](./index.md) 的一部分。
 
-Function `[func]bumpVersion()` is a simple function that increases version number.
+函数 `[func]bumpVersion()` 是一个用于递增版本号的简单函数。
 
-It can be used to automatically increase version number when updating existing package.
+在更新现有包时，可用于自动递增版本号。
 
-## Usage
+## 用法
 
-Function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]version`, `[type]string`. Old version
+- `[prop]version`，`[type]string`。旧版本号
 
-Function returns updated version number.
+函数返回更新后的版本号。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/package/version.ts

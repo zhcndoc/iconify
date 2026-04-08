@@ -1,8 +1,8 @@
-The function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]data`, `[type]IconifyJSON`. Icon set data.
-- `[prop]provider`, `[type]string`. Optional API provider ID.
+- `[prop]data`，`[type]IconifyJSON`。图标集数据。
+- `[prop]provider`，`[type]string`。可选的 API 提供商 ID。
 
-The function returns `[type]boolean` value: `[bool]true` on success, `[bool]false` if something is wrong with data.
+该函数返回 `[type]boolean` 值：成功时返回 `[bool]true`，如果数据有问题则返回 `[bool]false`。
 
-If an icon set has provider property and second parameter to `[func]addCollection()` is passed, provider from second parameter overrides provider from an icon set.
+如果图标集包含 provider 属性，且向 `[func]addCollection()` 传递了第二个参数，则第二个参数中的 provider 将覆盖图标集中的 provider。

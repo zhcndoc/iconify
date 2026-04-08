@@ -1,5 +1,5 @@
 ```yaml
-title: List icons in icon set
+title: 列出图标集中的图标
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconSet: './index.md'
@@ -9,23 +9,23 @@ functions:
 
 # list()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]list()` lists all icons in an icon set.
+函数 `[func]list()` 用于列出图标集中的所有图标。
 
-## Usage
+## 用法
 
-The function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]type`, `[type]string[]`. Optional. Icon types to list, default is `[js]['icon', 'variation']`.
+- `[prop]type`，`[type]string[]`。可选。要列出的图标类型，默认为 `[js]['icon', 'variation']`。
 
-Function returns an array of icon names `[type]string[]`.
+函数返回图标名称数组 `[type]string[]`。
 
-## Icon types
+## 图标类型
 
 `include libraries/tools/icon-set/icon-types`
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/list.ts

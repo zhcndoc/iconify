@@ -1,34 +1,34 @@
 ```yaml
-title: Validating SVG
+title: 验证 SVG
 functions:
   cleanupSVG: '/docs/libraries/tools/icon/cleanup.md'
 ```
 
-# Validating SVG
+# 验证 SVG
 
-This article is part of [SVG clean up article](./index.md).
+本文是 [SVG 清理文章](./index.md) 的一部分。
 
-SVG can contain a lot of stuff that might be dangerous: scripts and external resources.
+SVG 可能包含许多潜在危险的内容：脚本和外部资源。
 
-## Style
+## 样式
 
-Global `[tag]style` and inline `[attr]style` are converted to attributes.
+全局 `[tag]style` 和内联 `[attr]style` 会被转换为属性。
 
-Style complicates the process of analysing an icon structure, which is needed to later get rid of unused elements and parse the palette, so style should go. If style is too complex to parse or style overrides attribute, an exception is thrown.
+样式会使分析图标结构的过程变得复杂，而该结构是后续移除未使用元素和解析调色板所必需的，因此应当移除样式。如果样式过于复杂无法解析，或样式覆盖了属性，则会抛出异常。
 
-## Bad tags
+## 非法标签
 
-During [clean up](./cleanup.md), the icon is also checked for bad stuff.
+在 [清理](./cleanup.md) 过程中，还会检查图标是否包含不良内容。
 
-Validation is very strict and opinionated.
+验证非常严格且遵循特定规范。
 
-Things that will cause validation to fail (function will throw an exception):
+导致验证失败的情况（函数将抛出异常）：
 
-- `[tag]script` is found or an event listener is found.
-- Text or font. See below.
-- Any external resources.
-- Raster images. See below.
-- Links.
+- 发现 `[tag]script` 或事件监听器。
+- 文本或字体。见下文。
+- 任何外部资源。
+- 光栅图像。见下文。
+- 链接。
 
 ```yaml
 src: articles/script.svg
@@ -38,50 +38,50 @@ src: articles/script.svg
 src: articles/image.svg
 ```
 
-## Removed tags
+## 被移除的标签
 
-Clean up function has a list of all allowed SVG tags and their attributes.
+清理函数包含所有允许的 SVG 标签及其属性的列表。
 
-If an unknown tag is encountered, this happens:
+如果遇到未知标签，将按以下方式处理：
 
-- If a tag belongs to a namespace, such as `[tag]rdf:RDF`, it is removed with all its children elements.
-- If a tag does not have a namespace, an exception is thrown.
+- 如果标签属于某个命名空间（例如 `[tag]rdf:RDF`），它及其所有子元素将被移除。
+- 如果标签没有命名空间，则会抛出异常。
 
-## Attributes
+## 属性
 
-Clean up function also checks each attribute on each element.
+清理函数还会检查每个元素上的每个属性。
 
-All attributes that do not affect icon rendering are removed.
+所有不影响图标渲染的属性都会被移除。
 
-If an event listener is found, the function throws an exception.
+如果发现事件监听器，函数将抛出异常。
 
-`[attr]class` attribute is allowed.
+允许使用 `[attr]class` 属性。
 
-Inline `[attr]style` is converted to attributes (before parsing other attributes).
+内联 `[attr]style` 会被转换为属性（在解析其他属性之前）。
 
-## Text and fonts
+## 文本和字体
 
-All text tags are not allowed.
+不允许使用任何文本标签。
 
-Why? Because different operating systems have different fonts, it will cause the icon to render differently.
+为什么？因为不同操作系统使用不同的字体，这会导致图标渲染效果不一致。
 
-This rule cannot be disabled.
+此规则无法禁用。
 
 ```yaml
 src: articles/text.svg
 ```
 
-## Raster images
+## 光栅图像
 
-Sometimes raster images are used by icons for various purposes, usually masks or masked content.
+有时图标会出于各种目的使用光栅图像，通常用于遮罩或被遮罩的内容。
 
-They are not allowed. Why?
+它们是不被允许的。为什么？
 
-- They do not scale, thus it is no longer a vector icon.
-- Validating them adds unnecessary complications. Having content that cannot be fully validated in SVG is not acceptable.
+- 它们无法无损缩放，因此不再是矢量图标。
+- 验证它们会增加不必要的复杂性。在 SVG 中包含无法完全验证的内容是不可接受的。
 
-## Clean up
+## 清理
 
-Validation is done during [clean up process](./cleanup.md).
+验证是在 [清理过程](./cleanup.md) 中完成的。
 
-It is done with the `[func]cleanupSVG()` function from [Iconify Tools](/docs/libraries/tools/index.md).
+这是通过 [Iconify Tools](/docs/libraries/tools/index.md) 中的 `[func]cleanupSVG()` 函数完成的。

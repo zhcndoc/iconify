@@ -11,56 +11,56 @@ replacements:
 
 # Iconify for Sketch
 
-Want to add icons to your designs?
+想在设计中添加图标吗？
 
-Iconify for Sketch got you covered. One plugin offers over 60,000 icons from 70+ icon sets.
+Iconify for Sketch 能帮您轻松搞定。一个插件即可提供来自 70 多个图标集的 60,000 多个图标。
 
-With Sketch plug-in you can:
+使用 Sketch 插件，您可以：
 
-- Browse icon sets.
-- Search icon sets.
-- Import any icon as vector shape to Sketch document.
+- 浏览图标集。
+- 搜索图标集。
+- 将任意图标作为矢量形状导入 Sketch 文档。
 
-It is completely free! Unlike other plugins that offer many icons, but require payment to use SVG, Iconify always imports icons as SVG. Iconify project is open source and offers only open source icon sets.
+它完全免费！与其他提供大量图标但使用 SVG 需要付费的插件不同，Iconify 始终将图标作为 SVG 导入。Iconify 项目是开源的，仅提供开源图标集。
 
-## Installation
+## 安装
 
-Go to [plug-in releases page](https://github.com/iconify/iconify-sketch/releases), download the latest file, unpack it, open `[file]iconify.sketchplugin` in Finder. Finder should launch Sketch that should install plug-in.
+前往[插件发布页面](https://github.com/iconify/iconify-sketch/releases)，下载最新文件，解压后在 Finder 中打开 `[file]iconify.sketchplugin`。Finder 应该会启动 Sketch 并自动安装该插件。
 
-If plug-in installation fails, copy `[file]iconify.sketchplugin` to `[file]~/Library/Application Support/com.bohemiancoding.sketch3/Plugins/`.
+如果插件安装失败，请将 `[file]iconify.sketchplugin` 复制到 `[file]~/Library/Application Support/com.bohemiancoding.sketch3/Plugins/`。
 
-## Usage
+## 使用方法
 
-In Sketch menu select `[str]Plug-ins`, then `[str]Iconify` or press Ctrl+Shift+I.
+在 Sketch 菜单中选择 `[str]Plug-ins`，然后选择 `[str]Iconify`，或按下 Ctrl+Shift+I。
 
-Browse or search icons, select any icon, click `[str]Import` button. Plug-in will import icon to your current project.
+浏览或搜索图标，选择任意图标，点击 `[str]Import` 按钮。插件会将图标导入您当前的项目中。
 
-## Screenshots
+## 截图
 
-Importing icon:
+导入图标：
 
-![Iconify for Sketch: footer](/assets/images/plugins/sketch_footer.png)
+![Iconify for Sketch: 页脚](/assets/images/plugins/sketch_footer.png)
 
-Big choice of `[str]home` icons:
+海量 `[str]home` 图标供您选择：
 
-![Iconify for Sketch: search results](/assets/images/plugins/sketch_home_grid.png)
+![Iconify for Sketch: 搜索结果](/assets/images/plugins/sketch_home_grid.png)
 
-Collections list:
+合集列表：
 
-![Iconify for Sketch: browse collections](/assets/images/plugins/sketch_index.png)
+![Iconify for Sketch: 浏览合集](/assets/images/plugins/sketch_index.png)
 
-![Iconify for Sketch: browse collections](/assets/images/plugins/sketch_emoji.png)
+![Iconify for Sketch: 浏览合集](/assets/images/plugins/sketch_emoji.png)
 
-Importing multiple icons:
+导入多个图标：
 
-![Iconify for Sketch: browsing icons set](/assets/images/plugins/sketch_select_multiple.png)
+![Iconify for Sketch: 浏览图标集](/assets/images/plugins/sketch_select_multiple.png)
 
-## Available icons
+## 可用图标
 
-You can browse and import iver 60k open source icons hosted on [Iconify API](../../api/index.md) to Sketch projects.
+您可以浏览并导入托管在 [Iconify API](../../api/index.md) 上的超过 60k 个开源图标到 Sketch 项目中。
 
-## Source code
+## 源代码
 
-All source code is available at [Iconify for Sketch repository](https://github.com/iconify/iconify-sketch).
+所有源代码均可在 [Iconify for Sketch 仓库](https://github.com/iconify/iconify-sketch) 获取。
 
-To build it, install all necessary dependencies and run `[bash]npm run build`. Build script will generate `[file]iconify.sketchplugin` that you can install.
+要构建它，请安装所有必要的依赖项并运行 `[bash]npm run build`。构建脚本将生成可安装的 `[file]iconify.sketchplugin` 文件。

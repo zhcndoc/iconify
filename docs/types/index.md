@@ -1,5 +1,5 @@
 ```yaml
-title: Iconify Types
+title: Iconify 类型
 types:
   IconifyIcon: './iconify-icon.md'
   IconifyAlias: './iconify-alias.md'
@@ -7,27 +7,27 @@ types:
   IconifyInfo: './iconify-info.md'
 ```
 
-# Iconify types
+# Iconify 类型
 
-All Iconify libraries share common object structures. They are described as types in `[npm]@iconify/types` NPM package.
+所有 Iconify 库都共享通用的对象结构。它们在 `[npm]@iconify/types` NPM 包中被描述为类型。
 
 ## TypeScript
 
-All types are described with TypeScript.
+所有类型均使用 TypeScript 进行描述。
 
-If you are not familiar with TypeScript, but are familiar with JavaScript, it should not be hard to understand this documentation because it is mostly just basic types.
+如果你不熟悉 TypeScript 但熟悉 JavaScript，理解本文档应该不会太难，因为它主要只涉及基本类型。
 
-Few basic TypeScript concepts you need to know to understand documentation:
+理解本文档你需要了解的几个基本 TypeScript 概念：
 
 ### Record
 
-Type `[type]Record<string, number>` is an object, where key is `[type]string`, value is `[type]number`.
+类型 `[type]Record<string, number>` 是一个对象，其中键为 `[type]string`，值为 `[type]number`。
 
-For PHP developers it is the same as associative array.
+对于 PHP 开发者来说，它等同于关联数组。
 
 ### unknown
 
-Type `[type]unknown` means value can be any type.
+类型 `[type]unknown` 表示值可以是任何类型。
 
 ### extends
 
@@ -36,18 +36,18 @@ src: types/interface.ts
 copy: false
 ```
 
-This means one type extends another type. In the example above, type `[type]Foo` has all properties of types `[type]Bar` and `[type]Baz`.
+这表示一个类型扩展了另一个类型。在上面的示例中，类型 `[type]Foo` 拥有类型 `[type]Bar` 和 `[type]Baz` 的所有属性。
 
-## Main types
+## 主要类型
 
-There are two main types that are used in Iconify ecosystem:
+Iconify 生态系统中使用了两种主要类型：
 
-- `[type]IconifyIcon` is used for data for one icon.
-- `[type]IconifyJSON` is used for an entire icon set. It stores icon data, icon aliases and various metadata.
+- `[type]IconifyIcon` 用于单个图标的数据。
+- `[type]IconifyJSON` 用于整个图标集。它存储图标数据、图标别名以及各种元数据。
 
-## Additional types
+## 附加类型
 
-These types are used in `[type]IconifyJSON` type:
+这些类型在 `[type]IconifyJSON` 类型中使用：
 
-- `[type]IconifyAlias` is used for icon aliases.
-- `[type]IconifyInfo` is used for icon set information.
+- `[type]IconifyAlias` 用于图标别名。
+- `[type]IconifyInfo` 用于图标集信息。

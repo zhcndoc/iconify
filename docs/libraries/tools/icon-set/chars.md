@@ -1,5 +1,5 @@
 ```yaml
-title: Export characters map from icon set
+title: 从图标集导出字符映射
 types:
   IconSet: './index.md'
   IconifyJSON: '/docs/types/iconify-json.md'
@@ -10,29 +10,29 @@ functions:
 
 # chars()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]chars()` exports characters map. Function is used by `[func]export()` function to add characters map to `[type]IconifyJSON` data.
+`[func]chars()` 函数用于导出字符映射。该函数由 `[func]export()` 函数调用，用于将字符映射添加到 `[type]IconifyJSON` 数据中。
 
-## Usage
+## 用法
 
-Function has one parameter:
+该函数包含一个参数：
 
-- `[prop]names`, `[type]string[]`. Optional. List of icons to check.
+- `[prop]names`，`[type]string[]`。可选。要检查的图标列表。
 
-Function returns a simple `[type]Record<string, string>` object. Key is character, in hexadecimal form (such as `[str]u1f3cc`), value is name of icon.
+函数返回一个简单的 `[type]Record<string, string>` 对象。键为十六进制格式的字符（例如 `[str]u1f3cc`），值为图标名称。
 
-## Character map
+## 字符映射
 
-What is the purpose of characters map?
+字符映射的作用是什么？
 
-It is used to generate icon fonts. Each icon in an icon font has a character assigned to it. Even when using ligatures, ligatures point to a character, so character is needed.
+它用于生成图标字体。图标字体中的每个图标都会分配一个字符。即使使用连字，连字也会指向一个字符，因此字符是必需的。
 
-### How to assign a character to icon? {#assign}
+### 如何为图标分配字符？ {#assign}
 
-You can assign a character to icon by using `[func]toggleCharacter()` method.
+你可以使用 `[func]toggleCharacter()` 方法为图标分配字符。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/chars.ts

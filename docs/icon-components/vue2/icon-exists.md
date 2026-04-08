@@ -1,18 +1,18 @@
 ```yaml
-title: 'Iconify for Vue 2 Function: iconExists'
+title: 'Iconify for Vue 2 函数：iconExists'
 ```
 
-# Iconify for Vue 2 function: iconExists
+# Iconify for Vue 2 函数：iconExists
 
-This tutorial is part of [Iconify for Vue 2 functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Vue 2 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/icon-exists/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/icon-exists/props`
 
-## Example
+## 示例
 
 ```js
 import { iconExists } from '@iconify/vue2';

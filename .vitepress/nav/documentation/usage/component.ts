@@ -4,14 +4,14 @@ import { commonAPIFunctions, commonComponentAttributes, commonIconFunctions, com
 export function iconComponentSidebar(root: string): SidebarItem[] {
   return [
     {
-      text: 'IconifyIconName type',
+      text: 'IconifyIconName 类型',
       link: `${root}icon-name`,
       hidden: true,
     },
     // Attributes
     ...commonComponentAttributes(root),
     {
-      text: 'Functions',
+      text: '函数',
       items: [
       // Internal
         ...commonInternalFunctions(root),

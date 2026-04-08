@@ -1,74 +1,74 @@
 ```yaml
-title: "Getting Started: Icons"
+title: "入门指南：图标"
 replacements:
   - code: "60,000"
     value: "${counters.icons}"
   - code: "60k"
     value: "${counters.icons-short}"
   - code: "80 icon sets"
-    value: "${counters.sets} icon sets"
+    value: "${counters.sets} 个图标集"
   - code: "80 open source"
-    value: "${counters.sets} open source"
+    value: "${counters.sets} 个开源"
 types:
   IconifyJSON: "/docs/types/iconify-json.md"
   IconifyIcon: "/docs/types/iconify-icon.md"
 ```
 
-# Icons
+# 图标
 
-There are over 60,000 icons available from more than 80 open source icon sets, which you can use in your projects.
+您可以从 80 多个开源图标集中获取超过 60,000 个图标，并在您的项目中使用它们。
 
-This section of Iconify documentation explains:
+Iconify 文档的这一部分将解释：
 
-- Where to get raw data for icons to use in your projects.
-- How icons are organised.
-- How icons are handled in Iconify (imported, cleaned up, updated).
+- 在哪里获取用于项目的图标原始数据。
+- 图标是如何组织的。
+- Iconify 如何处理图标（导入、清理、更新）。
 
-This section is only about icon data, it does not explain how to use icons in your project,
-for that [see different section of documentation](/docs/usage/index.md).
+本节仅涉及图标数据，不解释如何在项目中使用图标，
+如需了解使用方法，请[参阅文档的其他部分](/docs/usage/index.md)。
 
-## Icon data {#data}
+## 图标数据 {#data}
 
-How icons are organised:
+图标的组织方式：
 
-- Icons are grouped in icon sets. Each icon set contains icons from the same source.
-- Icon sets are exported in easy to use JSON format, which includes icons and extra metadata.
-- All icon sets are stored in one main GitHub repository, also available as NPM packages.
+- 图标按图标集分组。每个图标集包含来自同一来源的图标。
+- 图标集以易于使用的 JSON 格式导出，其中包含图标和额外的元数据。
+- 所有图标集都存储在一个主要的 GitHub 仓库中，也可作为 NPM 包获取。
 
-See [how to get icon data](./icon-data.md) for a list of packages and repositories.
+有关包和仓库的列表，请参阅[如何获取图标数据](./icon-data.md)。
 
-You can use that data to create your own components, plugins, generate icons in various formats.
+您可以使用这些数据来创建自己的组件、插件，或生成各种格式的图标。
 
-Iconify ecosystem offers [different components and plugins to render icons](/docs/usage/index.md) and [tools to work with icons](/docs/libraries/index.md).
+Iconify 生态系统提供了[用于渲染图标的不同组件和插件](/docs/usage/index.md)以及[用于处理图标的工具](/docs/libraries/index.md)。
 
-### What makes Iconify different? {#iconify}
+### Iconify 有何不同之处？ {#iconify}
 
-What makes Iconify different from other projects that consolidate icons?
+Iconify 与其他整合图标的项目有何不同？
 
-- All icon sets are automatically kept up to date.
-- Icons are not just dumped as is, they pass strict validation, cleanup and optimisation process to make sure all icons from all icon sets can be used in the same consistent way.
-- Icon data is available in easy to use format, encouraging developers to create their own components that render it.
+- 所有图标集都会自动保持更新。
+- 图标并非原样直接导入，它们会经过严格的验证、清理和优化流程，以确保所有图标集中的图标都能以一致的方式使用。
+- 图标数据以易于使用的格式提供，鼓励开发者创建自己的渲染组件。
 
-See [icon clean up and validation process](./icon-basics.md) article for more details. It also describes icon naming convention used in Iconify.
+有关更多详细信息，请参阅[图标清理与验证流程](./icon-basics.md)一文。该文还介绍了 Iconify 中使用的图标命名规范。
 
-## Icon sets
+## 图标集
 
-Icons in Iconify are organised in icon sets.
+Iconify 中的图标按图标集进行组织。
 
-Each icon set has icons from the same author(s) following the same theme.
+每个图标集都包含来自同一作者（或团队）且遵循相同主题的图标。
 
-See [icon set basics](./icon-set-basics.md) for more details.
+有关更多详细信息，请参阅[图标集基础](./icon-set-basics.md)。
 
-Icon sets are automatically kept up to date, checking for updates several times a week.
+图标集会自动保持更新，每周会检查数次更新。
 
-## Custom icons {#custom}
+## 自定义图标 {#custom}
 
-You can also use Iconify with custom icons.
+您也可以将 Iconify 与自定义图标一起使用。
 
-This allows you to reuse components and plugins from Iconify ecosystem with your icons instead of creating your own.
+这使您能够复用 Iconify 生态系统中的组件和插件来处理您的图标，而无需自行开发。
 
-See [building custom icon sets](./custom.md) for details.
+有关详细信息，请参阅[构建自定义图标集](./custom.md)。
 
-## Add an icon set {#add}
+## 添加图标集 {#add}
 
-If you have created an open source icon set that you want to add to Iconify, please [follow this guide](/docs/articles/add-icon-set/index.md).
+如果您创建了一个想要添加到 Iconify 的开源图标集，请[按照本指南操作](/docs/articles/add-icon-set/index.md)。

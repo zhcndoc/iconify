@@ -10,23 +10,23 @@ functions:
   setFetch: './set-fetch.md'
 ```
 
-# Iconify SVG framework
+# Iconify SVG 框架
 
 `include notices/iconify2`
 
-Iconify SVG framework is an easy-to-use JavaScript library that renders icons.
+Iconify SVG 框架是一个易于使用的 JavaScript 库，用于渲染图标。
 
-It combines the pixel-perfect rendering of SVG with ease of use of glyph fonts while offering more choice than any glyph font or SVG framework.
+它将 SVG 的像素级完美渲染与字形字体的易用性相结合，同时提供比任何字形字体或 SVG 框架都更多的选择。
 
-Unlike icon fonts, the Iconify SVG framework only loads icons that are used on the current page, so visitors do not waste bandwidth loading hundreds or thousands of icons just to show a few icons.
+与图标字体不同，Iconify SVG 框架仅加载当前页面使用的图标，因此访问者不会为了显示几个图标而浪费带宽去加载成百上千个图标。
 
-Iconify SVG framework was designed to be as easy to use as possible. You can change icon dimensions and color with CSS, just like icon fonts.
+Iconify SVG 框架的设计初衷是尽可能易于使用。你可以像使用图标字体一样，通过 CSS 更改图标的尺寸和颜色。
 
-## Usage
+## 使用方法
 
-Adding icons to the HTML document is easy:
+向 HTML 文档添加图标非常简单：
 
-Add script tag to include the Iconify SVG framework. You can add it in the head section (before `[tag]</head>`) or at the end of page before `[tag]</body>`:
+添加 script 标签以引入 Iconify SVG 框架。你可以将其放在 head 部分（在 `[tag]</head>` 之前），或放在页面末尾 `[tag]</body>` 之前：
 
 ```yaml
 src: icon-components/iconify/script.html
@@ -35,7 +35,7 @@ replacements:
     value: '/${svg-framework.version.major}/${svg-framework.version.full}/'
 ```
 
-To add an icon, write placeholder `[tag]span` (or it could be any other inline DOM element):
+要添加图标，请编写占位符 `[tag]span`（也可以是任何其他内联 DOM 元素）：
 
 ```yaml
 src: icon-components/iconify/index-sample0.html
@@ -43,48 +43,38 @@ demo: true
 demoFirst: false
 ```
 
-To change an icon, write a different icon name in the `[attr]data-icon` attribute instead of `[str]"fa-solid:home"`.
+要更改图标，请在 `[attr]data-icon` 属性中写入不同的图标名称，而不是 `[str]"fa-solid:home"`。
 
-Look in [icon collections](https://icon-sets.iconify.design/) to find icons. Click an icon to see HTML code for that icon.
+在 [图标集合](https://icon-sets.iconify.design/) 中查找图标。点击图标即可查看该图标的 HTML 代码。
 
-### Importing SVG framework
+### 依赖 API 的使用
 
-You can also import Iconify SVG framework in other script and bundle it with your code. This is useful if you are using tools like WebPack or Rollup.js to build your project.
+Iconify SVG 框架从 Iconify API 获取图标数据。这使得它非常易于使用，因为开发者无需准备图标数据。缺点是，访问者必须在线才能获取图标数据。
 
-Install `[npm]@iconify/iconify@2` as dependency and import it in your project:
+## 它是如何工作的？
 
-```js
-import Iconify from '@iconify/iconify';
-```
+Iconify SVG 框架的工作原理是：定位图标占位符，从占位符中获取图标名称，从 [Iconify API](/docs/api/index.md) 获取图标数据，然后用 SVG 替换占位符。这一过程非常迅速，仅需极短的时间。
 
-### Usage without API
+这种方法有哪些优势？
 
-Iconify SVG framework retrieves icon data from Iconify API. That makes it very easy to use because developer does not need to prepare the icon data. Downside is, visitor must be online to retrieve icon data.
+- 非常易于使用，就像图标字体一样。
+- 无需将图标嵌入 HTML 代码中。从 Iconify API 获取的图标会被缓存，因此只需获取一次。如果将 SVG 嵌入 HTML 代码，则每次页面访问都需要发送给访问者。
+- 仅从 API 获取当前页面中存在的图标。其他 SVG 框架和图标字体会加载整个图标集，从而浪费访问者的带宽。
 
-## How does it work?
+有哪些缺点？
 
-Iconify SVG framework works by locating icon placeholders, retrieving icon name from placeholder, retrieving icon data from [Iconify API](/docs/api/index.md), then replacing the placeholder with SVG. This is done very quickly in a fraction of a second.
+- 需要互联网连接。
+- 使用公共 API 意味着你依赖第三方服务。不过，你可以选择自行托管 Iconify API，请参阅 [Iconify API 托管教程](/docs/api/hosting.md)。
 
-What are the advantages of this approach?
+如果你需要在不依赖 Iconify API 的情况下渲染图标，请[使用其他图标组件](/docs/usage/index.md)。
 
-- It is very easy to use, just like icon fonts.
-- No need to embed icons in HTML code. Icons retrieved from Iconify API are cached, so they are retrieved only once. If you embed SVG into HTML code, you need to send it to the visitor on every page view.
-- Only icons that are found on the current page are retrieved from API. Other SVG frameworks and icon fonts load entire icon sets, wasting your visitor's bandwidth.
+## 图标语法
 
-What are the disadvantages?
+元素必须使用 `[tag]span` 或 `[tag]i` 标签。
 
-- It requires an internet connection.
-- By using public API, you rely on a third party service. However, there is an option to host your own Iconify API, see [Iconify API hosting tutorial](/docs/api/hosting.md).
+为了让 Iconify SVG 框架将元素视为图标占位符，该元素的 class 列表中必须包含 `[str]iconify` 或 `[str]iconify-inline`。
 
-If you need to render icons without relying on Iconify API, [use a different icon component](/docs/usage/index.md).
-
-## Icon syntax
-
-An element must have `[tag]span` or `[tag]i` tag.
-
-For the Iconify SVG framework to treat the element as icon placeholder, the element must have `[str]iconify` or `[str]iconify-inline` among the list of classes.
-
-Element also must have a `[prop]data-icon` attribute with icon name as value.
+元素还必须具有 `[prop]data-icon` 属性，其值为图标名称。
 
 ```yaml
 src: icon-components/iconify/index-sample1.html
@@ -92,27 +82,27 @@ demo: true
 demoFirst: false
 ```
 
-Icon name syntax is `[attr]data-icon="prefix:icon-name"` or `[attr]data-icon="prefix-icon-name"`. Second syntax can be used if prefix does not contain `[str]"-"`, it is kept for compatibility with icon fonts.
+图标名称的语法为 `[attr]data-icon="prefix:icon-name"` 或 `[attr]data-icon="prefix-icon-name"`。如果前缀不包含 `[str]"-"`，则可以使用第二种语法，这是为了保持与图标字体的兼容性。
 
-For example, `[attr]data-icon="fa-arrow-left"` and `[attr]data-icon="fa:arrow-left"` are identical (both have a prefix `[str]"fa"`), but `[attr]data-icon="flat-color-icons:voice-presentation"` and `[attr]data-icon="flat-color-icons-voice-presentation"` are not the same (first has a prefix `[str]"flat-color-icons"`, second has a prefix `[str]"flat"` that does not exist).
+例如，`[attr]data-icon="fa-arrow-left"` 和 `[attr]data-icon="fa:arrow-left"` 是相同的（两者前缀均为 `[str]"fa"`），但 `[attr]data-icon="flat-color-icons:voice-presentation"` 和 `[attr]data-icon="flat-color-icons-voice-presentation"` 则不同（前者前缀为 `[str]"flat-color-icons"`，后者前缀为 `[str]"flat"`，而该前缀并不存在）。
 
-## Color
+## 颜色
 
-You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.
+你只能更改单色图标的颜色。某些图标（如 emoji）具有内置的调色板，无法更改。
 
-To add color to the monotone icon simply change text color.
+要为单色图标添加颜色，只需更改文本颜色即可。
 
 ```html
 <span class="iconify" data-icon="ion:umbrella-sharp" style="color: red"></span>
 ```
 
-For various ways to set color, see [changing icon color tutorial](./color.md).
+有关设置颜色的各种方法，请参阅[更改图标颜色教程](./color.md)。
 
-## Dimensions
+## 尺寸
 
-By default, icon height is set to `[str]"1em"`, icon width is changed dynamically based on the icon's width to height ratio.
+默认情况下，图标高度设置为 `[str]"1em"`，图标宽度会根据图标的宽高比动态调整。
 
-This makes it easy to change icon size by changing `[attr]font-size` in the stylesheet, just like icon fonts:
+这使得你可以通过更改样式表中的 `[attr]font-size` 来轻松调整图标大小，就像使用图标字体一样：
 
 ```html
 <span
@@ -122,37 +112,37 @@ This makes it easy to change icon size by changing `[attr]font-size` in the styl
 ></span>
 ```
 
-For various ways to change icon dimensions, see [changing icon dimensions tutorial](./dimensions.md).
+有关更改图标尺寸的各种方法，请参阅[更改图标尺寸教程](./dimensions.md)。
 
-## Transformations
+## 变换
 
-An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.
+图标可以旋转，也可以水平和/或垂直翻转。所有变换均以图标中心为基准进行。
 
-These are not CSS transformations, transformations are applied inside SVG.
+这些不是 CSS 变换，变换是直接应用于 SVG 内部的。
 
-For more details see [icon transformations tutorial](./transform.md).
+更多详情请参阅[图标变换教程](./transform.md)。
 
-## Functions {#functions}
+## 函数 {#functions}
 
-Iconify SVG framework offers many functions, which developers can use to control SVG framework:
+Iconify SVG 框架提供了许多函数，开发者可以使用它们来控制 SVG 框架：
 
-- Load icons from API.
-- Add custom icons and icon sets.
-- Generate SVG.
-- Control MutationObserver.
-- ...and many other functions.
+- 从 API 加载图标。
+- 添加自定义图标和图标集。
+- 生成 SVG。
+- 控制 MutationObserver。
+- ……以及许多其他函数。
 
-For more details see [Iconify SVG framework functions](./functions.md).
+更多详情请参阅 [Iconify SVG 框架函数](./functions.md)。
 
-## Server side rendering {#ssr}
+## 服务端渲染 {#ssr}
 
-SVG Framework can be used in Node.js scripts, but because there is no DOM, it can be used only to generate data using functions such as `[func]buildIcon()`.
+SVG 框架可用于 Node.js 脚本中，但由于没有 DOM，它只能用于通过 `[func]buildIcon()` 等函数生成数据。
 
 ```yaml
 include: icon-components/functions/set-fetch/nodejs
 ```
 
-How to solve this problem?
+如何解决这个问题？
 
 ```yaml
 include: icon-components/functions/set-fetch/svg-framework

@@ -10,12 +10,12 @@ const root = "/docs/iconify-icon/";
 
 export const IconifyIconSidebar: SidebarItem[] = [
   {
-    text: "IconifyIconName type",
+    text: "IconifyIconName 类型",
     link: `${root}icon-name`,
     hidden: true,
   },
   {
-    text: "Wrappers for",
+    text: "适用于",
     items: [
       {
         text: "React",
@@ -28,7 +28,7 @@ export const IconifyIconSidebar: SidebarItem[] = [
     ],
   },
   {
-    text: "Attributes",
+    text: "属性",
     items: [
       {
         text: "Icon",
@@ -43,7 +43,7 @@ export const IconifyIconSidebar: SidebarItem[] = [
     ],
   },
   {
-    text: "Functions",
+    text: "函数",
     items: [
       // Internal functions
       ...commonInternalFunctions(root),

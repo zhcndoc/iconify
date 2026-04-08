@@ -51,49 +51,41 @@
         </div>
         <div class="intro-icons-content">
             <p>
-                Material Design, Phosphor, Remix, Carbon, Bootstrap, Tabler,
-                Feather, Fluent, IconPark, Octicons and many other icon sets.
-                Twitter Emoji, Fluent Emoji, EmojiOne, Noto Emoji are also available
-                as icon sets.
+                Material Design、Phosphor、Remix、Carbon、Bootstrap、Tabler、Feather、Fluent、IconPark、Octicons 等众多图标集。Twitter Emoji、Fluent Emoji、EmojiOne、Noto Emoji 也作为图标集提供。
             </p>
             <p>
-                Use them with the same tools, same reusable and customisable icon
-                components:
+                使用相同的工具、可复用和可定制的图标组件：
             </p>
         </div>
     </div>
     <ul>
         <li>
-            <a href="/docs/iconify-icon/">Iconify Icon web component</a>
-            (HTML with or without UI frameworks. Works great with SSR).
+            <a href="/docs/iconify-icon/">Iconify Icon Web 组件</a>
+            （可在 HTML 中使用，无论是否使用 UI 框架。与 SSR 配合极佳）。
         </li>
         <li>
-            <a href="/docs/icon-components/">Iconify framework native components</a>
-            (React, Vue, Svelte, Ember).
+            <a href="/docs/icon-components/">Iconify 框架原生组件</a>
+            （React、Vue、Svelte、Ember）。
         </li>
     </ul>
     <p>
-        You can also get raw SVG
-        <a href="/docs/libraries/tools/">using various tools</a>
-        and embed them in your pages without any components.
+        您还可以使用各种工具获取原始 SVG，并将其嵌入页面中，无需任何组件。
     </p>
     <p>
-        Iconify is supported by a growing community. In addition to Iconify
-        icon components, there are now more ways to use icons, created by
-        amazing open source developers:
+        Iconify 得到了不断壮大的社区支持。除了 Iconify 图标组件外，现在还有更多使用图标的方式，由出色的开源开发者创建：
     </p>
     <ul>
         <li>
-            <a href="/docs/usage/svg/unplugin/">Unplugin Icons</a>
-            (supports many UI frameworks).
+            <a href="/docs/usage/svg/unplugin/">Unplugin 图标</a>
+            （支持许多 UI 框架）。
         </li>
         <li>
             <a href="/docs/usage/css/unocss/">UnoCSS</a>
-            (icons in CSS).
+            （CSS 中的图标）。
         </li>
         <li>
-            <a href="/docs/usage/svg/astro/">Astro Icon</a>
-            (Astro).
+            <a href="/docs/usage/svg/astro/">Astro 图标</a>
+            （Astro）。
         </li>
         <li>
             <a
@@ -101,21 +93,18 @@
                 target="_blank"
                 >Edge Iconify</a
             >
-            (Edge template engine).
         </li>
         <li>
             <a
                 href="https://github.com/cawa-93/iconify-prerendered"
                 target="_blank"
-                >Iconify Prerendered</a
+                >Iconify 预渲染</a
             >
-            (Vue).
         </li>
         <li>
             <a href="https://github.com/Atinux/nuxt-icon" target="_blank"
-                >Nuxt Icon</a
+                >Nuxt 图标</a
             >
-            (Nuxt).
         </li>
     </ul>
 </section>

@@ -9,33 +9,33 @@ types:
   IconifyIcon: '/docs/types/iconify-icon.md'
 ```
 
-# Export SVGs using Iconify Utils
+# 使用 Iconify Utils 导出 SVG
 
-This tutorial is part of [code examples for Iconify Utils](./index.md).
+本教程属于 [Iconify Utils 代码示例](./index.md) 的一部分。
 
-## Export SVGs
+## 导出 SVG
 
-This is an example of using Iconify Utils to generate SVGs from the icon set:
+以下是使用 Iconify Utils 从图标集生成 SVG 的示例：
 
 ```yaml
 src: libraries/utils/svgs-from-set.ts
 title: 'demo.ts'
 ```
 
-## Functions
+## 函数
 
-Functions used in this code sample:
+本代码示例中使用的函数：
 
-- `[func]parseIconSet()` to parse icon set, calling callback for each icon.
-- `[func]iconToSVG()` to generate attributes and HTML for SVG.
-- `[func]replaceIDs()` to create unique IDs, though it is commented out. Use it if you are embedding output in HTML.
+- `[func]parseIconSet()` 用于解析图标集，并为每个图标调用回调函数。
+- `[func]iconToSVG()` 用于生成 SVG 的属性和 HTML。
+- `[func]replaceIDs()` 用于创建唯一 ID，尽管在此示例中已被注释。若需将输出嵌入 HTML 中，请使用此函数。
 
-## Source
+## 来源
 
-For icon set source, this example uses `[file].json` file in `[type]IconifyJSON` format.
+关于图标集来源，本示例使用 `[type]IconifyJSON` 格式的 `[file].json` 文件。
 
-You can also use [individual icon set package](/docs/icons/json.md) or [full icon sets package](/docs/icons/all.md). Point `[var]source` variable to `[file].json` file from one of those packages.
+你也可以使用[独立图标集包](/docs/icons/json.md)或[完整图标集包](/docs/icons/all.md)。将 `[var]source` 变量指向这些包中的 `[file].json` 文件即可。
 
-## Output
+## 输出
 
-This example writes all SVGs to the file system. Change `[var]target` variable to point to different directory.
+本示例将所有 SVG 写入文件系统。更改 `[var]target` 变量以指向其他目录。

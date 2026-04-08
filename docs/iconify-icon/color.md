@@ -1,10 +1,10 @@
 ```yaml
-title: Changing Icon Color in Iconify Icon Web Component
+title: 在 Iconify Icon Web 组件中更改图标颜色
 ```
 
-# Icon color
+# 图标颜色
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md).
+本教程是 [Iconify Icon Web 组件教程](./index.md) 的一部分。
 
 ```yaml
 include: icon-components/components/color-intro
@@ -21,6 +21,6 @@ class: components-color
 include: icon-components/components/color-intro2
 ```
 
-## RGBA and HSLA colors {#opacity}
+## RGBA 和 HSLA 颜色 {#opacity}
 
 `include icon-components/color-rgba`

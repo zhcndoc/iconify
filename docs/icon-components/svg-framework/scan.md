@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify SVG Framework Function: scan'
+title: 'Iconify SVG 框架函数：scan'
 functions:
   observe: './observe.md'
   stopObserving: './stop-observing.md'
@@ -7,28 +7,28 @@ functions:
   resumeObserver: './resume-observer.md'
 ```
 
-# SVG framework function: scan
+# SVG 框架函数：scan
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#scanner).
+本教程属于 [Iconify SVG 框架函数教程](./functions.md#scanner) 的一部分。
 
-Function `[func]scan()` scans document for icon placeholders and replaces placeholders with icons.
+函数 `[func]scan()` 会扫描文档中的图标占位符，并将其替换为图标。
 
-SVG framework automatically watches `[prop]document.body` and scans DOM after every change, so no need to use this function after you are changing DOM.
+SVG 框架会自动监听 `[prop]document.body` 并在每次更改后扫描 DOM，因此在更改 DOM 后无需使用此函数。
 
-When to use this function:
+何时使用此函数：
 
-- If you have disabled observer using `[func]stopObserving(document.body)` or `[func]pauseObserver()`.
-- If you need to scan element that is not part of `[prop]document.body`, such as Shadow DOM.
+- 如果你已使用 `[func]stopObserving(document.body)` 或 `[func]pauseObserver()` 禁用了观察器。
+- 如果你需要扫描不属于 `[prop]document.body` 的元素，例如 Shadow DOM。
 
-If you want SVG framework to watch custom root element for changes, do not use this function, use `[func]observe()` instead. This function stops watching element when all placeholders have been replaced, `[func]observe()` continues to watch element until you tell it to stop using `[func]stopObserving()`.
+如果你希望 SVG 框架监听自定义根元素的更改，请不要使用此函数，而应使用 `[func]observe()`。此函数会在所有占位符被替换后停止监听元素，而 `[func]observe()` 会持续监听元素，直到你使用 `[func]stopObserving()` 告知其停止。
 
-## Usage
+## 用法
 
-Function has the following optional parameter:
+该函数具有以下可选参数：
 
-- `[prop]root`, `[type]HTMLElement`. Element to scan. If missing, function will scan all watched root elements.
+- `[prop]root`，`[type]HTMLElement`。要扫描的元素。如果省略，函数将扫描所有被监听的根元素。
 
-## Example
+## 示例
 
 ```js
 const node = document.createElement('div');
@@ -37,7 +37,7 @@ node.innerHTML =
 Iconify.scan(node);
 ```
 
-## Notes
+## 注意事项
 
-- Function might not replace placeholders immediately. If an icon has not been loaded, SVG framework will asynchronously load icon from Iconify API, then scan DOM again and replace placeholders.
-- Do not use placeholder as root element. Function checks only child elements, not root element.
+- 函数可能不会立即替换占位符。如果图标尚未加载，SVG 框架将从 Iconify API 异步加载图标，然后再次扫描 DOM 并替换占位符。
+- 请勿将占位符用作根元素。该函数仅检查子元素，不检查根元素。

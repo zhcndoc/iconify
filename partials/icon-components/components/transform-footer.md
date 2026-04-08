@@ -1,1 +1,1 @@
-You can use both rotation and flip on an icon. The icon is flipped first, then rotated.
+您可以在图标上同时使用旋转和翻转。图标会先翻转，然后再旋转。

@@ -1,5 +1,5 @@
 ```yaml
-title: Exporting Icons as SVG
+title: 将图标导出为 SVG
 types:
   SVG: '../svg/index.md'
   IconSet: '../icon-set/index.md'
@@ -8,38 +8,38 @@ functions:
   export: '../icon-set/export.md'
 ```
 
-# Exporting icons to directory
+# 将图标导出到目录
 
-This tutorial is part of [export functions documentation](./index.md) in [Iconify Tools](../index.md).
+本教程是 [Iconify Tools](../index.md) 中[导出函数文档](./index.md)的一部分。
 
-Function `[func]exportToDirectory()` writes all icons in `[type]IconSet` instance to a specified directory.
+函数 `[func]exportToDirectory()` 将 `[type]IconSet` 实例中的所有图标写入指定目录。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数具有以下参数：
 
-- `[prop]iconSet`, `[type]IconSet`. Icon set to export.
-- `[prop]options`, `[type]object`. Options. See below.
+- `[prop]iconSet`，`[type]IconSet`。要导出的图标集。
+- `[prop]options`，`[type]object`。选项。见下文。
 
-Function returns array of stored icons.
+函数返回已存储图标的数组。
 
-Function is asynchronous. That means you need to handle it as `[class]Promise` instance, usually by adding `[js]await` before function call.
+该函数是异步的。这意味着你需要将其作为 `[class]Promise` 实例进行处理，通常在函数调用前添加 `[js]await`。
 
-### Options
+### 选项
 
-The `[prop]options` object has the following mandatory property:
+`[prop]options` 对象具有以下必需属性：
 
-- `[prop]target`, `[type]string`. Target directory. If a directory is missing, it will be created.
+- `[prop]target`，`[type]string`。目标目录。如果目录不存在，将会自动创建。
 
-and the following optional properties:
+以及以下可选属性：
 
-- `[prop]cleanup`, `[type]boolean`. If `true`, target directory will be emptied before exporting icons. Default is `false`.
-- `[prop]autoHeight`, `[type]boolean`. If `true`, icons will have dimensions matching `[attr]viewBox`. If `false`, icons will have height set to `[str]1em`. Default is `true`.
-- `[prop]includeAliases`, `[type]boolean`. Generates files for aliases. Default is `true`.
-- `[prop]includeChars`, `[type]boolean`. Generates files for characters, such as `[file]f00.svg` for icon that has character `[str]f00` assigned to it. Default is `false`.
-- `[prop]log`, `[type]boolean`. If `true`, function logs process. Default is `false`.
+- `[prop]cleanup`，`[type]boolean`。如果为 `true`，则在导出图标前会清空目标目录。默认为 `false`。
+- `[prop]autoHeight`，`[type]boolean`。如果为 `true`，图标的尺寸将与 `[attr]viewBox` 匹配。如果为 `false`，图标的高度将设置为 `[str]1em`。默认为 `true`。
+- `[prop]includeAliases`，`[type]boolean`。为别名生成文件。默认为 `true`。
+- `[prop]includeChars`，`[type]boolean`。为字符生成文件，例如为分配了字符 `[str]f00` 的图标生成 `[file]f00.svg`。默认为 `false`。
+- `[prop]log`，`[type]boolean`。如果为 `true`，函数将记录处理过程。默认为 `false`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/export/directory.ts

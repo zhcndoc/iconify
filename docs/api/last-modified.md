@@ -1,36 +1,36 @@
 ```yaml
-title: Icon set last modification time
+title: 图标集最后修改时间
 types:
   IconifyJSON: '../types/iconify-json.md'
 ```
 
-# Last icon set modification time
+# 图标集最后修改时间
 
-Most icon sets have last modification time in `[prop]lastModified` property of `[type]IconifyJSON` object.
+大多数图标集的最后修改时间都存储在 `[type]IconifyJSON` 对象的 `[prop]lastModified` 属性中。
 
-If you have cached icon data, you might want to see if it was updated. You can do that by requesting icon data again, but that is inefficient.
+如果你缓存了图标数据，可能想要检查它是否已更新。你可以通过再次请求图标数据来实现，但这样做效率较低。
 
-With `[url]/last-modified` API query you can get `[prop]lastModified` value for multiple icon sets with one simple query!
+通过 `[url]/last-modified` API 查询，你只需一次简单的请求即可获取多个图标集的 `[prop]lastModified` 值！
 
-## Query
+## 查询
 
-API query is `[url]/last-modified`.
+API 查询地址为 `[url]/last-modified`。
 
-Optional parameters:
+可选参数：
 
-- `[prop]prefix`, `[type]string`. Icon set prefix if you want to get result only for one icon set.
-- `[prop]prefixes`, `[type]string`. Comma separated list of icon set prefixes. You can use partial prefixes that end with `[str]-`, such as `[str]mdi-` matches `[str]mdi-light`.
+- `[prop]prefix`，`[type]string`。如果你只想获取单个图标集的结果，请传入图标集前缀。
+- `[prop]prefixes`，`[type]string`。以逗号分隔的图标集前缀列表。你可以使用以 `[str]-` 结尾的部分前缀，例如 `[str]mdi-` 会匹配 `[str]mdi-light`。
 
-Response contains `[prop]lastModified` object, where key is icon set prefix, value is `[prop]lastModified` property from that icon set.
+响应包含 `[prop]lastModified` 对象，其中键为图标集前缀，值为该图标集的 `[prop]lastModified` 属性值。
 
 ```yaml
 hint: /last-modified?prefixes=mdi,mdi-light,tabler&pretty=1
 src: api/last-modified.json
 ```
 
-### Error response
+### 错误响应
 
-If requested icon sets are not found, server returns an empty object:
+如果请求的图标集未找到，服务器将返回一个空对象：
 
 ```json
 {
@@ -38,7 +38,7 @@ If requested icon sets are not found, server returns an empty object:
 }
 ```
 
-## Type
+## 类型
 
 ```ts
 export interface APIv3LastModifiedResponse {

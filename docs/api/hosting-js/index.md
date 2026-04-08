@@ -1,60 +1,60 @@
-# Hosting Iconify API
+# 托管 Iconify API
 
-This documentation is for the Node.js version of [Iconify API](../index.md).
+本文档适用于 [Iconify API](../index.md) 的 Node.js 版本。
 
-To install API, first clone or download Iconify API from GitHub: [https://github.com/iconify/api](https://github.com/iconify/api).
+要安装 API，请先从 GitHub 克隆或下载 Iconify API：[https://github.com/iconify/api](https://github.com/iconify/api)。
 
-## How to use it
+## 使用方法
 
-First, you need to install NPM dependencies and run build script:
+首先，你需要安装 NPM 依赖并运行构建脚本：
 
 ```sh
 npm install
 npm run build
 ```
 
-Then you can start server:
+然后你可以启动服务器：
 
 ```sh
 npm run start
 ```
 
-By default, server will:
+默认情况下，服务器将：
 
-- Automatically load the latest icons from [`[npm]@iconify/json`](/docs/icons/all.md).
-- Serve data on port `[num]3000`.
+- 自动从 [`[npm]@iconify/json`](/docs/icons/all.md) 加载最新图标。
+- 在 `[num]3000` 端口提供数据服务。
 
-You can customise API to:
+你可以自定义 API 以：
 
-- Serve custom icon sets, loaded from various sources.
-- Run on a different port.
-- Disable search engine if you do not need it, reducing memory usage.
+- 提供从各种来源加载的自定义图标集。
+- 在不同的端口上运行。
+- 如果不需要搜索引擎，可以将其禁用，从而减少内存占用。
 
-## Port and HTTPS
+## 端口与 HTTPS
 
-It is recommended that you do not run API on port `[num]80`.
-Server can handle pretty much anything, but it is still not as good as a dedicated solution such as nginx.
+建议不要在 `[num]80` 端口上运行 API。
+该服务器几乎可以处理任何请求，但它仍然不如 nginx 等专用解决方案。
 
-Run API on obscure port, hidden from the outside world with firewall rules, use nginx as reverse proxy.
+在隐蔽的端口上运行 API，通过防火墙规则对外隐藏，并使用 nginx 作为反向代理。
 
-HTTPS is not supported.
-It is a very resource intensive process, better handled by a dedicated solution such as nginx.
-Use nginx to run as HTTP and HTTPS server,
-forward queries to API HTTP server on hidden port such as default port `[num]3000`.
+不支持 HTTPS。
+这是一个非常消耗资源的过程，最好由 nginx 等专用解决方案来处理。
+使用 nginx 作为 HTTP 和 HTTPS 服务器运行，
+将查询转发到隐藏端口（如默认端口 `[num]3000`）上的 API HTTP 服务器。
 
-## Configuration
+## 配置
 
-There are several ways to change configuration:
+有几种更改配置的方法：
 
-- Editing files in `[file]src/config/`, then rebuilding script. This is required for some advanced options, such as using API with custom icons.
-- Using environment variables, such as `[bash]PORT=3100 npm run start`.
-- Using `[file].env` file to store environment variables.
+- 编辑 `[file]src/config/` 中的文件，然后重新构建脚本。某些高级选项（例如将 API 与自定义图标一起使用）需要此操作。
+- 使用环境变量，例如 `[bash]PORT=3100 npm run start`。
+- 使用 `[file].env` 文件存储环境变量。
 
-See [Iconify API configuration](./config.md) for details.
+有关详细信息，请参阅 [Iconify API 配置](./config.md)。
 
-## Starting server
+## 启动服务器
 
-To start server, run
+要启动服务器，请运行
 
 ```sh
 npm run start
@@ -62,7 +62,7 @@ npm run start
 
 ### PM2
 
-To make sure API runs without interruption, use [pm2](https://github.com/Unitech/PM2/) or similar Node.js process manager to run application.
+为确保 API 不间断运行，请使用 [pm2](https://github.com/Unitech/PM2/) 或类似的 Node.js 进程管理器来运行应用程序。
 
-It will automatically restart API if something goes wrong and will automatically start API if the server is restarted.
-Sometimes host server might restart for whatever reason, this will make sure the API is always running.
+如果出现问题，它将自动重启 API；如果服务器重启，它也会自动启动 API。
+有时主机服务器可能会因各种原因重启，这将确保 API 始终处于运行状态。

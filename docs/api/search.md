@@ -1,62 +1,62 @@
 ```yaml
-title: Searching icons
+title: 搜索图标
 types:
   IconifyJSON: "../types/iconify-json.md"
   IconifyInfo: "../types/iconify-info.md"
 ```
 
-# Searching icons
+# 搜索图标
 
-You can search icons using `[url]/search` API query.
+您可以使用 `[url]/search` API 查询来搜索图标。
 
-## Query
+## 查询
 
-API query is `[url]/search`.
+API 查询地址为 `[url]/search`。
 
-Required parameter:
+必需参数：
 
-- `[prop]query`, `[type]string`. Search query. Case insensitive.
+- `[prop]query`，`[type]string`。搜索查询词。不区分大小写。
 
-Optional parameters:
+可选参数：
 
-- `[prop]limit`, `[type]number`. Search results limit.
-- `[prop]start`, `[type]number`. Start index of result. See below.
-- `[prop]prefix`, `[type]string`. Icon set prefix if you want to get result only for one icon set.
-- `[prop]prefixes`, `[type]string`. Comma separated list of icon set prefixes. You can use partial prefixes that end with `[str]-`, such as `[str]mdi-` matches `[str]mdi-light`.
-- `[prop]category`, `[type]string`. Limit search to icon sets from specific category.
+- `[prop]limit`，`[type]number`。搜索结果数量限制。
+- `[prop]start`，`[type]number`。结果的起始索引。见下文。
+- `[prop]prefix`，`[type]string`。图标集前缀，如果您只想获取单个图标集的结果。
+- `[prop]prefixes`，`[type]string`。以逗号分隔的图标集前缀列表。您可以使用以 `[str]-` 结尾的部分前缀，例如 `[str]mdi-` 会匹配 `[str]mdi-light`。
+- `[prop]category`，`[type]string`。将搜索限制为特定类别的图标集。
 
-### Limit and start
+### limit 和 start
 
-If your UI uses pagination, please consider saving API resources by not sending unnecessary search queries.
+如果您的 UI 使用了分页，请考虑通过避免发送不必要的搜索查询来节省 API 资源。
 
-You can use the following logic:
+您可以使用以下逻辑：
 
-- Set `[prop]limit` to number of icons that fit in first 2 pages.
-- If numer of icons in result matches `[prop]limit`, it means there are more icons to show.
-- If there are more icons to show, when visitor clicks second page, retrieve the rest of results by setting `[prop]limit` to `[num]999`. You can also set `[prop]start` to number of icons retrieved in first query, but that doesn't change much because search function on server can't just resume from old state, so it checks all icons anyway.
+- 将 `[prop]limit` 设置为适合前两页显示的图标数量。
+- 如果结果中的图标数量等于 `[prop]limit`，则表示还有更多图标可显示。
+- 如果还有更多图标可显示，当访客点击第二页时，通过将 `[prop]limit` 设置为 `[num]999` 来获取剩余结果。您也可以将 `[prop]start` 设置为第一次查询获取的图标数量，但这改变不大，因为服务器上的搜索函数无法直接从旧状态恢复，所以无论如何它都会检查所有图标。
 
-### Changing limit
+### 修改 limit
 
-There are limits on what you can set `[prop]limit` property to:
+您可以为 `[prop]limit` 属性设置的值存在以下限制：
 
-- Minimum value: `[num]32`.
-- Default value, used if property is not set: `[num]64`.
-- Maximum value: `[num]999`.
+- 最小值：`[num]32`。
+- 默认值（未设置该属性时使用）：`[num]64`。
+- 最大值：`[num]999`。
 
-You can change limits in API code in `[file]src/http/responses/search.ts`.
+您可以在 `[file]src/http/responses/search.ts` 的 API 代码中修改这些限制。
 
-## Response
+## 响应
 
-Response is a simple object with the following properties:
+响应是一个包含以下属性的简单对象：
 
-- `[prop]icons`, `[type]string[]` - list of icons. Each icon name includes icon set prefix + name: `[str]mdi-light:home`
-- `[prop]total`, `[type]number` - number of results. Same length of `[prop]icons` property.
-- `[prop]limit`, `[type]number` - results limit set by search. If matches `[prop]total`, there are more results available.
-- `[prop]start`, `[type]number` - index of first result.
-- `[prop]collections`, `[type]Record<string, IconifyInfo>` - info blocks for icon sets used in results.
-- `[prop]request` - copy of request parameters. All values in this object are `[type]string`, as they are passed to query.
+- `[prop]icons`，`[type]string[]` - 图标列表。每个图标名称包含图标集前缀 + 名称：`[str]mdi-light:home`
+- `[prop]total`，`[type]number` - 结果数量。与 `[prop]icons` 属性的长度相同。
+- `[prop]limit`，`[type]number` - 搜索设置的结果限制。如果与 `[prop]total` 匹配，则表示还有更多可用结果。
+- `[prop]start`，`[type]number` - 第一个结果的索引。
+- `[prop]collections`，`[type]Record<string, IconifyInfo>` - 结果中所用图标集的信息块。
+- `[prop]request` - 请求参数的副本。此对象中的所有值均为 `[type]string`，因为它们是作为查询参数传递的。
 
-## Examples
+## 示例
 
 ```yaml
 hint: /search?query=home&pretty=1
@@ -68,9 +68,9 @@ hint: /search?query=arrows-horizontal&pretty=1&limit=999
 src: api/search-arrows.json
 ```
 
-### Error response
+### 错误响应
 
-If no matches found, search returns object with no icons:
+如果未找到匹配项，搜索将返回一个不包含图标的对象：
 
 ```json
 {
@@ -86,34 +86,34 @@ If no matches found, search returns object with no icons:
 }
 ```
 
-If query is invalid, such as missing `[prop]query` parameter, server returns `[num]400` HTTP error.
+如果查询无效（例如缺少 `[prop]query` 参数），服务器将返回 `[num]400` HTTP 错误。
 
-If search engine is disabled, `[url]/search` route is not handled, server returns `[num]404` HTTP error.
+如果搜索引擎被禁用，`[url]/search` 路由将不会被处理，服务器将返回 `[num]404` HTTP 错误。
 
-## Type
+## 类型
 
-Type for API response:
+API 响应的类型定义：
 
 ```ts
 import type { IconifyInfo } from "@iconify/types";
 
 export interface APIv2SearchResponse {
-  // List of icons, including prefixes
+  // 图标列表，包含前缀
   icons: string[];
 
-  // Number of results. If same as `limit`, more results are available
+  // 结果数量。如果与 `limit` 相同，则表示还有更多可用结果
   total: number;
 
-  // Number of results shown
+  // 显示的结果数量
   limit: number;
 
-  // Index of first result
+  // 第一个结果的索引
   start: number;
 
-  // Info about icon sets
+  // 图标集信息
   collections: Record<string, IconifyInfo>;
 
-  // Copy of request, values are string
+  // 请求的副本，值为字符串
   request: Record<keyof APIv2SearchParams, string>;
 }
 ```

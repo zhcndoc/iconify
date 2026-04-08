@@ -1,81 +1,81 @@
 ```yaml
-title: Downloading GitLab repository using API
+title: 使用 API 下载 GitLab 仓库
 types:
   DownloadGitLabRepoResult: './gitlab.md#result'
 ```
 
-# Downloading GitLab repository using API
+# 使用 API 下载 GitLab 仓库
 
-This tutorial is part of [package functions documentation](./index.md) in [Iconify Tools](../index.md).
+本教程是 [Iconify Tools](../index.md) 中 [包函数文档](./index.md) 的一部分。
 
-Function `[func]downloadGitLabRepo()` downloads files from GitLab repository using GitLab API.
+函数 `[func]downloadGitLabRepo()` 使用 GitLab API 从 GitLab 仓库下载文件。
 
-## Usage
+## 用法
 
-Function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]options`, `[type]object`. Options, see below.
+- `[prop]options`，`[type]object`。选项，见下文。
 
-Function returns:
+函数返回：
 
-- `[type]DownloadGitLabRepoResult` object on success.
-- `[str]not_modified` string if repository has not been updated since last run (can be returned only if `[prop]ifModifiedSince` option is set).
+- 成功时返回 `[type]DownloadGitLabRepoResult` 对象。
+- 如果自上次运行以来仓库未更新，则返回 `[str]not_modified` 字符串（仅在设置了 `[prop]ifModifiedSince` 选项时可能返回）。
 
-In case of error, function might throw an exception, which you can catch using `[func]try` and `[func]catch`.
+如果发生错误，函数可能会抛出异常，你可以使用 `[func]try` 和 `[func]catch` 进行捕获。
 
-Function is asynchronous. That means you need to handle it as `[class]Promise` instance, usually by adding `[js]await` before function call.
+该函数是异步的。这意味着你需要将其作为 `[class]Promise` 实例进行处理，通常是在函数调用前添加 `[js]await`。
 
-### Options
+### 选项
 
-Options object has the following mandatory properties:
+选项对象包含以下必需属性：
 
-- `[prop]target`, `[type]string`. Target directory. If directory is missing, it will be created. Value can contain `[str]{hash}` that will be replaced with latest commit hash.
-- `[prop]project`, `[type]string`. GitLab project ID. You can find it on project page on GitLab website.
-- `[prop]branch`, `[type]string`. Branch, such as `[str]master`.
-- `[prop]token`, `[type]string`. GitLab API token. See below.
-- `[prop]uri`, `[type]string`. Optional URI for custom GitLab host, default value is `[url]https://gitlab.com/api/v4/projects`.
+- `[prop]target`，`[type]string`。目标目录。如果目录不存在，将会被创建。值可以包含 `[str]{hash}`，它将被替换为最新的提交哈希值。
+- `[prop]project`，`[type]string`。GitLab 项目 ID。你可以在 GitLab 网站的项目页面上找到它。
+- `[prop]branch`，`[type]string`。分支，例如 `[str]master`。
+- `[prop]token`，`[type]string`。GitLab API 令牌。见下文。
+- `[prop]uri`，`[type]string`。自定义 GitLab 主机的可选 URI，默认值为 `[url]https://gitlab.com/api/v4/projects`。
 
-and the following optional properties:
+以及以下可选属性：
 
-- `[prop]cleanup`, `[type]boolean`. If `true`, target directory will be emptied before exporting icons. Default is `false`.
-- `[prop]ifModifiedSince`, `[type]string | DownloadGitLabRepoResult`. If set, function will check if repository has been updated.
+- `[prop]cleanup`，`[type]boolean`。如果为 `true`，在导出图标前将清空目标目录。默认为 `false`。
+- `[prop]ifModifiedSince`，`[type]string | DownloadGitLabRepoResult`。如果设置，函数将检查仓库是否已更新。
 
-Function downloads archive, puts it in `[prop]target` directory, then unpacks it in sub-directory. There are two optional properties that allow you remove outdated files without removing everything. Options do not work if `[prop]cleanup` is enabled because `[prop]cleanup` removes everything.
+函数会下载归档文件，将其放入 `[prop]target` 目录，然后在子目录中解压。有两个可选属性允许你在不清除所有内容的前提下移除过时的文件。如果启用了 `[prop]cleanup`，这些选项将不起作用，因为 `[prop]cleanup` 会移除所有内容。
 
-- `[prop]cleanupOldFiles`, `[type]boolean`. If `true`, old zip files in target directory will be removed. Default is `false`.
-- `[prop]cleanupOldDirectories`, `[type]boolean`. If `true`, old unpacked archives in target directory will be removed. Default is `true`.
+- `[prop]cleanupOldFiles`，`[type]boolean`。如果为 `true`，将移除目标目录中旧的 zip 文件。默认为 `false`。
+- `[prop]cleanupOldDirectories`，`[type]boolean`。如果为 `true`，将移除目标目录中旧的已解压归档。默认为 `true`。
 
 #### token
 
-You can get GitLab API token from [access tokens page on GitLab](https://gitlab.com/-/profile/personal_access_tokens).
+你可以从 [GitLab 的访问令牌页面](https://gitlab.com/-/profile/personal_access_tokens) 获取 GitLab API 令牌。
 
-If you are creating a new token, set scope to `[str]read_api`.
+如果你正在创建新令牌，请将作用域（scope）设置为 `[str]read_api`。
 
-Never commit token to a repository or publish it anywhere! Keep it secret. There are many ways to keep token secret, most common is using environmental variables to pass token to script. There are plenty of tutorials available that explain different methods.
+切勿将令牌提交到仓库或发布到任何地方！请严格保密。有许多方法可以保护令牌安全，最常见的是使用环境变量将令牌传递给脚本。有大量教程详细解释了不同的方法。
 
 #### ifModifiedSince
 
-Option `[prop]ifModifiedSince` is used when you want to retrieve data only if repository has been updated.
+当你只想在仓库更新时检索数据时，会使用 `[prop]ifModifiedSince` 选项。
 
-Value can be one of the following:
+值可以是以下之一：
 
-- Commit hash as `[type]string`. You can get it from `[prop]hash` property of result of previous run.
-- `[type]DownloadGitLabRepoResult` value from previous run.
+- 作为 `[type]string` 的提交哈希值。你可以从上次运行结果的 `[prop]hash` 属性中获取。
+- 上次运行返回的 `[type]DownloadGitLabRepoResult` 值。
 
-If repository has not been modified, function will return string `[str]not_modified`.
+如果仓库未修改，函数将返回字符串 `[str]not_modified`。
 
-If option is not set, function cannot return `[str]not_modified`.
+如果未设置此选项，函数将无法返回 `[str]not_modified`。
 
-### Result
+### 结果
 
-Result object has the following properties:
+结果对象包含以下属性：
 
-- `[prop]downloadType` = `[str]gitlab`.
-- `[prop]rootDir`, `[type]string`. Target directory. It is normalized version of `[prop]target` option, without trailing `[str]/` and with `[str]{hash}` replaced with commit hash.
-- `[prop]contentsDir`, `[type]string`. Directory where archive was unpacked.
-- `[prop]hash`, `[type]string`. Last commit hash.
+- `[prop]downloadType` = `[str]gitlab`。
+- `[prop]rootDir`，`[type]string`。目标目录。它是 `[prop]target` 选项的规范化版本，不包含末尾的 `[str]/`，且 `[str]{hash}` 已被替换为提交哈希值。
+- `[prop]contentsDir`，`[type]string`。归档文件被解压到的目录。
+- `[prop]hash`，`[type]string`。最后一次提交的哈希值。
 
-Value is `[prop]contentsDir` always contains `[prop]rootDir` because archives are unpacked in sub-directory of `[prop]rootDir`. For example:
+`[prop]contentsDir` 的值始终包含 `[prop]rootDir`，因为归档文件是在 `[prop]rootDir` 的子目录中解压的。例如：
 
 ```json
 {
@@ -86,7 +86,7 @@ Value is `[prop]contentsDir` always contains `[prop]rootDir` because archives ar
 }
 ```
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/package/gitlab.ts

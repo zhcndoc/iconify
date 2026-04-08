@@ -28,7 +28,7 @@ functions:
   setCustomIconsLoader: "./custom-loaders.md"
 ```
 
-# Iconify for Svelte
+# Svelte 的 Iconify
 
 ```yaml
 include: icon-components/components/intro
@@ -37,18 +37,18 @@ replacements:
     replace: Svelte
 ```
 
-Please be aware that this component is not designed for server side rendering.
-If you are using SSR, consider switching to [Iconify Icon web component](/docs/iconify-icon/index.md).
+请注意，此组件并非为服务端渲染设计。
+如果您正在使用 SSR，请考虑切换到 [Iconify Icon Web 组件](/docs/iconify-icon/index.md)。
 
-## Installation
+## 安装
 
-If you are using NPM:
+如果您使用 NPM：
 
 ```bash
 npm install --save-dev @iconify/svelte@2
 ```
 
-If you are using Yarn:
+如果您使用 Yarn：
 
 ```bash
 yarn add --dev @iconify/svelte@2
@@ -56,25 +56,25 @@ yarn add --dev @iconify/svelte@2
 
 ### Svelte 4
 
-Starting with version 6.0.0 of component, it uses Svelte 5 syntax, which is not compatible with Svelte 4.
+从组件的 6.0.0 版本开始，它使用了 Svelte 5 语法，这与 Svelte 4 不兼容。
 
-If you are using Svelte 4, you need to use version 5 of component:
+如果您使用的是 Svelte 4，则需要使用组件的 4 版本：
 
 ```bash
 npm install --save-dev @iconify/svelte@4
 ```
 
-or use a [web component](/docs/iconify-icon/index.md).
+或者使用 [Web 组件](/docs/iconify-icon/index.md)。
 
-## Usage
+## 使用方法
 
-Install `[npm]@iconify/svelte@2` and import component from it (component is exported as default export):
+安装 `[npm]@iconify/svelte@2` 并从中导入组件（该组件作为默认导出）：
 
 ```js
 import Icon from "@iconify/svelte";
 ```
 
-Then in template use `[var]Icon` component with icon name as `[prop]icon` parameter:
+然后在模板中使用 `[var]Icon` 组件，并将图标名称作为 `[prop]icon` 参数传入：
 
 ```jsx
 <Icon icon="mdi-light:home" />
@@ -82,39 +82,39 @@ Then in template use `[var]Icon` component with icon name as `[prop]icon` parame
 
 ### SvelteKit {#sveltekit}
 
-Component is compatible with SvelteKit. Syntax is the same as with Svelte.
+该组件与 SvelteKit 兼容。语法与 Svelte 相同。
 
-The component does not retrieve icon data until it is mounted.
-For server side rendering it means generated HTML will not include SVGs,
-icons will be rendered only on the client side after hydration is complete.
+该组件在挂载之前不会获取图标数据。
+对于服务端渲染而言，这意味着生成的 HTML 将不包含 SVG，
+图标仅在水合（hydration）完成后在客户端渲染。
 
-If you do want to render SVGs on the server side,
-provide [icon data](/docs/types/iconify-icon.md) as a parameter instead of icon name
-or [use a different icon component](/docs/usage/index.md).
+如果您确实希望在服务端渲染 SVG，
+请提供 [图标数据](/docs/types/iconify-icon.md) 作为参数，而不是图标名称，
+或者 [使用其他图标组件](/docs/usage/index.md)。
 
-## Properties
+## 属性
 
-You can pass any custom properties to `[var]Icon`.
+您可以向 `[var]Icon` 传递任何自定义属性。
 
-Required properties:
+必需属性：
 
-- `[prop]icon`, `[type]IconifyIcon | string` icon name or icon data.
+- `[prop]icon`，`[type]IconifyIcon | string` 图标名称或图标数据。
 
 `include icon-components/component-optional-props`
 
-See below for more information on each optional property.
+有关每个可选属性的更多信息，请参见下文。
 
-In addition to the properties mentioned above, the icon component accepts any other properties. All other properties will be passed to generated SVG element, so you can do stuff like setting the inline style, add title and so on.
+除了上述属性外，图标组件还接受任何其他属性。所有其他属性都将传递给生成的 SVG 元素，因此您可以执行设置内联样式、添加标题等操作。
 
-Unlike React component, Svelte component does not support events.
+与 React 组件不同，Svelte 组件不支持事件。
 
-## Icon
+## 图标
 
 ```yaml
 include: icon-components/components/intro-icon
 ```
 
-## Color
+## 颜色
 
 ```yaml
 include: icon-components/components/intro-color
@@ -124,9 +124,9 @@ include: icon-components/components/intro-color
 <Icon icon="mdi:home" style="color: red" />
 ```
 
-For various ways to set color, see [how to change icon color in Iconify for Svelte](./color.md).
+有关设置颜色的各种方法，请参阅 [如何在 Svelte 的 Iconify 中更改图标颜色](./color.md)。
 
-## Dimensions
+## 尺寸
 
 ```yaml
 include: icon-components/components/intro-size
@@ -136,57 +136,57 @@ include: icon-components/components/intro-size
 <Icon icon="mdi:home" style="font-size: 24px;" />
 ```
 
-For various ways to change icon dimensions, see [how to change icon dimensions in Iconify for Svelte](./dimensions.md).
+有关更改图标尺寸的各种方法，请参阅 [如何在 Svelte 的 Iconify 中更改图标尺寸](./dimensions.md)。
 
-## Transformations
+## 变换
 
 ```yaml
 include: icon-components/components/intro-transform
 ```
 
-For more details see [how to transform icon in Iconify for Svelte](./transform.md).
+有关更多详细信息，请参阅 [如何在 Svelte 的 Iconify 中变换图标](./transform.md)。
 
 ## onLoad
 
 `include icon-components/components/onload`
 
-## Functions {#functions}
+## 函数 {#functions}
 
 ```yaml
 include: icon-components/components/functions-list/header
 ```
 
-### Check available icons {#getting-icons}
+### 检查可用图标 {#getting-icons}
 
 ```yaml
 include: icon-components/components/functions-list/getting-icons
 ```
 
-### Adding icons {#adding-icons}
+### 添加图标 {#adding-icons}
 
 ```yaml
 include: icon-components/components/functions-list/adding-icons
 ```
 
-### Custom loaders {#custom-loaders}
+### 自定义加载器 {#custom-loaders}
 
 ```yaml
 include: icon-components/components/functions-list/custom-loaders
 ```
 
-### Helper functions {#helper}
+### 辅助函数 {#helper}
 
 ```yaml
 include: icon-components/components/functions-list/helpers
 ```
 
-### API functions {#api}
+### API 函数 {#api}
 
 ```yaml
 include: icon-components/components/functions-list/api
 ```
 
-### Internal API functions {#internal}
+### 内部 API 函数 {#internal}
 
 ```yaml
 include: icon-components/components/functions-list/internal

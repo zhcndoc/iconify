@@ -1,37 +1,37 @@
 ```yaml
-title: 'Importing SVG from Figma: Getting file ID'
+title: '从 Figma 导入 SVG：获取文件 ID'
 functions:
   importFromFigma: ./index.md
 ```
 
-# How to get Figma document ID
+# 如何获取 Figma 文档 ID
 
-This article is part of `[func]importFromFigma()` documentation.
+本文是 `[func]importFromFigma()` 文档的一部分。
 
-How to get Figma file ID:
+如何获取 Figma 文件 ID：
 
-1. Open file in Figma.
-2. Click the "Share" button in the top right corner.
-3. Click "Copy link".
+1. 在 Figma 中打开文件。
+2. 点击右上角的“分享”按钮。
+3. 点击“复制链接”。
 
-![How to get file ID in Figma](/assets/images/tools/figma_id.png)
+![如何在 Figma 中获取文件 ID](/assets/images/tools/figma_id.png)
 
-In your clipboard you will have a link to Figma file, which looks like this:
+你的剪贴板中将包含一个指向 Figma 文件的链接，格式如下：
 
 ```txt
 https://www.figma.com/file/9lvc7JGhqpNnpF3OK9kjnG/Quill-Iconset-(Community)?node-id=0%3A1
 ```
 
-File ID is between `[str]/file/` and next `[str]/`. In example above, file ID is `[str]9lvc7JGhqpNnpF3OK9kjnG`.
+文件 ID 位于 `[str]/file/` 和下一个 `[str]/` 之间。在上面的示例中，文件 ID 为 `[str]9lvc7JGhqpNnpF3OK9kjnG`。
 
-## Community files
+## 社区文件
 
-Community files contain `[str]/community/` in the file link:
+社区文件的链接中包含 `[str]/community/`：
 
 ```txt
 https://www.figma.com/community/file/1034432054377533052/Quill-Iconset
 ```
 
-It cannot be used to get file ID.
+该链接无法用于获取文件 ID。
 
-You need to get ID from actual file. If someone else published file to community, you need to clone it, then follow steps above to get file ID.
+你需要从实际文件中获取 ID。如果其他人将文件发布到了社区，你需要先克隆该文件，然后按照上述步骤获取文件 ID。

@@ -1,14 +1,14 @@
 ```yaml
-title: Vertical Alignment in Iconify for Svelte
+title: Iconify for Svelte 中的垂直对齐
 ```
 
-# Vertical alignment
+# 垂直对齐
 
-This tutorial is part of [Iconify for Svelte tutorial](./index.md).
+本教程是 [Iconify for Svelte 教程](./index.md) 的一部分。
 
 `include icon-components/vertical-align-intro`
 
-## Inline attribute
+## 内联属性
 
 `include icon-components/components/inline-basic`
 

@@ -1,11 +1,11 @@
-`[prop]onLoad` property is an optional callback function. It is called when icon data has been loaded.
+`[prop]onLoad` 属性是一个可选的回调函数。当图标数据加载完成时调用。
 
-It is not an event, such as `[prop]click` event for links, it is a simple callback function.
+它并非事件（例如链接的 `[prop]click` 事件），而是一个简单的回调函数。
 
-When `[prop]onLoad` is called:
+当 `[prop]onLoad` 被调用时：
 
-- If value of `[prop]icon` property is an object, `[prop]onLoad` is not called.
-- If value of `[prop]icon` property is a string and icon data is available, `[prop]onLoad` is called on first render.
-- If value of `[prop]icon` property is a string and icon data is not available, `[prop]onLoad` is called on first re-render after icon data is retrieved from API.
+- 如果 `[prop]icon` 属性的值是一个对象，则不会调用 `[prop]onLoad`。
+- 如果 `[prop]icon` 属性的值是一个字符串且图标数据可用，则会在首次渲染时调用 `[prop]onLoad`。
+- 如果 `[prop]icon` 属性的值是一个字符串且图标数据不可用，则会在从 API 获取图标数据后的首次重新渲染时调用 `[prop]onLoad`。
 
-What is the purpose of `[prop]onLoad`? To let you know when `[var]Icon` component renders an icon and when it does not render anything. This allows you to do things like adding class name for the parent element, such as `[str]container--with-icon` that modify layout if icon is being displayed.
+`[prop]onLoad` 的作用是什么？用于让您知道 `[var]Icon` 组件何时渲染了图标，以及何时未渲染任何内容。这使您可以执行诸如为父元素添加类名（例如 `[str]container--with-icon`）之类的操作，以便在显示图标时修改布局。

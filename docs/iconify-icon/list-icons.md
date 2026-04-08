@@ -1,18 +1,18 @@
 ```yaml
-title: 'Iconify Icon Web Component Function: listIcons'
+title: 'Iconify Icon Web 组件函数：listIcons'
 ```
 
-# Web component function: listIcons
+# Web 组件函数：listIcons
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md#functions).
+本教程是 [Iconify Icon Web 组件教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/list-icons/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/list-icons/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/list-icons.js
@@ -21,7 +21,7 @@ replacements:
     replace: 'iconify-icon'
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/common/list-icons2.js

@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify for Vue Function: loadIcons'
+title: 'Iconify for Vue 函数：loadIcons'
 types:
   IconifyIconName: './icon-name.md'
 functions:
@@ -7,31 +7,31 @@ functions:
   loadIcon: './load-icon.md'
 ```
 
-# Iconify for Vue function: loadIcons
+# Iconify for Vue 函数：loadIcons
 
-This tutorial is part of [Iconify for Vue functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Vue 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/load-icons/intro`
 
-## Usage
+## 使用方法
 
 `include icon-components/functions/load-icons/props`
 
-## Icons list
+## 图标列表
 
 `include icon-components/functions/load-icons/props-icons`
 
-## Callback
+## 回调函数
 
 `include icon-components/functions/load-icons/props-callback`
 
-## IconifyIconName type
+## IconifyIconName 类型
 
 `include types/iconify-icon-name`
 
-## Examples
+## 示例
 
-Simple callback that loads one icon:
+加载单个图标的简单回调：
 
 ```yaml
 src: icon-components/common/load-icons.js
@@ -40,7 +40,7 @@ replacements:
     replace: vue
 ```
 
-Async version of `[func]loadIcons()`:
+`[func]loadIcons()` 的异步版本：
 
 ```yaml
 src: icon-components/common/load-icons-async.js
@@ -49,9 +49,9 @@ replacements:
     replace: vue
 ```
 
-## Component example
+## 组件示例
 
-This example dynamically loads icon data and renders `[html]<slot />` while icon is being loaded. It is redundant because Vue component already does that, but it is used to show how to use `[func]getIcon()` and `[func]loadIcons()`.
+此示例动态加载图标数据，并在图标加载期间渲染 `[html]<slot />`。虽然 Vue 组件本身已经具备此功能，因此该示例显得有些多余，但它用于展示如何使用 `[func]getIcon()` 和 `[func]loadIcons()`。
 
 ```js
 import { Icon, getIcon, loadIcons } from '@iconify/vue';
@@ -63,17 +63,17 @@ export default defineComponent({
 	},
 	props: ['icon'],
 	setup() {
-		// Variable to store function to cancel loading
+		// 用于存储取消加载函数的变量
 		const loader = ref(null);
 
-		// Icon data
+		// 图标数据
 		const data = ref(null);
 
-		// Function to check icon data
+		// 检查图标数据的函数
 		const check = (icon: string) => {
 			const iconData = getIcon(icon);
 
-			// Cancel old loder
+			// 取消旧的加载器
 			if (loader.value) {
 				loader.value();
 				loader.value = null;
@@ -97,12 +97,12 @@ export default defineComponent({
 		icon: {
 			immediate: true,
 			handler(value) {
-				// Check new value
+				// 检查新值
 				this.check(value);
 			},
 		},
 	},
-	// Stop loading
+	// 停止加载
 	unmounted() {
 		const loader = this.loader.value;
 		if (loader) {
@@ -121,4 +121,4 @@ export default defineComponent({
 });
 ```
 
-If you want to load only one icon, there is also `[func]loadIcon()` that is easier to use.
+如果您只想加载单个图标，还可以使用更简单的 `[func]loadIcon()`。

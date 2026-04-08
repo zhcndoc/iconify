@@ -1,5 +1,5 @@
 ```yaml
-title: IconSet Class
+title: IconSet 类
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyInfo: '/docs/types/iconify-info.md'
@@ -9,13 +9,13 @@ functions:
   forEachSync: './for-each.md'
 ```
 
-# IconSet class
+# IconSet 类
 
-`[type]IconSet` class in [Iconify Tools](../index.md) represents an icon set.
+`[type]IconSet` 类在 [Iconify Tools](../index.md) 中表示一个图标集。
 
-## Usage
+## 使用方法
 
-To create an instance, use this code to import existing `[type]IconifyJSON` data:
+要创建实例，请使用以下代码导入现有的 `[type]IconifyJSON` 数据：
 
 ```ts
 import { IconSet } from '@iconify/tools';
@@ -36,7 +36,7 @@ const iconSet = new IconSet({
 });
 ```
 
-or this to create an empty icon set:
+或使用以下代码创建空的图标集：
 
 ```ts
 import { blankIconSet } from '@iconify/tools';
@@ -44,19 +44,19 @@ import { blankIconSet } from '@iconify/tools';
 const iconSet = blankIconSet('some-prefix');
 ```
 
-Constructor does not validate the icon set. 
-If you are not sure about the source,
-you need to validate it using `[func]validateIconSet()` from [Iconify Utils](../../utils/index.md).
+构造函数不会对图标集进行验证。 
+如果你不确定数据来源，
+则需要使用 [Iconify Utils](../../utils/index.md) 中的 `[func]validateIconSet()` 对其进行验证。
 
-## Functions
+## 函数
 
 `include libraries/tools/icon-set/methods-list`
 
-## Working with icons
+## 处理图标
 
-All icon optimisation and parsing functions work with `[type]SVG` instances. How to apply those functions to an entire icon set?
+所有图标优化和解析函数都作用于 `[type]SVG` 实例。如何将这些函数应用于整个图标集？
 
-It can be done by icons using `[func]forEach()` method:
+可以通过使用 `[func]forEach()` 方法遍历图标来实现：
 
 ```yaml
 src: libraries/tools/icon/icon-set.ts

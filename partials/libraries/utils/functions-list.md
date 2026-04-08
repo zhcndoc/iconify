@@ -51,62 +51,62 @@ functions:
   wrapSVGContent: './wrap-svg-content.md'
 ```
 
-Icon sets are stored in `[type]IconifyJSON` format. Functions for working with icon sets:
+图标集以 `[type]IconifyJSON` 格式存储。用于处理图标集的函数：
 
-- `[func]validateIconSet(data)` validates an icon set. If you are not sure if the source is a valid icon set, run this function to validate an icon set. It will convert data to correct `[type]IconifyJSON` and will attempt to fix errors.
-- `[func]quicklyValidateIconSet(data)` same as above, but does basic validation. Use it if you do not care about metadata being invalid, if you do not want to attempt to fix errors in an icon set, or if you want to reduce bundle size.
-- `[func]getIcons(data, icons)` extracts few icons from an icon set. It can be used to reduce an icon set to few icons that are used by your project.
-- `[func]getIconData(data, icon)` extracts data for one icon from an icon set.
-- `[func]minifyIconSet(data)` minifies icon set, removing redundant data. Used to reduce file size.
-- `[func]expandIconSet(data)` is the opposite of function above.
-- `[func]convertIconSetInfo(data)` converts a legacy icon set format to correct `[type]IconifyInfo` type.
-- `[func]parseIconSet(data, callback)` parses icon set, calling `[attr]callback` function for every icon. Can be used to extract all icons from an icon set. Validate icon set before parsing it.
-- `[func]parseIconSetAsync(data, callback)` is async version of `[func]parseIconSet()`, where both function and callback are asynchronous.
+- `[func]validateIconSet(data)` 验证图标集。如果你不确定源是否为有效的图标集，请运行此函数进行验证。它会将数据转换为正确的 `[type]IconifyJSON` 格式，并尝试修复错误。
+- `[func]quicklyValidateIconSet(data)` 与上述函数类似，但仅执行基本验证。如果你不关心元数据是否无效、不想尝试修复图标集中的错误，或者希望减小打包体积，请使用此函数。
+- `[func]getIcons(data, icons)` 从图标集中提取少量图标。可用于将图标集缩减为项目中实际使用的少数图标。
+- `[func]getIconData(data, icon)` 从图标集中提取单个图标的数据。
+- `[func]minifyIconSet(data)` 压缩图标集，移除冗余数据。用于减小文件大小。
+- `[func]expandIconSet(data)` 与上述函数功能相反。
+- `[func]convertIconSetInfo(data)` 将旧版图标集格式转换为正确的 `[type]IconifyInfo` 类型。
+- `[func]parseIconSet(data, callback)` 解析图标集，为每个图标调用 `[attr]callback` 函数。可用于从图标集中提取所有图标。解析前请先验证图标集。
+- `[func]parseIconSetAsync(data, callback)` 是 `[func]parseIconSet()` 的异步版本，该函数及其回调均为异步。
 
-Functions for working with `[type]IconifyIcon` format that represents one icon:
+用于处理表示单个图标的 `[type]IconifyIcon` 格式的函数：
 
-- `[func]mergeIconData(icon, alias)` merges data for icon and alias. Used by functions that extract icon data from an icon set.
-- `[func]defaultIconProps` contains default values for optional properties to `[type]IconifyIcon` object.
-- `[func]convertParsedSVG(data)` can be used to convert SVG string to `[type]IconifyIcon` object.
+- `[func]mergeIconData(icon, alias)` 合并图标及其别名的数据。供从图标集中提取图标数据的函数使用。
+- `[func]defaultIconProps` 包含 `[type]IconifyIcon` 对象可选属性的默认值。
+- `[func]convertParsedSVG(data)` 可用于将 SVG 字符串转换为 `[type]IconifyIcon` 对象。
 
-When rendering icon, customisations can be applied to it. For example, changing dimensions, rotating or flipping icon. They are represented by `[type]IconCustomisations` type. Functions for working with customisations:
+渲染图标时，可对其应用自定义设置。例如，更改尺寸、旋转或翻转图标。它们由 `[type]IconCustomisations` 类型表示。用于处理自定义设置的函数：
 
-- `[func]mergeCustomisations(defaultIconCustomisations, custom)` function converts an object to `[type]FullIconCustomisations` type. It also validates types, so it can be used to clean up user input.
-- `[func]defaultIconCustomisations` exported from `[file]lib/customisations/defaults` contains default customisations.
-- `[func]toBoolean(name, value, defaultValue)` converts various strings to boolean. Used by icon components to clean up parameters that can be boolean or string.
-- `[func]rotateFromString(value)` converts various methods of rotating icon (such as `[str]90deg` or `[str]25%`) to a number.
-- `[func]flipFromString(customisations, value)` applies flip string (such as `[attr]flip="horizontal,vertical"`) to customisations.
+- `[func]mergeCustomisations(defaultIconCustomisations, custom)` 函数将对象转换为 `[type]FullIconCustomisations` 类型。它还会验证类型，因此可用于清理用户输入。
+- `[func]defaultIconCustomisations` 从 `[file]lib/customisations/defaults` 导出，包含默认的自定义设置。
+- `[func]toBoolean(name, value, defaultValue)` 将各种字符串转换为布尔值。供图标组件使用，以清理可能为布尔值或字符串的参数。
+- `[func]rotateFromString(value)` 将各种图标旋转表示法（如 `[str]90deg` 或 `[str]25%`）转换为数字。
+- `[func]flipFromString(customisations, value)` 将翻转字符串（如 `[attr]flip="horizontal,vertical"`）应用到自定义设置中。
 
-Functions for rendering icon:
+用于渲染图标的函数：
 
-- `[func]iconToSVG(icon, customisations)` generates data needed to render SVG. It does not generate full SVG, only content and list of attributes to add to the SVG element, making it easy to use in custom components.
-- `[func]iconToHTML(body, attributes)` converts result of `[func]iconToSVG()` to SVG string.
-- `[func]calculateSize(size, ratio)` calculates icon dimensions. It is used when building icons using `[func]iconToSVG()`.
-- `[func]replaceIDs(content)` replaces IDs in SVG with unique IDs. IDs used in elements like masks, and they must be unique, so multiple icons displayed on the same page using the same IDs will result in chaos. This function prevents that chaos.
-- `[func]getIconCSS(icon)` generates stylesheet for using icon as background image or mask image.
-- `[func]getIconsCSS(iconSet, names)` generates stylesheet for using multiple icons from the same icon set as background images or mask images.
-- `[func]getIconContentCSS(icon, options)` generates stylesheet for using icon as content of pseudo-element.
-- `[func]getIconsContentCSS(iconSet, names, options)` generates stylesheet for using multiple icons from the same icon set as content of pseudo-elements.
-- `[func]cleanUpInnerHTML()` allows using `[prop]innerHTML` to assign SVG to an existing DOM element in strict environments.
+- `[func]iconToSVG(icon, customisations)` 生成渲染 SVG 所需的数据。它不会生成完整的 SVG，仅生成内容以及需添加到 SVG 元素的属性列表，便于在自定义组件中使用。
+- `[func]iconToHTML(body, attributes)` 将 `[func]iconToSVG()` 的结果转换为 SVG 字符串。
+- `[func]calculateSize(size, ratio)` 计算图标尺寸。在使用 `[func]iconToSVG()` 构建图标时使用。
+- `[func]replaceIDs(content)` 将 SVG 中的 ID 替换为唯一 ID。遮罩等元素会使用 ID，且它们必须唯一，因此在同一页面上显示多个使用相同 ID 的图标会导致混乱。此函数可避免该问题。
+- `[func]getIconCSS(icon)` 生成将图标用作背景图像或遮罩图像的样式表。
+- `[func]getIconsCSS(iconSet, names)` 生成将同一图标集中的多个图标用作背景图像或遮罩图像的样式表。
+- `[func]getIconContentCSS(icon, options)` 生成将图标用作伪元素内容的样式表。
+- `[func]getIconsContentCSS(iconSet, names, options)` 生成将同一图标集中的多个图标用作伪元素内容的样式表。
+- `[func]cleanUpInnerHTML()` 允许在严格环境中使用 `[prop]innerHTML` 将 SVG 分配给现有的 DOM 元素。
 
-Functions for parsing icons:
+用于解析图标的函数：
 
-- `[func]parseSVGContent(content)` parses SVG string, extracting `[tag]svg` attributes and body.
-- `[func]buildParsedSVG(data)` converts result of `[func]parseSVGContent(content)` to the same data as generated by `[func]iconToSVG()`.
-- `[func]convertParsedSVG(data)` converts result of `[func]parseSVGContent(content)` to `[type]IconifyIcon` object.
-- `[func]splitSVGDefs(content)` split icon content in definitions and other data. It is used by `[func]wrapSVGContent()`.
-- `[func]mergeDefsAndContent(defs, content)` merges back definitions and content in one string.
-- `[func]wrapSVGContent(body, start, end)` wraps icon content, without wrapping definition. It is used to wrap content in groups by various functions.
-- `[func]getSVGViewBox(value)` parses and validates `[prop]viewBox` attribute, returning it as an array of numbers on success, `[type]undefined` on error.
+- `[func]parseSVGContent(content)` 解析 SVG 字符串，提取 `[tag]svg` 属性和主体内容。
+- `[func]buildParsedSVG(data)` 将 `[func]parseSVGContent(content)` 的结果转换为与 `[func]iconToSVG()` 生成的相同数据。
+- `[func]convertParsedSVG(data)` 将 `[func]parseSVGContent(content)` 的结果转换为 `[type]IconifyIcon` 对象。
+- `[func]splitSVGDefs(content)` 将图标内容拆分为定义部分和其他数据。供 `[func]wrapSVGContent()` 使用。
+- `[func]mergeDefsAndContent(defs, content)` 将定义和内容重新合并为一个字符串。
+- `[func]wrapSVGContent(body, start, end)` 包装图标内容，但不包装定义部分。供各种函数将内容包装在组中使用。
+- `[func]getSVGViewBox(value)` 解析并验证 `[prop]viewBox` 属性，成功时返回数字数组，失败时返回 `[type]undefined`。
 
-Functions for working with icon names:
+用于处理图标名称的函数：
 
-- `[func]matchIconName` constant is a regular expression to test parts of icon name.
-- `[func]stringToIcon(value)` converts icon name, such as `[str]mdi-light:home` into an `[type]IconifyIconName` object and optionally validates it.
-- `[func]validateIconName(icon)` validates `[type]IconifyIconName` object.
+- `[func]matchIconName` 常量是一个正则表达式，用于测试图标名称的各个部分。
+- `[func]stringToIcon(value)` 将图标名称（如 `[str]mdi-light:home`）转换为 `[type]IconifyIconName` 对象，并可选择性地对其进行验证。
+- `[func]validateIconName(icon)` 验证 `[type]IconifyIconName` 对象。
 
-Functions for working with colors:
+用于处理颜色的函数：
 
-- `[func]stringToColor(value)` converts string to `[type]Color` object, returns `null` on error. This can be used to validate user input. It supports color keywords, hexadecimal colors, RGB, HSL, LAB and LCH colors. Variables are not supported because this is meant for parsing SVGs, which should not reference any external variables.
-- `[func]compareColors(color1, color2)` compares colors. It also converts RGB to HSL if needed.
-- `[func]colorToString(color)` converts `[type]Color` object to string. Combined with `[func]stringToColor()`, this can be used to validate and clean up user input.
+- `[func]stringToColor(value)` 将字符串转换为 `[type]Color` 对象，出错时返回 `null`。可用于验证用户输入。支持颜色关键字、十六进制颜色、RGB、HSL、LAB 和 LCH 颜色。不支持变量，因为此函数旨在解析 SVG，而 SVG 不应引用任何外部变量。
+- `[func]compareColors(color1, color2)` 比较颜色。必要时还会将 RGB 转换为 HSL。
+- `[func]colorToString(color)` 将 `[type]Color` 对象转换为字符串。与 `[func]stringToColor()` 结合使用，可用于验证和清理用户输入。

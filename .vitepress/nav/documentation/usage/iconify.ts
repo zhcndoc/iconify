@@ -7,13 +7,13 @@ const root = "/docs/icon-components/";
 
 export const IconifyUsageSidebar: SidebarItem[] = [
   {
-    text: "Web Component",
+    text: "Web 组件",
     collapsed: true,
     link: "/docs/iconify-icon/",
     items: IconifyIconSidebar,
   },
   {
-    text: "SVG Framework",
+    text: "SVG 框架",
     collapsed: true,
     link: `${root}svg-framework/`,
     hidden: true,

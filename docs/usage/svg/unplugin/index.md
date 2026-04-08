@@ -9,9 +9,9 @@ replacements:
 
 # Unplugin Icons
 
-Unplugin Icons is a plug-in that dynamically generates icon components.
+Unplugin Icons 是一个动态生成图标组件的插件。
 
-You can use it to render icons if you are building an app using one of the following UI frameworks:
+如果您使用以下 UI 框架构建应用，可以使用它来渲染图标：
 
 - React, Preact
 - Vue 2.7+, Vue 3
@@ -20,13 +20,13 @@ You can use it to render icons if you are building an app using one of the follo
 - Astro
 - Qwik
 
-With Unplugin Icons, you can easily use [over 60,000 open source icons](/docs/icons/icon-data.md) and custom icons with minimal code.
+借助 Unplugin Icons，您只需极少的代码即可轻松使用[超过 60,000 个开源图标](/docs/icons/icon-data.md)和自定义图标。
 
-## How does it work? {#process}
+## 它是如何工作的？ {#process}
 
-It is a plug-in that works with practically all modern build tools, generating components dynamically as needed.
+它是一个与几乎所有现代构建工具兼容的插件，可根据需要动态生成组件。
 
-## React example {#react}
+## React 示例 {#react}
 
 ```tsx
 import HomeIcon from '~icons/mdi/home';
@@ -40,9 +40,9 @@ function Demo() {
 }
 ```
 
-## Vue example {#vue}
+## Vue 示例 {#vue}
 
-Example of Vue template:
+Vue 模板示例：
 
 ```vue
 <script setup lang="ts">
@@ -54,25 +54,25 @@ import MdiHome from 'virtual:icons/mdi/home';
 </template>
 ```
 
-## Installation and usage
+## 安装与使用
 
-Installation and usage instructions depend on what build tools and UI framework you are using.
+安装和使用说明取决于您使用的构建工具和 UI 框架。
 
-See [Unplugin Icons readme](https://github.com/antfu/unplugin-icons) for instructions.
+请参阅 [Unplugin Icons 自述文件](https://github.com/antfu/unplugin-icons) 获取说明。
 
-## Examples
+## 示例
 
-If you want to see full examples, which include both configuration and templates,
-check out [Unplugin Icons examples](https://github.com/antfu/unplugin-icons/tree/main/examples).
+如果您想查看包含配置和模板的完整示例，
+请查看 [Unplugin Icons 示例](https://github.com/antfu/unplugin-icons/tree/main/examples)。
 
-## Custom icons
+## 自定义图标
 
-You can use Unplugin Icons with custom icons.
+您可以将 Unplugin Icons 与自定义图标配合使用。
 
-With [Iconify Tools](/docs/libraries/tools/index.md) you can import,
-clean up and optimise icons and use them with Unplugin Icons.
+借助 [Iconify Tools](/docs/libraries/tools/index.md)，您可以导入、
+清理并优化图标，然后将它们与 Unplugin Icons 配合使用。
 
-You can find a working example in [Iconify Tools repository](https://github.com/iconify/tools/tree/main/%40iconify-demo/unplugin),
-see `[file]vite.config.ts` for example of config that loads custom icons.
+您可以在 [Iconify Tools 仓库](https://github.com/iconify/tools/tree/main/%40iconify-demo/unplugin) 中找到一个可运行的示例，
+查看 `[file]vite.config.ts` 以获取加载自定义图标的配置示例。
 
-Functions are documented in [Iconify Tools](/docs/libraries/tools/index.md) section of this documentation. 
+相关函数的文档请参阅本文档的 [Iconify Tools](/docs/libraries/tools/index.md) 部分。

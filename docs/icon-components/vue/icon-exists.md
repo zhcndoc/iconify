@@ -1,21 +1,21 @@
 ```yaml
-title: "Iconify for Vue Function: iconLoaded"
+title: "Iconify for Vue 函数：iconLoaded"
 functions:
   getIcon: "./get-icon.md"
   loadIcons: "./load-icons.md"
 ```
 
-# Iconify for Vue function: iconLoaded
+# Iconify for Vue 函数：iconLoaded
 
-This tutorial is part of [Iconify for Vue functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Vue 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/icon-loaded/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/icon-loaded/props`
 
-## Example
+## 示例
 
 ```js
 import { iconLoaded } from "@iconify/vue";
@@ -24,7 +24,7 @@ const icon = "bi:arrow-left";
 console.log(`Is ${icon} available?`, iconLoaded(icon) ? "yes" : "no");
 ```
 
-This example dynamically loads icon data and renders `[html]<slot />` while icon is being loaded. It is redundant because Vue component already does that, but it is used to show how to use `[func]iconLoaded()` and `[func]loadIcons()`, though instead of `[func]iconLoaded()` it is better done with `[func]getIcon()`.
+此示例在图标加载期间动态加载图标数据并渲染 `[html]<slot />`。由于 Vue 组件本身已经实现了该功能，因此这显得有些多余，但此处用于展示如何使用 `[func]iconLoaded()` 和 `[func]loadIcons()`。不过，相较于使用 `[func]iconLoaded()`，使用 `[func]getIcon()` 会是更好的做法。
 
 ```js
 import { Icon, iconLoaded, loadIcons } from "@iconify/vue";
@@ -36,17 +36,17 @@ export default defineComponent({
   },
   props: ["icon"],
   setup() {
-    // Variable to store function to cancel loading
+    // 用于存储取消加载函数的变量
     const loader = ref(null);
 
-    // Icon status
+    // 图标状态
     const loaded = ref(null);
 
-    // Function to check if icon data is available
+    // 检查图标数据是否可用的函数
     const check = (icon: string) => {
       const isLoaded = (loaded.value = iconLoaded(icon));
 
-      // Cancel old loder
+      // 取消旧的加载器
       if (loader.value) {
         loader.value();
         loader.value = null;
@@ -68,12 +68,12 @@ export default defineComponent({
     icon: {
       immediate: true,
       handler(value) {
-        // Check new value
+        // 检查新值
         this.check(value);
       },
     },
   },
-  // Stop loading
+  // 停止加载
   unmounted() {
     const loader = this.loader.value;
     if (loader) {
@@ -92,6 +92,6 @@ export default defineComponent({
 });
 ```
 
-## Legacy
+## 旧版
 
 `include icon-components/functions/icon-loaded/legacy`

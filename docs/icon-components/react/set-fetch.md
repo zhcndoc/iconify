@@ -1,14 +1,14 @@
 ```yaml
-title: 'Iconify for React Function: setFetch'
+title: 'Iconify for React 函数：setFetch'
 ```
 
-# Iconify for React function: setFetch
+# Iconify for React 函数：setFetch
 
-This tutorial is part of [Iconify for React functions tutorial](./index#functions).
+本教程是 [Iconify for React 函数教程](./index#functions) 的一部分。
 
 `include icon-components/functions/set-fetch/intro-component`
 
-## Why is it needed? {#why}
+## 为什么需要它？ {#why}
 
 ```yaml
 include: icon-components/functions/set-fetch/why
@@ -18,13 +18,13 @@ include: icon-components/functions/set-fetch/why
 include: icon-components/functions/set-fetch/nodejs
 ```
 
-## Usage
+## 用法
 
 ```yaml
 include: icon-components/functions/set-fetch/usage
 ```
 
-## Steps
+## 步骤
 
 ```yaml
 include: icon-components/functions/set-fetch/component

@@ -1,44 +1,44 @@
 ```yaml
-title: 'Iconify SVG Framework Function: enableCache'
+title: 'Iconify SVG 框架函数：enableCache'
 functions:
   disableCache: './disable-cache.md'
   addIcon: './add-icon.md'
   addCollection: './add-collection.md'
 ```
 
-# SVG framework function: enableCache
+# SVG 框架函数：enableCache
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#api).
+本教程是 [Iconify SVG 框架函数教程](./functions.md#api) 的一部分。
 
 ```yaml
 include: icon-components/functions/cache/intro-enable
 replacements:
-  - search: component
-    replace: SVG framework
+  - search: 组件
+    replace: SVG 框架
 ```
 
-## Usage
+## 用法
 
 `include icon-components/functions/cache/props-enable`
 
-## Storage types
+## 存储类型
 
 `include icon-components/functions/cache/storage-types`
 
-## Examples
+## 示例
 
 ```js
-// Enable caching in localStorage
+// 在 localStorage 中启用缓存
 Iconify.enableCache('local');
 ```
 
-Another example:
+另一个示例：
 
 ```js
-// Disable all caching
+// 禁用所有缓存
 Iconify.enableCache('all', false);
 ```
 
-## Notes
+## 注意事项
 
 `include icon-components/functions/cache/notes`

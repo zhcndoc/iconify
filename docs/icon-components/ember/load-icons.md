@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify for Ember Function: loadIcons'
+title: 'Iconify for Ember 函数：loadIcons'
 types:
   IconifyIconName: './icon-name.md'
 functions:
@@ -7,31 +7,31 @@ functions:
   loadIcon: './load-icon.md'
 ```
 
-# Iconify for Ember function: loadIcons
+# Iconify for Ember 函数：loadIcons
 
-This tutorial is part of [Iconify for Ember functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Ember 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/load-icons/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/load-icons/props`
 
-## Icons list
+## 图标列表
 
 `include icon-components/functions/load-icons/props-icons`
 
-## Callback
+## 回调函数
 
 `include icon-components/functions/load-icons/props-callback`
 
-## IconifyIconName type
+## IconifyIconName 类型
 
 `include types/iconify-icon-name`
 
-## Examples
+## 示例
 
-Simple callback that loads one icon:
+加载单个图标的简单回调：
 
 ```yaml
 src: icon-components/common/load-icons.js
@@ -40,7 +40,7 @@ replacements:
     replace: '@iconify/ember/components/iconify-icon'
 ```
 
-Async version of `[func]loadIcons()`:
+`[func]loadIcons()` 的异步版本：
 
 ```yaml
 src: icon-components/common/load-icons-async.js
@@ -49,4 +49,4 @@ replacements:
     replace: '@iconify/ember/components/iconify-icon'
 ```
 
-If you want to load only one icon, there is also `[func]loadIcon()` that is easier to use.
+如果您只想加载单个图标，还可以使用更简单的 `[func]loadIcon()`。

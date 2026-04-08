@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify Utils Code Examples: Generate CSS'
+title: 'Iconify Utils 代码示例：生成 CSS'
 functions:
   getIconsCSS: '../get-icons-css.md'
 types:
@@ -7,29 +7,29 @@ types:
   IconifyIcon: '/docs/types/iconify-icon.md'
 ```
 
-# Generate CSS using Iconify Utils
+# 使用 Iconify Utils 生成 CSS
 
-This tutorial is part of [code examples for Iconify Utils](./index.md).
+本教程是 [Iconify Utils 代码示例](./index.md) 的一部分。
 
-## Generate CSS
+## 生成 CSS
 
-This is an example of using Iconify Utils to generate CSS from icon data:
+这是一个使用 Iconify Utils 从图标数据生成 CSS 的示例：
 
 ```yaml
 src: usage/css-utils.js
 title: 'demo.js'
 ```
 
-## Functions
+## 函数
 
-Functions used in this code sample:
+此代码示例中使用的函数：
 
-- `[func]getIconsCSS()` to generate CSS for icons.
+- `[func]getIconsCSS()` 用于为图标生成 CSS。
 
-## Source
+## 来源
 
-For icon data source, this example uses `[npm]@iconify/json` package.
+对于图标数据源，本示例使用 `[npm]@iconify/json` 包。
 
-## Output
+## 输出
 
-This example writes CSS to a file.
+本示例将 CSS 写入文件。

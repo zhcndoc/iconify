@@ -1,5 +1,5 @@
-API providers allow using icons from multiple API servers in the same document. For example, you can use default Iconify icons and custom icons from IconScout or Icons8 or custom API.
+API 提供商允许在同一文档中使用来自多个 API 服务器的图标。例如，您可以使用默认的 Iconify 图标，以及来自 IconScout、Icons8 或自定义 API 的自定义图标。
 
 <namespaces-animation></namespaces-animation>
 
-See [API providers documentation](/docs/api/providers.md) for details.
+有关详细信息，请参阅 [API 提供商文档](/docs/api/providers.md)。

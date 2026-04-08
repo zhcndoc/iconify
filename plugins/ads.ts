@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+// import { readFile } from 'node:fs/promises'
 import type { Plugin } from 'vite'
 
 export default function CustomAds(): Plugin {
@@ -7,8 +7,8 @@ export default function CustomAds(): Plugin {
     enforce: 'pre',
     async transform(code, id) {
       // Change VPSidebarItem.vue
-      if (id.includes('VPCarbonAds.vue') && !id.endsWith('.css') && !id.includes('&setup='))
-        return readFile('.vitepress/theme/components/VPCarbonAds.vue', 'utf8')
+      // if (id.includes('VPCarbonAds.vue') && !id.endsWith('.css') && !id.includes('&setup='))
+      //   return readFile('.vitepress/theme/components/VPCarbonAds.vue', 'utf8')
     },
   }
 }

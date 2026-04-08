@@ -1,56 +1,52 @@
 ```yaml
-title: Reverse Proxy for Iconify API
+title: Iconify API 的反向代理
 ```
 
-# Reverse proxy for Iconify API
+# Iconify API 的反向代理
 
-This tutorial is a part of [Iconify API installation instructions](./index.md).
+本教程是 [Iconify API 安装说明](./index.md) 的一部分。
 
-It explains how to configure reverse proxy for hosting Node.js version of [Iconify API](../index.md) in a custom hosting environment.
+它介绍了如何在自定义托管环境中配置反向代理，以托管 [Iconify API](../index.md) 的 Node.js 版本。
 
-## Why is it needed?
+## 为什么需要它？
 
-What is reverse proxy and why is it needed?
+什么是反向代理？为什么需要它？
 
-Running Node.js applications on port `[num]3000` without reverse proxy is fine for localhost development,
-but usually it is not fine for production.
+在没有反向代理的情况下于 `[num]3000` 端口运行 Node.js 应用程序对于本地开发来说没有问题，但通常不适合生产环境。
 
-In a production environment, you want stability and HTTPS support.
-That should be delegated to a reverse proxy.
-Reverse proxy allows you to add HTTPS support, add security features such as rate limiting.
+在生产环境中，你需要稳定性和 HTTPS 支持。这应当交由反向代理处理。反向代理允许你添加 HTTPS 支持，以及速率限制等安全功能。
 
-Reverse proxy handles HTTP and HTTPS requests, forwards them to Node.js application and returns response to customer.
-It is useful if you want to:
+反向代理负责处理 HTTP 和 HTTPS 请求，将其转发给 Node.js 应用程序，并将响应返回给客户端。如果你有以下需求，它将非常有用：
 
-- Run API on a different port, so you can host multiple websites on the same server instead of only hosting API.
-- Handle HTTPS requests. Web server will handle all SSL stuff.
-- Dealing with bad customers. You can use web server rules to block misbehaving customers and bots.
-- Using API on subdirectory rather than a custom subdomain.
+- 在不同的端口上运行 API，这样你就可以在同一台服务器上托管多个网站，而不仅仅是托管 API。
+- 处理 HTTPS 请求。Web 服务器将处理所有 SSL 相关事务。
+- 应对恶意用户。你可以使用 Web 服务器规则来阻止行为不当的用户和机器人。
+- 在子目录而非自定义子域名上使用 API。
 
 ### CloudFlare
 
-You can avoid this by using service like CloudFlare. It handles all HTTPS requests and deals with security stuff.
+你可以通过使用 CloudFlare 等服务来避免此问题。它会处理所有 HTTPS 请求并负责安全相关事务。
 
-If you are using such service, you can run API on port 80 and forget about reverse proxy.
+如果你使用此类服务，可以在端口 80 上运行 API，而无需再考虑反向代理。
 
-## Configuration
+## 配置
 
-Before configuring reverse proxy, you need to make sure Iconify API runs on a port hidden from the outside world.
+在配置反向代理之前，你需要确保 Iconify API 运行在一个对外部隐藏的端口上。
 
-Default port is `[num]3000`. See [API configuration](./config.md) for details.
+默认端口为 `[num]3000`。有关详细信息，请参阅 [API 配置](./config.md)。
 
 ### Apache 2.4 {#apache}
 
-This section explains how to create a reverse proxy with Apache 2.4.
+本节介绍如何使用 Apache 2.4 创建反向代理。
 
-In `[file]httpd.conf` you need to uncomment these 2 lines to enable `[prop]mod_proxy`:
+在 `[file]httpd.conf` 中，你需要取消注释以下两行以启用 `[prop]mod_proxy`：
 
 ```apache
 LoadModule proxy_module libexec/apache2/mod_proxy.so
 LoadModule proxy_http_module libexec/apache2/mod_proxy_http.so
 ```
 
-Then you can add `[prop]mod_proxy` to virtual host like this:
+然后，你可以像这样将 `[prop]mod_proxy` 添加到虚拟主机配置中：
 
 ```apache
 <VirtualHost *>
@@ -60,10 +56,9 @@ Then you can add `[prop]mod_proxy` to virtual host like this:
 </VirtualHost>
 ```
 
-This configuration will allow you to access API at `[url]http://api.yourdomain.com/`.
+此配置将允许你通过 `[url]http://api.yourdomain.com/` 访问 API。
 
-Here is an alternative solution,
-that you can add to your existing `[prop]VirtualHost` directive that allows you to run API on subdirectory:
+以下是一个替代方案，你可以将其添加到现有的 `[prop]VirtualHost` 指令中，从而允许你在子目录下运行 API：
 
 ```apache
 <VirtualHost *>
@@ -75,72 +70,70 @@ that you can add to your existing `[prop]VirtualHost` directive that allows you 
 </VirtualHost>
 ```
 
-This solution will allow you to access API at `[url]http://yourdomain.com/api/`.
+此方案将允许你通过 `[url]http://yourdomain.com/api/` 访问 API。
 
 ### NGINX
 
-This section explains how to create a reverse proxy with NGINX.
+本节介绍如何使用 NGINX 创建反向代理。
 
-Open `[file]nginx.conf`, find section with your domain. It is under `[prop]http` -> `[prop]server` -> `[prop]location`:
+打开 `[file]nginx.conf`，找到包含你域名的配置部分。它位于 `[prop]http` -> `[prop]server` -> `[prop]location` 层级下：
 
 ```nginx
 http {
-    # some stuff here
+    # 此处为其他配置
     server {
         listen 80;
         server_name api.yourdomain.com;
 
-        # some stuff here
+        # 此处为其他配置
         location / {
             root   html;
             index  index.html index.htm;
         }
-        # some stuff here
+        # 此处为其他配置
     }
-    # some stuff here
+    # 此处为其他配置
 }
 ```
 
-Replace contents of `[prop]location` with this:
+将 `[prop]location` 的内容替换为以下内容：
 
 ```nginx
 http {
-    # some stuff here
+    # 此处为其他配置
     server {
         listen 80;
         server_name api.yourdomain.com;
 
-        # some stuff here
+        # 此处为其他配置
         location / {
             proxy_pass http://127.0.0.1:3000;
             proxy_http_version 1.1;
             proxy_buffering on;
             proxy_buffers 16 1024k;
         }
-        # some stuff here
+        # 此处为其他配置
     }
-    # some stuff here
+    # 此处为其他配置
 }
 ```
 
-You will need to do this change twice: once for HTTP server, once for HTTPS server.
-In your `[file]nginx.conf` look for second `[prop]server` section with SSL settings
-that is configured to listen on port `[num]443` and apply exactly the same changes.
+你需要进行两次此更改：一次用于 HTTP 服务器，一次用于 HTTPS 服务器。在你的 `[file]nginx.conf` 中，找到配置为监听 `[num]443` 端口的第二个包含 SSL 设置的 `[prop]server` 部分，并应用完全相同的更改。
 
-This configuration will allow you to access API at `[url]http://api.yourdomain.com/`.
+此配置将允许你通过 `[url]http://api.yourdomain.com/` 访问 API。
 
-If you want to host API in subdirectory, instead of editing the default location block, add custom location:
+如果你想在子目录中托管 API，请添加自定义 location 块，而不是编辑默认的 location 块：
 
 ```nginx
 http {
-    # some stuff here
+    # 此处为其他配置
     server {
         listen 80;
         server_name yourdomain.com;
 
-        # some stuff here
+        # 此处为其他配置
         location / {
-            # some stuff here
+            # 此处为其他配置
         }
         location /api/ {
             proxy_pass http://127.0.0.1:3000;
@@ -148,20 +141,19 @@ http {
             proxy_buffering on;
             proxy_buffers 16 1024k;
         }
-        # some stuff here
+        # 此处为其他配置
     }
-    # some stuff here
+    # 此处为其他配置
 }
 ```
 
-This solution will allow you to access API at `[url]http://yourdomain.com/api/`.
+此方案将允许你通过 `[url]http://yourdomain.com/api/` 访问 API。
 
-#### Resolving POST errors in NGINX {#post-nginx}
+#### 解决 NGINX 中的 POST 错误 {#post-nginx}
 
-If you are using GitHub web hooks to synchronize icon sets, you might run into error `[num]500`.
-It is very likely to happen if you have fresh NGINX installation.
+如果你使用 GitHub Webhook 来同步图标集，可能会遇到 `[num]500` 错误。如果你刚安装 NGINX，这种情况非常可能发生。
 
-That error is likely to be caused by NGINX having wrong permissions. Run this to fix it:
+该错误很可能是由于 NGINX 权限设置不正确引起的。运行以下命令进行修复：
 
 ```bash
 sudo chmod +x /var/lib/nginx -R

@@ -1,3 +1,3 @@
-What if you set both `[prop]width` and `[prop]height` and its ratio doesn't match icon's width/height ratio?
+如果你同时设置了 `[prop]width` 和 `[prop]height`，且它们的比例与图标的宽高比不匹配，会发生什么？
 
-For example, what will happen if icon is 24x24, but you set one dimension to `[num]40` and other dimension to `[num]24`?
+例如，如果图标是 24x24，但你将一个维度设置为 `[num]40`，另一个维度设置为 `[num]24`，会发生什么？

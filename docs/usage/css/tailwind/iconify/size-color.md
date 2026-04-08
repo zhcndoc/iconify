@@ -1,5 +1,5 @@
 ```yaml
-title: Changing icon size and color in Iconify for Tailwind CSS
+title: 在 Tailwind CSS 的 Iconify 中更改图标大小和颜色
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyInfo: '/docs/types/iconify-info.md'
@@ -7,98 +7,97 @@ functions:
   addIconSelectors: './index.md'
 ```
 
-# Changing icon size and color in Iconify for Tailwind CSS
+# 在 Tailwind CSS 的 Iconify 中更改图标大小和颜色
 
-This documentation explains how to change icon size and color for `[func]addIconSelectors` plugin.
+本文档说明了如何为 `[func]addIconSelectors` 插件更改图标的大小和颜色。
 
-## Icon color
+## 图标颜色
 
-There are two types of icons:
-- Icons with hardcoded palette.
-- Monotone icons.
+图标分为两种类型：
+- 具有硬编码调色板的图标。
+- 单色图标。
   
-See [how monotone icons work in CSS](../../index.md#monotone) (html syntax in linked tutorial is different - tutorial is not specific to this plugin).
+请参阅 [CSS 中单色图标的工作原理](../../index.md#monotone)（链接教程中的 HTML 语法有所不同 - 该教程并非专为此插件编写）。
 
-### Monotone icons
+### 单色图标
 
-To change the color of monotone icons, render them as mask images and change text color:
+要更改单色图标的颜色，请将其渲染为遮罩图像并更改文本颜色：
 
 ```html
 <span class="iconify mdi-light--home text-blue-600"></span>
 ```
 
-### Icons with palette
+### 带调色板的图标
 
-Icons with hardcoded palette aren't designed to be customisable.
-However, `[func]addIconSelectors` plugin gives you option to change color via [`[prop]customise`](./customise.md) option.
+具有硬编码调色板的图标并非设计为可自定义的。
+不过，`[func]addIconSelectors` 插件允许你通过 [`[prop]customise`](./customise.md) 选项来更改颜色。
 
-For example, this code will change yellow background in Twitter emojis with red:
+例如，此代码会将 Twitter 表情符号中的黄色背景更改为红色：
 
 ```js
 addIconSelectors({
     prefixes: [
-        // Render 'twemoji' icon set
+        // 渲染 'twemoji' 图标集
         'twemoji',
-        // Render 'twemoji' as 'twemoji-red' with custom color changes 
+        // 将 'twemoji' 渲染为 'twemoji-red' 并进行自定义颜色更改 
         {
-            // Change icon set prefix by setting 'prefix' property
+            // 通过设置 'prefix' 属性更改图标集前缀
             prefix: 'twemoji-red',
             
-            // Resolve location of icon set from '@iconify-json/twemoji' package 
-            // Also below is the same code, using '@iconify/json' package
+            // 从 '@iconify-json/twemoji' 包解析图标集的位置 
+            // 下方也是相同的代码，使用 '@iconify/json' 包
             source: require.resolve('@iconify-json/twemoji/icons.json'),
             // source: require.resolve('@iconify/json/json/twemoji.json'),
             
-            // Filter only icons that contain 'face' to improve plugin performance
+            // 仅过滤包含 'face' 的图标以提高插件性能
             icons: (name) => name.includes('face'),
             
-            // Change color
+            // 更改颜色
             customise: (content, name) => content.replaceAll('#ffcc4d', '#ff9667'),
         },
     ],
 })
 ```
 
-Then you can use both original and customised icons:
+然后你就可以同时使用原始图标和自定义图标：
 
 ```html
 <span class="iconify-color twemoji--winking-face"></span>
 <span class="iconify-color twemoji-red--winking-face"></span>
 ```
 
-See [customise option documentation](./customise.md) for details and usage examples.
+有关详细信息和使用示例，请参阅 [customise 选项文档](./customise.md)。
 
-Also see [prefixes option documentation](./prefixes.md) for explanation of how the configuration above works.
+另请参阅 [prefixes 选项文档](./prefixes.md) 以了解上述配置的工作原理。
 
-## Icon size
+## 图标大小
 
-By default, icons are rendered as `[num]1em` x `[num]1em` square.
+默认情况下，图标渲染为 `[num]1em` x `[num]1em` 的正方形。
 
-To change icon size, you can change font size:
+要更改图标大小，你可以更改字体大小：
 
 ```html
 <span class="iconify mdi-light--home text-2xl"></span>
 ```
 
-Because common selectors, which contain size, are treated as Tailwind components,
-you can also set width/height to resize icon:
+由于包含尺寸的通用选择器被视为 Tailwind 组件，
+你也可以设置宽度/高度来调整图标大小：
 
 ```html
 <span class="iconify mdi-light--home w-12 h-12"></span>
 ```
 
-Make sure width and height are identical (see `[prop]square` option below).
-Some browsers (Safari) fail to keep proportions when using SVG as a mask image,
-so using different width and height values might result in unexpected user experience for some users.
+请确保宽度和高度相同（请参阅下方的 `[prop]square` 选项）。
+某些浏览器（如 Safari）在使用 SVG 作为遮罩图像时无法保持比例，
+因此使用不同的宽度和高度值可能会导致部分用户获得意外的体验。
 
-Additionally, you can change default size by using `[prop]scale` option.
+此外，你可以使用 `[prop]scale` 选项更改默认大小。
 
-### Non-square icons
+### 非正方形图标
 
-By default, all icons are rendered as square icons. This makes it easy to resize icons.
+默认情况下，所有图标都渲染为正方形图标。这使得调整图标大小变得很容易。
 
-However, if you want to render non-square icons as is, you can disable this
-behavior by changing option `[prop]square` to `false`: 
+但是，如果你想按原样渲染非正方形图标，可以通过将 `[prop]square` 选项更改为 `false` 来禁用此行为： 
 
 ```js
 addIconSelectors({
@@ -107,14 +106,14 @@ addIconSelectors({
 })
 ```
 
-However, be aware that this might make resizing icon a bit more complex.
-If you are setting `[prop]width` and `[prop]height`, make sure width/height ratio matches icon's ratio.
+但请注意，这可能会使调整图标大小变得稍微复杂一些。
+如果你正在设置 `[prop]width` 和 `[prop]height`，请确保宽高比与图标的宽高比匹配。
 
-### Scaling icon
+### 缩放图标
 
-Option `[prop]scale` changes default icon size from `[num]1em`.
+`[prop]scale` 选项会将默认图标大小从 `[num]1em` 更改。
 
-The following configuration
+以下配置
 
 ```js
 addIconSelectors({
@@ -123,15 +122,15 @@ addIconSelectors({
 })
 ```
 
-changes default size to `[num]1.2em` x `[num]1.2em` square.
+将默认大小更改为 `[num]1.2em` x `[num]1.2em` 的正方形。
 
-You can use font size to further resize icons, like in the example above, but icons will be 1.2 times bigger.
+你可以像上面的示例一样使用字体大小进一步调整图标大小，但图标会放大 1.2 倍。
 
-### Fixed size
+### 固定大小
 
-If you want to set default icon size to a fixed size in pixels, 
-such as `[num]24` to render icons that are designed for `[num]24` x `[num]24`,
-you can set width and height in pixels using `[prop]extraMaskRules` or `[prop]extraBackgroundRules` options:
+如果你想将默认图标大小设置为固定的像素大小， 
+例如 `[num]24` 以渲染专为 `[num]24` x `[num]24` 设计的图标，
+你可以使用 `[prop]extraMaskRules` 或 `[prop]extraBackgroundRules` 选项以像素为单位设置宽度和高度：
 
 ```js
 addIconSelectors({
@@ -148,25 +147,25 @@ addIconSelectors({
 })
 ```
 
-### Multiple sizes
+### 多种尺寸
 
-What if you want to use `[num]1em` icons, icons without size and icons with fixed size in pixels in the same project?
+如果你想在同一个项目中同时使用 `[num]1em` 图标、无尺寸图标和固定像素大小的图标，该怎么办？
 
-You can use multiple instances of plugin with different settings and different selectors:
+你可以使用具有不同设置和不同选择器的多个插件实例：
 
 ```js
 plugins: [
-    // Default options, 1em size
+    // 默认选项，1em 大小
     addIconSelectors(['mdi-light']),
-    // Fixed size
+    // 固定大小
     addIconSelectors({
-        // Set fixed size
+        // 设置固定大小
         maskSelector: '.material-icon',
         extraMaskRules: {
             'width': '24px',
             'height': '24px',
         },
-        // Not using background selector for this demo - demo uses monotone icons only
+        // 本演示不使用背景选择器 - 演示仅使用单色图标
         backgroundSelector: '',
     }),
 ]
@@ -174,18 +173,17 @@ plugins: [
 
 ```html
 <p>
-  Icon with 1em size: 
+  1em 大小的图标： 
   <span class="iconify mdi-light--home"></span>
 </p>
 <p>
-  Using custom width/height: 
+  使用自定义宽度/高度： 
   <span class="iconify mdi-light--home h-12 w-12"></span>
 </p>
 <p>
-  24px icon:
+  24px 图标：
   <span class="material-icon mdi-light--home"></span>
 </p>
 ```
 
-Because icon data is identical in all instances of plugin, there is no need to change icon selector and
-the `[prop]prefixes` option needs to be used only once. This reduces duplication and makes parsing faster. 
+由于所有插件实例中的图标数据都是相同的，因此无需更改图标选择器，且 `[prop]prefixes` 选项只需使用一次。这减少了重复并加快了解析速度。

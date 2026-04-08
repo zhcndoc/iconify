@@ -1,1 +1,1 @@
-Note: icons added by this function are not cached in `[prop]localStorage` and `[prop]sessionStorage`.
+注意：通过此函数添加的图标不会被缓存在 `[prop]localStorage` 和 `[prop]sessionStorage` 中。

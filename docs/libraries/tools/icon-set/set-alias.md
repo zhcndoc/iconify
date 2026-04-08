@@ -1,5 +1,5 @@
 ```yaml
-title: Add icon alias to icon set
+title: 向图标集添加图标别名
 types:
   IconSet: './index.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
@@ -11,24 +11,24 @@ functions:
 
 # setAlias()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]setAlias()` adds new icon alias.
+函数 `[func]setAlias()` 用于添加新的图标别名。
 
-## Alias
+## 别名
 
-Icon alias is a different name for icon. It is usually used when renaming icon to allow users access icon using old name.
+图标别名是图标的另一个名称。它通常在重命名图标时使用，以便用户仍可通过旧名称访问该图标。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]name`, `[type]string`. Icon name.
-- `[prop]parent`, `[type]string`. Parent item name.
+- `[prop]name`，`[type]string`。图标名称。
+- `[prop]parent`，`[type]string`。父项名称。
 
-Function returns a simple `true` on success, `false` on failure.
+函数在成功时返回简单的 `true`，失败时返回 `false`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/set-alias.ts

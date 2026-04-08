@@ -1,5 +1,5 @@
 ```yaml
-title: Selecting icon sets in Iconify for Tailwind CSS
+title: 在 Iconify for Tailwind CSS 中选择图标集
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyInfo: '/docs/types/iconify-info.md'
@@ -7,98 +7,96 @@ functions:
   addIconSelectors: './index.md'
 ```
 
-# Selecting icon sets in Iconify for Tailwind CSS
+# 在 Iconify for Tailwind CSS 中选择图标集
 
-This documentation covers `[prop]prefixes` option for `[func]addIconSelectors` plugin.
+本文档介绍了 `[func]addIconSelectors` 插件的 `[prop]prefixes` 选项。
 
-## Prefixes list
+## 前缀列表
 
-`[func]addIconSelectors()` plugin requires setting a list of icon sets you want to use,
-set as either the only parameter to plugin or as `[prop]prefixes` property in options.
+`[func]addIconSelectors()` 插件需要设置你想要使用的图标集列表，可以作为插件的唯一参数传入，也可以作为选项中的 `[prop]prefixes` 属性传入。
 
-Why is it needed?
-- Iconify offers a massive number of icons. Tailwind CSS plugin system requires creating all selectors, which means parsing all icons. By selecting icon sets you want to use, plugin only parses those icon sets, reducing build time.
-- It can be used for custom icon sets.
+为什么需要这样做？
+- Iconify 提供了海量的图标。Tailwind CSS 插件系统需要创建所有选择器，这意味着需要解析所有图标。通过选择你想要使用的图标集，插件只会解析这些图标集，从而减少构建时间。
+- 它可用于自定义图标集。
 
-Value of prefixes list is an array, each entry can be:
-- A string, containing icon set prefix.
-- `[type]IconSetOptions` object.
+前缀列表的值是一个数组，每个条目可以是：
+- 包含图标集前缀的字符串。
+- `[type]IconSetOptions` 对象。
 
-If you use a string with icon set prefix, all icons in icon set will be parsed without any changes.
+如果你使用包含图标集前缀的字符串，图标集中的所有图标都将被原样解析，不做任何更改。
 
-`[type]IconSetOptions` object gives you more control over icons, allowing you to filter icons, customise icons and load custom icon sets.
+`[type]IconSetOptions` 对象让你对图标拥有更多控制权，允许你过滤图标、自定义图标以及加载自定义图标集。
 
 ## IconSetOptions
 
-Object `[type]IconSetOptions` has the following properties:
-- `[prop]prefix`, `[type]string`. Icon set prefix.
-- `[prop]source`, `[type]string | IconifyJSON`. Icon set source.
-- `[prop]icons`, `[type]string[] | function`. List of icons to load or a callback to filter icons.
-- `[prop]customise`, `[type]function`. Callback to customise icons.
+对象 `[type]IconSetOptions` 包含以下属性：
+- `[prop]prefix`，`[type]string` 类型。图标集前缀。
+- `[prop]source`，`[type]string | IconifyJSON` 类型。图标集来源。
+- `[prop]icons`，`[type]string[] | function` 类型。要加载的图标列表或用于过滤图标的回调函数。
+- `[prop]customise`，`[type]function` 类型。用于自定义图标的回调函数。
 
-Either `[prop]prefix` or `[prop]source` must be set.
-If both are set, the icon set is loaded from `[prop]source`, but prefix is set to value of `[prop]prefix`.
+必须设置 `[prop]prefix` 或 `[prop]source` 中的至少一个。
+如果两者都设置了，图标集将从 `[prop]source` 加载，但前缀会被设置为 `[prop]prefix` 的值。
 
-### Source
+### 来源
 
-Property `[prop]source` of `[type]IconSetOptions` can be:
-- Location of icon set to load in `[type]IconifyJSON` format.
-- Icon set in `[type]IconifyJSON` format.
+`[type]IconSetOptions` 的 `[prop]source` 属性可以是：
+- 以 `[type]IconifyJSON` 格式加载的图标集路径。
+- `[type]IconifyJSON` 格式的图标集数据。
 
-### Icons
+### 图标
 
-Property `[prop]icons` of `[type]IconSetOptions` can be used to filter icons in the loaded icon set.
+`[type]IconSetOptions` 的 `[prop]icons` 属性可用于过滤已加载图标集中的图标。
 
-By filtering unused icons, you can improve parsing time, thus making the build process faster.
+通过过滤未使用的图标，你可以提升解析速度，从而使构建过程更快。
 
-### Customise
+### 自定义
 
-Property `[prop]customise` of `[type]IconSetOptions` can be used to customise icons.
-For example, to change `[prop]stroke-width`, change certain color in icons with color,
-change animation duration in animated icons and so on.
+`[type]IconSetOptions` 的 `[prop]customise` 属性可用于自定义图标。
+例如，修改 `[prop]stroke-width`、更改带颜色图标中的特定颜色、修改动画图标的动画时长等。
 
-Callback has two parameters:
-- `[prop]content`, `[type]string`. SVG content.
-- `[prop]name`, `[type]string`. Icon name.
+回调函数包含两个参数：
+- `[prop]content`，`[type]string` 类型。SVG 内容。
+- `[prop]name`，`[type]string` 类型。图标名称。
 
-Callback should return new content. If icon is not modified, it should return value passed in `[prop]content` property.
+回调函数应返回新的内容。如果图标未被修改，则应返回 `[prop]content` 属性传入的值。
 
-## Examples
+## 示例
 
-Examples of using `[prop]prefixes` option to load custom icon sets and customise icons:
+使用 `[prop]prefixes` 选项加载自定义图标集和自定义图标的示例：
 
 ```js
 addIconSelectors({
     prefixes: [
         {
-            // Change stroke width in Tabler icons
+            // 更改 Tabler 图标中的描边宽度
             prefix: 'tabler',
             customise: (content) =>
                 content.replaceAll('stroke-width="2"', 'stroke-width="1.5"'),
         },
         {
-            // Change color in face emojis from Twitter, also rename icon set
+            // 更改 Twitter 表情符号中的颜色，同时重命名图标集
             
-            // Change icon set prefix by setting 'prefix' property
+            // 通过设置 'prefix' 属性更改图标集前缀
             prefix: 'twemoji-red',
             
-            // Resolve location of icon set from '@iconify-json/twemoji' package 
-            // Also below is the same code, using '@iconify/json' package
+            // 解析 '@iconify-json/twemoji' 包中的图标集位置 
+            // 下方注释的代码功能相同，但使用的是 '@iconify/json' 包
             source: require.resolve('@iconify-json/twemoji/icons.json'),
             // source: require.resolve('@iconify/json/json/twemoji.json'),
             
-            // Filter only icons that contain 'face' to improve plugin performance
+            // 仅过滤包含 'face' 的图标以提升插件性能
             icons: (name) => name.includes('face'),
             
-            // Change color
+            // 更改颜色
             customise: (content, name) => content.replaceAll('#ffcc4d', '#ff9667'),
         },
         {
-            // Load custom icon set. It can be pre-generated using Iconify Tools
+            // 加载自定义图标集。可以使用 Iconify Tools 预先生成
             prefix: 'custom',
             source: 'data/custom.json',
             
-            // Example of using Iconify Tools icon set as source. Assumes that customIconSet is an IconSet class instance. 
+            // 使用 Iconify Tools 图标集作为来源的示例。假设 customIconSet 是 IconSet 类的实例。 
             // source: customIconSet.export(),
         },
     ],

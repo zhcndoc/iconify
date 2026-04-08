@@ -1,5 +1,5 @@
 ```yaml
-title: Iconify JSON Metadata
+title: Iconify JSON 元数据
 types:
   IconifyIcon: './iconify-icon.md'
   IconifyAlias: './iconify-alias.md'
@@ -7,37 +7,37 @@ types:
   IconifyInfo: './iconify-info.md'
 ```
 
-# IconifyJSON metadata
+# IconifyJSON 元数据
 
-`[type]IconifyJSON` can also contain additional data that is used for displaying a list of icons:
+`[type]IconifyJSON` 还可以包含用于显示图标列表的附加数据：
 
-- Last modification time (since version 2).
-- Icon set info.
-- Categories. Each icon can belong to multiple categories.
-- Themes. They are used for variations of the same icon that have different start or end parts.
-- Characters map. This is used for icons imported from icon fonts.
+- 最后修改时间（自版本 2 起）。
+- 图标集信息。
+- 分类。每个图标可以属于多个分类。
+- 主题。它们用于表示同一图标具有不同开头或结尾部分的变体。
+- 字符映射表。这用于从图标字体导入的图标。
 
-## Last modification time {#last-modified}
+## 最后修改时间 {#last-modified}
 
-Last modification time is used to check if an icon set was updated. Icon components use it to invalidate old cache.
+最后修改时间用于检查图标集是否已更新。图标组件使用它来使旧缓存失效。
 
-Value is a number, which needs to be higher than in a previously released version of an icon set.
+该值是一个数字，需要高于图标集先前发布的版本中的值。
 
-## Information {#iconify-info}
+## 信息 {#iconify-info}
 
-Information is stored in `[prop]info` object.
+信息存储在 `[prop]info` 对象中。
 
-See `[type]IconifyInfo` documentation.
+请参阅 `[type]IconifyInfo` 文档。
 
-## Categories {#iconify-categories}
+## 分类 {#iconify-categories}
 
-Categories are stored in `[prop]categories` object.
+分类存储在 `[prop]categories` 对象中。
 
-In TypeScript categories are represented by type `[type]IconifyCategories` that can be imported from `[npm]@iconify/types`.
+在 TypeScript 中，分类由类型 `[type]IconifyCategories` 表示，该类型可从 `[npm]@iconify/types` 导入。
 
-This is a simple object, where key is category name, value is an array of icon names that belong to that category.
+这是一个简单的对象，其中键是分类名称，值是属于该分类的图标名称数组。
 
-Example:
+示例：
 
 ```json
 {
@@ -58,17 +58,17 @@ Example:
 }
 ```
 
-## Themes: prefixes and suffixes {#themes}
+## 主题：前缀和后缀 {#themes}
 
-Themes are used to display variations of the same icon that have different prefix or suffix. It is similar to categories, but instead of listing every icon, data contains only prefixes or suffixes.
+主题用于显示具有不同前缀或后缀的同一图标的变体。它类似于分类，但数据不包含每个图标的列表，而仅包含前缀或后缀。
 
-Themes are stored in `[prop]prefixes` and `[prop]suffixes` objects.
+主题存储在 `[prop]prefixes` 和 `[prop]suffixes` 对象中。
 
-In TypeScript both `[prop]prefixes` and `[prop]suffixes` are simple `[type]Record<string, string>` objects, where:
-- key is prefix or suffix in icon.
-- value is the name of theme.
+在 TypeScript 中，`[prop]prefixes` 和 `[prop]suffixes` 都是简单的 `[type]Record<string, string>` 对象，其中：
+- 键是图标中的前缀或后缀。
+- 值是主题的名称。
 
-Example of prefixes used in [Google Material Icons](https://icon-sets.iconify.design/ic/):
+[Google Material Icons](https://icon-sets.iconify.design/ic/) 中使用的前缀示例：
 
 ```json
 {
@@ -82,13 +82,13 @@ Example of prefixes used in [Google Material Icons](https://icon-sets.iconify.de
 }
 ```
 
-In an example above, all icons that start with `[icon]baseline-` belong to `[str]Baseline` theme and so on.
+在上面的示例中，所有以 `[icon]baseline-` 开头的图标都属于 `[str]Baseline` 主题，依此类推。
 
-When checking if icon belongs to a prefix, add `[str]-` to prefix.
-For example, `[str]baseline-home` belongs to `[str]Baseline` theme in example above,
-`[str]baselinehome` does not, because `[str]-` should separate prefix and icon name.
+在检查图标是否属于某个前缀时，需在前缀后添加 `[str]-`。
+例如，在上面的示例中，`[str]baseline-home` 属于 `[str]Baseline` 主题，
+而 `[str]baselinehome` 不属于，因为 `[str]-` 应该用于分隔前缀和图标名称。
 
-Example of suffixes used in [Ant Design Icons](https://icon-sets.iconify.design/ant-design/):
+[Ant Design Icons](https://icon-sets.iconify.design/ant-design/) 中使用的后缀示例：
 
 ```json
 {
@@ -100,16 +100,16 @@ Example of suffixes used in [Ant Design Icons](https://icon-sets.iconify.design/
 }
 ```
 
-In an example above, all icons that end with `[str]-filled` belong to `[str]Filled` theme,
-all icons that end with `[str]-outlined` belong to `[str]Outlined` theme and all icons that
-end with `[str]-twotone` belong to `[str]TwoTone` theme.
+在上面的示例中，所有以 `[str]-filled` 结尾的图标都属于 `[str]Filled` 主题，
+所有以 `[str]-outlined` 结尾的图标都属于 `[str]Outlined` 主题，所有以
+`[str]-twotone` 结尾的图标都属于 `[str]TwoTone` 主题。
 
-### Default theme
+### 默认主题
 
-Both prefixes and suffixes can have default entry, where the key is an empty string.
-Icons that do not fit other themes should be put in that theme.
+前缀和后缀都可以有一个默认条目，其键为空字符串。
+不符合其他主题的图标应放入该主题中。
 
-Example:
+示例：
 
 ```json
 {
@@ -121,24 +121,24 @@ Example:
 }
 ```
 
-Icons that end with `[str]-outline` belong to `[str]Outline` theme, 
-icons that end with `[str]-negative` belong to `[str]Negative` theme,
-all other icons belong to `[str]Filled` theme.
+以 `[str]-outline` 结尾的图标属于 `[str]Outline` 主题， 
+以 `[str]-negative` 结尾的图标属于 `[str]Negative` 主题，
+所有其他图标都属于 `[str]Filled` 主题。
 
-### Legacy themes
+### 旧版主题
 
-In older versions of metadata, themes were stored in `[prop]themes` property.
-This has been deprecated and should be ignored.
+在旧版本的元数据中，主题存储在 `[prop]themes` 属性中。
+该属性已被弃用，应忽略。
 
-## Characters map {#chars}
+## 字符映射表 {#chars}
 
-Map of characters is stored in `[prop]chars` object.
+字符映射表存储在 `[prop]chars` 对象中。
 
-In TypeScript characters are represented by type `[type]IconifyChars` that can be imported from `[npm]@iconify/types`.
+在 TypeScript 中，字符由类型 `[type]IconifyChars` 表示，该类型可从 `[npm]@iconify/types` 导入。
 
-This is a simple object, where key is character code in hexadecimal form, value is name of icon.
+这是一个简单的对象，其中键是十六进制形式的字符代码，值是图标名称。
 
-Example:
+示例：
 
 ```json
 {

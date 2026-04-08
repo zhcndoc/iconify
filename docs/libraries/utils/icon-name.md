@@ -1,22 +1,22 @@
 ```yaml
-title: IconifyIconName Type
+title: IconifyIconName 类型
 ```
 
-# IconifyIconName type
+# IconifyIconName 类型
 
-`[type]IconifyIconName` type is used in [Iconify Utils](./index.md) to handle icon names.
+`[type]IconifyIconName` 类型用于 [Iconify Utils](./index.md) 中处理图标名称。
 
-You can find this type in `[file]src/icon/name.ts` of [Iconify Utils source code](https://github.com/iconify/iconify/tree/main/packages/utils).
+你可以在 [Iconify Utils 源代码](https://github.com/iconify/iconify/tree/main/packages/utils) 的 `[file]src/icon/name.ts` 中找到此类型。
 
 `include types/iconify-icon-name`
 
-## Validation
+## 验证
 
-All parts of icon name must match the following regular expression: `[js]/^[a-z0-9]+(-[a-z0-9]+)*$/`.
+图标名称的所有部分都必须匹配以下正则表达式：`[js]/^[a-z0-9]+(-[a-z0-9]+)*$/`。
 
-The only exception is `[prop]provider`, which can be empty.
+唯一的例外是 `[prop]provider`，它可以为空。
 
-Expression for validation can be imported from Iconify Utils:
+验证表达式可以从 Iconify Utils 中导入：
 
 ```yaml
 src: libraries/utils/match-name.ts

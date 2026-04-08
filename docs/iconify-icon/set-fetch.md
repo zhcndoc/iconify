@@ -1,14 +1,14 @@
 ```yaml
-title: 'Iconify Icon Web Component Function: setFetch'
+title: 'Iconify Icon Web 组件函数：setFetch'
 ```
 
-# Web component function: setFetch
+# Web 组件函数：setFetch
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md#functions).
+本教程是 [Iconify Icon Web 组件教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/set-fetch/intro-component`
 
-## Why is it needed? {#why}
+## 为什么需要它？ {#why}
 
 ```yaml
 include: icon-components/functions/set-fetch/why
@@ -18,13 +18,13 @@ include: icon-components/functions/set-fetch/why
 include: icon-components/functions/set-fetch/nodejs
 ```
 
-## Usage
+## 使用方法
 
 ```yaml
 include: icon-components/functions/set-fetch/usage
 ```
 
-## Steps
+## 步骤
 
 ```yaml
 include: icon-components/functions/set-fetch/component

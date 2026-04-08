@@ -1,6 +1,6 @@
-The function has the following optional parameters:
+该函数包含以下可选参数：
 
-- `[prop]provider`, `[type]string`. Lists only icons from one API provider.
-- `[prop]prefix`, `[type]string`. Lists only icons with specific prefix. If `[prop]prefix` is set, `[prop]provider` must be set too (for Iconify public API `[prop]provider` value is empty string `[str]""`).
+- `[prop]provider`，`[type]string`。仅列出来自单个 API 提供商的图标。
+- `[prop]prefix`，`[type]string`。仅列出具有特定前缀的图标。如果设置了 `[prop]prefix`，则也必须设置 `[prop]provider`（对于 Iconify 公共 API，`[prop]provider` 的值为空字符串 `[str]""`）。
 
-The function returns an array of icon names.
+该函数返回一个图标名称数组。

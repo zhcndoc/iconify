@@ -1,5 +1,5 @@
 ```yaml
-title: Importing icons
+title: 导入图标
 types:
   IconSet: '../icon-set/index.md'
   SVG: '../svg/index.md'
@@ -15,46 +15,46 @@ functions:
   importFromFigma: './figma/index.md'
 ```
 
-# Importing icons
+# 导入图标
 
-[Iconify Tools](../index.md) can import icons from several sources.
+[Iconify Tools](../index.md) 可以从多个来源导入图标。
 
-## Usage
+## 使用方法
 
-All functions listed below are asynchronous. Most functions create `[type]IconSet` instances.
+下面列出的所有函数都是异步的。大多数函数会创建 `[type]IconSet` 实例。
 
-Before using Iconify Tools, you should be aware that package is opinionated. Certain SVG elements are not allowed and will cause import to fail. See [SVG import limitations](../tags.md).
+在使用 Iconify Tools 之前，你应该了解该包具有明确的设计偏好。某些 SVG 元素是不被允许的，会导致导入失败。请参阅 [SVG 导入限制](../tags.md)。
 
-### Async
+### 异步
 
-Most functions are asynchronous.
+大多数函数都是异步的。
 
 `include libraries/tools/async`
 
-## Cleanup
+## 清理
 
-After importing icons, make sure you validate them. See `[func]cleanupSVG()` function.
+导入图标后，请确保对其进行验证。请参阅 `[func]cleanupSVG()` 函数。
 
-## Import functions
+## 导入函数
 
-There are several functions for importing icons:
+有多个用于导入图标的函数：
 
 ### importDirectory()
 
-Functions `[func]importDirectory()` and `[func]importDirectorySync()` import SVG files from directory.
+函数 `[func]importDirectory()` 和 `[func]importDirectorySync()` 用于从目录导入 SVG 文件。
 
 ### importFromFigma()
 
-Function `[func]importFromFigma()` imports icons from Figma document.
+函数 `[func]importFromFigma()` 用于从 Figma 文档导入图标。
 
-### Importing single icon {#svg}
+### 导入单个图标 {#svg}
 
-Making a function for importing a single file is redundant. All you have to do is read file and create `[type]SVG` instance.
+为导入单个文件创建函数是多余的。你只需读取文件并创建 `[type]SVG` 实例即可。
 
-See [importing SVG](./svg.md) documentation.
+请参阅 [导入 SVG](./svg.md) 文档。
 
-### Importing Iconify icon set {#json}
+### 导入 Iconify 图标集 {#json}
 
-Making a function for importing `[type]IconifyJSON` data is also redundant. All you have to do is read file and create `[type]IconSet` instance.
+为导入 `[type]IconifyJSON` 数据创建函数同样是多余的。你只需读取文件并创建 `[type]IconSet` 实例即可。
 
-See [importing Iconify icon set](./json.md) documentation.
+请参阅 [导入 Iconify 图标集](./json.md) 文档。

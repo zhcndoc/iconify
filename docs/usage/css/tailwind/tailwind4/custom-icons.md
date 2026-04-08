@@ -1,21 +1,21 @@
 ```yaml
-title: Custom icons in Iconify for Tailwind CSS
+title: Tailwind CSS 的 Iconify 中的自定义图标
 types:
   IconifyJSON: "/docs/types/iconify-json.md"
 ```
 
-# Custom icons in Iconify for Tailwind CSS
+# Tailwind CSS 的 Iconify 中的自定义图标
 
-This documentation explains how to use [Iconify plugin for Tailwind CSS 4](./index.md) with custom icons.
+本文档介绍了如何将 [Tailwind CSS 4 的 Iconify 插件](./index.md) 与自定义图标配合使用。
 
-## Loader options
+## 加载器选项
 
-There are two methods of loading icon sets:
+加载图标集有两种方法：
 
-- Loading a pre-parsed icon set in `[type]IconifyJSON` format.
-- Loading all icons in a folder.
+- 加载 `[type]IconifyJSON` 格式的预解析图标集。
+- 加载文件夹中的所有图标。
 
-Syntax is similar:
+语法类似：
 
 ```css
 @plugin "@iconify/tailwind4" {
@@ -23,44 +23,44 @@ Syntax is similar:
 }
 ```
 
-Add option `[prop]icon-sets` to plugin config in CSS, with comma separated sets of options.
+在 CSS 的插件配置中添加 `[prop]icon-sets` 选项，使用逗号分隔的选项集。
 
-## Loading from JSON file
+## 从 JSON 文件加载
 
-Loading from JSON file is faster because there is no clean up to do, so if you can, load icon sets from a JSON file.
+从 JSON 文件加载速度更快，因为无需进行清理操作，因此如果条件允许，请从 JSON 文件加载图标集。
 
-File must be in `[type]IconifyJSON` format, which can be created with [Iconify Tools](/docs/libraries/tools/index.md).
+文件必须为 `[type]IconifyJSON` 格式，可以使用 [Iconify Tools](/docs/libraries/tools/index.md) 创建。
 
-To add an icon set to config, add `[func]from-json()` function to `[prop]icon-sets` option, with two values:
+要将图标集添加到配置中，请在 `[prop]icon-sets` 选项中添加 `[func]from-json()` 函数，并传入两个值：
 
-- Icon set prefix
-- Path to .json file, relative to project's root directory
+- 图标集前缀
+- .json 文件的路径，相对于项目根目录
 
-## Loading from folder
+## 从文件夹加载
 
-Loading from folder makes it easy to use existing icons without pre-parsing them.
+从文件夹加载可以轻松使用现有图标，而无需预先解析它们。
 
-To add a folder with icons to config, add `[func]from-folder()` function to `[prop]icon-sets` option, with two values:
+要将包含图标的文件夹添加到配置中，请在 `[prop]icon-sets` 选项中添加 `[func]from-folder()` 函数，并传入两个值：
 
-- Icon set prefix
-- Path to folder, relative to project's root directory
+- 图标集前缀
+- 文件夹路径，相对于项目根目录
 
-You can load icons from multiple folders by adding multiple entries with different prefixes to `[prop]icon-sets` option.
+您可以通过在 `[prop]icon-sets` 选项中添加多个具有不同前缀的条目，从多个文件夹加载图标。
 
-### Clean up
+### 清理
 
-Icons loaded from folder are cleaned up and optimised.
+从文件夹加载的图标会经过清理和优化。
 
-If you do not want this, pre-parse icons, export them as `[type]IconifyJSON` file and load .json file instead.
+如果您不希望这样，请预先解析图标，将其导出为 `[type]IconifyJSON` 文件，然后改为加载 .json 文件。
 
-How icons are handled:
+图标的处理方式如下：
 
-- All names are cleaned up: converted to lower case with dash as separator.
-- Icon palette is checked. If icon has more than one color, it is treated as a colored icon and rendered as background image. If icon has one color, it is treated as a monotone icon and rendered as a mask image.
+- 所有名称都会经过清理：转换为小写，并使用连字符作为分隔符。
+- 检查图标调色板。如果图标包含多种颜色，则将其视为彩色图标并作为背景图像渲染。如果图标只有一种颜色，则将其视为单色图标并作为遮罩图像渲染。
 
-## Examples
+## 示例
 
-Examples of configuration:
+配置示例：
 
 ```css
 @plugin "@iconify/tailwind4" {

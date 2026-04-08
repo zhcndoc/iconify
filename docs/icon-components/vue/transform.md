@@ -1,18 +1,18 @@
 ```yaml
-title: Transforming Icon in Iconify for Vue
+title: 在 Iconify for Vue 中变换图标
 ```
 
-# Transformations
+# 变换
 
-This tutorial is part of [Iconify for Vue tutorial](./index.md).
+本教程是 [Iconify for Vue 教程](./index.md) 的一部分。
 
 `include icon-components/transform-intro`
 
-## CSS vs Iconify transformations {#css}
+## CSS 与 Iconify 变换 {#css}
 
 `include icon-components/transform-compare`
 
-Example:
+示例：
 
 ```yaml
 src: icon-components/common/rotate-comparison.vue
@@ -23,7 +23,7 @@ class: highlight-box
 
 `include icon-components/transform-compare-footer`
 
-## Flip
+## 翻转
 
 ```yaml
 include: icon-components/components/transform-flip
@@ -43,7 +43,7 @@ extra:
     hint: Using "horizontalFlip" and "verticalFlip" attributes
 ```
 
-## Rotation
+## 旋转
 
 `include icon-components/components/transform-rotate`
 
@@ -52,12 +52,12 @@ src: icon-components/common/rotate.vue
 demo: true
 ```
 
-## Rotate and flip
+## 旋转与翻转
 
 `include icon-components/components/transform-footer`
 
-## Property names
+## 属性名称
 
-In other components, properties for flip are `[attr]hFlip` and `[attr]vFlip`. Vue has special treatment for properties that start with `[attr]v-`, so `[attr]vFlip` (same applies to `[attr]vAlign` attribute) attribute is not available without using tricky syntax.
+在其他组件中，翻转属性为 `[attr]hFlip` 和 `[attr]vFlip`。Vue 对以 `[attr]v-` 开头的属性有特殊处理，因此如果不使用复杂的语法，将无法使用 `[attr]vFlip`（同样适用于 `[attr]vAlign` 属性）属性。
 
-Because of that, Vue component uses longer property names: `[attr]verticalFlip` instead of `[attr]vFlip` and `[attr]horizontalFlip` instead of `[attr]hFlip` for consistency.
+因此，为了保持一致性，Vue 组件使用了更长的属性名称：使用 `[attr]verticalFlip` 代替 `[attr]vFlip`，使用 `[attr]horizontalFlip` 代替 `[attr]hFlip`。

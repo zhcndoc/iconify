@@ -1,14 +1,14 @@
 ```yaml
-title: Vertical Alignment in Iconify for React
+title: Iconify for React 中的垂直对齐
 ```
 
-# Vertical alignment
+# 垂直对齐
 
-This tutorial is part of [Iconify for React tutorial](./index.md).
+本教程是 [Iconify for React 教程](./index.md) 的一部分。
 
 `include icon-components/vertical-align-intro`
 
-## Inline attribute
+## inline 属性
 
 `include icon-components/components/inline-react`
 

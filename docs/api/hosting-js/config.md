@@ -1,92 +1,92 @@
 ```yaml
-title: Iconify API Configuration
+title: Iconify API 配置
 ```
 
-# Iconify API configuration
+# Iconify API 配置
 
-This tutorial is a part of [Iconify API installation instructions](./index.md) for Node.js.
-This part of the tutorial explains API configuration options.
+本教程是面向 Node.js 的 [Iconify API 安装说明](./index.md) 的一部分。
+本部分教程将解释 API 的配置选项。
 
-There are several ways to change configuration:
+有几种更改配置的方法：
 
-- Editing files in `[file]src/config/`, then rebuilding script. This is required for some advanced options, such as using API with custom icons.
-- Using environment variables, such as `[bash]PORT=3100 npm run start`.
-- Using `[file].env` file to store environment variables.
+- 编辑 `[file]src/config/` 中的文件，然后重新构建脚本。某些高级选项（例如将 API 与自定义图标结合使用）需要此操作。
+- 使用环境变量，例如 `[bash]PORT=3100 npm run start`。
+- 使用 `[file].env` 文件来存储环境变量。
 
-If your API is already running, after changing configuration, you must restart the API.
-Configuration cannot be reloaded without downtime.
+如果您的 API 已经在运行，更改配置后必须重启 API。
+配置无法在不中断服务的情况下重新加载。
 
-## Env options
+## 环境变量选项
 
-Options that can be changed with environment variables and their default values (you can find all of them in `[file]src/config/app.ts`):
+可以通过环境变量更改的选项及其默认值（您可以在 `[file]src/config/app.ts` 中找到所有选项）：
 
-- `[bash]HOST=0.0.0.0`: IP address or hostname HTTP server listens on.
-- `[bash]PORT=3000`: port HTTP server listens on.
-- `[bash]REDIRECT_INDEX=https://iconify.design/`: redirect for `[url]/` route. API does not serve any pages, so index page redirects to the main website.
-- `[bash]STATUS_REGION=`: custom text to add to [`[url]/version`](../version.md) route response. Iconify API is run on network of servers, the visitor is routed to the closest server. It is used to tell which server user is connected to.
-- `[bash]CACHE_ROOT_DIR=cache`: cache directory, relative to app directory, without trailing `[str]/`.
-- `[bash]ENABLE_VERSION=true`: enables [`[url]/version`](../version.md) route that shows API version and value of `[prop]STATUS_REGION`. Disable it if you are using API only to serve icon data.
-- `[bash]ENABLE_ICON_LISTS=true`: enables [`[url]/collections`](../collections.md) route that lists icon sets and `[url]/collection?prefix=whatever` route to get a list of icons. Used by icon pickers. Disable it if you are using API only to serve icon data.
-- `[bash]ENABLE_SEARCH_ENGINE=true`: enables [`[url]/search`](../search.md) route. Requires `[bash]ENABLE_ICON_LISTS=true`.
-- `[bash]ALLOW_FILTER_ICONS_BY_STYLE=true`: allows searching for icons based on fill or stroke, such as adding `[url]style=fill` to search query. This feature uses a bit of memory, so it can be disabled. Requires `[bash]ENABLE_SEARCH_ENGINE=true`.
+- `[bash]HOST=0.0.0.0`：HTTP 服务器监听的 IP 地址或主机名。
+- `[bash]PORT=3000`：HTTP 服务器监听的端口。
+- `[bash]REDIRECT_INDEX=https://iconify.design/`：`[url]/` 路由的重定向地址。API 不提供任何页面服务，因此索引页会重定向到主网站。
+- `[bash]STATUS_REGION=`：添加到 [`[url]/version`](../version.md) 路由响应中的自定义文本。Iconify API 运行在服务器网络上，访问者会被路由到最近的服务器。此选项用于告知用户连接到了哪台服务器。
+- `[bash]CACHE_ROOT_DIR=cache`：缓存目录，相对于应用目录，末尾不带 `[str]/`。
+- `[bash]ENABLE_VERSION=true`：启用显示 API 版本和 `[prop]STATUS_REGION` 值的 [`[url]/version`](../version.md) 路由。如果您仅使用 API 提供图标数据，请禁用它。
+- `[bash]ENABLE_ICON_LISTS=true`：启用列出图标集的 [`[url]/collections`](../collections.md) 路由，以及用于获取图标列表的 `[url]/collection?prefix=whatever` 路由。供图标选择器使用。如果您仅使用 API 提供图标数据，请禁用它。
+- `[bash]ENABLE_SEARCH_ENGINE=true`：启用 [`[url]/search`](../search.md) 路由。需要 `[bash]ENABLE_ICON_LISTS=true`。
+- `[bash]ALLOW_FILTER_ICONS_BY_STYLE=true`：允许基于填充（fill）或描边（stroke）搜索图标，例如在搜索查询中添加 `[url]style=fill`。此功能会占用少量内存，因此可以禁用。需要 `[bash]ENABLE_SEARCH_ENGINE=true`。
 
-## Updating icons
+## 更新图标
 
-Icons are automatically updated when the server starts.
+服务器启动时会自动更新图标。
 
-In addition to that, API can update icon sets without restarting the server.
+除此之外，API 还可以在不重启服务器的情况下更新图标集。
 
-To enable automatic update, you must set `[bash]APP_UPDATE_SECRET` environment variable. Without it, update will not work.
+要启用自动更新，您必须设置 `[bash]APP_UPDATE_SECRET` 环境变量。没有它，更新将无法工作。
 
-- `[bash]ALLOW_UPDATE=true`: enables `[url]/update` route.
-- `[bash]UPDATE_REQUIRED_PARAM=secret`: key from the secret key/value pair. Cannot be empty.
-- `[bash]APP_UPDATE_SECRET=`: value from the secret key/value pair. Cannot be empty.
-- `[bash]UPDATE_THROTTLE=60`: number of seconds to wait before running update.
+- `[bash]ALLOW_UPDATE=true`：启用 `[url]/update` 路由。
+- `[bash]UPDATE_REQUIRED_PARAM=secret`：密钥/值对中的键。不能为空。
+- `[bash]APP_UPDATE_SECRET=`：密钥/值对中的值。不能为空。
+- `[bash]UPDATE_THROTTLE=60`：运行更新前等待的秒数。
 
-To trigger icon sets update, open `[url]/update?foo=bar`, where `[prop]foo` is value of `[bash]UPDATE_REQUIRED_PARAM`, `[prop]bar` is value of `[bash]APP_UPDATE_SECRET`.
+要触发图标集更新，请打开 `[url]/update?foo=bar`，其中 `[prop]foo` 是 `[bash]UPDATE_REQUIRED_PARAM` 的值，`[prop]bar` 是 `[bash]APP_UPDATE_SECRET` 的值。
 
-Update will not be triggered immediately, it will be run after `[bash]UPDATE_THROTTLE` seconds.
-This is done to prevent multiple checks when update is triggered several times in a row by something like GitHub hooks.
+更新不会立即触发，它将在 `[bash]UPDATE_THROTTLE` 秒后运行。
+这样做是为了防止当类似 GitHub hooks 的机制连续多次触发更新时进行重复检查。
 
-If update is triggered while an update process is already running
-(as in, the source was checked for update, but download is still in progress),
-another update check will be run after currently running update ends.
+如果在更新过程已经在运行时触发了更新
+（即，已检查源是否有更新，但下载仍在进行中），
+则会在当前运行的更新结束后再次运行更新检查。
 
-Response to `[url]/update` route is always the same, regardless of outcome.
-This is done to make it impossible to try to guess the key/value pair or even see if the route is enabled.
-To see the actual result, you need to check the console.
-Successful request and update process will be logged.
+无论结果如何，对 `[url]/update` 路由的响应始终相同。
+这样做是为了防止他人尝试猜测密钥/值对，甚至无法判断该路由是否已启用。
+要查看实际结果，您需要检查控制台。
+成功的请求和更新过程将被记录到日志中。
 
-## HTTP headers
+## HTTP 标头
 
-By default, server sends the following HTTP headers:
+默认情况下，服务器会发送以下 HTTP 标头：
 
-- Various CORS headers, allowing access from anywhere.
-- Cache headers to cache responses for 604800 seconds (7 days).
+- 各种 CORS 标头，允许从任何地方访问。
+- 缓存标头，用于将响应缓存 604800 秒（7 天）。
 
-See [how to change HTTP headers in API](./headers.md) for more details.
+有关更多详细信息，请参阅 [如何在 API 中更改 HTTP 标头](./headers.md)。
 
-## Memory management
+## 内存管理
 
-API does not store all loaded icons in memory.
-Instead, it splits icon sets into smaller chunks, stores them in cache and loads those chunks from cache when needed.
-After loading a chunk from cache, it is stored in memory for a while.
-This way, the most used icons are in memory, rarely used icons are not using memory.
+API 不会将所有已加载的图标存储在内存中。
+相反，它将图标集拆分为较小的块，将它们存储在缓存中，并在需要时从缓存加载这些块。
+从缓存加载块后，它会在内存中保留一段时间。
+这样，最常用的图标会保留在内存中，而很少使用的图标则不会占用内存。
 
-There are two configuration variables that deal with that:
+有两个配置变量用于处理此问题：
 
-- `[var]splitIconSetConfig` in `[file]src/config/app.ts` that manages splitting big icon sets in smaller chunks.
-- `[var]storageConfig` in `[file]src/config/app.ts` that manages cache.
+- `[file]src/config/app.ts` 中的 `[var]splitIconSetConfig`，用于管理将大型图标集拆分为较小的块。
+- `[file]src/config/app.ts` 中的 `[var]storageConfig`，用于管理缓存。
 
-All properties in those config objects can be changed via environment variables.
-Convert property to underscore-separated upper case,
-add `[str]SPLIT_` prefix for `[var]splitIconSetConfig`, `[str]STORAGE_` prefix for `[var]storageConfig`.
+这些配置对象中的所有属性都可以通过环境变量进行更改。
+将属性转换为下划线分隔的大写形式，
+为 `[var]splitIconSetConfig` 添加 `[str]SPLIT_` 前缀，为 `[var]storageConfig` 添加 `[str]STORAGE_` 前缀。
 
-Config values that you might want to change, as environment variables:
+您可能想要更改的配置值（作为环境变量）：
 
-- `[bash]STORAGE_CACHE_DIR={cache}/storage`: directory where cache is stored, relative to app directory, without trailing `[str]/`. Use `[str]{cache}` to point to root cache directory set in `[bash]CACHE_ROOT_DIR` variable.
-- `[bash]STORAGE_MAX_COUNT=100`: maximum number of stored items in memory. Reduce number if memory usage is too high. Set to `[num]0` to disable.
-- `[bash]STORAGE_TIMER=60000`: timer to check for expired items.
+- `[bash]STORAGE_CACHE_DIR={cache}/storage`：存储缓存的目录，相对于应用目录，末尾不带 `[str]/`。使用 `[str]{cache}` 指向 `[bash]CACHE_ROOT_DIR` 变量中设置的根缓存目录。
+- `[bash]STORAGE_MAX_COUNT=100`：内存中存储项的最大数量。如果内存使用率过高，请减少该数值。设置为 `[num]0` 可禁用。
+- `[bash]STORAGE_TIMER=60000`：用于检查过期项的计时器。
 
-If you want to always keep icon data in memory, set `[bash]SPLIT_CHUNK_SIZE=0` and `[bash]STORAGE_MAX_COUNT=0`.
-This is useful to make responses as fast as possible if your API instance does not serve hundreds of thousands of icons.
+如果您希望始终将图标数据保留在内存中，请设置 `[bash]SPLIT_CHUNK_SIZE=0` 和 `[bash]STORAGE_MAX_COUNT=0`。
+如果您的 API 实例不需要提供数十万个图标，这将有助于使响应速度尽可能快。

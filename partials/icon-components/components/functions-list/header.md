@@ -1,3 +1,3 @@
-Component exports various functions, which developers can use to control icons.
+该组件导出了多种函数，开发者可使用它们来控制图标。
 
-Functions are split in several groups (click function name to see more details and examples):
+函数分为多个组（点击函数名称可查看更多详情和示例）：

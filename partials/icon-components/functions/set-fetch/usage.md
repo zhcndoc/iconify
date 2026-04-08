@@ -1,3 +1,3 @@
-The function has the following parameter:
+该函数具有以下参数：
 
-- `[prop]fetch`. Function `[func]fetch()`.
+- `[prop]fetch`。函数 `[func]fetch()`。

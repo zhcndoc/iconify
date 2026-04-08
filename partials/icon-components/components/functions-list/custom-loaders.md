@@ -1,8 +1,8 @@
-Custom loaders can be used to load icons from custom sources:
+可以使用自定义加载器从自定义源加载图标：
 
-- `[func]setCustomIconLoader()`. Loads one icon.
-- `[func]setCustomIconsLoader()`. Loads icons in bulk.
+- `[func]setCustomIconLoader()`。加载单个图标。
+- `[func]setCustomIconsLoader()`。批量加载图标。
 
-Loaders are set per icon set prefix. Make sure to configure loader before displaying any icons.
+加载器按图标集前缀进行设置。请确保在显示任何图标之前配置好加载器。
 
-It can also be used to customise icons: in custom loader you can load icon from API using `[func]loadIcon`, change its content (such as colors or stroke width) and return modified icon.
+它也可用于自定义图标：在自定义加载器中，你可以使用 `[func]loadIcon` 从 API 加载图标，更改其内容（例如颜色或描边宽度），然后返回修改后的图标。

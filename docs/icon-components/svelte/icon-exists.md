@@ -1,28 +1,28 @@
 ```yaml
-title: "Iconify for Svelte Function: iconLoaded"
+title: "Iconify for Svelte 函数：iconLoaded"
 functions:
   getIcon: "./get-icon.md"
 ```
 
-# Iconify for Svelte function: iconLoaded
+# Iconify for Svelte 函数：iconLoaded
 
-This tutorial is part of [Iconify for Svelte functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Svelte 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/icon-loaded/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/icon-loaded/props`
 
-## Example
+## 示例
 
-This example renders `[prop]fallback` snippet while icon is being loaded.
+此示例在图标加载期间渲染 `[prop]fallback` 代码片段。
 
 ```yaml
 src: icon-components/common/icon-exists.svelte
 ```
 
-Usage example:
+使用示例：
 
 ```svelte
 <IconWrapper icon="mdi-light:alert">
@@ -32,8 +32,8 @@ Usage example:
 </IconWrapper>
 ```
 
-This example uses `[func]iconLoaded()` to show function, but for this purpose it is better to use `[func]getIcon()`. See `[func]getIcon()` documentation for better example.
+此示例使用 `[func]iconLoaded()` 来展示该函数，但为此目的，最好使用 `[func]getIcon()`。有关更好的示例，请参阅 `[func]getIcon()` 文档。
 
-## Legacy
+## 旧版
 
 `include icon-components/functions/icon-loaded/legacy`

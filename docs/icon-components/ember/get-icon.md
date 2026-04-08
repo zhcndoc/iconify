@@ -1,44 +1,44 @@
 ```yaml
-title: 'Iconify for Ember Function: getIcon'
+title: 'Iconify for Ember 函数：getIcon'
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
 ```
 
-# Iconify for Ember function: getIcon
+# Iconify for Ember 函数：getIcon
 
-This tutorial is part of [Iconify for Ember functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Ember 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/get-icon/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/get-icon/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/get-icon.js
 extra:
   - src: icon-components/iconify/get-icon.json
-    title: 'Result:'
+    title: '结果：'
 replacements:
   - search: '@iconify/react'
     replace: '@iconify/ember/components/iconify-icon'
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/common/get-icon2.js
 extra:
   - src: icon-components/iconify/get-icon2.json
-    title: 'Result:'
+    title: '结果：'
 replacements:
   - search: '@iconify/react'
     replace: '@iconify/ember/components/iconify-icon'
 ```
 
-Example with bad icon name, returns `null`:
+图标名称无效时的示例，返回 `null`：
 
 ```yaml
 src: icon-components/common/get-icon-null.js

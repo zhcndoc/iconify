@@ -1,3 +1,3 @@
-- `[func]replaceIDs(html)`. Randomises IDs in generated string. This should be used when rendering icon based on data returned by `[func]getIcon()` to make sure elements inside each icon have unique IDs.
-- `[func]calculateSize()`. Calculates icon size. It is used to calculate `[attr]width` if only `[attr]height` is set and vice versa.
-- `[func]buildIcon(icon, customisations?)`. Generates data used by icon component. This can be used if you prefer to generate `[tag]svg` yourself. Data includes attributes for `[tag]svg` and inner HTML.
+- `[func]replaceIDs(html)`。随机化生成字符串中的 ID。在基于 `[func]getIcon()` 返回的数据渲染图标时应使用此函数，以确保每个图标内部的元素都具有唯一的 ID。
+- `[func]calculateSize()`。计算图标尺寸。当仅设置了 `[attr]height` 时用于计算 `[attr]width`，反之亦然。
+- `[func]buildIcon(icon, customisations?)`。生成图标组件所需的数据。如果您倾向于自行生成 `[tag]svg`，可以使用此函数。数据包含 `[tag]svg` 的属性以及内部 HTML。

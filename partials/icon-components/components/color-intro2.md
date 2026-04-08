@@ -1,3 +1,3 @@
-Color only works for icons that do not have a palette. Color in icons that do have a palette, like paintbrush icon in an example above, cannot be changed.
+颜色仅适用于没有调色板的图标。带有调色板的图标（如上方示例中的画笔图标）的颜色无法更改。
 
-You can change color the same way as you would for text.
+更改颜色的方法与更改文本颜色的方法相同。

@@ -1,14 +1,14 @@
 ```yaml
-title: Changing Icon Color in Iconify SVG Framework
+title: 在 Iconify SVG 框架中更改图标颜色
 ```
 
-# Icon color
+# 图标颜色
 
-This tutorial is part of [Iconify SVG Framework tutorial](./index.md).
+本教程是 [Iconify SVG 框架教程](./index.md) 的一部分。
 
-You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.
+您只能更改单色图标的颜色。某些图标（例如表情符号）具有硬编码的调色板，无法更改。
 
-To change color of a monotone icon simply change text color.
+要更改单色图标的颜色，只需更改文本颜色即可。
 
 ```yaml
 src: icon-components/iconify/index-color.html
@@ -17,33 +17,33 @@ demo: true
 class: iconify-index-color
 ```
 
-Color only works for icons that do not have a palette. Color in icons that do have a palette, like `[icon]noto:paintbrush` in an example above, cannot be changed.
+颜色仅适用于没有调色板的图标。具有调色板的图标（如上面示例中的 `[icon]noto:paintbrush`）的颜色无法更改。
 
-## Demo breakdown
+## 演示解析
 
-In demo above some icons have `[attr]class="iconify-inline"`, but in stylesheet they are targetted by `[prop].iconify`. This requires a small explanation.
+在上面的演示中，某些图标具有 `[attr]class="iconify-inline"`，但在样式表中它们是通过 `[prop].iconify` 进行定位的。这需要稍作解释。
 
-When icons are rendered by Iconify SVG Framework, all icons get class `[str]iconify`, even ones that did not have it. That means if placeholder had `[attr]class="iconify-inline"`, `[tag]svg` will have `[attr]class="iconify iconify-inline"` (and few other extra classes). All custom classes will be passed from placeholder to `[tag]svg` as well.
+当图标由 Iconify SVG 框架渲染时，所有图标都会获得 `[str]iconify` 类，即使原本没有。这意味着如果占位符具有 `[attr]class="iconify-inline"`，则 `[tag]svg` 将具有 `[attr]class="iconify iconify-inline"`（以及其他一些额外的类）。所有自定义类也会从占位符传递到 `[tag]svg`。
 
-Why are icons using `[attr]class="iconify-inline"`? This is covered by [inline mode tutorial](./inline.md).
+为什么图标使用 `[attr]class="iconify-inline"`？这在 [内联模式教程](./inline.md) 中有详细说明。
 
-## Various ways to set color
+## 设置颜色的各种方法
 
-You can change color the same way as you would for text.
+您可以像更改文本颜色一样更改图标颜色。
 
-Example above shows changing color with stylesheet.
+上面的示例展示了如何使用样式表更改颜色。
 
-You can also change color with inline style:
+您也可以使用内联样式更改颜色：
 
 ```html
 <span class="iconify" data-icon="ion:umbrella-sharp" style="color: red"></span>
 ```
 
-## Target specific icon
+## 定位特定图标
 
-To target a specific icon, you can:
+要定位特定图标，您可以：
 
-### Target icon by name
+### 按名称定位图标
 
 ```css
 .iconify[data-icon='mdi:home'] {
@@ -51,9 +51,9 @@ To target a specific icon, you can:
 }
 ```
 
-This will change color for all icons that have `[attr]data-icon="mdi:home"` to red.
+这会将所有具有 `[attr]data-icon="mdi:home"` 的图标的颜色更改为红色。
 
-### Target icon by prefix
+### 按前缀定位图标
 
 ```css
 .iconify--mdi {
@@ -61,17 +61,17 @@ This will change color for all icons that have `[attr]data-icon="mdi:home"` to r
 }
 ```
 
-When SVG Framework renders `[tag]svg`, it will add current provider and prefix to list of classes. See demo below.
+当 SVG 框架渲染 `[tag]svg` 时，它会将当前提供者和前缀添加到类列表中。请参阅下面的演示。
 
-### Custom class
+### 自定义类
 
-You can add custom class to placeholder:
+您可以向占位符添加自定义类：
 
 ```html
 <span class="iconify red-icon" data-icon="mdi:home"></span>
 ```
 
-Then you can target icon by that class name:
+然后您可以通过该类名定位图标：
 
 ```css
 .red-icon {
@@ -79,21 +79,21 @@ Then you can target icon by that class name:
 }
 ```
 
-### Example
+### 示例
 
 ```yaml
 src: icon-components/iconify/prefix-color.html
-hint: 'Placeholder HTML'
+hint: '占位符 HTML'
 extra:
   - src: icon-components/iconify/prefix-color-svg.html
-    hint: 'Rendered SVG'
+    hint: '渲染后的 SVG'
   - src: icon-components/iconify/prefix-color.css
 ```
 
-## RGBA and HSLA colors {#opacity}
+## RGBA 和 HSLA 颜色 {#opacity}
 
 `include icon-components/color-rgba`
 
-## fill and stroke
+## fill 和 stroke
 
 `include icon-components/color-fill`

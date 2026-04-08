@@ -1,30 +1,30 @@
 ```yaml
-title: 'Iconify Icon Web Component with SolidJS'
+title: '在 SolidJS 中使用 Iconify Icon Web 组件'
 ```
 
-# Iconify Icon web component with SolidJS
+# 在 SolidJS 中使用 Iconify Icon Web 组件
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md).
+本教程是 [Iconify Icon Web 组件教程](./index.md) 的一部分。
 
-Currently, SolidJS has poor support for web components. It is caused by issues in the web components spec. When setting a property to a web component, it sometimes does not work as expected.
+目前，SolidJS 对 Web 组件的支持较差。这是由 Web 组件规范中的问题导致的。在为 Web 组件设置属性（property）时，有时无法按预期工作。
 
-## Workaround
+## 解决方案
 
-Workaround for Solid usage is to force Solid to use attributes instead of properties:
+在 Solid 中使用的变通方法是强制 Solid 使用特性（attributes）而不是属性（properties）：
 
 ```html
 <iconify-icon attr:icon="mdi-light:home"></iconify-icon>
 ```
 
-## Iconify Icon for Solid
+## 适用于 Solid 的 Iconify Icon
 
-Iconify Icon for Solid solves that by mapping properties to attributes in a native Solid component, so you can use the web component without any issues.
+适用于 Solid 的 Iconify Icon 通过在原生 Solid 组件中将属性映射为特性来解决此问题，因此你可以毫无问题地使用该 Web 组件。
 
-It also provides typings for the component, making it easier to use in JSX and supports objects for `[prop]icon` property.
+它还为该组件提供了类型定义，使其在 JSX 中更易于使用，并支持为 `[prop]icon` 属性传入对象。
 
-## Installation
+## 安装
 
-Instead of `[npm]iconify-icon` package, install `[npm]@iconify-icon/solid` package:
+不要安装 `[npm]iconify-icon` 包，请安装 `[npm]@iconify-icon/solid` 包：
 
 ```bash
 npm install --save-dev @iconify-icon/solid
@@ -34,9 +34,9 @@ npm install --save-dev @iconify-icon/solid
 yarn add --dev @iconify-icon/solid
 ```
 
-## Usage
+## 使用方法
 
-Import `[prop]Icon` component from `[npm]@iconify-icon/solid`, set icon in `[prop]icon` property:
+从 `[npm]@iconify-icon/solid` 导入 `[prop]Icon` 组件，并在 `[prop]icon` 属性中设置图标：
 
 ```jsx
 import { Icon } from '@iconify-icon/solid';
@@ -51,9 +51,9 @@ export default () => {
 };
 ```
 
-### Usage with objects
+### 使用对象
 
-You can pass objects in `[prop]icon` property:
+你可以在 `[prop]icon` 属性中传入对象：
 
 ```jsx
 import { Icon } from '@iconify-icon/solid';
@@ -69,9 +69,9 @@ export default () => {
 };
 ```
 
-### Functions
+### 函数
 
-All other functions, listed in [Iconify Icon web component tutorial](./index.md#functions), are available. You can import them directly from `[npm]@iconify-icon/solid` package:
+[Iconify Icon Web 组件教程](./index.md#functions) 中列出的所有其他函数均可用。你可以直接从 `[npm]@iconify-icon/solid` 包中导入它们：
 
 ```jsx
 import { Icon, addIcon } from '@iconify-icon/solid';
@@ -92,4 +92,4 @@ export default () => {
 };
 ```
 
-See [Iconify Icon web component](./index.md) for the list of all attributes, all functions and usage examples. `[npm]@iconify-icon/solid` is only a wrapper for `[npm]iconify-icon`, not a different component, it supports all the same properties and functions.
+有关所有特性、所有函数和使用示例的列表，请参阅 [Iconify Icon Web 组件](./index.md)。`[npm]@iconify-icon/solid` 仅是 `[npm]iconify-icon` 的包装器，并非不同的组件，它支持所有相同的属性和函数。

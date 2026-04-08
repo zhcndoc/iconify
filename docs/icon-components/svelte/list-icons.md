@@ -2,17 +2,17 @@
 title: 'Iconify for Svelte Function: listIcons'
 ```
 
-# Iconify for Svelte function: listIcons
+# Iconify for Svelte 函数：listIcons
 
-This tutorial is part of [Iconify for Svelte functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Svelte 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/list-icons/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/list-icons/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/list-icons.js
@@ -21,7 +21,7 @@ replacements:
     replace: svelte
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/common/list-icons2.js

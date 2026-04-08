@@ -1,41 +1,41 @@
-# Hosting Iconify API
+# 托管 Iconify API
 
-This article explains how to host Iconify on your server, so your website does not rely on Iconify public API servers.
+本文介绍如何在您自己的服务器上托管 Iconify，从而使您的网站不再依赖 Iconify 公共 API 服务器。
 
-[Iconify API](./index.md) software is available as Node.js script.
+[Iconify API](./index.md) 软件以 Node.js 脚本的形式提供。
 
 ## Django Iconify
 
-In addition to Iconify API mentioned above, there is a community created alternative for Django users: [django-iconify](https://pypi.org/project/django-iconify/).
+除了上述的 Iconify API 之外，还有一个由社区为 Django 用户创建的替代方案：[django-iconify](https://pypi.org/project/django-iconify/)。
 
-See [django-iconify project page](https://pypi.org/project/django-iconify/) for configuration options and usage.
+有关配置选项和使用方法，请参阅 [django-iconify 项目页面](https://pypi.org/project/django-iconify/)。
 
-## Source code
+## 源代码
 
-Everything you need is available at [Iconify GitHub repositories](https://github.com/iconify):
+您所需的一切均可在 [Iconify GitHub 仓库](https://github.com/iconify) 中找到：
 
 - [Iconify API](https://github.com/iconify/api)
-- [Open source icon sets](https://github.com/iconify/icon-sets)
+- [开源图标集](https://github.com/iconify/icon-sets)
 
 ## Node.js API {#node}
 
-See [Iconify API: Node.js](./hosting-js/index.md) for installation and configuration instructions.
+有关安装和配置说明，请参阅 [Iconify API: Node.js](./hosting-js/index.md)。
 
-## API network
+## API 网络
 
-Iconify public API is hosted on multiple servers that form custom CDN. They are located in different parts of the world, and visitors are always redirected to the closest server.
+Iconify 公共 API 托管在多个服务器上，这些服务器共同构成了一个自定义 CDN。它们分布在全球不同地区，访问者始终会被重定向到距离最近的服务器。
 
-How does CDN help? By connecting visitors to the closest server, latency is greatly reduced:
+CDN 如何提供帮助？通过将访问者连接到最近的服务器，可以大幅降低延迟：
 
-- Visitors from US are connected to one of the servers located on different sides of the US.
-- Visitors from Europe are connected to server in the UK or server in Germany.
-- For visitors from Asia, there are servers in Singapore and Japan.
-- For visitors from Oceania, there is a server in Australia.
+- 来自美国的访问者将连接到位于美国不同地区的服务器之一。
+- 来自欧洲的访问者将连接到英国或德国的服务器。
+- 对于来自亚洲的访问者，设有新加坡和日本的服务器。
+- 对于来自大洋洲的访问者，设有澳大利亚的服务器。
 
-Additional servers may be added in other regions when needed.
+在需要时，可能会在其他地区添加额外的服务器。
 
-How else does it help? Redundancy. Downtime happens. If one server has issues, you can quickly disable it and visitors will be routed to a different server. There are tools to automate it, such as Route 53 health checks.
+它还有什么其他作用？冗余性。停机情况时有发生。如果某台服务器出现问题，您可以快速将其禁用，访问者将被路由到另一台服务器。有一些工具可以自动化此过程，例如 Route 53 健康检查。
 
-Would you like to set up your own CDN for Iconify API? See [setting up custom CDN tutorial](./cdn.md).
+想要为 Iconify API 设置自己的 CDN 吗？请参阅 [设置自定义 CDN 教程](./cdn.md)。
 
-For added security, Iconify public API also CloudFlare service. However, that does not change anything. Instead of connecting visitor to the closest server, CDN is used to connect CloudFlare edge server to the closest API. Iconify API still greatly benefits from latency reduction offered by a custom CDN.
+为了增强安全性，Iconify 公共 API 还使用了 CloudFlare 服务。然而，这并不会改变什么。CDN 并非用于将访问者直接连接到最近的服务器，而是用于将 CloudFlare 边缘服务器连接到最近的 API。Iconify API 仍然能从自定义 CDN 提供的延迟降低中获益良多。

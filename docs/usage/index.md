@@ -1,5 +1,5 @@
 ```yaml
-title: How to use icons
+title: 如何使用图标
 replacements:
   - code: "60,000"
     value: "${counters.icons}"
@@ -7,92 +7,92 @@ replacements:
     value: "${counters.icons-short}"
 ```
 
-# How to use icons
+# 如何使用图标
 
-How to use icons in your projects?
+如何在项目中使用图标？
 
-Iconify ecosystem offers many ways to use icons, for both coders and designers.
+Iconify 生态系统为开发者和设计师提供了多种使用图标的方式。
 
 ## HTML {#html}
 
-For using icons in HTML, there are several viable options:
+在 HTML 中使用图标，有几种可行的方案：
 
 `include usage/options/html`
 
 ### SVG + CSS {#svg-css}
 
-SVG + CSS is the preferred solution because it:
+SVG + CSS 是首选方案，因为它：
 
-- Reduces HTML size.
-- Caches icons in CSS.
-- Gives you full power of CSS to manipulate icons.
+- 减小 HTML 体积。
+- 在 CSS 中缓存图标。
+- 让你能够充分利用 CSS 的强大功能来操控图标。
 
-However, due to complexity and poor browser support, implementation is available only for limited number of frameworks.
+然而，由于复杂性和浏览器支持不佳，该实现仅适用于有限数量的框架。
 
-See [how to use icons as SVG + CSS](./svg-css/index.md).
+请参阅[如何将图标用作 SVG + CSS](./svg-css/index.md)。
 
-### SVG in CSS {#css}
+### CSS 中的 SVG {#css}
 
-How to use icons in CSS:
+如何在 CSS 中使用图标：
 
-- Add icon as a background or mask image in CSS.
-- Use `[tag]span` element in HTML to render it.
+- 在 CSS 中将图标添加为背景或遮罩图像。
+- 在 HTML 中使用 `[tag]span` 元素来渲染它。
 
-Using icons as background images works great for icons with hardcoded palette, such as emojis.
+将图标用作背景图像非常适合具有固定配色的图标，例如表情符号。
 
-Using icons as mask images, in combination with setting background color to `[prop]currentColor`, allows using monotone icons in CSS. To change icon color, simply change text color.
+将图标用作遮罩图像，并结合将背景颜色设置为 `[prop]currentColor`，可以在 CSS 中使用单色图标。要更改图标颜色，只需更改文本颜色即可。
 
-Example showing icons used as background and mask images (hover to see color change):
+展示图标用作背景和遮罩图像的示例（悬停查看颜色变化）：
 
 ```yaml
 include: usage/css-demo
 ```
 
-See [how to use icons in CSS](./css/index.md) for various tools and plug-ins that make it easy to add icons to CSS.
+请参阅[如何在 CSS 中使用图标](./css/index.md)，了解各种可轻松将图标添加到 CSS 的工具和插件。
 
-### SVG in HTML {#svg}
+### HTML 中的 SVG {#svg}
 
-Icons can be embedded in HTML as `[tag]svg` elements:
+图标可以作为 `[tag]svg` 元素嵌入到 HTML 中：
 
 ```yaml
 src: usage/sample.svg
 copy: false
 ```
 
-See [how to add SVG to HTML](./svg/index.md) for various tools and components that make it easy to add icons to HTML.
+请参阅[如何将 SVG 添加到 HTML](./svg/index.md)，了解各种可轻松将图标添加到 HTML 的工具和组件。
 
-### Icons on demand
+### 按需加载图标
 
-Iconify ecosystem has a unique feature: [Iconify API](/docs/api/index.md).
+Iconify 生态系统有一个独特的功能：[Iconify API](/docs/api/index.md)。
 
-It is used by various icon components to [load icon data on demand](/docs/api/icon-data.md). Iconify icon components only load icon data for icons used on the page visitor is viewing, at run time, instead of bundling icons.
+各种图标组件使用它来[按需加载图标数据](/docs/api/icon-data.md)。Iconify 图标组件仅在运行时加载当前页面访客正在查看的图标数据，而不是将图标打包在一起。
 
-Iconify icon components are perfect for complex projects like theme or website customisers, customisable admin panels or any similar projects, where icons can be customised by user.
+Iconify 图标组件非常适合主题或网站定制器、可定制的管理面板或任何类似项目等复杂项目，在这些项目中图标可以由用户自定义。
 
-Iconify icon components are very easy to use. All a developer has to specify is an icon name:
+Iconify 图标组件非常易于使用。开发者只需指定一个图标名称：
 
 ```yaml
 src: icon-components/icon/usage.html
 copy: false
 ```
 
-See [how to use Iconify icon components](/docs/icon-components/index.md).
+请参阅[如何使用 Iconify 图标组件](/docs/icon-components/index.md)。
 
-## Design
+## 设计
 
-For designers, Iconify ecosystem offers several ways to easily import icons in various design tools.
+对于设计师，Iconify 生态系统提供了几种在各种设计工具中轻松导入图标的方法。
 
 `include usage/options/design`
 
-### Browse icons
+### 浏览图标
 
-You can browse and search more than 60k open source icons at one of the following websites:
+您可以在以下任一网站上浏览和搜索超过 6 万个开源图标：
 
 `include usage/options/websites`
 
-Find icon you want to use, select it, copy SVG to clipboard, paste it to your favorite design tool.
+找到您想使用的图标，选中它，将 SVG 复制到剪贴板，然后粘贴到您喜爱的设计工具中。
 
-Possible issues:
+可能遇到的问题：
 
-- Some design tools do not support `[prop]currentColor`. Set icon color to black before copying code sample.
-- Almost all image editing software do not support SVG 2 animations. Animated icons will be imported without animations, sometimes rendered weirdly.
+- 某些设计工具不支持 `[prop]currentColor`。在复制代码示例前，请将图标颜色设置为黑色。
+- 几乎所有图像编辑软件都不支持 SVG 2 动画。带动画的图标导入时将不带动画，有时渲染效果会显得很奇怪。

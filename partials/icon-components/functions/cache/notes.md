@@ -1,3 +1,3 @@
-- Enabling or disabling the cache will not affect icon data already stored in the cache. Icon data will always be loaded, regardless of setting. The setting affects only storing new icon data retrieved from API.
-- Setting affects only icon data loaded from the Iconify API. Icon data loaded with `[func]addIcon()` or `[func]addCollection()` is not cached.
-- When both `[prop]localStorage` and `[prop]sessionStorage` are enabled, icon data is cached only in `[prop]localStorage`.
+- 启用或禁用缓存不会影响已存储在缓存中的图标数据。无论设置如何，图标数据始终会被加载。该设置仅影响从 API 检索到的新图标数据的存储。
+- 该设置仅影响从 Iconify API 加载的图标数据。通过 `[func]addIcon()` 或 `[func]addCollection()` 加载的图标数据不会被缓存。
+- 当同时启用 `[prop]localStorage` 和 `[prop]sessionStorage` 时，图标数据仅缓存在 `[prop]localStorage` 中。

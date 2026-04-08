@@ -6,19 +6,19 @@ types:
 
 # getIcons()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]getIcons()` retrieves few icons from icon set.
+函数 `[func]getIcons()` 用于从图标集中检索少量图标。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]data`, `[type]IconifyJSON`. Icon set data.
-- `[prop]icons`, `[type]string[]`. List of icon names to retrieve.
-- `[prop]nof_found`, `[type]boolean`. Optional. If set, icons that are not available in icon set will be added to `[prop]not_found` property of result. Default value is `false`.
+- `[prop]data`，`[type]IconifyJSON`。图标集数据。
+- `[prop]icons`，`[type]string[]`。要检索的图标名称列表。
+- `[prop]nof_found`，`[type]boolean`。可选。如果设置，图标集中不存在的图标将被添加到结果的 `[prop]not_found` 属性中。默认值为 `false`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/get-icons.ts

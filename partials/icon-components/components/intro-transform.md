@@ -1,3 +1,3 @@
-An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.
+图标可以进行旋转，以及水平翻转和/或垂直翻转。所有变换均相对于图标中心进行。
 
-These are not CSS transformations, transformations are applied inside SVG.
+这些不是 CSS 变换，变换是在 SVG 内部应用的。

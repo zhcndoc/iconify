@@ -1,5 +1,5 @@
 ```yaml
-title: Check if icon exists in icon set
+title: 检查图标集中是否存在图标
 types:
   IconSet: './index.md'
 functions:
@@ -8,12 +8,12 @@ functions:
 
 # exists()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]exists()` checks if icon is in icon set, returns `[type]boolean` value.
+函数 `[func]exists()` 用于检查图标是否存在于图标集中，返回 `[type]boolean` 值。
 
-## Usage
+## 用法
 
-Function has the parameter:
+该函数包含以下参数：
 
-- `[prop]name`, `[type]string`. Icon name.
+- `[prop]name`，`[type]string`。图标名称。

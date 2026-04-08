@@ -1,29 +1,29 @@
 ```yaml
-title: Exporting icon set from Figma with Iconify Tools
+title: 使用 Iconify Tools 从 Figma 导出图标集
 ```
 
-# Exporting icons from Figma
+# 从 Figma 导出图标
 
-This example shows how to import icon set from Figma, clean up all icons (including two-tone icons), export icon set as `[type]IconifyJSON` and SVG.
+本示例展示了如何从 Figma 导入图标集，清理所有图标（包括双色图标），并将图标集导出为 `[type]IconifyJSON` 和 SVG 格式。
 
-This specific code is designed to import and clean up Solar icon set.
+此特定代码专为导入和清理 Solar 图标集而设计。
 
-## Process
+## 流程
 
-What is shown in this example?
+本示例展示了什么？
 
-This code has 3 parts:
-- Importing icons from Figma using Figma API.
-- Cleaning up icons.
-- Exporting icon set as `[type]IconifyJSON` and individual SVG files.
+此代码包含 3 个部分：
+- 使用 Figma API 从 Figma 导入图标。
+- 清理图标。
+- 将图标集导出为 `[type]IconifyJSON` 和独立的 SVG 文件。
 
-What is happening in the clean-up process? For each icon it:
-- Retrieves icon from `[type]IconSet` instance as `[type]SVG` instance.
-- Attempts to remove a clip path, if present, which Figma often adds to SVG.
-- Parses all colors: replaces known icon colors with black, known two-tone color as gray, keeps white as white. In Figma document icons use many colors, not just black.
-- If an icon contains white or two-tone color, applies mask to it.
+清理过程中会执行什么操作？对于每个图标，它会：
+- 从 `[type]IconSet` 实例中检索图标，并将其作为 `[type]SVG` 实例。
+- 尝试移除裁剪路径（如果存在），Figma 通常会将其添加到 SVG 中。
+- 解析所有颜色：将已知的图标颜色替换为黑色，已知的双色颜色替换为灰色，保留白色不变。在 Figma 文档中，图标使用了多种颜色，而不仅仅是黑色。
+- 如果图标包含白色或双色，则为其应用遮罩。
 
-## Code
+## 代码
 
 ```yaml
 src: libraries/tools/examples/import-solar.mjs

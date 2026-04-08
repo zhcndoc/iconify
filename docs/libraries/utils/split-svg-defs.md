@@ -10,29 +10,29 @@ functions:
 
 # splitSVGDefs()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]splitSVGDefs()` splits SVG body in contents of `[tag]defs` and other content.
+函数 `[func]splitSVGDefs()` 将 SVG 主体拆分为 `[tag]defs` 的内容与其他内容。
 
-This function is used by `[func]wrapSVGContent()` to wrap icon content,
-which is used by `[func]iconToSVG()` to apply flip and rotation to icon,
-by `[func]buildParsedSVG()` and `[func]convertParsedSVG()` to move presentational
-attributes from `[tag]svg` element to a group element.
+此函数由 `[func]wrapSVGContent()` 使用以包装图标内容，
+而 `[func]wrapSVGContent()` 又被 `[func]iconToSVG()` 使用以对图标应用翻转和旋转，
+并被 `[func]buildParsedSVG()` 和 `[func]convertParsedSVG()` 使用以将表现性
+属性从 `[tag]svg` 元素移至组元素。
 
-## Usage
+## 用法
 
-This function has the following parameter:
+此函数包含以下参数：
 
-- `[prop]content`, `[type]string`. Icon content.
+- `[prop]content`，`[type]string` 类型。图标内容。
 
-This function returns an object with 2 properties:
+此函数返回一个包含 2 个属性的对象：
 
-- `[prop]defs`, `[type]string`. Contents of `[tag]defs` element(s).
-- `[prop]content`, `[type]string`. The rest of icon.
+- `[prop]defs`，`[type]string` 类型。`[tag]defs` 元素的内容。
+- `[prop]content`，`[type]string` 类型。图标的其余部分。
 
-To merge back definitions and content, use `[func]mergeDefsAndContent()`.
+若要将定义与内容重新合并，请使用 `[func]mergeDefsAndContent()`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/split-svg-defs.ts

@@ -1,169 +1,169 @@
 ```yaml
-title: Iconify for Figma update
+title: Iconify for Figma 更新
 ```
 
-# What's new in Iconify for Figma
+# Iconify for Figma 有哪些新功能
 
-Welcome to the new Iconify plugin for Figma.
+欢迎使用全新的 Figma Iconify 插件。
 
-In 2024, the plugin has been completely rewritten.
-The new version has nothing in common with the old version, so this is a rather radical change, 
-which requires a tutorial. 
+2024 年，该插件已完全重写。
+新版本与旧版本毫无共同之处，因此这是一次相当彻底的变革，
+需要一份教程来引导。
 
-## Failed redesign
+## 失败的重设计
 
-This page shows a failed launch of new UI.
+本页面展示了一次失败的新 UI 发布。
 
-For correct page, see [plugin update, attempt 2](./update-2024-attempt2.md).
+如需查看正确的页面，请参阅 [插件更新，第二次尝试](./update-2024-attempt2.md)。
 
-### What went wrong?
+### 出了什么问题？
 
-Idea was good, but implementation was horrible. I focused too much on adding features, forgot about user experience.
+想法很好，但实现得很糟糕。我过于专注于添加功能，却忽略了用户体验。
 
-What was wrong:
-- Tooltips everywhere were annoying, it was hard to scroll without tooltips popping up everywhere.
-- Bad design for UI elements. Buttons weren't really different from other elements, making them hard to spot.
-- Color overload. Too many shiny colors distracting from content.
-- Some integral functions, such as search form, required multiple clicks to access.
+存在的问题：
+- 到处都是工具提示，非常烦人，滚动时工具提示会不断弹出，严重影响操作。
+- UI 元素设计不佳。按钮与其他元素区别不大，导致难以辨认。
+- 颜色过载。过多鲜艳的颜色分散了对内容的注意力。
+- 一些核心功能（如搜索框）需要多次点击才能访问。
 
-This version of plugin was live for 3 days.
+该版本的插件仅上线了 3 天。
 
-After receiving a lot of negative feedback, plugin was reverted to old version. 
-New version was later [redesigned from ground up](./update-2024-attempt2.md).
+在收到大量负面反馈后，插件已回退至旧版本。
+随后，新版本被 [从头开始重新设计](./update-2024-attempt2.md)。
 
-... and now back to showing how not to make a release.
+……现在回到正题，继续展示这次失败的发布过程。
 
-## New UI
+## 全新 UI
 
-The first change you'll notice immediately is the new layout.
+您首先会注意到的变化是全新的布局。
 
-Plugin is designed to fit as much content as possible in the smallest possible space.
+插件的设计旨在尽可能在最小的空间内容纳最多的内容。
 
-![Iconify for Figma: main page](/assets/images/plugins/figma4_index.png)
+![Iconify for Figma：主页面](/assets/images/plugins/figma4_index.png)
 
-You can make it even smaller by clicking the button in navigation to toggle compact width.
+您可以通过点击导航栏中的按钮切换紧凑宽度，使其变得更小。
 
-![Iconify for Figma: compact mode](/assets/images/plugins/figma4_compact_toggle.png)
+![Iconify for Figma：紧凑模式](/assets/images/plugins/figma4_compact_toggle.png)
 
-Due to limited space, the plugin uses tooltips to show additional information.
+由于空间有限，插件使用工具提示来显示附加信息。
 
-## License information
+## 许可证信息
 
-One of the biggest changes is advanced license information.
+最大的变化之一是提供了更详细的许可证信息。
 
-Even though all icon sets are open source, not all open source licenses are equal.
-Some ask for attribution, some prevent commercial use.
+尽管所有图标集都是开源的，但并非所有开源许可证都相同。
+有些要求署名，有些则禁止商业用途。
 
-The new plugin shows attribution requirement and commercial use limitation in various places:
-- In icon sets list in tooltip for each icon set.
-- When browsing icon set, it is shown in tooltip for icon set name.
-- When browsing icons, it is shown in tooltip for each icon.
+新插件在多个位置显示了署名要求和商业用途限制：
+- 在图标集列表中，每个图标集的工具提示内。
+- 浏览图标集时，显示在图标集名称的工具提示中。
+- 浏览图标时，显示在每个图标的工具提示中。
 
-![Iconify for Figma: search results](/assets/images/plugins/figma4_cat.png)
+![Iconify for Figma：搜索结果](/assets/images/plugins/figma4_cat.png)
 
-Additionally, you can filter icon sets and search results by license (see below).
+此外，您还可以按许可证过滤图标集和搜索结果（见下文）。
 
-## Advanced filters
+## 高级筛选器
 
-There are many icon sets, finding an icon set that you want might be a challenge.
+图标集数量众多，找到您想要的图标集可能颇具挑战。
 
-The new version of the plugin has advanced filters to help you find icon sets.
+新版插件提供了高级筛选器，帮助您快速定位图标集。
 
-You can filter icon sets by:
-- Category
-- Palette
-- License
-- Icon grid
-- Tags (coming very soon)
+您可以按以下条件筛选图标集：
+- 类别
+- 调色板
+- 许可证
+- 图标网格
+- 标签（即将推出）
 
-![Iconify for Figma: advanced filters](/assets/images/plugins/figma4_filters.png)
+![Iconify for Figma：高级筛选器](/assets/images/plugins/figma4_filters.png)
 
-## Favorite icon sets
+## 收藏图标集
 
-You can now mark icon sets as favorite.
+现在您可以将图标集标记为收藏。
 
-This can be done by clicking the star button when viewing icon set.
+在查看图标集时，点击星形按钮即可完成操作。
 
-![Iconify for Figma: star an icon set](/assets/images/plugins/figma4_favorite_toggle.png)
+![Iconify for Figma：收藏图标集](/assets/images/plugins/figma4_favorite_toggle.png)
 
-When browsing the icon sets list, if you have marked some icon sets as favorite,
-you will see the new option to browse only favorite icon sets.
+浏览图标集列表时，如果您已收藏了某些图标集，
+将会看到仅浏览已收藏图标集的新选项。
 
-![Iconify for Figma: favorite icon sets](/assets/images/plugins/figma4_favorite.png)
+![Iconify for Figma：已收藏的图标集](/assets/images/plugins/figma4_favorite.png)
 
-All lists (favorite and recent icon sets, recent icons) are considered to be private data (stored in Figma) and can be cleared.
+所有列表（收藏和最近使用的图标集、最近使用的图标）均被视为私有数据（存储在 Figma 中），并且可以随时清除。
 
-## Scrollable icons
+## 可滚动图标
 
-Previous versions of the plugin used pagination to show many icons.
-You needed to click page buttons to show more icons, which was not convenient.
+旧版插件使用分页来显示大量图标。
+您需要点击页码按钮才能查看更多图标，这并不方便。
 
-The new version of the plugin has completely redesigned icons view:
-- You can now scroll icons.
-- Icons list takes all available space, so the bigger plugin window is, the more icons are shown.
-- Pagination is also available if you prefer to use pages.
+新版插件完全重新设计了图标视图：
+- 现在您可以滚动浏览图标。
+- 图标列表会占据所有可用空间，因此插件窗口越大，显示的图标就越多。
+- 如果您更喜欢使用分页，也保留了分页功能。
 
-![Iconify for Figma: icon set](/assets/images/plugins/figma4_solar.png)
+![Iconify for Figma：图标集](/assets/images/plugins/figma4_solar.png)
 
-## Color styles
+## 颜色样式
 
-When importing icons, you can now pick color styles in color picker.
+导入图标时，您现在可以在颜色选择器中选取颜色样式。
 
-Due to Figma plugin system limitation, color picker might not show all color styles.
+由于 Figma 插件系统的限制，颜色选择器可能无法显示所有颜色样式。
 
-The plugin has access to:
-- Color styles defined in the currently viewed document.
-- Color styles used in selected layers.
+插件可访问：
+- 当前查看文档中定义的颜色样式。
+- 所选图层中使用的颜色样式。
 
-So if you have color styles shared from another document, the plugin might not see them.
-To add them to color picker, you need to select any layer that uses that color style.
+因此，如果您有从其他文档共享的颜色样式，插件可能无法识别它们。
+要将其添加到颜色选择器中，您需要选中任何使用了该颜色样式的图层。
 
-![Iconify for Figma: color picker](/assets/images/plugins/figma4_colors.png)
+![Iconify for Figma：颜色选择器](/assets/images/plugins/figma4_colors.png)
 
-### Solid colors only
+### 仅支持纯色
 
-Note that the plugin supports only color styles that have one solid color.
+请注意，插件仅支持单一纯色的颜色样式。
 
-Gradients, patterns, colors with opacity are not supported.
+不支持渐变、图案或带有透明度的颜色。
 
-## Replacing icons
+## 替换图标
 
-If you have selected a layer that contains icon, which was previously imported with plugin,
-you will see an option to replace that icon.
+如果您选中了包含之前通过插件导入的图标的图层，
+将会看到替换该图标的选项。
 
-Option to replace icon already existed in the previous version of the plugin, but now it has been redesigned.
+替换图标的选项在旧版插件中就已存在，但现在已重新设计。
 
-When replacing an icon, new icon will keep old icon's:
-- Size.
-- Color. Also supports color styles.
+替换图标时，新图标将保留旧图标的：
+- 尺寸。
+- 颜色。同时支持颜色样式。
 
-![Iconify for Figma: replacing icon](/assets/images/plugins/figma4_replace.png)
+![Iconify for Figma：替换图标](/assets/images/plugins/figma4_replace.png)
 
-## Animated icons
+## 动态图标
 
-Unfortunately, Figma does not support SVG animations.
+遗憾的是，Figma 不支持 SVG 动画。
 
-But it does not mean you cannot use animated icons in your work.
+但这并不意味着您不能在设计中使用动态图标。
 
-The new version of the plugin allows you to import animated icons to Figma.
-It will parse animations, remove animations and import static icon without animations.
+新版插件允许您将动态图标导入 Figma。
+它会解析动画，移除动画效果，并导入不带动画的静态图标。
 
-This allows you to use animated icon in the design.
+这使您可以在设计中使用动态图标。
 
-In production code, you can copy SVG with full animations from the Iconify website
-or use Iconify icon components. 
+在生产代码中，您可以从 Iconify 网站复制包含完整动画的 SVG，
+或使用 Iconify 图标组件。
 
-![Iconify for Figma: animated icons](/assets/images/plugins/figma4_animations.png)
+![Iconify for Figma：动态图标](/assets/images/plugins/figma4_animations.png)
 
-## Removed functions
+## 已移除的功能
 
-Not all functions from the old version made it to the new version:
-- Function to paste SVG (it also decoded icons wrapped in `[func]url()`).
-- Option to minify the plugin window. This option might return if requested, but it is not available in first release.
-- Various configuration options.
+并非旧版中的所有功能都保留到了新版中：
+- 粘贴 SVG 的功能（该功能还会解码包裹在 `[func]url()` 中的图标）。
+- 最小化插件窗口的选项。如果用户有需求，该选项可能会回归，但首次发布时暂不提供。
+- 各种配置选项。
 
-## Feedback
+## 反馈
 
-Feedback is welcome.
+欢迎提供反馈。
 
-See `[str]feedback` page in the plugin or visit [support page on website](/support/index.md).
+请查看插件内的 `[str]feedback` 页面，或访问[网站支持页面](/support/index.md)。

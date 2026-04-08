@@ -1,5 +1,5 @@
 ```yaml
-title: getIconsContentCSS() in Iconify Utils
+title: Iconify Utils 中的 getIconsContentCSS()
 functions:
   getIconsCSS: './get-icons-css.md'
   getIconContentCSS: './get-icon-content-css.md'
@@ -10,51 +10,49 @@ types:
 
 # getIconsCSS()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]getIconsCSS()` generates stylesheet for several icons from an icon set to render them as background or mask images.
+函数 `[func]getIconsCSS()` 为图标集中的多个图标生成样式表，以便将它们渲染为背景或遮罩图像。
 
-It generates code multiple icons from an icon set, splitting common code and icon-specific code.
-To generate code for one icon without splitting code, see `[func]getIconContentCSS()`.
+它为图标集中的多个图标生成代码，将通用代码和图标特定代码分开。
+若要为单个图标生成代码且不拆分代码，请参阅 `[func]getIconContentCSS()`。
 
-If, instead of using icons as content of a pseudo-elements,
-you want to use icons as background or mask images, see `[func]getIconsCSS()`.
+如果您不想将图标用作伪元素的内容，而是想将图标用作背景或遮罩图像，请参阅 `[func]getIconsCSS()`。
 
-To use icons in HTML, all you need to do is create any element, such as `[tag]span` with class names for an icon set and icon.
+若要在 HTML 中使用图标，您只需创建任意元素（例如带有图标集和图标类名的 `[tag]span`）即可。
 
-## Color and size
+## 颜色与尺寸
 
-When using icons as content of pseudo-elements, `[prop]currentColor` cannot be used, so icons must have a hardcoded color.
+当将图标用作伪元素的内容时，无法使用 `[prop]currentColor`，因此图标必须具有硬编码的颜色。
 
-Icons also must have fixed dimensions, which cannot be changed in CSS.
+图标还必须具有固定尺寸，且无法在 CSS 中更改。
 
-If you want to use icons with `[prop]currentColor` in CSS or want to resize icons using CSS,
-you should use `[func]getIconsCSS()` instead.
+如果您想在 CSS 中使用带有 `[prop]currentColor` 的图标，或想使用 CSS 调整图标大小，则应改用 `[func]getIconsCSS()`。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数具有以下参数：
 
-- `[prop]iconSet`, `[type]IconifyJSON`. Icon set data.
-- `[prop]names`, `[type]string[]`. Array of icon names.
-- `[prop]options`. Options object, optional.
+- `[prop]iconSet`，`[type]IconifyJSON`。图标集数据。
+- `[prop]names`，`[type]string[]`。图标名称数组。
+- `[prop]options`。选项对象，可选。
 
-Function returns `[type]string` with stylesheet for icons.
+函数返回包含图标样式表的 `[type]string`。
 
-## Options
+## 选项
 
-The `[prop]options` object has the following properties:
+`[prop]options` 对象具有以下属性：
 
-- `[prop]height`, `[type]number`. Icon height. Required.
-- `[prop]width`, `[type]number`. Icon width, optional. If not set, it is calculated using icon's width/height ratio and `[prop]height` option.
-- `[prop]color`, `[type]string`. Color to replace `[prop]currentColor` with. This should be used to change color of monotone icon, otherwise icon will be rendered black.
-- `[prop]iconSelector`, `[type]string`. Selector for icon, defaults to `[str].icon--{prefix}--{name}::after`. Variable `[str]{prefix}` is replaced with icon set prefix, `[str]{name}` with icon name.
-- `[prop]format`. Stylesheet formatting option. Matches options used in Sass. Supported values: `[str]expanded`, `[str]compact`, `[str]compressed`.
-- `[prop]rules`, `[type]Record<string, string>`. Extra rules to add to CSS.
+- `[prop]height`，`[type]number`。图标高度。必填。
+- `[prop]width`，`[type]number`。图标宽度，可选。如果未设置，则根据图标的宽高比和 `[prop]height` 选项计算得出。
+- `[prop]color`，`[type]string`。用于替换 `[prop]currentColor` 的颜色。应用于更改单色图标的颜色，否则图标将渲染为黑色。
+- `[prop]iconSelector`，`[type]string`。图标的选择器，默认为 `[str].icon--{prefix}--{name}::after`。变量 `[str]{prefix}` 将被替换为图标集前缀，`[str]{name}` 将被替换为图标名称。
+- `[prop]format`。样式表格式化选项。与 Sass 中使用的选项匹配。支持的值：`[str]expanded`、`[str]compact`、`[str]compressed`。
+- `[prop]rules`，`[type]Record<string, string>`。要添加到 CSS 中的额外规则。
 
-## Result
+## 结果
 
-Example of generated stylesheet:
+生成的样式表示例：
 
 ```css
 .icon--tabler--code::after {
@@ -70,32 +68,30 @@ Example of generated stylesheet:
 }
 ```
 
-That code can be used in HTML with any element, such as `[tag]span` with class names for both common code and icon specific code:
+该代码可在 HTML 中与任何元素一起使用，例如带有通用代码和图标特定代码类名的 `[tag]span`：
 
 ```html
 <span class="icon--tabler--code"></span>
 ```
 
-## Color option
+## 颜色选项
 
 ```yaml
 include: libraries/utils/css-color-content
 ```
 
-If you want to use different colors for different icons, you need to call `[func]getIconsContentCSS()` multiple times
-with different values for the `[prop]color` option.
+如果您想为不同的图标使用不同的颜色，则需要使用不同的 `[prop]color` 选项值多次调用 `[func]getIconsContentCSS()`。
 
-If you want to have several entries of the same monotone icon with different colors, you need to call
-`[func]getIconsContentCSS()` multiple times with different values for the `[prop]color` and `[prop]iconSelector` options.
+如果您希望同一个单色图标有多个不同颜色的实例，则需要使用不同的 `[prop]color` 和 `[prop]iconSelector` 选项值多次调用 `[func]getIconsContentCSS()`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/get-icons-content-css.ts
 title: 'generate-css.ts'
 extra:
   - src: libraries/utils/get-icons-content-css.css
-    title: 'Result:'
+    title: '结果：'
   - src: libraries/utils/get-icons-content-css.html
-    title: 'Usage in HTML:'
+    title: 'HTML 中的用法：'
 ```

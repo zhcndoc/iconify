@@ -9,85 +9,85 @@ replacements:
 
 # Iconify for Figma
 
-With the Iconify plugin for Figma you can import over 60,000 vector icons to Figma.
+借助 Figma 的 Iconify 插件，您可以将超过 60,000 个矢量图标导入 Figma。
 
-It is completely free!
+它完全免费！
 
-Unlike other plugins that offer many icons, but require payment to use SVG, Iconify always imports icons as SVG.
-Iconify project is open source and offers only open source icon sets.
+与其他提供大量图标但使用 SVG 需要付费的插件不同，Iconify 始终以 SVG 格式导入图标。
+Iconify 项目是开源的，仅提供开源图标集。
 
-Plugin remembers the last page you have visited, making it easy to continue searching or browsing icons.
+插件会记住您上次访问的页面，方便您继续搜索或浏览图标。
 
-For visitors that have small monitors, the plugin offers compact mode.
-Button to toggle compact mode is in the top right corner of the plugin window.
+对于显示器较小的用户，插件提供了紧凑模式。
+切换紧凑模式的按钮位于插件窗口的右上角。
 
-## Installation
+## 安装
 
-You can install Iconify for Figma from [Iconify plugin page](https://www.figma.com/community/plugin/735098390272716381/Iconify).
+您可以从 [Iconify 插件页面](https://www.figma.com/community/plugin/735098390272716381/Iconify) 安装 Figma 版 Iconify。
 
-## Usage
+## 使用方法
 
-In Figma menu select `[str]Plugins`, then select `[str]Iconify`.
+在 Figma 菜单中选择 `[str]插件`，然后选择 `[str]Iconify`。
 
-Browse or search icons, select any icon, click `[str]Import Icon` button or drag icon to the Figma document.
+浏览或搜索图标，选择任意图标，点击 `[str]导入图标` 按钮或将图标拖拽到 Figma 文档中。
 
-### Detailed instructions
+### 详细说明
 
-After opening the plugin, you will see the main page:
+打开插件后，您将看到主页面：
 
-![Iconify for Figma: main page](/assets/images/plugins/figma41-icon-sets.png)
+![Iconify for Figma: 主页面](/assets/images/plugins/figma41-icon-sets.png)
 
-Click any icon set or search icons.
+点击任意图标集或搜索图标。
 
-When you click an icon set, the plugin will show you all icons in that icon set.
-You can filter icons by categories (if the current icon set has them), search icons.
+点击图标集后，插件将显示该图标集中的所有图标。
+您可以按类别筛选图标（如果当前图标集支持），或搜索图标。
 
-To show more icons, simply scroll the icons list.
+要显示更多图标，只需滚动图标列表即可。
 
-![Iconify for Figma: icon set](/assets/images/plugins/figma41-icon-set.png)
+![Iconify for Figma: 图标集](/assets/images/plugins/figma41-icon-set.png)
 
-You can also search all icon sets for icons.
-For example, search for "gear":
+您还可以在所有图标集中搜索图标。
+例如，搜索 "gear"（齿轮）：
 
-![Iconify for Figma: icon search results](/assets/images/plugins/figma41-search-compact.png)
+![Iconify for Figma: 图标搜索结果](/assets/images/plugins/figma41-search-compact.png)
 
-The plugin will show you all icons that match your keyword.
+插件将显示所有匹配您关键词的图标。
 
-When you hover any icon, you will see a button to show more information.
+将鼠标悬停在任意图标上时，您将看到一个显示更多信息的按钮。
 
-If you hover it, you will see the icon name. If you click it, you will see:
+悬停在该按钮上会显示图标名称。点击它，您将看到：
 
-- Icon size.
-- Author information and license (only in search results).
-- Buttons to quickly import icon as a component or frame and to get code sample.
+- 图标尺寸。
+- 作者信息和许可证（仅在搜索结果中显示）。
+- 快速将图标导入为组件或画框的按钮，以及获取代码示例的按钮。
 
-You can import icon by:
+您可以通过以下方式导入图标：
 
-- Using quick import buttons from icon tooltip.
-- Dragging icon from plugin window to Figma document.
-- Clicking icon to select it, importing it using buttons in plugin window footer.
+- 使用图标工具提示中的快速导入按钮。
+- 将图标从插件窗口拖拽到 Figma 文档中。
+- 点击图标选中它，然后使用插件窗口底部的按钮进行导入。
 
-### Advanced import
+### 高级导入
 
-When you select an icon, it will appear in page footer with options:
+选中图标后，它将出现在页面底部并附带选项：
 
-![Iconify for Figma: icon code](/assets/images/plugins/figma41-icon-set-selected2.png)
+![Iconify for Figma: 图标代码](/assets/images/plugins/figma41-icon-set-selected2.png)
 
-For icons that do not have a hardcoded palette, color picker is available,
-showing recently used colors and available color styles:
+对于没有硬编码调色板的图标，提供颜色选择器，
+显示最近使用的颜色和可用的颜色样式：
 
-![Iconify for Figma: color picker](/assets/images/plugins/figma41-color-picker.png)
+![Iconify for Figma: 颜色选择器](/assets/images/plugins/figma41-color-picker.png)
 
-### Compact mode
+### 紧凑模式
 
-If you have limited window space available, you can make the plugin window even smaller.
+如果您的窗口空间有限，可以将插件窗口调得更小。
 
-Click the compact window button in the top right corner and the plugin window will become much smaller:
+点击右上角的紧凑窗口按钮，插件窗口将变得非常小巧：
 
-![Iconify for Figma: compact mode](/assets/images/plugins/figma41-icon-sets-compact.png)
+![Iconify for Figma: 紧凑模式](/assets/images/plugins/figma41-icon-sets-compact.png)
 
-## Support and feedback
+## 支持与反馈
 
-Feedback is welcome.
+欢迎提供反馈。
 
-See `[str]feedback` page in the plugin or visit [support page on website](/support/index.md).
+查看插件中的 `[str]反馈` 页面，或访问[网站上的支持页面](/support/index.md)。

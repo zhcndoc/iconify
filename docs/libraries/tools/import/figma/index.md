@@ -1,5 +1,5 @@
 ```yaml
-title: Importing icons from Figma
+title: 从 Figma 导入图标
 types:
   SVG: '../../svg/index.md'
   IconSet: '../../icon-set/index.md'
@@ -14,212 +14,212 @@ functions:
   runSVGO: '../../icon/svgo.md'
 ```
  
-# Importing icons from Figma
+# 从 Figma 导入图标
 
-This function is part of [import functions](../index.md) in [Iconify Tools](../../index.md).
+此函数属于 [Iconify Tools](../../index.md) 中的 [导入函数](../index.md) 的一部分。
 
-Function `[func]importFromFigma()` imports SVG files from a Figma file.
+函数 `[func]importFromFigma()` 用于从 Figma 文件中导入 SVG 文件。
 
-It creates `[type]IconSet` instance, which [can be exported to various formats](../../export/index.md).
+它会创建一个 `[type]IconSet` 实例，该实例[可导出为多种格式](../../export/index.md)。
 
-## Requirements
+## 要求
 
-To import Figma file, you need to have:
+要导入 Figma 文件，你需要具备：
 
-- Figma file ID. See [how to get Figma file ID](./file-id.md) article.
-- Access to document.
-- Figma API access token. See [how to get Figma API access token](./token.md) article.
+- Figma 文件 ID。请参阅[如何获取 Figma 文件 ID](./file-id.md) 一文。
+- 文档的访问权限。
+- Figma API 访问令牌。请参阅[如何获取 Figma API 访问令牌](./token.md) 一文。
 
-## Limitations
+## 限制
 
-Import function has few limitations on Figma document structure:
+导入函数对 Figma 文档结构有以下几点限制：
 
-Icon must be one of the following Figma node types:
+图标必须是以下 Figma 节点类型之一：
 
 - Frame
 - Component
-- Instance of a component
+- 组件实例
 
-Parent layers can only be the following Figma node types:
+父图层只能是以下 Figma 节点类型：
 
-- Page (in some Figma documentation it is called Canvas)
+- Page（在某些 Figma 文档中称为 Canvas）
 - Frame
 - Group
 
-Icons cannot be:
+图标不能是：
 
-- Placed inside components or component instances
-- Shapes without frame or component container
+- 放置在组件或组件实例内部
+- 没有 Frame 或 Component 容器的形状
 
-Icons cannot contain:
+图标不能包含：
 
-- Raster images
-- Text. Convert text to shapes
+- 位图
+- 文本。请将文本转换为轮廓
 
-## Usage
+## 用法
 
-Function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]options`, `[type]object`. Options.
+- `[prop]options`，`[type]object`。配置选项。
 
-Function returns:
+函数返回：
 
-- `[type]FigmaImportResult` object on success.
-- `[str]not_modified` string if file has not been modified since last run (can be returned only if `[prop]ifModifiedSince` option is set).
+- 成功时返回 `[type]FigmaImportResult` 对象。
+- 如果自上次运行以来文件未被修改，则返回 `[str]not_modified` 字符串（仅在设置了 `[prop]ifModifiedSince` 选项时才会返回）。
 
-In case of error, import might throw an exception, which you can catch using `[func]try` and `[func]catch`.
+如果发生错误，导入过程可能会抛出异常，你可以使用 `[func]try` 和 `[func]catch` 进行捕获。
 
-Function is asynchronous. That means you need to handle it as `[class]Promise` instance, usually by adding `[js]await` before function call.
+该函数是异步的。这意味着你需要将其作为 `[class]Promise` 实例进行处理，通常是在函数调用前添加 `[js]await`。
 
-## Options
+## 选项
 
-Options object has many properties, most are not required.
+选项对象包含许多属性，其中大多数不是必需的。
 
-Required options used in all parts of import process are:
+在导入过程的所有部分中都必须使用的必需选项包括：
 
-- `[prop]file`, `[type]string`. Figma file ID. See [how to get Figma file ID](./file-id.md) article.
-- `[prop]token`, `[type]string`. Figma API access token. See [how to get Figma API access token](./token.md) article.
+- `[prop]file`，`[type]string`。Figma 文件 ID。请参阅[如何获取 Figma 文件 ID](./file-id.md) 一文。
+- `[prop]token`，`[type]string`。Figma API 访问令牌。请参阅[如何获取 Figma API 访问令牌](./token.md) 一文。
 
-Required option used when traversing document:
+遍历文档时使用的必需选项：
 
-- `[prop]iconNameForNode`, `[type]function`. Callback that checks if node is an icon.
+- `[prop]iconNameForNode`，`[type]function`。用于检查节点是否为图标的回调函数。
 
-Required option used when generating icon set:
+生成图标集时使用的必需选项：
 
-- `[prop]prefix`, `[type]string`. Prefix for imported icon set. It is used in `[type]IconSet` instance when exporting to `[type]IconifyJSON`.
+- `[prop]prefix`，`[type]string`。导入图标集的前缀。在导出为 `[type]IconifyJSON` 时，会在 `[type]IconSet` 实例中使用。
 
-Other options are split in several groups:
+其他选项分为以下几组：
 
-### Cache options
+### 缓存选项
 
-These options are for caching data:
+这些选项用于缓存数据：
 
-- `[prop]cacheDir`, `[type]string`. Directory where cache should be stored. Use it to avoid retrieving same files every time you run your script.
-- `[prop]cacheAPITTL`, `[type]string`. TTL for API queries cache, in seconds. Used only if `[prop]cacheDir` is set, default value is 3 days.
-- `[prop]cacheSVGTTL`, `[type]string`. TTL for SVG cache, in seconds. Used only if `[prop]cacheDir` is set, default value is 30 days.
+- `[prop]cacheDir`，`[type]string`。缓存存储目录。使用它可以避免每次运行脚本时都重新获取相同的文件。
+- `[prop]cacheAPITTL`，`[type]string`。API 查询缓存的 TTL（生存时间），单位为秒。仅在设置了 `[prop]cacheDir` 时生效，默认值为 3 天。
+- `[prop]cacheSVGTTL`，`[type]string`。SVG 缓存的 TTL（生存时间），单位为秒。仅在设置了 `[prop]cacheDir` 时生效，默认值为 30 天。
 
-If you are expecting to run your script more than once, it is a good idea to cache API responses to avoid retrieving the same data multiple times. Set `[prop]cacheDir` to a writable directory.
+如果你预计会多次运行脚本，建议缓存 API 响应以避免重复获取相同数据。请将 `[prop]cacheDir` 设置为一个可写目录。
 
-TTL options usually do not need changing from default values. Each SVG has unique link, so if icon changes, it will have new cache file, so TTL for icons can be high.
+TTL 选项通常无需更改默认值。每个 SVG 都有唯一的链接，因此如果图标发生变化，它将生成新的缓存文件，所以图标的 TTL 可以设置得较高。
 
-If you set cache options, also consider setting `[prop]ifModifiedSince` option to `true`. This will tell import function to retrieve shallow copy of document from Figma, bypassing cache, then comparing if document in Figma has been updated since last cache. If document has been updated, function will clear cache.
+如果设置了缓存选项，还建议将 `[prop]ifModifiedSince` 选项设置为 `true`。这将指示导入函数绕过缓存，从 Figma 获取文档的浅拷贝，然后比较 Figma 中的文档自上次缓存以来是否已更新。如果文档已更新，函数将清除缓存。
 
 ```js
 const options = {
-	// ... other options here
+	// ... 其他选项在此处
 	cacheDir: 'cache/api',
 	ifModifiedSince: true,
 };
 ```
 
-### Options for retrieving Figma document
+### 获取 Figma 文档的选项
 
-These options are used when retrieving document:
+这些选项在获取文档时使用：
 
-- `[prop]version`, `[type]string`. Document version. Set it to parse specific version of document.
-- `[prop]ifModifiedSince`, `[type]string | Date | true`. If set, function will check if document has been updated.
+- `[prop]version`，`[type]string`。文档版本。设置此项以解析文档的特定版本。
+- `[prop]ifModifiedSince`，`[type]string | Date | true`。如果设置，函数将检查文档是否已更新。
 
 #### ifModifiedSince
 
-Option `[prop]ifModifiedSince` is used when you want to retrieve data only if icon set has been updated.
+当你希望仅在图标集已更新时才获取数据时，使用 `[prop]ifModifiedSince` 选项。
 
-Value can be one of the following:
+值可以是以下之一：
 
-- Last modification time as `[type]string`. You can get it from `[prop]lastModified` property of parse result.
-- Last modification time as `[type]Date`.
-- `true`. This is special value, it compares time to time stored in cached data (see `[prop]cacheDir` option above).
+- 最后修改时间，格式为 `[type]string`。你可以从解析结果的 `[prop]lastModified` 属性中获取。
+- 最后修改时间，格式为 `[type]Date`。
+- `true`。这是一个特殊值，它会将时间与缓存数据中存储的时间进行比较（参见上方的 `[prop]cacheDir` 选项）。
 
-If Figma document has not been modified, function will return string `[str]not_modified`.
+如果 Figma 文档未被修改，函数将返回字符串 `[str]not_modified`。
 
-If option is not set, function cannot return `[str]not_modified`.
+如果未设置此选项，函数将无法返回 `[str]not_modified`。
 
-### Options for finding icons in Figma document
+### 在 Figma 文档中查找图标的选项
 
-Function cannot reliably detect which element is an icon and which is not.
+该函数无法可靠地检测哪个元素是图标，哪个不是。
 
-These options tell function where to look for icons:
+这些选项用于告知函数在何处查找图标：
 
-- `[prop]ids`, `[type]string[]`. Array of node IDs to check. Useful if you know your document structure and want to limit Figma API query to specific nodes.
-- `[prop]depth`, `[type]number`. Depth of nodes tree to retrieve from API. See below.
-- `[prop]pages`, `[type]string[]`. List of page names that should be checked for icons.
-- `[prop]filterParentNode`, `[type]function`. Callback to filter parent nodes. Alternative to `[prop]pages` property, but also checks child nodes, such as frames and groups.
-- `[prop]iconNameForNode`, `[type]function`. Required. Callback that checks if node is an icon.
+- `[prop]ids`，`[type]string[]`。要检查的节点 ID 数组。如果你了解文档结构并希望将 Figma API 查询限制在特定节点，此选项非常有用。
+- `[prop]depth`，`[type]number`。从 API 检索的节点树深度。见下文。
+- `[prop]pages`，`[type]string[]`。应检查图标的页面名称列表。
+- `[prop]filterParentNode`，`[type]function`。用于过滤父节点的回调函数。可作为 `[prop]pages` 属性的替代方案，但还会检查子节点（如 Frame 和 Group）。
+- `[prop]iconNameForNode`，`[type]function`。必需。用于检查节点是否为图标的回调函数。
 
 #### depth
 
-Option `[prop]depth` tells function how deep it should scan Figma document. Scanning large documents results in slow parsing, so it is recommended to set this option.
+`[prop]depth` 选项用于告知函数应扫描 Figma 文档的深度。扫描大型文档会导致解析变慢，因此建议设置此选项。
 
-Value is number of layers to reach icons.
+该值表示到达图标所需的层数。
 
-For example, if icons are placed directly on page without parent group, depth value is `[num]2`.
+例如，如果图标直接放置在页面上且没有父级 Group，则深度值为 `[num]2`。
 
-![Figma tree depth: 2](/assets/images/tools/figma_depth_2.png)
+![Figma 树深度：2](/assets/images/tools/figma_depth_2.png)
 
-If icons are placed using the following tree:
+如果图标按以下树状结构放置：
 
-- Page.
-- Container frame or group.
-- Icon frame or component or component instance.
+- Page。
+- 容器 Frame 或 Group。
+- 图标 Frame、Component 或组件实例。
 
-Then depth value is `[num]3`.
+则深度值为 `[num]3`。
 
-![Figma tree depth: 3](/assets/images/tools/figma_depth_3.png)
+![Figma 树深度：3](/assets/images/tools/figma_depth_3.png)
 
 #### pages
 
-Option `[prop]pages` tells function which pages of Figma document contain icons. Value is list of page titles.
+`[prop]pages` 选项用于告知函数 Figma 文档的哪些页面包含图标。值为页面标题列表。
 
-Example:
+示例：
 
 ```js
 const options = {
-	// ... other options here
+	// ... 其他选项在此处
 	pages: ['Icons'],
 };
 ```
 
-If you set option `[prop]pages`, option `[prop]filterParentNode` is ignored.
+如果设置了 `[prop]pages` 选项，则 `[prop]filterParentNode` 选项将被忽略。
 
 #### filterParentNode
 
-Option `[prop]filterParentNode` is a callback function that filters potential parent nodes.
+`[prop]filterParentNode` 选项是一个用于过滤潜在父节点的回调函数。
 
-If possible, it should be used to filter parent nodes, otherwise parser might unexpectedly find and export nodes that match icon, but are on wrong page, that you forgot about.
+如果可能，应使用它来过滤父节点，否则解析器可能会意外找到并导出符合图标条件但位于你已遗忘的错误页面上的节点。
 
-It is an alternative to `[prop]pages` option. This option is ignored if `[prop]pages` option is set.
+它是 `[prop]pages` 选项的替代方案。如果设置了 `[prop]pages` 选项，则此选项将被忽略。
 
-Callback has the following parameters:
+回调函数包含以下参数：
 
-- `[prop]node`, `[type]FigmaParentNodeData`. Node to check.
-- `[prop]document` is Figma document structure, as returned by Figma API. TypeScript interface for document is limited because currently Figma does not provide typings for API responses.
+- `[prop]node`，`[type]FigmaParentNodeData`。要检查的节点。
+- `[prop]document` 是 Figma API 返回的 Figma 文档结构。由于目前 Figma 未提供 API 响应的类型定义，因此文档的 TypeScript 接口功能有限。
 
-Callback should return:
+回调函数应返回：
 
-- `true` if node is a valid parent node.
-- `false` if node should be ignored.
+- 如果节点是有效的父节点，则返回 `true`。
+- 如果节点应被忽略，则返回 `false`。
 
-Callback can be asynchronous.
+回调函数可以是异步的。
 
-Example:
+示例：
 
 ```js
 const options = {
-	// ... other options here
+	// ... 其他选项在此处
 
-	// 3 levels: page 'Icons' -> frame 'Regular -> icon
+	// 3 个层级：页面 'Icons' -> 画框 'Regular' -> 图标
 	depth: 3,
 
-	// Import icons only from 'Icons' -> 'Regular'
+	// 仅从 'Icons' -> 'Regular' 导入图标
 	filterParentNode: (nodes) => {
 		switch (nodes.length) {
 			case 1: {
-				// Page: 'Icons'
+				// 页面：'Icons'
 				const node = nodes[0];
 				return node.name === 'Icons';
 			}
 
 			case 2: {
-				// Frame: 'Regular'
+				// 画框：'Regular'
 				const node = nodes[1];
 				return node.name === 'Regular';
 			}
@@ -231,75 +231,75 @@ const options = {
 
 #### iconNameForNode
 
-Option `[prop]iconNameForNode` is a callback that checks if node is an icon.
+`[prop]iconNameForNode` 选项是一个用于检查节点是否为图标的回调函数。
 
-Function should return:
+函数应返回：
 
-- `[type]string` icon name if icon should be exported from node. Name is used when adding icon to `[type]IconSet` instance.
-- `[type]null` if node is not a valid icon.
+- 如果应从该节点导出图标，则返回 `[type]string` 类型的图标名称。在将图标添加到 `[type]IconSet` 实例时会使用该名称。
+- 如果节点不是有效的图标，则返回 `[type]null`。
 
-Callback parameters are:
+回调参数包括：
 
-- `[prop]node`, `[type]FigmaImportNodeData`. Information about node.
-- `[prop]nodes` is an object that contains number of nodes and list of nodes that callback has marked as icons.
-- `[prop]document` is Figma document structure, as returned by Figma API. TypeScript interface for document is limited because currently Figma does not provide typings for API responses.
+- `[prop]node`，`[type]FigmaImportNodeData`。节点的相关信息。
+- `[prop]nodes` 是一个对象，包含节点数量以及回调函数已标记为图标的节点列表。
+- `[prop]document` 是 Figma API 返回的 Figma 文档结构。由于目前 Figma 未提供 API 响应的类型定义，因此文档的 TypeScript 接口功能有限。
 
-Example of callback:
+回调示例：
 
 ```js
 const options = {
-	// ... other options here
+	// ... 其他选项在此处
 	iconNameForNode: (node) => {
 		if (
-			// Icons are stored after 2 parents: page -> container frame -> icon
+			// 图标存储在 2 个父级之后：页面 -> 容器画框 -> 图标
 			node.parents.length !== 2 ||
-			// Icons use frames
+			// 图标使用画框
 			node.type !== 'FRAME' ||
-			// Icon should be 32x32
+			// 图标尺寸应为 32x32
 			node.width !== 32 ||
 			node.height !== 32
 		) {
 			return null;
 		}
 
-		// Return node name as keyword for icon
+		// 返回节点名称作为图标的关键字
 		return node.name;
 	},
 };
 ```
 
-Callback can be asynchronous.
+回调函数可以是异步的。
 
-### Options for generating SVG
+### 生成 SVG 的选项
 
-These options are identical to export settings when you export SVG from Figma:
+这些选项与从 Figma 导出 SVG 时的导出设置完全相同：
 
-- `[prop]includeID`, `[type]boolean`. Set to `true` to include `[prop]id` attributes for all SVG elements (disabled by default).
-- `[prop]simplifyStroke`, `[type]boolean`. Simplifies inside/outside strokes and use stroke attribute if possible instead of `[tag]mask` (enabled by default).
-- `[prop]useAbsoluteBounds`, `[type]boolean`. Use the full dimensions of the node regardless of whether or not it is cropped or the space around it is empty. Use this to export text nodes without cropping (disabled by default).
+- `[prop]includeID`，`[type]boolean`。设置为 `true` 可为所有 SVG 元素包含 `[prop]id` 属性（默认禁用）。
+- `[prop]simplifyStroke`，`[type]boolean`。简化内部/外部描边，并在可能的情况下使用描边属性代替 `[tag]mask`（默认启用）。
+- `[prop]useAbsoluteBounds`，`[type]boolean`。无论节点是否被裁剪或周围空间是否为空，都使用节点的完整尺寸。使用此选项可在不裁剪的情况下导出文本节点（默认禁用）。
 
-### Options for importing icons
+### 导入图标的选项
 
-Function imports icons to `[type]IconSet` instance. These options are for customising import:
+该函数将图标导入到 `[type]IconSet` 实例中。这些选项用于自定义导入过程：
 
-- `[prop]prefix`, `[type]string`. Required. Prefix for icon set. It is used in `[type]IconSet` instance when exporting to `[type]IconifyJSON`.
-- `[prop]beforeImportingIcon`, `[type]function`. Callback to call before importing each icon.
-- `[prop]afterImportingIcon`, `[type]function`. Callback to call after importing each icon.
+- `[prop]prefix`，`[type]string`。必需。图标集的前缀。在导出为 `[type]IconifyJSON` 时，会在 `[type]IconSet` 实例中使用。
+- `[prop]beforeImportingIcon`，`[type]function`。在导入每个图标之前调用的回调函数。
+- `[prop]afterImportingIcon`，`[type]function`。在导入每个图标之后调用的回调函数。
 
-Callback functions are identical, the only difference is one is called before importing icon, another one is used after importing icons.
+这两个回调函数完全相同，唯一的区别是一个在导入图标前调用，另一个在导入图标后调用。
 
-Callbacks have the following parameters:
+回调函数包含以下参数：
 
-- `[prop]item`, `[type]FigmaIconNode`. Item that is about to be imported or was imported. In `[prop]beforeImportingIcon` callback you can change its contents.
-- `[prop]iconSet`, `[type]IconSet`. Icon set instance.
+- `[prop]item`，`[type]FigmaIconNode`。即将被导入或已导入的项。在 `[prop]beforeImportingIcon` 回调中，你可以修改其内容。
+- `[prop]iconSet`，`[type]IconSet`。图标集实例。
 
-Callbacks don't need to return anything.
+回调函数无需返回任何内容。
 
-Callbacks can be asynchronous.
+回调函数可以是异步的。
 
-## Example
+## 示例
 
-The following example imports simple icon set from Figma, where all icons have color `[str]#2e4454`, then replaces color with `[str]currentColor`.
+以下示例从 Figma 导入简单的图标集，其中所有图标的颜色均为 `[str]#2e4454`，然后将颜色替换为 `[str]currentColor`。
 
 ```yaml
 src: libraries/tools/import/figma-quill.ts

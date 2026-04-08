@@ -1,42 +1,42 @@
 ```yaml
-title: Custom Icon Sets
+title: 自定义图标集
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
 functions:
   exportJSONPackage: '/docs/libraries/tools/export/json-package.md'
 ```
 
-# Custom icon sets
+# 自定义图标集
 
-You can also use Iconify with custom icons.
+您也可以将 Iconify 与自定义图标一起使用。
 
-Most icon components and plugins support custom icon sets. The only exception are plugins that are not meant to work with custom icon sets, such as [Iconify plugin for Figma](/docs/design/figma/index.md).
+大多数图标组件和插件都支持自定义图标集。唯一的例外是那些不打算与自定义图标集配合使用的插件，例如 [Figma 的 Iconify 插件](/docs/design/figma/index.md)。
 
-## Format
+## 格式
 
-How custom icon sets are handled depends on your use case.
+自定义图标集的处理方式取决于您的使用场景。
 
-[All tools in Iconify ecosystem](/docs/usage/index.md) work with `[type]IconifyJSON` format.
+[Iconify 生态系统中的所有工具](/docs/usage/index.md) 都使用 `[type]IconifyJSON` 格式。
 
-Some icon components and plugins that are designed to work in Node.js (server side rendering or works with bundlers) can import individual SVG files, but usually they convert icons to `[type]IconifyJSON` format.
+一些设计用于在 Node.js 中运行（服务端渲染或与打包工具配合使用）的图标组件和插件可以导入单个 SVG 文件，但通常它们会将图标转换为 `[type]IconifyJSON` 格式。
 
-## Import tools
+## 导入工具
 
-Importing custom icon sets can be done at build time in Node.js environment.
+在 Node.js 环境中，可以在构建时导入自定义图标集。
 
-It is done with [Iconify Tools](/docs/libraries/tools/index.md) package.
+这可以通过 [Iconify Tools](/docs/libraries/tools/index.md) 包来完成。
 
-Typical import process:
+典型的导入流程：
 
-- Import icons. There are [various import functions](/docs/libraries/tools/import/index.md). They create unparsed icon set.
-- [Cleaning up imported icons](/docs/libraries/tools/icon/cleanup.md).
-- For monotone icon sets [parsing colors](/docs/libraries/tools/icon/colors.md) to make sure all icons use `[prop]currentColor`.
-- [Export icon set](/docs/libraries/tools/icon-set/export.md) to `[type]IconifyJSON`.
+- 导入图标。有[多种导入函数](/docs/libraries/tools/import/index.md)。它们会创建未解析的图标集。
+- [清理导入的图标](/docs/libraries/tools/icon/cleanup.md)。
+- 对于单色图标集，[解析颜色](/docs/libraries/tools/icon/colors.md)以确保所有图标都使用 `[prop]currentColor`。
+- 将[图标集导出](/docs/libraries/tools/icon-set/export.md)为 `[type]IconifyJSON`。
 
-See [Iconify Tools code examples](/docs/libraries/tools/examples/index.md) for code samples.
+有关代码示例，请参阅 [Iconify Tools 代码示例](/docs/libraries/tools/examples/index.md)。
 
-## Using custom icon sets
+## 使用自定义图标集
 
-Usage depends on where you want to use it. See documentation of icon component you want to use icons with.
+具体用法取决于您想在何处使用它。请参阅您打算配合使用的图标组件的文档。
 
-If icon component you want to use loads icon data on demand, you probably want to [set up your own Iconify API](/docs/api/hosting-js/index.md) to host custom icon sets.
+如果您想使用的图标组件是按需加载图标数据的，您可能需要[搭建自己的 Iconify API](/docs/api/hosting-js/index.md) 来托管自定义图标集。

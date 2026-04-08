@@ -1,3 +1,3 @@
-By default, icon height is set to `[str]"1em"`, icon width is changed dynamically based on the icon's width/height ratio.
+默认情况下，图标高度设置为 `[str]"1em"`，图标宽度会根据图标的宽高比动态调整。
 
-This makes it easy to change icon size by changing `[attr]font-size` in the stylesheet or in style, just like icon fonts:
+这使得只需在样式表或 style 中更改 `[attr]font-size`，即可轻松调整图标大小，就像使用图标字体一样：

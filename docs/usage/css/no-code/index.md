@@ -1,51 +1,51 @@
 ```yaml
-title: CSS for icons without coding
+title: 无需编写代码即可为图标生成 CSS
 replacements:
   - code: '60,000'
     value: '${counters.icons}'
   - code: '60k'
     value: '${counters.icons-short}'
   - code: '70 icon sets'
-    value: '${counters.sets} icon sets'
+    value: '${counters.sets} 个图标集'
   - code: '70 open source'
-    value: '${counters.sets} open source'
+    value: '${counters.sets} 个开源'
 functions:
   getIconsCSS: '/docs/libraries/utils/get-icons-css.md'
 ```
 
-# CSS for icons without coding
+# 无需编写代码即可为图标生成 CSS
 
-You can generate CSS for icons without writing any code, using Iconify API.
+借助 Iconify API，您可以在不编写任何代码的情况下为图标生成 CSS。
 
-If you would rather generate CSS programmatically, [consider using Iconify Utils](../utils/index.md).
+如果您更希望通过编程方式生成 CSS，[请考虑使用 Iconify Utils](../utils/index.md)。
 
 ## API
 
-Iconify API is an open source hosted (or self-hosted) service for developers. Public Iconify API servers host over 60,000 icons from more than 70 open source icon sets.
+Iconify API 是一项面向开发者的开源托管（或可自托管）服务。公共 Iconify API 服务器托管了来自 70 多个开源图标集的超过 60,000 个图标。
 
-Public API is available at `[url]https://api.iconify.design`.
+公共 API 可通过 `[url]https://api.iconify.design` 访问。
 
-Among other features, it can generate CSS for icons. Query for CSS is `[url]/{prefix}.css?icons={icons}`, where:
+除其他功能外，它还可以为图标生成 CSS。CSS 的查询格式为 `[url]/{prefix}.css?icons={icons}`，其中：
 
-- `[str]{prefix}` is icon set prefix. To generate CSS for icons from multiple icon sets, send separate queries for each icon set.
-- `[str]{icons}` is list of icon names, separated by comma.
+- `[str]{prefix}` 是图标集前缀。若要为来自多个图标集的图标生成 CSS，请为每个图标集分别发送查询请求。
+- `[str]{icons}` 是图标名称列表，以逗号分隔。
 
-## Usage
+## 使用方法
 
-Getting CSS is easy:
+获取 CSS 非常简单：
 
-- In your browser, create URL for Iconify API with the correct list of icons, as described above (see examples below).
-- Select all generated CSS, copy it to clipboard, paste it to a `[file].css` file.
+- 在浏览器中，按照上述说明（见下方示例）使用正确的图标列表创建 Iconify API 的 URL。
+- 选中所有生成的 CSS，将其复制到剪贴板，然后粘贴到 `[file].css` 文件中。
 
-To use those icons in HTML, use `[tag]span` elements with 2 class names: class name for the icon set, class name for the icon.
+要在 HTML 中使用这些图标，请使用带有 2 个类名的 `[tag]span` 元素：图标集的类名和图标的类名。
 
 ```html
 <span class="icon--mdi-light icon--mdi-light--alert-circle"></span>
 ```
 
-There is a bit of duplication in class names, as both the icon set and the icon contain the same first part. You can change it with options. See below.
+类名存在一定的重复，因为图标集和图标都包含相同的前缀部分。您可以通过选项进行更改。请见下文。
 
-## Examples
+## 示例
 
 [/mdi-light.css?icons=alert-circle,circle,help-circle](https://api.iconify.design/mdi-light.css?icons=alert-circle,circle,help-circle):
 
@@ -68,8 +68,8 @@ hint: /mdi.css?icons=account-box,account-cash,account,home
 src: api/mdi.css
 ```
 
-## Options
+## 选项
 
-API query has optional params that you can use to get different results.
+API 查询包含可选参数，您可以使用它们来获取不同的结果。
 
-See [API query documentation](/docs/api/css.md) for more details.
+有关更多详细信息，请参阅 [API 查询文档](/docs/api/css.md)。

@@ -1,14 +1,14 @@
 ```yaml
-title: 'Iconify SVG Framework Internal Function: setFetch'
+title: 'Iconify SVG 框架内部函数：setFetch'
 ```
 
-# SVG framework internal function: setFetch
+# SVG 框架内部函数：setFetch
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#render).
+本教程是 [Iconify SVG 框架函数教程](./functions.md#render) 的一部分。
 
 `include icon-components/functions/set-fetch/intro-component`
 
-## Why is it needed? {#why}
+## 为什么需要它？ {#why}
 
 ```yaml
 include: icon-components/functions/set-fetch/why
@@ -21,13 +21,13 @@ replacements:
 include: icon-components/functions/set-fetch/nodejs
 ```
 
-## Usage
+## 用法
 
 ```yaml
 include: icon-components/functions/set-fetch/usage
 ```
 
-## Steps
+## 步骤
 
 ```yaml
 include: icon-components/functions/set-fetch/svg-framework

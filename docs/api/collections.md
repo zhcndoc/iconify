@@ -1,36 +1,36 @@
 ```yaml
-title: List of icon sets
+title: 图标集列表
 types:
   IconifyInfo: '../types/iconify-info.md'
 ```
 
-# List of icon sets
+# 图标集列表
 
-You can get list of available icon sets using `[url]/collections` API query.
+您可以使用 `[url]/collections` API 查询获取可用图标集的列表。
 
-## Query
+## 查询
 
-API query is `[url]/collections`.
+API 查询地址为 `[url]/collections`。
 
-Optional parameters:
+可选参数：
 
-- `[prop]prefix`, `[type]string`. Icon set prefix if you want to get the result only for one icon set.
-- `[prop]prefixes`, `[type]string`. Comma separated list of icon set prefixes. You can use partial prefixes that end with `[str]-`, such as `[str]mdi-` matches `[str]mdi-light`.
+- `[prop]prefix`，`[type]string`。如果您只想获取单个图标集的结果，请提供图标集前缀。
+- `[prop]prefixes`，`[type]string`。以逗号分隔的图标集前缀列表。您可以使用以 `[str]-` 结尾的部分前缀，例如 `[str]mdi-` 会匹配 `[str]mdi-light`。
 
-Response is an object, where key is icon set prefix, value is `[type]IconifyInfo` object.
+响应是一个对象，其中键为图标集前缀，值为 `[type]IconifyInfo` 对象。
 
-Only icon sets that have info will be returned. If you want to hide an icon set, do not set the info object when importing it.
+仅返回包含信息的图标集。如果您想隐藏某个图标集，请在导入时不要设置 info 对象。
 
 ```yaml
 hint: /collections?prefixes=fa,fa-,fa6-&pretty=1
 src: api/collections.json
 ```
 
-### Error response
+### 错误响应
 
-If browsing icons is disabled, route is not handled, server returns `[num]404` HTTP error.
+如果禁用了图标浏览功能，该路由将不会被处理，服务器将返回 `[num]404` HTTP 错误。
 
-## Type
+## 类型
 
 ```ts
 import type { IconifyInfo } from '@iconify/types';

@@ -1,20 +1,20 @@
 ```yaml
-title: 'Iconify for React Function: replaceIDs'
+title: 'Iconify for React 函数：replaceIDs'
 functions:
   getIcon: './get-icon.md'
 ```
 
-# Iconify for React function: replaceIDs
+# Iconify for React 函数：replaceIDs
 
-This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
+本教程属于 [Iconify for React 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/replace-ids/intro-component`
 
-## Usage
+## 用法
 
 `include icon-components/functions/replace-ids/props`
 
-## Example
+## 示例
 
 `include icon-components/functions/replace-ids/example-component`
 

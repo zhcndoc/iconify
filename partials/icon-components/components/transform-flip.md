@@ -1,10 +1,10 @@
-You can flip an icon horizontally and/or vertically.
+您可以水平和/或垂直翻转图标。
 
-One way to do that is to add `[attr]flip` attribute with comma-separated values. Possible values:
+一种方法是添加带有逗号分隔值的 `[attr]flip` 属性。可能的值：
 
-- `[str]horizontal`: flip icon horizontally.
-- `[str]vertical`: flip icon vertically.
+- `[str]horizontal`：水平翻转图标。
+- `[str]vertical`：垂直翻转图标。
 
-You can also do that by setting `[attr]hFlip` and / or `[attr]vFlip` attributes to `[bool]true`.
+您也可以通过将 `[attr]hFlip` 和/或 `[attr]vFlip` 属性设置为 `[bool]true` 来实现。
 
-Example:
+示例：

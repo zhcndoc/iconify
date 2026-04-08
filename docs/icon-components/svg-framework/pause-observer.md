@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify SVG Framework Function: pauseObserver'
+title: 'Iconify SVG 框架函数：pauseObserver'
 functions:
   scan: './scan.md'
   observe: './observe.md'
@@ -7,35 +7,35 @@ functions:
   resumeObserver: './resume-observer.md'
 ```
 
-# SVG framework function: pauseObserver
+# SVG 框架函数：pauseObserver
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#scanner).
+本教程是 [Iconify SVG 框架函数教程](./functions.md#scanner) 的一部分。
 
-Function `[func]pauseObserver()` tells SVG framework to temporarily stop watching HTML element for icon placeholders.
+函数 `[func]pauseObserver()` 会告知 SVG 框架暂时停止监视 HTML 元素中的图标占位符。
 
-Use this function when you need to do a lot of DOM manipulation and you want to prevent SVG framework from scanning DOM until you resume observing using `[func]resumeObserver()`.
+当你需要进行大量 DOM 操作，并且希望在使用 `[func]resumeObserver()` 恢复监视之前阻止 SVG 框架扫描 DOM 时，请使用此函数。
 
-## Usage
+## 用法
 
-Function has the following optional parameter:
+该函数包含以下可选参数：
 
-- `[prop]root`, `[type]HTMLElement`. Element to pause observing. If missing, SVG framework will pause all active observers.
+- `[prop]root`，`[type]HTMLElement`。要暂停监视的元素。如果省略，SVG 框架将暂停所有活动的监视器。
 
-## Example
+## 示例
 
 ```js
-// Pause observer
+// 暂停监视器
 Iconify.pauseObserver();
 
-// Do some heavy DOM manipulation
+// 执行一些繁重的 DOM 操作
 // ...
 // ...
 
-// Resume observer
+// 恢复监视器
 Iconify.resumeObserver();
 ```
 
-## Notes
+## 注意事项
 
-- Pause tracker is a number, it increases with every call. If you call `[func]pauseObserver()` multiple times, you need to call `[func]resumeObserver()` the same amount of times to resume observer.
-- If you are removing custom node and do not plan to re-use it, you need to stop observer, not pause it. See `[func]stopObserving()`.
+- 暂停计数器是一个数字，每次调用都会递增。如果你多次调用 `[func]pauseObserver()`，则需要调用相同次数的 `[func]resumeObserver()` 才能恢复监视。
+- 如果你正在移除自定义节点且不打算重新使用它，你需要停止监视器，而不是暂停它。请参阅 `[func]stopObserving()`。

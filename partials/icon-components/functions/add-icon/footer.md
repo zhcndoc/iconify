@@ -1,3 +1,3 @@
-This function adds one icon in `[type]IconifyIcon` format.
+此函数用于添加一个 `[type]IconifyIcon` 格式的图标。
 
-If you want to add several icons, or you have `[type]IconifyJSON` data, use function `[func]addCollection()` instead.
+如果您需要添加多个图标，或已有 `[type]IconifyJSON` 数据，请改用 `[func]addCollection()` 函数。

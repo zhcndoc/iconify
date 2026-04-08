@@ -1,34 +1,34 @@
 ```yaml
-title: getSVGViewBox() and SVGViewBox in Iconify Utils
+title: Iconify Utils 中的 getSVGViewBox() 和 SVGViewBox
 ```
 
-# getSVGViewBox() and SVGViewBox type
+# getSVGViewBox() 和 SVGViewBox 类型
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]getSVGViewBox()` is a helper function that parses `[prop]viewBox` attribute value.
+函数 `[func]getSVGViewBox()` 是一个辅助函数，用于解析 `[prop]viewBox` 属性值。
 
-Result is represented by `[type]SVGViewBox` type, used in various functions in Iconify Utils.
+结果由 `[type]SVGViewBox` 类型表示，该类型在 Iconify Utils 的多个函数中使用。
 
-## Usage
+## 用法
 
-The function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]value`, `[type]string`. Attribute value.
+- `[prop]value`，`[type]string` 类型。属性值。
 
-Function returns `[type]SVGViewBox` with parsed viewBox value or `[type]undefined` on error.
+函数返回包含已解析 viewBox 值的 `[type]SVGViewBox`，出错时返回 `[type]undefined`。
 
-Function validates numbers to make sure values are valid numbers and there are exactly 4 numbers. On failure, it will return `[type]undefined`. 
+函数会验证数字，以确保值是有效的数字且恰好包含 4 个数字。验证失败时，将返回 `[type]undefined`。 
 
-## SVGViewBox type
+## SVGViewBox 类型
 
-Type `[type]SVGViewBox` is an array of four numbers:
-- x (or left)
-- y (or top)
-- width
-- height
+类型 `[type]SVGViewBox` 是一个包含四个数字的数组：
+- x（或 left）
+- y（或 top）
+- 宽度
+- 高度
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/get-svg-viewbox.ts
@@ -38,9 +38,9 @@ extra:
     title: 'Result:'
 ```
 
-## Convert to string
+## 转换为字符串
 
-To get `[prop]viewBox` attribute as a string from `[type]SVGViewBox`, use `[func]join` function:
+要从 `[type]SVGViewBox` 获取 `[prop]viewBox` 属性的字符串形式，请使用 `[func]join` 函数：
 
 ```js
 const value = viewBox.join(' ');

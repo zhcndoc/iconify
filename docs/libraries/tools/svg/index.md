@@ -1,5 +1,5 @@
 ```yaml
-title: SVG Class
+title: SVG 类
 types:
   IconSet: "../icon-set/index.md"
   IconifyIcon: "/docs/types/iconify-icon.md"
@@ -8,13 +8,13 @@ functions:
   runSVGO: "../icon/svgo.md"
 ```
 
-# SVG class
+# SVG 类
 
-`[type]SVG` class represents one icon. It is used in [Iconify Tools](../index.md) in functions for icon content.
+`[type]SVG` 类表示一个图标。它在 [Iconify Tools](../index.md) 中用于处理图标内容的函数。
 
-## Usage
+## 用法
 
-To create an instance, use this code:
+要创建实例，请使用以下代码：
 
 ```ts
 import { SVG } from "@iconify/tools";
@@ -24,7 +24,7 @@ const svg = new SVG(
 );
 ```
 
-If you are working with icon sets, use function `[func]toSVG()` of `[type]IconSet` instance to get `[type]SVG` instance:
+如果你正在处理图标集，请使用 `[type]IconSet` 实例的 `[func]toSVG()` 函数来获取 `[type]SVG` 实例：
 
 ```ts
 const svg = iconSet("home");
@@ -33,41 +33,41 @@ if (!svg) {
 }
 ```
 
-## Properties
+## 属性
 
-`[type]SVG` instance has several properties, all are initialized when instance is created:
+`[type]SVG` 实例包含多个属性，所有属性均在实例创建时初始化：
 
-- `[prop]viewBox`, `[type]ViewBox`. Icon's `[attr]viewBox`. It is a simple object with numeric properties `[prop]left`, `[prop]top`, `[prop]width` and `[prop]height`. Properties `[prop]left`, `[prop]top` are optional, default value is `[num]0`.
-- `[prop]$svg` is a root element of SVG.
+- `[prop]viewBox`，`[type]ViewBox`。图标的 `[attr]viewBox`。它是一个包含数值属性 `[prop]left`、`[prop]top`、`[prop]width` 和 `[prop]height` 的简单对象。属性 `[prop]left` 和 `[prop]top` 是可选的，默认值为 `[num]0`。
+- `[prop]$svg` 是 SVG 的根元素。
 
-## Methods
+## 方法
 
-The following methods are available:
+提供以下方法：
 
-- `[func]load(content)` replaces icon content. This is identical to creating new `[type]SVG` instance, but it changes current instance instead of making new one.
-- `[func]toString()` exports icon as string.
-- `[func]toMinifiedString()` export icon as string, but without whitespace.
-- `[func]toPrettyString()` export icon as string, with extra tabs and new lines for readability.
-- `[func]getBody()` export icon's content as string (icon without `[tag]svg` tag).
-- `[func]getIcon()` exports icon as `[type]IconifyIcon` object.
+- `[func]load(content)` 替换图标内容。这与创建新的 `[type]SVG` 实例相同，但它会修改当前实例而不是创建新实例。
+- `[func]toString()` 将图标导出为字符串。
+- `[func]toMinifiedString()` 将图标导出为字符串，但不包含空白字符。
+- `[func]toPrettyString()` 将图标导出为字符串，包含额外的缩进和换行以提高可读性。
+- `[func]getBody()` 将图标内容导出为字符串（不包含 `[tag]svg` 标签的图标）。
+- `[func]getIcon()` 将图标导出为 `[type]IconifyIcon` 对象。
 
-## Validating and cleaning up icon
+## 验证与清理图标
 
-Unfortunately, many editors leave lots of junk in SVG files, sometimes multiplying icon file size several times.
+遗憾的是，许多编辑器会在 SVG 文件中留下大量冗余数据，有时会使图标文件大小增加数倍。
 
-SVG files might also contain scripts and links to external resources.
+SVG 文件还可能包含脚本和指向外部资源的链接。
 
-This is why after loading icon, it should be validated and cleaned up. See `[func]cleanupSVG()` function.
+这就是为什么在加载图标后，应对其进行验证和清理。请参阅 `[func]cleanupSVG()` 函数。
 
-## Optimising icon
+## 优化图标
 
-The cleanup process is very basic, it does bare minimum to get rid of bad stuff.
-However, icons often contain unnecessary or unused elements and attributes.
+清理过程非常基础，仅执行最基本的操作以去除不良内容。
+然而，图标通常包含不必要或未使用的元素和属性。
 
-Before exporting icons, you need to properly fix them. The process can include:
+在导出图标之前，你需要对其进行适当的修复。该过程可能包括：
 
-- Fixing color palette.
-- Scaling icons.
-- Optimising icons.
+- 修正调色板。
+- 缩放图标。
+- 优化图标。
 
-See [icon manipulation functions](../icon/index.md).
+请参阅 [图标操作函数](../icon/index.md)。

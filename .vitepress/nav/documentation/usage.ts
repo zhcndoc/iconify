@@ -28,12 +28,12 @@ export const UsageSidebar: SidebarItem[] = [
     ],
   },
   {
-    text: "SVG in CSS",
+    text: "CSS 中的 SVG",
     collapsed: true,
     link: `${usageRoot}css/`,
     items: [
       {
-        text: "No Code",
+        text: "无需代码",
         link: `${usageRoot}css/no-code/`,
       },
       {
@@ -47,11 +47,11 @@ export const UsageSidebar: SidebarItem[] = [
             // collapsed: true,
             items: [
               {
-                text: "Size and Color",
+                text: "尺寸与颜色",
                 link: `${usageRoot}css/tailwind/tailwind4/size-color`,
               },
               {
-                text: "Custom Icons",
+                text: "自定义图标",
                 link: `${usageRoot}css/tailwind/tailwind4/custom-icons`,
               },
             ],
@@ -66,19 +66,19 @@ export const UsageSidebar: SidebarItem[] = [
                 // collapsed: true,
                 items: [
                   {
-                    text: "Size and Color",
+                        text: "尺寸与颜色",
                     link: `${usageRoot}css/tailwind/iconify/size-color`,
                   },
                   {
-                    text: "Prefixes",
+                        text: "前缀",
                     link: `${usageRoot}css/tailwind/iconify/prefixes`,
                   },
                   {
-                    text: "Selectors",
+                        text: "选择器",
                     link: `${usageRoot}css/tailwind/iconify/selectors`,
                   },
                   {
-                    text: "Customise",
+                        text: "自定义",
                     link: `${usageRoot}css/tailwind/iconify/customise`,
                   },
                 ],
@@ -89,26 +89,26 @@ export const UsageSidebar: SidebarItem[] = [
                 // collapsed: true,
                 items: [
                   {
-                    text: "Size",
+                        text: "尺寸",
                     link: `${usageRoot}css/tailwind/dynamic/size`,
                   },
                   {
-                    text: "Icon Sets",
+                        text: "图标集",
                     link: `${usageRoot}css/tailwind/dynamic/icon-sets`,
                   },
                   {
-                    text: "Customise",
+                        text: "自定义",
                     link: `${usageRoot}css/tailwind/dynamic/customise`,
                   },
                 ],
               },
               {
-                text: "Clean Class Names",
+                    text: "简洁类名",
                 link: `${usageRoot}css/tailwind/clean`,
                 hidden: true,
               },
               {
-                text: "Options",
+                    text: "选项",
                 link: `${usageRoot}css/tailwind/options`,
                 hidden: true,
               },
@@ -127,12 +127,12 @@ export const UsageSidebar: SidebarItem[] = [
     ],
   },
   {
-    text: "SVG in HTML",
+    text: "HTML 中的 SVG",
     collapsed: true,
     link: `${usageRoot}svg/`,
     items: [
       {
-        text: "No Code",
+        text: "无需代码",
         link: `${usageRoot}svg/no-code/`,
       },
       {
@@ -150,26 +150,26 @@ export const UsageSidebar: SidebarItem[] = [
     ],
   },
   {
-    text: "Icons on Demand",
+    text: "按需图标",
     collapsed: true,
     link: "/docs/icon-components/",
     items: IconifyUsageSidebar,
   },
   {
-    text: "UI Design",
+    text: "UI 设计",
     collapsed: true,
     link: "/docs/design/",
     items: [
       {
-        text: "Figma Plugin",
+        text: "Figma 插件",
         link: "/docs/design/figma/",
       },
       {
-        text: "Penpot Plugin",
+        text: "Penpot 插件",
         link: "/docs/design/penpot/",
       },
       {
-        text: "Sketch Plugin",
+        text: "Sketch 插件",
         link: "/docs/design/sketch/",
       },
     ],

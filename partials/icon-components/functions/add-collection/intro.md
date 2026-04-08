@@ -1,1 +1,1 @@
-Function `[func]addCollection()` adds an icon set to component's icon storage.
+函数 `[func]addCollection()` 将图标集添加到组件的图标存储中。

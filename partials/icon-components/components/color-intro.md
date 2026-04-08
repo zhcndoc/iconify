@@ -1,3 +1,3 @@
-You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.
+您只能更改单色图标的颜色。某些图标（例如表情符号）具有无法更改的硬编码配色方案。
 
-To change color of a monotone icon, simply change text color or use `[prop]color` attribute or add `[prop]style` with color.
+要更改单色图标的颜色，只需更改文本颜色，或使用 `[prop]color` 属性，或添加带有颜色的 `[prop]style`。

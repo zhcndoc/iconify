@@ -7,14 +7,14 @@ const packageRoot = `${root}package/`
 
 export const ToolsSidebar: SidebarItem[] = [
   {
-    text: 'SVG Class',
+    text: 'SVG 类',
     link: `${root}svg/`,
   },
   {
-    text: 'IconSet Class',
+    text: 'IconSet 类',
     link: iconSetRoot,
     items: [{
-      text: 'Icons',
+      text: '图标',
       collapsed: true,
       items: [{
         text: 'list()',
@@ -69,7 +69,7 @@ export const ToolsSidebar: SidebarItem[] = [
         link: `${iconSetRoot}resolve`,
       }],
     }, {
-      text: 'Import / Export',
+      text: '导入 / 导出',
       collapsed: true,
       items: [
         {
@@ -93,7 +93,7 @@ export const ToolsSidebar: SidebarItem[] = [
           link: `${iconSetRoot}to-string`,
         }],
     }, {
-      text: 'Metadata',
+      text: '元数据',
       collapsed: true,
       items: [{
         text: 'prefix',
@@ -136,14 +136,14 @@ export const ToolsSidebar: SidebarItem[] = [
       link: `${iconSetRoot}merge`,
     }],
   }, {
-    text: 'Cleanup/Validation',
+    text: '清理 / 校验',
     link: `${iconRoot}cleanup`,
   }, {
     text: 'ResolvedIconifyIcon',
     link: `${root}iconify-icon`,
     hidden: true,
   }, {
-    text: 'Icon Manipulation',
+    text: '图标处理',
     link: iconRoot,
     collapsed: true,
     items: [{
@@ -163,61 +163,61 @@ export const ToolsSidebar: SidebarItem[] = [
       link: `${iconRoot}mask`,
     }],
   }, {
-    text: 'Import',
+    text: '导入',
     link: `${root}import/`,
     collapsed: true,
     items: [{
       text: 'IconifyJSON',
       link: `${root}import/json`,
     }, {
-      text: 'Single SVG',
+      text: '单个 SVG',
       link: `${root}import/svg`,
     }, {
-      text: 'Directory',
+      text: '目录',
       link: `${root}import/directory`,
     }, {
       text: 'Figma',
       link: `${root}import/figma/`,
       items: [{
-        text: 'Getting File ID',
+        text: '获取文件 ID',
         link: `${root}import/figma/file-id`,
       }, {
-        text: 'Getting Access Token',
+        text: '获取访问令牌',
         link: `${root}import/figma/token`,
       }, {
-        text: 'Types',
+        text: '类型',
         link: `${root}import/figma/types`,
       }],
     }],
   }, {
-    text: 'Export',
+    text: '导出',
     link: `${root}export/`,
     collapsed: true,
     items: [{
       text: 'IconifyJSON',
       link: `${root}export/json`,
     }, {
-      text: 'Single SVG',
+      text: '单个 SVG',
       link: `${root}export/svg`,
     }, {
-      text: 'Directory',
+      text: '目录',
       link: `${root}export/directory`,
     }, {
-      text: 'IconifyJSON Package',
+      text: 'IconifyJSON 包',
       link: `${root}export/json-package`,
     }, {
-      text: 'Icon Package',
+      text: '图标包',
       link: `${root}export/icon-package`,
     }],
   }, {
-    text: 'Managing Packages',
+    text: '管理包',
     link: packageRoot,
     collapsed: true,
     items: [{
-      text: 'Download Packages',
+      text: '下载包',
       collapsed: true,
       items: [{
-        text: 'Git Repository',
+        text: 'Git 仓库',
         link: `${packageRoot}git`,
       }, {
         text: 'GitHub API',
@@ -226,64 +226,64 @@ export const ToolsSidebar: SidebarItem[] = [
         text: 'GitLab API',
         link: `${packageRoot}gitlab`,
       }, {
-        text: 'NPM Package',
+        text: 'NPM 包',
         link: `${packageRoot}npm`,
       }],
     }, {
-      text: 'Versions',
+      text: '版本',
       collapsed: true,
       items: [{
-        text: 'Increase Version',
+        text: '递增版本',
         link: `${packageRoot}bump-version`,
       }, {
-        text: 'NPM Version',
+        text: 'NPM 版本',
         link: `${packageRoot}npm-version`,
       }, {
-        text: 'Package Version',
+        text: '包版本',
         link: `${packageRoot}package-version`,
       }, {
-        text: 'Git Repo Hash',
+        text: 'Git 仓库哈希',
         link: `${packageRoot}git-repo-hash`,
       }, {
-        text: 'GitHub Last Commit',
+        text: 'GitHub 最近提交',
         link: `${packageRoot}github-commit`,
       }, {
-        text: 'GitLab Last Commit',
+        text: 'GitLab 最近提交',
         link: `${packageRoot}gitlab-commit`,
       }],
     }, {
-      text: 'Helper Functions',
+      text: '辅助函数',
       collapsed: true,
       items: [{
-        text: 'Compare Directories',
+        text: '比较目录',
         link: `${packageRoot}compare`,
       }, {
-        text: 'Send API Query',
+        text: '发送 API 查询',
         link: `${packageRoot}api-query`,
       }, {
-        text: 'Download File',
+        text: '下载文件',
         link: `${packageRoot}download-file`,
       }],
     }],
   }, {
-    text: 'Examples',
+    text: '示例',
     collapsed: true,
     link: `${root}examples/`,
     items: [{
-      text: 'Export all Iconify icon sets as SVG',
+      text: '将所有 Iconify 图标集导出为 SVG',
       link: `${root}examples/export-svg`,
     }, {
-      text: 'Import icon set from Figma',
+      text: '从 Figma 导入图标集',
       link: `${root}examples/import-figma`,
     }, {
-      text: 'Convert Material Design Icons to Iconify JSON format',
+      text: '将 Material Design Icons 转换为 Iconify JSON 格式',
       link: `${root}examples/import-mdi`,
     }, {
-      text: 'Convert FontAwesome Pro to Iconify JSON format',
+      text: '将 FontAwesome Pro 转换为 Iconify JSON 格式',
       link: `${root}examples/import-fa-pro`,
     }],
   }, {
-    text: 'Import Limitations',
+    text: '导入限制',
     link: `${root}tags`,
   },
 ]

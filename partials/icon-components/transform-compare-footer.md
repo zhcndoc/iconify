@@ -1,3 +1,3 @@
-In example above, first icon is rotated using `[attr]rotate` attribute, second icon is rotated using CSS. The first icon kept its `[num]1em` height, second icon became taller than it should be.
+在上面的示例中，第一个图标使用 `[attr]rotate` 属性进行旋转，第二个图标使用 CSS 进行旋转。第一个图标保持了其 `[num]1em` 的高度，而第二个图标变得比预期更高。
 
-Sometimes you do want behaviour that CSS transformations provide. Then you can still use CSS transformations by adding it to style.
+有时你确实需要 CSS 变换所提供的行为。此时，你仍然可以通过将其添加到样式中来使用 CSS 变换。

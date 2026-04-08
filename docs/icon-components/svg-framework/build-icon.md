@@ -1,5 +1,5 @@
 ```yaml
-title: "Iconify SVG Framework Function: buildIcon"
+title: "Iconify SVG 框架函数：buildIcon"
 types:
   IconifyIcon: "/docs/types/iconify-icon.md"
 functions:
@@ -13,24 +13,24 @@ functions:
   iconLoaded: "./icon-exists.md"
 ```
 
-# SVG framework function: buildIcon
+# SVG 框架函数：buildIcon
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#render).
+本教程是 [Iconify SVG 框架函数教程](./functions.md#render) 的一部分。
 
-Function `[func]buildIcon()` generates data used by `[func]renderSVG()` and `[func]renderHTML()` functions.
+函数 `[func]buildIcon()` 生成 `[func]renderSVG()` 和 `[func]renderHTML()` 函数所使用的数据。
 
-This function is meant to be used when you generate `[tag]svg` code.
+该函数适用于生成 `[tag]svg` 代码的场景。
 
-## Usage
+## 用法
 
 `include icon-components/functions/build-icon/usage`
 
-## Result
+## 结果
 
-See `[func]renderIcon()` function.
+请参阅 `[func]renderIcon()` 函数。
 
-## Difference from renderIcon
+## 与 renderIcon 的区别
 
-This function is almost identical to `[func]renderIcon()` with one difference: first parameter is icon data, not icon name.
+该函数与 `[func]renderIcon()` 几乎完全相同，唯一区别在于：第一个参数是图标数据，而非图标名称。
 
-Why are there two functions? For compatibility with other icon components and with old versions of SVG framework. Other components export only `[func]buildIcon()`, SVG framework had `[func]renderIcon()` from old version. Internally, `[func]renderIcon()` uses same code as `[func]buildIcon()`, so having both does not increase bundle size by much.
+为何存在两个函数？旨在与其他图标组件及旧版 SVG 框架保持兼容。其他组件仅导出 `[func]buildIcon()`，而 SVG 框架自旧版本起便已提供 `[func]renderIcon()`。在内部实现上，`[func]renderIcon()` 复用了 `[func]buildIcon()` 的代码，因此同时保留两者并不会显著增加打包体积。

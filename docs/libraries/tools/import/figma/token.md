@@ -1,24 +1,24 @@
 ```yaml
-title: 'Importing SVG from Figma: Getting access token'
+title: '从 Figma 导入 SVG：获取访问令牌'
 functions:
   importFromFigma: ./index.md
 ```
 
-# How to get Figma API access token
+# 如何获取 Figma API 访问令牌
 
-This article is part of `[func]importFromFigma()` documentation.
+本文是 `[func]importFromFigma()` 文档的一部分。
 
-How to get Figma API access token:
+获取 Figma API 访问令牌的步骤：
 
-1. Open Figma.
-2. Select "Home" button in top left corner if you are not on home page.
-3. Click your name in top right corner to see account menu.
-4. Select "Settings".
-5. In settings window click "Account".
-6. Scroll to "Personal access tokens", in token name type something then hit enter key.
+1. 打开 Figma。
+2. 如果您不在主页，请点击左上角的“主页”按钮。
+3. 点击右上角的您的名字以查看账户菜单。
+4. 选择“设置”。
+5. 在设置窗口中点击“账户”。
+6. 滚动到“个人访问令牌 (Personal access tokens)”，在令牌名称处输入内容后按回车键。
 
-You should see new token. Copy it.
+您应该会看到新生成的令牌。请将其复制。
 
-If you at some point would want to remove token, follow steps above. Below form to generate new tokens, you'll see list of all tokens. From there you can remove tokens.
+如果您日后想要删除令牌，请按照上述步骤操作。在生成新令牌的表单下方，您将看到所有令牌的列表。您可以从那里删除令牌。
 
-Never commit token to a repository or publish it anywhere! Keep it secret. There are many ways to keep token secret, most common is using environmental variables to pass token to script. There are plenty of tutorials available that explain different methods.
+切勿将令牌提交到代码仓库或发布到任何地方！请务必保密。有许多方法可以保护令牌安全，最常见的是使用环境变量将令牌传递给脚本。网上有大量教程详细解释了各种方法。

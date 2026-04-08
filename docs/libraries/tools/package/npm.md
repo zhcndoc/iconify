@@ -1,69 +1,69 @@
 ```yaml
-title: Downloading NPM package
+title: 下载 NPM 包
 types:
   DownloadNPMPackageResult: './npm.md#result'
 ```
 
-# Downloading NPM package
+# 下载 NPM 包
 
-This tutorial is part of [package functions documentation](./index.md) in [Iconify Tools](../index.md).
+本教程是 [Iconify Tools](../index.md) 中 [包函数文档](./index.md) 的一部分。
 
-Function `[func]downloadNPMPackage()` downloads NPM package.
+函数 `[func]downloadNPMPackage()` 用于下载 NPM 包。
 
-Unlike `[bash]npm install`, this function downloads and extracts only requested NPM package, it does not install dependencies and does not run any scripts.
+与 `[bash]npm install` 不同，此函数仅下载并提取请求的 NPM 包，不会安装依赖项，也不会运行任何脚本。
 
-## Usage
+## 用法
 
-Function has the following parameter:
+该函数具有以下参数：
 
-- `[prop]options`, `[type]object`. Options, see below.
+- `[prop]options`，`[type]object`。选项，见下文。
 
-Function returns:
+函数返回：
 
-- `[type]DownloadNPMPackageResult` object on success.
-- `[str]not_modified` string if repository has not been updated since last run (can be returned only if `[prop]ifModifiedSince` option is set).
+- 成功时返回 `[type]DownloadNPMPackageResult` 对象。
+- 如果自上次运行以来包未更新，则返回 `[str]not_modified` 字符串（仅在设置了 `[prop]ifModifiedSince` 选项时才会返回）。
 
-In case of error, function might throw an exception, which you can catch using `[func]try` and `[func]catch`.
+如果发生错误，函数可能会抛出异常，你可以使用 `[func]try` 和 `[func]catch` 进行捕获。
 
-Function is asynchronous. That means you need to handle it as `[class]Promise` instance, usually by adding `[js]await` before function call.
+该函数是异步的。这意味着你需要将其作为 `[class]Promise` 实例进行处理，通常是在函数调用前添加 `[js]await`。
 
-### Options
+### 选项
 
-Options object has the following mandatory properties:
+选项对象包含以下必需属性：
 
-- `[prop]target`, `[type]string`. Target directory. If directory is missing, it will be created.
-- `[prop]package`, `[type]string`. Package name.
+- `[prop]target`，`[type]string`。目标目录。如果目录不存在，将会自动创建。
+- `[prop]package`，`[type]string`。包名称。
 
-and the following optional properties:
+以及以下可选属性：
 
-- `[prop]tag`, `[type]string`. NPM tag. Default is `[str]latest`.
-- `[prop]cleanup`, `[type]boolean`. If `true`, target directory will be emptied before exporting icons. Default is `false`.
-- `[prop]ifModifiedSince`, `[type]string | true | DownloadNPMPackageResult`. If set, function will check if repository has been updated.
+- `[prop]tag`，`[type]string`。NPM 标签。默认为 `[str]latest`。
+- `[prop]cleanup`，`[type]boolean`。如果为 `true`，则在导出图标前会清空目标目录。默认为 `false`。
+- `[prop]ifModifiedSince`，`[type]string | true | DownloadNPMPackageResult`。如果设置，函数将检查包是否已更新。
 
 #### ifModifiedSince
 
-Option `[prop]ifModifiedSince` is used when you want to retrieve data only if repository has been updated.
+当你希望仅在包已更新时才检索数据时，可使用 `[prop]ifModifiedSince` 选项。
 
-Value can be one of the following:
+值可以是以下之一：
 
-- Version as `[type]string`. You can get it from `[prop]version` property of result of previous run.
-- If value is `true`, function compare latest version in NPM registry with version from previously downloaded files in `[prop]target` directory.
-- `[type]DownloadNPMPackageResult` value from previous run.
+- 作为 `[type]string` 的版本号。你可以从上次运行结果的 `[prop]version` 属性中获取。
+- 如果值为 `true`，函数会将 NPM 注册表中的最新版本与 `[prop]target` 目录中先前下载文件的版本进行比较。
+- 上次运行返回的 `[type]DownloadNPMPackageResult` 值。
 
-If package has not been updated, function will return string `[str]not_modified`.
+如果包未更新，函数将返回字符串 `[str]not_modified`。
 
-If option is not set, function cannot return `[str]not_modified`.
+如果未设置该选项，函数将不会返回 `[str]not_modified`。
 
-### Result
+### 结果
 
-Result object has the following properties:
+结果对象包含以下属性：
 
-- `[prop]downloadType` = `[str]npm`.
-- `[prop]rootDir`, `[type]string`. Target directory. It is normalized version of `[prop]target` option, without trailing `[str]/`.
-- `[prop]contentsDir`, `[type]string`. Directory where archive was unpacked.
-- `[prop]version`, `[type]string`. Package version.
+- `[prop]downloadType` = `[str]npm`。
+- `[prop]rootDir`，`[type]string`。目标目录。它是 `[prop]target` 选项的规范化版本，不包含末尾的 `[str]/`。
+- `[prop]contentsDir`，`[type]string`。解压归档文件的目录。
+- `[prop]version`，`[type]string`。包版本。
 
-Value is `[prop]contentsDir` always contains `[prop]rootDir` because archives are unpacked in sub-directory of `[prop]rootDir`. For example:
+`[prop]contentsDir` 的值始终包含 `[prop]rootDir`，因为归档文件会解压到 `[prop]rootDir` 的子目录中。例如：
 
 ```json
 {
@@ -74,7 +74,7 @@ Value is `[prop]contentsDir` always contains `[prop]rootDir` because archives ar
 }
 ```
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/package/npm.ts

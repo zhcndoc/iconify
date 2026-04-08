@@ -1,41 +1,41 @@
 ```yaml
-title: "Iconify Icon Web Component Function: iconLoaded"
+title: "Iconify Icon Web 组件函数：iconLoaded"
 ```
 
-# Web component function: iconLoaded
+# Web 组件函数：iconLoaded
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md#functions).
+本教程属于 [Iconify Icon Web 组件教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/icon-loaded/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/icon-loaded/props`
 
-## Example
+## 示例
 
 ```js
 import { iconLoaded, loadIcons } from "iconify-icon";
 
 function renderLeftArrow() {
-  // Check if 'bi:arrow-left' is available
+  // 检查 'bi:arrow-left' 是否可用
   if (iconLoaded("bi:arrow-left")) {
-    // Return HTML for 'bi:arrow-left'
+    // 返回 'bi:arrow-left' 的 HTML
     return '<iconify-icon icon="bi:arrow-left"></iconify-icon>';
   }
 
-  // Load icon. Bad example because this should use a callback to re-render arrow in a stateful
-  // component, but this code example is about iconLoaded(), not loadIcons()
+  // 加载图标。这是一个不好的示例，因为在有状态组件中应该使用回调来重新渲染箭头，
+  // 但此代码示例是关于 iconLoaded() 的，而不是 loadIcons()
 
-  // Function loadIcons() is asynchronous, so in this example it will only trigger loading, but
-  // icon data will not be available immediately
+  // loadIcons() 函数是异步的，因此在此示例中它只会触发加载，但
+  // 图标数据不会立即可用
   loadIcons(["bi:arrow-left"]);
 
-  // Return '<'
+  // 返回 '<'
   return "<span>&lt;</span>";
 }
 ```
 
-## Legacy
+## 旧版
 
 `include icon-components/functions/icon-loaded/legacy`

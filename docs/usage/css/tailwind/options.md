@@ -1,10 +1,10 @@
 ```yaml
-title: Options in Iconify for Tailwind CSS
+title: Iconify for Tailwind CSS 中的选项
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyInfo: '/docs/types/iconify-info.md'
 ```
 
-# Options for Tailwind CSS
+# Tailwind CSS 的选项
 
-This page was moved to [`[func]addDynamicIconSelectors()` documentation](./dynamic/index.md).
+此页面已迁移至 [`[func]addDynamicIconSelectors()` 文档](./dynamic/index.md)。

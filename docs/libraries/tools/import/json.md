@@ -1,18 +1,18 @@
 ```yaml
-title: Importing Iconify Icon Set
+title: 导入 Iconify 图标集
 types:
   SVG: '../svg/index.md'
   IconSet: '../icon-set/index.md'
   IconifyJSON: '/docs/types/iconify-json.md'
 ```
 
-# Importing Iconify icon set
+# 导入 Iconify 图标集
 
-This tutorial is part of [import functions documentation](./index.md) in [Iconify Tools](../index.md).
+本教程是 [Iconify Tools](../index.md) 中 [导入函数文档](./index.md) 的一部分。
 
-There is no special function for importing an icon set because it is redundant. All you have to do is read content from file, parse JSON data and create new `[type]IconSet` instance.
+没有专门用于导入图标集的函数，因为这是多余的。您只需从文件中读取内容，解析 JSON 数据，并创建一个新的 `[type]IconSet` 实例即可。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/import/json-min.ts

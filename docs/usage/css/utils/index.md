@@ -1,5 +1,5 @@
 ```yaml
-title: Generate CSS for icons with Iconify Utils
+title: 使用 Iconify Utils 为图标生成 CSS
 replacements:
   - code: '60,000'
     value: '${counters.icons}'
@@ -12,71 +12,71 @@ functions:
   getIconContentCSS: '/docs/libraries/utils/get-icon-content-css.md'
 ```
 
-# Generate CSS for icons with Iconify Utils
+# 使用 Iconify Utils 为图标生成 CSS
 
-This method requires a bit of coding, using Node.js.
+此方法需要编写少量代码，并使用 Node.js。
 
-If you are not using Node.js or not comfortable with the code below,
-[consider other methods of generating CSS for icons](../index.md#tools).
+如果您不使用 Node.js 或不熟悉以下代码，
+[请考虑其他为图标生成 CSS 的方法](../index.md#tools)。
 
 ## Node.js {#node}
 
-If you do not have a Node.js app, you need to create one to generate CSS.
+如果您还没有 Node.js 应用，则需要创建一个来生成 CSS。
 
-There are plenty of tutorials on how Node.js works, short version of steps:
+关于 Node.js 工作原理的教程有很多，简要步骤如下：
 
-- Install Node.js on your computer.
-- Create an empty directory, run `[bash]npm init -y` to create a basic project.
+- 在您的计算机上安装 Node.js。
+- 创建一个空目录，运行 `[bash]npm init -y` 以创建基础项目。
 
-## Dependencies
+## 依赖项
 
-You need to install two dependencies:
+您需要安装两个依赖项：
 
-- `[npm]@iconify/utils` to install [Iconify Utils](/docs/libraries/utils/index.md) that have function to generate CSS.
-- `[npm]@iconify/json` to install [data for all open source icon sets](/docs/icons/icon-data.md).
+- `[npm]@iconify/utils` 用于安装包含生成 CSS 函数的 [Iconify Utils](/docs/libraries/utils/index.md)。
+- `[npm]@iconify/json` 用于安装[所有开源图标集的数据](/docs/icons/icon-data.md)。
 
-To install them, run
+要安装它们，请运行
 
 ```bash
 npm install --save-dev @iconify/utils @iconify/json
 ```
 
-## Functions
+## 函数
 
-Iconify Utils has several functions that generate CSS for icons:
+Iconify Utils 提供了几个用于为图标生成 CSS 的函数：
 
-- `[func]getIconsCSS()` generates CSS for selected icons from an icon set.
-- `[func]getIconCSS()` generates CSS for one icon (uses icon as a source instead of an icon set).
-- `[func]getIconsContentCSS()` renders selected icons from an icon set as content of pseudo-elements.
-- `[func]getIconContentCSS()` renders one icon as content of pseudo-element (uses icon as source).
+- `[func]getIconsCSS()` 为图标集中选定的图标生成 CSS。
+- `[func]getIconCSS()` 为单个图标生成 CSS（使用图标作为源，而非图标集）。
+- `[func]getIconsContentCSS()` 将图标集中选定的图标渲染为伪元素的内容。
+- `[func]getIconContentCSS()` 将单个图标渲染为伪元素的内容（使用图标作为源）。
 
-This tutorial shows how to use `[func]getIconsCSS()`, which fits most use cases.
+本教程展示了如何使用 `[func]getIconsCSS()`，它适用于大多数使用场景。
 
-## Build script
+## 构建脚本
 
-The process of building CSS is simple:
+构建 CSS 的过程很简单：
 
-- Load icon set.
-- Generate CSS for icons you need from that icon set.
-- Save it to `[file].css` file.
+- 加载图标集。
+- 为该图标集中您需要的图标生成 CSS。
+- 将其保存到 `[file].css` 文件中。
 
 ```yaml
 src: usage/css-utils.js
 ```
 
-Change the list of icons, location of `[file].css` file, run it to build CSS.
+修改图标列表和 `[file].css` 文件的位置，然后运行它以构建 CSS。
 
-## Usage
+## 使用方法
 
-To use those icons in HTML, use `[tag]span` elements with two class names:
-class name for the icon set, class name for the icon.
+要在 HTML 中使用这些图标，请使用带有两个类名的 `[tag]span` 元素：
+图标集的类名，以及图标的类名。
 
 ```html
 <span class="icon--mdi-light icon--mdi-light--alert-circle"></span>
 ```
 
-## Options
+## 选项
 
-There are options for `[func]getIconsCSS()` that you can use to customise generated CSS.
+`[func]getIconsCSS()` 提供了可用于自定义生成 CSS 的选项。
 
-See [getIconsCSS() documentation](/docs/libraries/utils/get-icons-css.md).
+请参阅 [getIconsCSS() 文档](/docs/libraries/utils/get-icons-css.md)。

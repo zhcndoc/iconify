@@ -4,39 +4,39 @@ const root = '/docs/api/'
 
 export const APISidebar: SidebarItem[] = [
   {
-    text: 'API Queries',
+    text: 'API 查询',
     collapsed: true,
     link: `${root}queries`,
     items: [{
-      text: 'Generate SVG',
+      text: '生成 SVG',
       link: `${root}svg`,
     }, {
-      text: 'Generate CSS',
+      text: '生成 CSS',
       link: `${root}css`,
     }, {
-      text: 'Icon Data',
+      text: '图标数据',
       link: `${root}icon-data`,
     }, {
-      text: 'Last Modified',
+      text: '最后修改',
       link: `${root}last-modified`,
     }, {
-      text: 'List of Icon Sets',
+      text: '图标集列表',
       link: `${root}collections`,
     }, {
-      text: 'List of Icons',
+      text: '图标列表',
       link: `${root}collection`,
     }, {
-      text: 'Search Icons',
+      text: '搜索图标',
       link: `${root}search`,
     }, {
-      text: 'Keywords',
+      text: '关键词',
       link: `${root}keywords`,
     }, {
-      text: 'API Version',
+      text: 'API 版本',
       link: `${root}version`,
     }],
   }, {
-    text: 'Hosting API',
+    text: '托管 API',
     collapsed: true,
     link: `${root}hosting`,
     items: [{
@@ -44,26 +44,26 @@ export const APISidebar: SidebarItem[] = [
       collapsed: true,
       link: `${root}hosting-js/`,
       items: [{
-        text: 'Configuration',
+        text: '配置',
         link: `${root}hosting-js/config`,
       },
       {
-        text: 'HTTP Headers',
+        text: 'HTTP 头',
         link: `${root}hosting-js/headers`,
       },
       {
-        text: 'Reverse Proxy',
+        text: '反向代理',
         link: `${root}hosting-js/reverse-proxy`,
       }],
     }, {
-      text: 'Custom CDN',
+      text: '自定义 CDN',
       link: `${root}cdn`,
     }],
   }, {
-    text: 'API Providers',
+    text: 'API 提供商',
     link: `${root}providers`,
   }, {
-    text: 'Components Config',
+    text: '组件配置',
     link: `${root}config`,
   },
 ]

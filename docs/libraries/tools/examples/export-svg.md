@@ -1,21 +1,21 @@
 ```yaml
-title: Export all Iconify icon sets as SVG
+title: 将所有 Iconify 图标集导出为 SVG
 ```
 
-# Export all Iconify icons as SVG
+# 将所有 Iconify 图标导出为 SVG
 
-This example shows how to generate SVG files for all icons from `[npm]@iconify/json` package.
+本示例展示了如何为 `[npm]@iconify/json` 包中的所有图标生成 SVG 文件。
 
-First, create a blank Node project, add `[npm]@iconify/tools` as a dependency. 
+首先，创建一个空白的 Node 项目，并将 `[npm]@iconify/tools` 添加为依赖项。 
 
-Then create file `[file]export-files.mjs` and put this content:
+然后创建文件 `[file]export-files.mjs` 并填入以下内容：
 
 ```yaml
 src: libraries/tools/examples/export-all-files.mjs
 title: 'export-files.mjs'
 ```
 
-Then run that file:
+然后运行该文件：
 
 ```bash
 node export-files.mjs

@@ -9,88 +9,88 @@ replacements:
 
 # Iconify for Penpot
 
-With the Iconify plugin for Penpot you can import over 60,000 vector icons to Penpot.
+借助适用于 Penpot 的 Iconify 插件，您可以将超过 60,000 个矢量图标导入 Penpot。
 
-It is completely free!
+它完全免费！
 
-Unlike other plugins that offer many icons, but require payment to use SVG, Iconify always imports icons as SVG.
-Iconify project is open source and offers only open source icon sets.
+与其他提供大量图标但使用 SVG 需要付费的插件不同，Iconify 始终以 SVG 格式导入图标。
+Iconify 项目是开源的，仅提供开源图标集。
 
-Plugin remembers the last page you have visited, making it easy to continue searching or browsing icons.
+插件会记住您上次访问的页面，方便您继续搜索或浏览图标。
 
-## Installation
+## 安装
 
-Plugin is available at [Iconify for Penpot GitHub repository](https://github.com/iconify/iconify-penpot/).
+该插件可在 [Iconify for Penpot GitHub 仓库](https://github.com/iconify/iconify-penpot/) 获取。
 
-To install plugin, open plugin manager in Penpot and add the following URL:
+要安装插件，请在 Penpot 中打开插件管理器并添加以下 URL：
 
 ```raw
 https://penpot.iconify.design/manifest.json
 ```
 
-## Usage
+## 使用方法
 
-In Penpot menu select `[str]Plugins`, then select `[str]Iconify`.
+在 Penpot 菜单中选择 `[str]插件`，然后选择 `[str]Iconify`。
 
-Browse or search icons, select any icon, click `[str]Import Icon` button or drag icon to the Penpot document.
+浏览或搜索图标，选择任意图标，点击 `[str]导入图标` 按钮或将图标拖拽至 Penpot 文档中。
 
-### Themes
+### 主题
 
-Plugin supports both light and dark themes.
+插件同时支持浅色和深色主题。
 
-To change theme, change theme in Penpot settings.
+要更改主题，请在 Penpot 设置中更改主题。
 
-Screenshots below demonstrate both themes.
+下方的截图展示了这两种主题。
 
-### Detailed instructions
+### 详细说明
 
-After opening the plugin, you will see the main page:
+打开插件后，您将看到主页面：
 
-![Iconify for Penpot: main page](/assets/images/plugins/penpot-index2-light.png)
+![Iconify for Penpot：主页面](/assets/images/plugins/penpot-index2-light.png)
 
-Click any icon set or search icons.
+点击任意图标集或搜索图标。
 
-When you click an icon set, the plugin will show you all icons in that icon set.
-You can filter icons by categories (if the current icon set has them), search icons.
+当您点击某个图标集时，插件将显示该图标集中的所有图标。
+您可以按类别筛选图标（如果当前图标集支持），或搜索图标。
 
-To show more icons, simply scroll the icons list.
+要显示更多图标，只需滚动图标列表即可。
 
-![Iconify for Penpot: icon set](/assets/images/plugins/penpot-tabler-dark.png)
+![Iconify for Penpot：图标集](/assets/images/plugins/penpot-tabler-dark.png)
 
-You can also search all icon sets for icons.
-For example, search for "home":
+您还可以在所有图标集中搜索图标。
+例如，搜索“home”：
 
-![Iconify for Penpot: icon search results](/assets/images/plugins/penpot-home-light.png)
+![Iconify for Penpot：图标搜索结果](/assets/images/plugins/penpot-home-light.png)
 
-The plugin will show you all icons that match your keyword.
+插件将显示所有匹配您关键词的图标。
 
-When you hover any icon, you will see a button to show more information.
+当您将鼠标悬停在任意图标上时，会看到一个显示更多信息的按钮。
 
-If you hover it, you will see the icon name. If you click it, you will see:
+悬停该按钮时，您将看到图标名称。点击它，您将看到：
 
-- Icon size.
-- Author information and license (only in search results).
-- Buttons to import icon and to get code sample.
+- 图标尺寸。
+- 作者信息和许可证（仅在搜索结果中显示）。
+- 导入图标和获取代码示例的按钮。
 
-You can import icon by:
+您可以通过以下方式导入图标：
 
-- Using quick import buttons from icon tooltip.
-- Dragging icon from plugin window to Penpot document.
-- Clicking icon to select it, importing it using buttons in plugin window footer.
+- 使用图标悬浮提示中的快速导入按钮。
+- 将图标从插件窗口拖拽至 Penpot 文档。
+- 点击图标选中它，然后使用插件窗口底部的按钮进行导入。
 
-### Advanced import
+### 高级导入
 
-When you select an icon, it will appear in page footer with options:
+当您选中一个图标时，它将出现在页面底部并附带选项：
 
-![Iconify for Penpot: icon code](/assets/images/plugins/penpot-icon-light.png)
+![Iconify for Penpot：图标代码](/assets/images/plugins/penpot-icon-light.png)
 
-For icons that do not have a hardcoded palette, color picker is available,
-showing recently used colors:
+对于没有固定调色板的图标，提供颜色选择器，
+显示最近使用的颜色：
 
-![Iconify for Penpot: color picker](/assets/images/plugins/penpot-color-light.png)
+![Iconify for Penpot：颜色选择器](/assets/images/plugins/penpot-color-light.png)
 
-## Support and feedback
+## 支持与反馈
 
-Feedback is welcome.
+欢迎提供反馈。
 
-See `[str]feedback` page in the plugin or visit [support page on website](/support/index.md).
+查看插件中的 `[str]反馈` 页面，或访问[网站上的支持页面](/support/index.md)。

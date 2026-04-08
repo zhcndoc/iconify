@@ -1,32 +1,32 @@
 ```yaml
-title: flipFromString() in Iconify Utils
+title: Iconify Utils 中的 flipFromString()
 types:
   IconCustomisations: './icon-customisations.md'
 ```
 
 # flipFromString()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]flipFromString()` applies `[prop]flip` shorthand property to `[type]IconCustomisations` object.
+函数 `[func]flipFromString()` 将 `[prop]flip` 简写属性应用于 `[type]IconCustomisations` 对象。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]custom`, `[type]IconCustomisations`. Customisations.
-- `[prop]value`, `[type]string`. Value to parse.
+- `[prop]custom`，`[type]IconCustomisations`。自定义配置。
+- `[prop]value`，`[type]string`。要解析的值。
 
-Function does not return anything, it applies changes to object passed in first parameter.
+该函数无返回值，它会直接修改作为第一个参数传入的对象。
 
-## Value
+## 值
 
-Value can be set of the following strings, separated by space and/or comma:
+值可以是以下字符串的组合，以空格和/或逗号分隔：
 
-- `[str]horizontal` sets `[prop]hFlip` to `true`.
-- `[str]vertical` sets `[prop]vFlip` to `true`.
+- `[str]horizontal` 将 `[prop]hFlip` 设置为 `true`。
+- `[str]vertical` 将 `[prop]vFlip` 设置为 `true`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/flip-from-string.ts

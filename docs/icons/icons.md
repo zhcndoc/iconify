@@ -1,70 +1,70 @@
 ```yaml
-title: Split Icon Packages
+title: 拆分图标包
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
 functions:
   exportIconPackage: '/docs/libraries/tools/export/icon-package.md'
 ```
 
-# Split icon packages
+# 拆分图标包
 
 `include notices/split-icons`
 
-For developer's convenience, [full icon sets package](./all.md) was also available as smaller packages.
+为了方便开发者，[完整图标集包](./all.md) 也提供了更小的拆分版本。
 
-This documentation is for packages that contain many files, one per icon. These packages can be used if you need to import only few icons without parsing the whole icon set.
+本文档适用于包含多个文件（每个图标一个文件）的包。如果你只需要导入少量图标，而无需解析整个图标集，可以使用这些包。
 
-Be aware that some packages might contain many files, which some file systems cannot handle.
+请注意，某些包可能包含大量文件，部分文件系统可能无法处理。
 
-## Packages
+## 包
 
-There are 2 versions of packages available on NPM:
+NPM 上提供两种版本的包：
 
-- `[npm]@iconify-icons/{prefix}` that contains data as ES modules for modern development.
-- `[npm]@iconify/icons-{prefix}` that contains icon data as CommonJS for legacy code.
+- `[npm]@iconify-icons/{prefix}`：包含 ES 模块格式的数据，适用于现代开发。
+- `[npm]@iconify/icons-{prefix}`：包含 CommonJS 格式的图标数据，适用于旧版代码。
 
-Replace `[str]{prefix}` with an icon set prefix.
+将 `[str]{prefix}` 替换为图标集的前缀。
 
-Packages are automatically generated from [big icon sets package](./all.md) whenever it is updated.
+每当[大型图标集包](./all.md)更新时，这些包都会自动生成。
 
-## Contents
+## 内容
 
-Each package contains one icon set, with separate files for each icon (`[str]{name}` is icon name):
+每个包包含一个图标集，每个图标都有独立的文件（`[str]{name}` 为图标名称）：
 
-- `[file]{name}.js` contains icon data in `[type]IconifyIcon` format as default export.
-- `[file]{name}.d.ts` contains type definition.
+- `[file]{name}.js`：以默认导出形式提供 `[type]IconifyIcon` 格式的图标数据。
+- `[file]{name}.d.ts`：包含类型定义。
 
-Icon data in `[type]IconifyIcon` format looks like this:
+`[type]IconifyIcon` 格式的图标数据如下所示：
 
 ```yaml
 src: icons/sample.json
 copy: false
 ```
 
-You can import data for any icon using default import from file, like this:
+你可以通过文件的默认导入来导入任意图标的数据，如下所示：
 
 ```js
 import mdiHome from '@iconify-icons/mdi/home';
 ```
 
-Example of React component using icon from such package:
+使用此类包中图标的 React 组件示例：
 
 ```yaml
 src: icon-components/common/offline.jsx
 ```
 
-### CommonJS packages
+### CommonJS 包
 
-For older software use CommonJS packages. Replace `[func]import` with `[func]require()`:
+对于较旧的软件，请使用 CommonJS 包。将 `[func]import` 替换为 `[func]require()`：
 
 ```js
 const mdiHome = require('@iconify/icons-mdi/home');
 ```
 
-## Creating packages
+## 创建包
 
-If you want to create a package for your icon set, see `[func]exportIconPackage()` of [Iconify Tools](/docs/libraries/tools/index.md).
+如果你想为自己的图标集创建包，请参阅 [Iconify Tools](/docs/libraries/tools/index.md) 中的 `[func]exportIconPackage()`。
 
-## Icon sets list
+## 图标集列表
 
-If you need to get list of available open source icon sets, see [icon sets list package](./collections.md).
+如果你需要获取可用的开源图标集列表，请参阅[图标集列表包](./collections.md)。

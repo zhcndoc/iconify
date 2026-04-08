@@ -1,6 +1,6 @@
-The function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]icons`, `[type](string | IconifyIconName)[]`. List of icons to load.
-- `[prop]callback`, `[type]function`. Optional callback to call. Callback is called not only when all icons have been retrieved, but also when part of icons have been retrieved.
+- `[prop]icons`，`[type](string | IconifyIconName)[]`。要加载的图标列表。
+- `[prop]callback`，`[type]function`。可选的回调函数。该回调不仅在所有图标获取完成时调用，在部分图标获取完成时也会调用。
 
-The function returns `[type]function` you can use to stop loading icons. It is needed when, for example, you are loading icons in a custom component, but the component's life cycle ended before icons have loaded, so you need to remove callback.
+该函数返回一个 `[type]function`，你可以使用它来停止加载图标。例如，当你在自定义组件中加载图标，但图标尚未加载完成时组件的生命周期就已结束，此时就需要使用它来移除回调。

@@ -1,1 +1,1 @@
-The function `[func]iconExists()` checks if icon data is available for rendering.
+函数 `[func]iconExists()` 检查图标数据是否可用于渲染。

@@ -1,3 +1,3 @@
-When using the icon component in a browser, it relies on `[func]fetch()` to retrieve data from Iconify API.
+在浏览器中使用图标组件时，它依赖于 `[func]fetch()` 从 Iconify API 获取数据。
 
-All modern browsers support it.
+所有现代浏览器均支持此功能。

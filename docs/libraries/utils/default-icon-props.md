@@ -1,5 +1,5 @@
 ```yaml
-title: defaultIconProps in Iconify Utils
+title: Iconify Utils 中的 defaultIconProps
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
   IconifyOptional: '/docs/types/iconify-icon.md#iconify-optional'
@@ -10,15 +10,15 @@ functions:
 
 # defaultIconProps
 
-This constant is part of [Iconify Utils package](./index.md).
+此常量属于 [Iconify Utils 包](./index.md)。
 
-Constant `[func]defaultIconProps` contains default values for optional `[type]IconifyIcon` properties.
+常量 `[func]defaultIconProps` 包含可选 `[type]IconifyIcon` 属性的默认值。
 
-It is merged from 2 parts:
+它由两部分合并而成：
 
 ### defaultIconDimensions
 
-Constant `[func]defaultIconDimensions` contains default values for icon dimensions:
+常量 `[func]defaultIconDimensions` 包含图标尺寸的默认值：
 
 ```js
 const defaultIconDimensions = {
@@ -31,7 +31,7 @@ const defaultIconDimensions = {
 
 ### defaultIconTransformations
 
-Constant `[func]defaultIconTransformations` contains default values for icon transformations:
+常量 `[func]defaultIconTransformations` 包含图标变换的默认值：
 
 ```js
 const defaultIconTransformations = {
@@ -41,22 +41,22 @@ const defaultIconTransformations = {
 };
 ```
 
-## Usage
+## 用法
 
-Function has the following parameter:
+该函数具有以下参数：
 
-- `[prop]icon`, `[type]IconifyIcon`. Icon data.
+- `[prop]icon`，`[type]IconifyIcon`。图标数据。
 
-Function returns full icon data with type `[type]FullIconifyIcon`.
+该函数返回类型为 `[type]FullIconifyIcon` 的完整图标数据。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/default-icon-props.ts
 title: 'usage.ts'
 extra:
   - src: libraries/utils/default-icon-props.json
-    title: 'Result:'
+    title: '结果：'
 ```
 
-It is used in functions that require only partial icon data, such as `[func]iconToSVG()`, but internally actually use full icon.
+它用于仅需部分图标数据的函数中，例如 `[func]iconToSVG()`，但其内部实际上使用的是完整图标。

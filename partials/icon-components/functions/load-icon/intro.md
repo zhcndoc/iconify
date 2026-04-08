@@ -1,13 +1,13 @@
-The function `[func]loadIcon()` retrieves an icon from Iconify API.
+函数 `[func]loadIcon()` 从 Iconify API 检索图标。
 
-It returns `[type]Promise` instance, making it very easy to use in asynchronous code.
+它返回 `[type]Promise` 实例，使其在异步代码中非常易于使用。
 
-When to use this function:
+何时使用此函数：
 
-- When you need to get icon data inside an asynchronous function.
+- 当你在异步函数内部需要获取图标数据时。
 
-When not to use this function:
+何时不应使用此函数：
 
-- To preload multiple icons that you will use later. Use `[func]loadIcons()` instead.
+- 预加载多个稍后使用的图标。请改用 `[func]loadIcons()`。
 
-It is safe to call function multiple times with the same icon name, component will not load icon data from Iconify API twice. If you pass `[type]string` icon name as parameter, multiple calls of the function will return the same `[type]Promise` instance.
+使用相同的图标名称多次调用该函数是安全的，组件不会从 Iconify API 重复加载图标数据。如果将 `[type]string` 类型的图标名称作为参数传递，多次调用该函数将返回相同的 `[type]Promise` 实例。

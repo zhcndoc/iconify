@@ -9,35 +9,35 @@ functions:
 
 # forEach()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]forEach()` runs a custom callback for all icons in icon set.
+函数 `[func]forEach()` 会为图标集中的所有图标执行自定义回调。
 
-Function supports asynchronous callbacks. 
+该函数支持异步回调。 
 
-If you use synchronous callback, you can treat function as synchronous, or you can use `[func]forEachSync()` alias.
+如果你使用同步回调，可以将该函数视为同步函数，或者使用 `[func]forEachSync()` 别名。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]callback`. Callback. See below.
-- `[prop]type`, `[type]string[]`. Optional. Icon types to iterate, default is `[js]['icon', 'variation', 'alias']` (all items).
+- `[prop]callback`。回调函数。见下文。
+- `[prop]type`，`[type]string[]`。可选。要遍历的图标类型，默认为 `[js]['icon', 'variation', 'alias']`（所有项目）。
 
-## Callback
+## 回调
 
-Callback can be synchronous or async. It has the following parameters:
+回调可以是同步或异步的。它包含以下参数：
 
-- `[prop]name`, `[type]string`. Icon name.
-- `[prop]type`, `[type]string`. Icon type (see below).
+- `[prop]name`，`[type]string`。图标名称。
+- `[prop]type`，`[type]string`。图标类型（见下文）。
 
-If callback returns `false`, function stops iterating icons.
+如果回调返回 `false`，函数将停止遍历图标。
 
-## Icon types
+## 图标类型
 
 `include libraries/tools/icon-set/icon-types`
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/for-each.ts

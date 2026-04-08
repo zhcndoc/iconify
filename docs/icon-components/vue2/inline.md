@@ -1,14 +1,14 @@
 ```yaml
-title: Vertical Alignment in Iconify for Vue 2
+title: Iconify for Vue 2 中的垂直对齐
 ```
 
-# Vertical alignment
+# 垂直对齐
 
-This tutorial is part of [Iconify for Vue 2 tutorial](./index.md).
+本教程是 [Iconify for Vue 2 教程](./index.md) 的一部分。
 
 `include icon-components/vertical-align-intro`
 
-## Inline attribute
+## 内联属性
 
 `include icon-components/components/inline-basic`
 

@@ -1,5 +1,5 @@
 ```yaml
-title: Exporting icons
+title: 导出图标
 types:
   IconSet: '../icon-set/index.md'
   SVG: '../svg/index.md'
@@ -18,45 +18,45 @@ functions:
   exportJSONPackage: './json-package.md'
 ```
 
-# Exporting icons
+# 导出图标
 
-[Iconify Tools](../index.md) can export icons to several formats.
+[Iconify Tools](../index.md) 可以将图标导出为多种格式。
 
-## Usage
+## 用法
 
-All functions listed below work with `[type]IconSet` instances. You need to create instance using `[func]blankIconSet()` or by [using one of import functions](../import/index.md).
+下面列出的所有函数都适用于 `[type]IconSet` 实例。你需要使用 `[func]blankIconSet()` 创建实例，或者通过[使用导入函数之一](../import/index.md)来创建。
 
-## Cleanup and optimisation
+## 清理与优化
 
-Before exporting icons, make sure you clean them up and optimise.
+在导出图标之前，请确保已对其进行清理和优化。
 
-See [icon manipulation functions](../icon/index.md).
+请参阅[图标操作函数](../icon/index.md)。
 
-## Export functions
+## 导出函数
 
-There are several functions for exporting icons:
+有多个用于导出图标的函数：
 
-### Exporting Iconify icon set {#json}
+### 导出 Iconify 图标集 {#json}
 
-`[type]IconSet` instance has `[func]export()` function that creates `[type]IconifyJSON` data. All you have to do is write it to file.
+`[type]IconSet` 实例包含 `[func]export()` 函数，用于创建 `[type]IconifyJSON` 数据。你只需将其写入文件即可。
 
-See [exporting Iconify icon set](./json.md) documentation.
+请参阅[导出 Iconify 图标集](./json.md)文档。
 
-### Exporting SVG (simplified version) {#directory}
+### 导出 SVG（简化版） {#directory}
 
-Function `[func]exportToDirectory()` exports all icons as SVG to a directory.
+函数 `[func]exportToDirectory()` 将所有图标以 SVG 格式导出到指定目录。
 
-### Exporting as SVG {#svg}
+### 导出为 SVG {#svg}
 
-`[type]IconSet` instance has `[func]toString()` function that generates `[type]string` for icon. You can use `[func]forEach()` to loop all icons in icon set.
+`[type]IconSet` 实例包含 `[func]toString()` 函数，用于为图标生成 `[type]string`。你可以使用 `[func]forEach()` 遍历图标集中的所有图标。
 
-See [exporting icons as SVG](./svg.md) documentation.
+请参阅[将图标导出为 SVG](./svg.md)文档。
 
-### Exporting NPM packages {#npm}
+### 导出 NPM 包 {#npm}
 
-There are different types of icon packages published at NPM, there are functions for exporting each type:
+NPM 上发布了不同类型的图标包，针对每种类型都有相应的导出函数：
 
-- Function `[func]exportIconPackage()` creates NPM package with one file per icon. This is used when a user needs only a few icons. This method is deprecated, but function is still maintained because some developers use it.
-- Function `[func]exportJSONPackage()` creates NPM package with an entire icon set in one file. This is used to get an entire icon set.
+- 函数 `[func]exportIconPackage()` 会创建每个图标对应一个文件的 NPM 包。当用户只需要少量图标时使用此方法。该方法已弃用，但由于部分开发者仍在使用，因此该函数仍会维护。
+- 函数 `[func]exportJSONPackage()` 会创建将整个图标集包含在单个文件中的 NPM 包。用于获取完整的图标集。
 
-Functions do not publish packages, they only generate contents. Run `[bash]npm publish` to publish generated packages.
+这些函数不会发布包，它们仅生成内容。请运行 `[bash]npm publish` 来发布生成的包。

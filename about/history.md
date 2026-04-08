@@ -1,122 +1,122 @@
-# History of Iconify
+# Iconify 的历史
 
-Iconify started as an experiment in 2016, developed in free time.
+Iconify 始于 2016 年的一项实验，利用业余时间开发。
 
-Only in 2020 it turned from a side project into a full time project,
-currently it is a very active and quickly growing project.
+直到 2020 年，它才从一个副业项目转变为全职项目，
+目前它是一个非常活跃且快速增长的项目。
 
-## Early experiments
+## 早期实验
 
-In 2016, I was working on customisable themes for forum software and was very unhappy with icon fonts,
-so I have started experimenting with different methods of using icons in projects.
+2016 年，我正在为论坛软件开发可定制的主题，但对图标字体非常不满意，
+因此我开始尝试在项目中以不同方式使用图标。
 
-Icon fonts are ugly, hard to customise, and once you choose an icon font, you are stuck with icons available in it.
-Using multiple icon fonts is not an option because it massively increases page loading times.
-I wanted to find a different solution, but there was none available.
+图标字体很难看，难以定制，而且一旦选择了某种图标字体，你就只能使用其中提供的图标。
+使用多个图标字体并不可行，因为这会大幅增加页面加载时间。
+我想寻找另一种解决方案，但当时并没有现成的选择。
 
-## Proof of concept
+## 概念验证
 
-In 2018, after a couple of years of experimenting with icons in free time,
-I came up with a solution: SVG framework that dynamically loads icon data from API.
+2018 年，在业余时间对图标进行了几年的实验后，
+我想出了一个解决方案：一个能从 API 动态加载图标数据的 SVG 框架。
 
-Finally, I could offer my users a huge choice of icons, but without downsides of embedding multiple icon fonts.
-Unlike fonts, it downloaded data only for icons used on page, rendered pixel perfect SVG.
+终于，我可以为用户提供海量的图标选择，同时避免了嵌入多个图标字体的缺点。
+与字体不同，它仅下载页面上实际使用的图标数据，并渲染出像素级完美的 SVG。
 
-Initially, the project was called SimpleSVG.
+最初，该项目名为 SimpleSVG。
 
-In late 2018 I renamed the project to Iconify.
+2018 年底，我将该项目更名为 Iconify。
 
-## Sketch and Figma plugins
+## Sketch 和 Figma 插件
 
-In addition to a solution for embedding icons, I needed a solution for browsing available icons.
-The whole project was created to offer a huge choice of icons in the forum theme customiser,
-so an icon finder component was needed, which would allow users to select icons when customising the theme.
+除了嵌入图标的解决方案外，我还需要一个浏览可用图标的方案。
+整个项目的初衷是为了在论坛主题定制器中提供海量的图标选择，
+因此需要一个图标查找组件，以便用户在定制主题时能够选择图标。
 
-When working on a solution for icon finder, I have decided to test it as a plugin for Sketch.
-Icon finder wasn't good, but integration was very successful.
+在开发图标查找解决方案时，我决定先将其作为 Sketch 插件进行测试。
+图标查找功能本身并不完善，但集成过程非常成功。
 
-Then Figma Plus was released, which was a third party plugin system for Figma when Figma did not support plugins.
-I have immediately ported the Sketch plugin to Figma Plus.
-Few months later, Figma developers released an official plugin system, and I have ported the Figma Plus plugin to Figma.
+随后 Figma Plus 发布了，这是在 Figma 官方尚未支持插件时的一个第三方插件系统。
+我立即将 Sketch 插件移植到了 Figma Plus。
+几个月后，Figma 开发者发布了官方插件系统，我又将 Figma Plus 插件移植到了 Figma 官方平台。
 
-## Startup
+## 创业
 
-Slowly, work on Iconify took over and I did not have time to work on forum software.
+渐渐地，Iconify 的开发工作占据了主导，我没有时间再开发论坛软件了。
 
-Iconify was not a simple solution, it had multiple parts that required a lot of time to develop,
-maintain and improve: the SVG framework, maintaining API software and servers, 
-maintaining icon sets and tools for parsing icons, developing icon finder, maintaining plugins for Sketch and Figma.
+Iconify 并非一个简单的解决方案，它包含多个部分，需要大量时间进行开发、
+维护和改进：SVG 框架、API 软件和服务器的维护、
+图标集及图标解析工具的维护、图标查找器的开发，以及 Sketch 和 Figma 插件的维护。
 
-In 2020, I was invited to AWS Startup Day in Helsinki. At the event I talked to several successful startup owners,
-learned a lot about startups. It was an amazing experience.
+2020 年，我受邀参加了在赫尔辛基举办的 AWS 创业日活动。在活动中，我与几位成功的创业者进行了交流，
+学到了很多关于创业的知识。这是一次非常棒的经历。
 
-After the AWS Startup event, I have decided to try to turn Iconify into a startup.
-I have officially registered a company in Estonia.
-At that time, multiple parts of the project were still in development, and the project was far from being ready.
+AWS 创业日活动结束后，我决定尝试将 Iconify 打造成一家初创公司。
+我在爱沙尼亚正式注册了一家公司。
+当时，项目的多个部分仍在开发中，距离完全就绪还有很长的路要走。
 
-### Original goals
+### 最初的目标
 
-Originally, Iconify had the following goals:
+最初，Iconify 设定了以下目标：
 
--   To offer an easy to use SVG framework for developers.
--   Maintain a repository of open source icon sets for open source developers.
--   Offer tools for working with custom and premium icon sets.
--   Create the icon finder, which can be easily integrated into various theme customisers.
+-   为开发者提供易于使用的 SVG 框架。
+-   为开源开发者维护一个开源图标集仓库。
+-   提供用于处理自定义和付费图标集的工具。
+-   创建图标查找器，以便轻松集成到各种主题定制器中。
 
-I was planning to monetise Iconify by:
+我计划通过以下方式实现 Iconify 的盈利：
 
--   Offering premium icon sets.
--   Offering custom solutions for businesses, which included custom API, custom version of the SVG framework and custom icon finder component.
+-   提供付费图标集。
+-   为企业提供定制解决方案，包括定制 API、定制版 SVG 框架和定制图标查找组件。
 
-### Slowing down
+### 放缓节奏
 
-My original plan was to finish developing it by the end of 2020.
-However, later things have changed. The world went into chaos,
-several meetings with potential investors I planned for 2020 all were cancelled due to travel restrictions.
+我最初的计划是在 2020 年底前完成开发。
+然而，后来情况发生了变化。世界陷入混乱，
+我原计划在 2020 年与潜在投资者进行的几次会面，都因旅行限制而取消。
 
-So I have decided to take it slowly.
+因此，我决定放慢脚步。
 
-Instead of rushing development, I have decided to take time improving existing code.
-There was a lot to improve: the project required [better documentation](/docs/index.md), [new tools](/docs/libraries/index.md), better website.
-Code in all parts of the project was initially written in JavaScript, but could use a full rewrite with TypeScript and ES modules support.
-My plan was to work on the project without rushing it, so the end product would have high-quality code.
+与其急于推进开发，我决定花时间改进现有代码。
+有很多需要改进的地方：项目需要[更好的文档](/docs/index.md)、[新工具](/docs/libraries/index.md)以及更好的网站。
+项目各部分的代码最初都是用 JavaScript 编写的，但完全可以利用 TypeScript 和 ES 模块支持进行彻底重写。
+我的计划是不急于求成地推进项目，以确保最终产品拥有高质量的代码。
 
-This was a good idea. Now, there are several third party icon components, which would be hard to create without proper documentation and tools.
-Project code is modern, ready for the future.
+这是一个好主意。如今，已经出现了多个第三方图标组件，如果没有完善的文档和工具，这些组件将很难开发出来。
+项目代码已实现现代化，为未来做好了准备。
 
-### Icon components
+### 图标组件
 
-Originally, Iconify was focused on the [SVG framework](/docs/icon-components/svg-framework/index.md),
-which was a good idea, but developers were asking for different solutions.
+最初，Iconify 专注于 [SVG 框架](/docs/icon-components/svg-framework/index.md)，
+这原本是个好主意，但开发者们提出了对其他解决方案的需求。
 
-In addition to the SVG framework, in 2021 I published [native icon components for multiple frameworks](/docs/icon-components/index.md) (React, Svelte, Vue) that had load on demand functionality, similar to the SVG framework.
+除了 SVG 框架之外，2021 年我还发布了[适用于多个框架的原生图标组件](/docs/icon-components/index.md)（React、Svelte、Vue），它们具备与 SVG 框架类似的按需加载功能。
 
-### Web component
+### Web 组件
 
-In mid 2022, a new [web component](/docs/iconify-icon/index.md) was created,
-which is an even better solution than the SVG framework.
+2022 年中，我们创建了一个全新的 [Web 组件](/docs/iconify-icon/index.md)，
+它是比 SVG 框架更优秀的解决方案。
 
-When the project was in development, web components were not usable because browsers did not support them,
-so the SVG framework and components native to UI frameworks were the best solutions.
-Internet Explorer did not support shadow DOM until the very end.
-But today all modern browsers support web components.
-Internet Explorer, the last browser to cause problems, moved to Chromium.
+在项目开发初期，Web 组件还无法使用，因为浏览器尚未提供支持，
+因此 SVG 框架和 UI 框架原生组件是最佳选择。
+Internet Explorer 直到最后才支持 Shadow DOM。
+但如今，所有现代浏览器都已支持 Web 组件。
+曾经带来最多兼容性问题的 Internet Explorer 也已转向 Chromium 内核。
 
-Web component will eventually replace all other icon components.
+Web 组件最终将取代所有其他图标组件。
 
-### Third party components
+### 第三方组件
 
-In addition to components mentioned above, there are now several third party components, developed by various authors.
+除了上述组件外，现在还有多个由不同作者开发的第三方组件。
 
-It became possible [with creation of detailed documentation](/docs/index.md) and [tools to work with icon data](/docs/libraries/index.md) in late 2021.
+这得益于 2021 年底[详细文档的创建](/docs/index.md)以及[处理图标数据的工具](/docs/libraries/index.md)的推出。
 
-## Open source
+## 开源
 
-In mid 2022 plans changed, thanks to people showing interest in sponsoring open source development.
+2022 年中，计划发生了改变，这得益于许多人表示有兴趣赞助开源开发。
 
-The new plan is to:
+新的计划是：
 
--   Open source everything, encourage developers to create their own open source solutions that use Iconify.
--   Rely on sponsors to finance development.
+-   将所有内容开源，鼓励开发者创建基于 Iconify 的自有开源解决方案。
+-   依靠赞助者来资助开发工作。
 
-If you are using Iconify in your projects, [please consider sponsoring Iconify development](/sponsors/index.md).
+如果您在项目中使用了 Iconify，[请考虑赞助 Iconify 的开发](/sponsors/index.md)。

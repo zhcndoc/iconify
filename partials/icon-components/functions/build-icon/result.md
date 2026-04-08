@@ -1,6 +1,6 @@
-Result object has the following properties:
+Result 对象具有以下属性：
 
-- `[prop]attributes`, `[type]object`. List of attributes for `[tag]svg` element.
-- `[prop]body`, `[type]string`. Icon contents.
+- `[prop]attributes`，`[type]object`。`[tag]svg` 元素的属性列表。
+- `[prop]body`，`[type]string`。图标内容。
 
-The list of attributes does not include standard attributes: `[attr]xmlns`, `[attr]xmlns:link`. It also does not include attributes that are added by icon component: `[attr]aria-hidden`, `[attr]focusable`, `[attr]role`, `[attr]class`, `[attr]style`. It is up to you to decide what attributes you want to add.
+该属性列表不包含标准属性：`[attr]xmlns`、`[attr]xmlns:link`。它也不包含由图标组件添加的属性：`[attr]aria-hidden`、`[attr]focusable`、`[attr]role`、`[attr]class`、`[attr]style`。您可以自行决定要添加哪些属性。

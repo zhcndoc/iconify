@@ -1,5 +1,5 @@
 ```yaml
-title: Iconify for Tailwind CSS version 3
+title: Iconify for Tailwind CSS 版本 3
 replacements:
   - code: "60,000"
     value: "${counters.icons}"
@@ -10,32 +10,32 @@ functions:
   addIconSelectors: "../iconify/index.md"
 ```
 
-# Iconify for Tailwind CSS
+# 适用于 Tailwind CSS 的 Iconify
 
-Iconify plugin for Tailwind CSS makes it easy to use icons in Tailwind CSS.
+适用于 Tailwind CSS 的 Iconify 插件让您能够轻松地在 Tailwind CSS 中使用图标。
 
-You can use [over 60,000 open source icons](/docs/icons/icon-data.md) and custom icons with minimal code.
+您只需编写极少的代码，即可使用[超过 60,000 个开源图标](/docs/icons/icon-data.md)和自定义图标。
 
-## Tailwind CSS version
+## Tailwind CSS 版本
 
-This documentation covers plugins for Tailwind 3.
+本文档涵盖适用于 Tailwind 3 的插件。
 
-For a newer Tailwind 4 plugin, see [Tailwind 4 plugin documentation](../tailwind4/index.md).
+如需了解较新的 Tailwind 4 插件，请参阅 [Tailwind 4 插件文档](../tailwind4/index.md)。
 
-However, Tailwind 3 plugins can be used with Tailwind 4 too, but you need to create a configuration file.
+不过，Tailwind 3 插件同样可以在 Tailwind 4 中使用，但您需要创建一个配置文件。
 
-## Plugins
+## 插件
 
-There are several plugins available, they use different syntax, have different options.
+目前提供多个插件，它们使用不同的语法并具有不同的选项。
 
-There are 2 main plugins:
+主要有 2 个插件：
 
 - `[func]addDynamicIconSelectors()`
 - `[func]addIconSelectors()`
 
-Plugins use different syntax, have different options.
+这些插件使用不同的语法，并提供不同的选项。
 
-For example, here is syntax to use icon `[icon]mdi-light:home` in HTML:
+例如，以下是在 HTML 中使用图标 `[icon]mdi-light:home` 的语法：
 
 ```yaml
 src: usage/tailwind/syntax-iconify.html
@@ -47,22 +47,21 @@ src: usage/tailwind/syntax-iconify2.html
 hint: "Usage with addIconSelectors"
 ```
 
-### Installation
+### 安装
 
-To install plugins, add `[npm]@iconify/tailwind` as dev dependency:
+要安装插件，请将 `[npm]@iconify/tailwind` 添加为开发依赖：
 
 ```sh
 npm i -D @iconify/tailwind
 ```
 
-Then you need to configure it.
+然后您需要对其进行配置。
 
-#### Tailwind 3 configuration
+#### Tailwind 3 配置
 
-For Tailwind CSS 3, open `[file]tailwind.config.js`, import `[func]addIconSelectors` (main plugin) or
-`[func]addDynamicIconSelectors` (dynamic selectors) from `[npm]@iconify/tailwind` and add it to a list of plugins.
+对于 Tailwind CSS 3，请打开 `[file]tailwind.config.js`，从 `[npm]@iconify/tailwind` 导入 `[func]addIconSelectors`（主插件）或 `[func]addDynamicIconSelectors`（动态选择器），并将其添加到插件列表中。
 
-Example `[file]tailwind.config.js` with `[func]addIconSelectors()` plugin:
+包含 `[func]addIconSelectors()` 插件的 `[file]tailwind.config.js` 示例：
 
 ```js
 const { addIconSelectors } = require("@iconify/tailwind");
@@ -71,8 +70,8 @@ const { addIconSelectors } = require("@iconify/tailwind");
 module.exports = {
   content: ["./src/*.html"],
   plugins: [
-    // Iconify plugin for clean selectors, requires writing a list of icon sets to load
-    // Icons usage in HTML:
+    // 用于简洁选择器的 Iconify 插件，需要编写要加载的图标集列表
+    // HTML 中的图标用法：
     //  <span class="iconify mdi-light--home"></span>
     //  <span class="iconify-color vscode-icons--file-type-tailwind"></span>
     addIconSelectors(["mdi-light", "vscode-icons"]),
@@ -80,7 +79,7 @@ module.exports = {
 };
 ```
 
-Example `[file]tailwind.config.js` with `[func]addDynamicIconSelectors()` plugin:
+包含 `[func]addDynamicIconSelectors()` 插件的 `[file]tailwind.config.js` 示例：
 
 ```js
 const { addDynamicIconSelectors } = require("@iconify/tailwind");
@@ -89,17 +88,17 @@ const { addDynamicIconSelectors } = require("@iconify/tailwind");
 module.exports = {
   content: ["./src/*.html"],
   plugins: [
-    // Iconify plugin for dynamic selectors, configuration is not required
-    // Icons usage in HTML:
+    // 用于动态选择器的 Iconify 插件，无需额外配置
+    // HTML 中的图标用法：
     //  <span class="i-[mdi-light--home]"></span>
     addDynamicIconSelectors(),
   ],
 };
 ```
 
-#### Tailwind 4 config
+#### Tailwind 4 配置
 
-For Tailwind 4, you need to create a new file, for example, `[file]icons.mjs` with configuration:
+对于 Tailwind 4，您需要创建一个新文件（例如 `[file]icons.mjs`）来存放配置：
 
 ```js
 import { addDynamicIconSelectors } from "@iconify/tailwind";
@@ -107,39 +106,39 @@ import { addDynamicIconSelectors } from "@iconify/tailwind";
 export default addDynamicIconSelectors();
 ```
 
-Then in your CSS file import that plugin:
+然后在您的 CSS 文件中导入该插件：
 
 ```css
 @plugin './icons.mjs';
 ```
 
-All code samples in documentation are for Tailwind CSS 3.
+文档中的所有代码示例均针对 Tailwind CSS 3。
 
-Tailwind CSS 4 configuration is similar, except that instead of adding plugin to `[prop]plugins` property of Tailwind configuration, you need to export it as a default export.
+Tailwind CSS 4 的配置类似，不同之处在于您不需要将插件添加到 Tailwind 配置的 `[prop]plugins` 属性中，而是需要将其作为默认导出。
 
-This requires basic understanding of how modules and exports work.
+这需要对模块和导出（exports）的工作原理有基本的了解。
 
-### Icon sets
+### 图标集
 
-Plugin does not include icons. You need to add icon sets you want to use.
+插件本身不包含图标。您需要添加想要使用的图标集。
 
-To add all open source icon sets, add `[npm]@iconify/json` as dev dependency:
+要添加所有开源图标集，请将 `[npm]@iconify/json` 添加为开发依赖：
 
 ```sh
 npm i -D @iconify/json
 ```
 
-You can also install only icon sets that you want to use by installing `[npm]@iconify-json/{prefix}` dependencies (where `[str]{prefix}` is icon set prefix), such as `[npm]@iconify-json/mdi-light`.
+您也可以通过安装 `[npm]@iconify-json/{prefix}` 依赖项（其中 `[str]{prefix}` 为图标集前缀）来仅安装您想要使用的图标集，例如 `[npm]@iconify-json/mdi-light`。
 
-See [icon data documentation](/docs/icons/icon-data.md).
+请参阅[图标数据文档](/docs/icons/icon-data.md)。
 
-#### Custom icon sets
+#### 自定义图标集
 
-Plugins also work with custom icon sets, see detailed documentation below.
+插件同样支持自定义图标集，请参阅下方的详细文档。
 
-## Usage
+## 使用方法
 
-For more details, see documentation for each plugin:
+如需了解更多详情，请参阅各插件的文档：
 
-- [`[func]addIconSelectors()` plugin documentation](../iconify/index.md).
-- [`[func]addDynamicIconSelectors()` plugin documentation](../dynamic/index.md).
+- [`[func]addIconSelectors()` 插件文档](../iconify/index.md)。
+- [`[func]addDynamicIconSelectors()` 插件文档](../dynamic/index.md)。

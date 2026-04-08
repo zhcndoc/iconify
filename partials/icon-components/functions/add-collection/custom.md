@@ -1,1 +1,1 @@
-Syntax is similar to default icon syntax, but with API provider `[str]@custom` in icon name. See [API providers documentation](/docs/api/providers.md) for details.
+语法与默认图标语法类似，但图标名称中需包含 API 提供商 `[str]@custom`。详情请参阅 [API 提供商文档](/docs/api/providers.md)。

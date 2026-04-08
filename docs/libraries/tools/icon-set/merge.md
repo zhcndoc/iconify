@@ -1,37 +1,37 @@
 ```yaml
-title: Merge icon sets with Iconify Tools
+title: 使用 Iconify Tools 合并图标集
 types:
   IconSet: './index.md'
 ```
 
 # mergeIconSets()
 
-This function is part of [Iconify Tools package](../index.md).
+此函数属于 [Iconify Tools 包](../index.md)。
 
-Function `[func]mergeIconSets()` merges to icon sets, creating new `[type]IconSet` instance.
+函数 `[func]mergeIconSets()` 用于合并两个图标集，并创建一个新的 `[type]IconSet` 实例。
 
-## Why merge icon sets?
+## 为什么要合并图标集？
 
-When you update an icon set, often old icons are lost.
-If someone is using an old icon, which no longer exists or was renamed, removing that icon will result in a broken UI.
-This is why icons should never be removed.
+更新图标集时，旧图标通常会丢失。
+如果有人正在使用一个已不存在或已重命名的旧图标，删除该图标将导致 UI 损坏。
+这就是为什么永远不应该删除图标的原因。
 
-Merging new icon set and old icon set ensures that icons are never removed.
-Merge process adds missing icons, but marks them as hidden,
-so they are not shown in icons list, but are available to anyone using old icons.
+合并新旧图标集可确保图标永远不会被删除。
+合并过程会添加缺失的图标，但会将它们标记为隐藏，
+因此它们不会显示在图标列表中，但可供使用旧图标的任何人调用。
 
-This function attempts to detect renamed icons, creating aliases for those icons.
+此函数会尝试检测已重命名的图标，并为这些图标创建别名。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]oldIcons`, `[type]IconSet`. Old version of icon set.
-- `[prop]newIcons`, `[type]IconSet`. New version of icon set.
+- `[prop]oldIcons`，`[type]IconSet`。图标集的旧版本。
+- `[prop]newIcons`，`[type]IconSet`。图标集的新版本。
 
-Function does not modify icon sets passed in parameters, it creates new `[type]IconSet` instance and returns it.
+该函数不会修改作为参数传入的图标集，而是创建一个新的 `[type]IconSet` 实例并将其返回。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/merge-icon-sets.ts

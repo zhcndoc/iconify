@@ -1,1 +1,1 @@
-Instead of adding `[prop]vertical-align` to each icon, the icon component has a property `[prop]inline`. Adding `[prop]inline` property to the icon component is identical to setting `[html]style="vertical-align: -0.125em"`:
+无需为每个图标添加 `[prop]vertical-align`，图标组件提供了 `[prop]inline` 属性。为图标组件添加 `[prop]inline` 属性等同于设置 `[html]style="vertical-align: -0.125em"`：

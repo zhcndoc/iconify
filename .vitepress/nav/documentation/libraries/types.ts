@@ -11,7 +11,7 @@ export const TypesSidebar: SidebarItem[] = [
     link: `${root}iconify-json`,
     collapsed: true,
     items: [{
-      text: 'Metadata',
+      text: '元数据',
       link: `${root}iconify-json-metadata`,
     }, {
       text: 'IconifyAlias',

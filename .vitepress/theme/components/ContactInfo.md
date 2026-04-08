@@ -1,5 +1,5 @@
-## Contact information
+## 联系方式
 
-Iconify OÜ is a registered company in Estonia, registration number 14973677.
+Iconify OÜ 是一家在爱沙尼亚注册的公司，注册号为 14973677。
 
 <contact-links></contact-links>

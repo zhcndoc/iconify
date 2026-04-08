@@ -1,5 +1,5 @@
 ```yaml
-title: Iconify JSON Type
+title: Iconify JSON 类型
 types:
   IconifyIcon: './iconify-icon.md'
   IconifyAlias: './iconify-alias.md'
@@ -9,32 +9,32 @@ functions:
   defaultIconProps: '/docs/libraries/utils/default-icon-props.md'
 ```
 
-# IconifyJSON type
+# IconifyJSON 类型
 
-All Iconify libraries share common object structures. They are described as types in `[npm]@iconify/types` NPM package.
+所有 Iconify 库都共享通用的对象结构。它们在 `[npm]@iconify/types` NPM 包中被定义为类型。
 
-For description of types and short explanation of TypeScript see [types documentation](./index.md).
+有关类型的描述和 TypeScript 的简要说明，请参阅[类型文档](./index.md)。
 
-This article describes `[type]IconifyJSON` type.
+本文介绍 `[type]IconifyJSON` 类型。
 
-## Usage
+## 用法
 
-Icon set in `[type]IconifyJSON` is created by Iconify Tools or loaded from pre-parsed JSON file.
+`[type]IconifyJSON` 格式的图标集由 Iconify Tools 创建，或从预解析的 JSON 文件加载。
 
-See [Iconify Utils documentation](/docs/libraries/utils/index.md) for parsing icon sets and [icon sets package documentation](/docs/icons/all.md).
+有关解析图标集的信息，请参阅 [Iconify Utils 文档](/docs/libraries/utils/index.md) 和 [图标集包文档](/docs/icons/all.md)。
 
-See [Iconify Tools documentation](/docs/libraries/tools/index.md) for creating custom icon sets.
+有关创建自定义图标集的信息，请参阅 [Iconify Tools 文档](/docs/libraries/tools/index.md)。
 
-## Structure
+## 结构
 
-Type `[type]IconifyJSON` is an object that has the following required properties.
+`[type]IconifyJSON` 类型是一个包含以下必需属性的对象。
 
-### Required properties
+### 必需属性
 
-- `[prop]prefix`, `[type]string`. Prefix for icons in JSON file. All icons in an icon set have the same prefix and icon set cannot include icons from other icon sets.
-- `[prop]icons`, `[type]Record<string, IconifyIcon>`. List of icons. Key is icon name, value is `[type]IconifyIcon` icon data.
+- `[prop]prefix`，`[type]string`。JSON 文件中图标的前缀。图标集中的所有图标都具有相同的前缀，且图标集不能包含来自其他图标集的图标。
+- `[prop]icons`，`[type]Record<string, IconifyIcon>`。图标列表。键为图标名称，值为 `[type]IconifyIcon` 图标数据。
 
-Example:
+示例：
 
 ```json
 {
@@ -49,29 +49,29 @@ Example:
 }
 ```
 
-Other properties are optional: aliases, default values for all icons, metadata.
+其他属性为可选：别名、所有图标的默认值、元数据。
 
-### Icon
+### 图标
 
-Object `[prop]icons` contains data for icons.
+`[prop]icons` 对象包含图标的数据。
 
-Key is icon name. Value is icon data, where `[prop]body` is required and other properties are optional:
+键为图标名称。值为图标数据，其中 `[prop]body` 为必需项，其他属性为可选项：
 
 `include types/iconify-optional`
 
-In your code you can get default values from `[var]defaultIconProps` constant from [Iconify Utils](/docs/libraries/utils/index.md).
+在代码中，你可以从 [Iconify Utils](/docs/libraries/utils/index.md) 的 `[var]defaultIconProps` 常量获取默认值。
 
-### Alias
+### 别名
 
-One optional property of `[type]IconifyJSON` type is `[prop]alias`, which has type `[type]Record<string, IconifyAlias>`.
-Key is alias name, value is `[type]IconifyAlias` alias data.
-It represents a list of icon aliases.
+`[type]IconifyJSON` 类型的一个可选属性是 `[prop]alias`，其类型为 `[type]Record<string, IconifyAlias>`。
+键为别名名称，值为 `[type]IconifyAlias` 别名数据。
+它表示图标别名的列表。
 
-What are aliases? They are variations of other icons. Aliases are used to reduce duplications.
+什么是别名？它们是其他图标的变体。别名用于减少重复。
 
-For example, if icons `[icon]home` and `[icon]house` are identical,
-only one of those icons can be present in `[prop]icons` property, another icon can be listed in `[prop]aliases`,
-pointing to original icon:
+例如，如果图标 `[icon]home` 和 `[icon]house` 完全相同，
+则 `[prop]icons` 属性中只能存在其中一个图标，另一个图标可以列在 `[prop]aliases` 中，
+并指向原始图标：
 
 ```json
 {
@@ -91,9 +91,9 @@ pointing to original icon:
 }
 ```
 
-Aliases can also include transformations: horizontal and/or vertical flip, 90/180/270 degrees rotation.
-This allows icon variations by reusing another icon,
-such as creating a right arrow by using left arrow with horizontal flip:
+别名还可以包含变换：水平和/或垂直翻转，90/180/270 度旋转。
+这允许通过复用另一个图标来创建图标变体，
+例如通过使用水平翻转的左箭头来创建右箭头：
 
 ```json
 {
@@ -114,39 +114,39 @@ such as creating a right arrow by using left arrow with horizontal flip:
 }
 ```
 
-Alias has the same properties as icons, except for `[prop]body`.
-It also has additional required property `[prop]parent` that points to parent icon.
+除了 `[prop]body` 之外，别名具有与图标相同的属性。
+它还有一个额外的必需属性 `[prop]parent`，用于指向父图标。
 
-Logic for resolving properties of alias:
+解析别名属性的逻辑：
 
-- For icon dimensions, value set in alias overrides value from parent icon.
-- For icon transformations, if value is set in both alias and parent icon, they are merged: horizontal flip + horizontal flip = no horizontal flip, 90 degrees rotation + 180 degrees rotation = 270 degrees rotation.
+- 对于图标尺寸，别名中设置的值会覆盖父图标中的值。
+- 对于图标变换，如果别名和父图标中都设置了值，则它们会合并：水平翻转 + 水平翻转 = 无水平翻转，90 度旋转 + 180 度旋转 = 270 度旋转。
 
 ```yaml
 src: types/alias-json.json
-title: 'Source icon set:'
-hint: 'Icon set as IconifyJSON'
+title: '源图标集：'
+hint: '作为 IconifyJSON 的图标集'
 extra:
   - src: types/alias-merged.json
-    title: 'Extracted alias:'
-    hint: 'Merged "arrow-right" icon as IconifyIcon'
+    title: '提取的别名：'
+    hint: '合并为 IconifyIcon 的 "arrow-right" 图标'
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: types/alias3-json.json
-title: 'Source icon set:'
-hint: 'Icon set as IconifyJSON'
+title: '源图标集：'
+hint: '作为 IconifyJSON 的图标集'
 extra:
   - src: types/alias3-merged.json
-    title: 'Extracted alias:'
-    hint: 'Merged "house-32" icon as IconifyIcon'
+    title: '提取的别名：'
+    hint: '合并为 IconifyIcon 的 "house-32" 图标'
 ```
 
-### Default dimensions
+### 默认尺寸
 
-If most icons in an icon set have the same dimensions, it does not make sense to list them all for each icon:
+如果图标集中的大多数图标具有相同的尺寸，为每个图标都列出它们是没有意义的：
 
 ```json
 {
@@ -171,7 +171,7 @@ If most icons in an icon set have the same dimensions, it does not make sense to
 }
 ```
 
-To reduce that duplication, root of `[type]IconifyJSON` object might include default values for icon dimensions:
+为了减少这种重复，`[type]IconifyJSON` 对象的根节点可以包含图标尺寸的默认值：
 
 ```json
 {
@@ -192,32 +192,32 @@ To reduce that duplication, root of `[type]IconifyJSON` object might include def
 }
 ```
 
-These default values are used only for icons that do not have dimensions:
+这些默认值仅用于没有指定尺寸的图标：
 
 ```yaml
 src: types/json-defaults-source.json
-title: 'With default values:'
+title: '包含默认值：'
 extra:
   - src: types/json-defaults-merged.json
-    title: 'Without default values:'
-    hint: 'Both examples are identical, first example has default values, second example does not.'
+    title: '不包含默认值：'
+    hint: '两个示例完全相同，第一个示例包含默认值，第二个示例不包含。'
 ```
 
-If dimensions in an icon are missing, and default values in the root object are missing,
-default value for property (see the list of properties above) is used:
+如果图标中缺少尺寸，且根对象中也缺少默认值，
+则会使用该属性的默认值（请参阅上面的属性列表）：
 
 ```yaml
 src: types/json-defaults2-source.json
-title: 'Icon without dimensions, which default to 16:'
+title: '无尺寸的图标，默认值为 16：'
 extra:
   - src: types/json-defaults2-merged.json
-    title: 'Icon with dimensions:'
-    hint: 'Both examples are identical, first example has default property values, second example has explicit dimensions.'
+    title: '有尺寸的图标：'
+    hint: '两个示例完全相同，第一个示例使用默认属性值，第二个示例使用显式尺寸。'
 ```
 
-In all examples above, `[prop]width` and `[prop]height` are used to demonstrate dimensions.
-But there are also `[prop]left` and `[prop]top` properties and transformations, which are missing in all examples.
-This is example above with all properties resolved:
+在上面的所有示例中，使用 `[prop]width` 和 `[prop]height` 来演示尺寸。
+但还有 `[prop]left` 和 `[prop]top` 属性以及变换属性，这些在所有示例中均未显示。
+以下是解析了所有属性的上述示例：
 
 ```json
 {
@@ -237,19 +237,19 @@ This is example above with all properties resolved:
 }
 ```
 
-## Metadata
+## 元数据
 
-`[type]IconifyJSON` can also contain additional data that is used for displaying list of icons.
+`[type]IconifyJSON` 还可以包含用于显示图标列表的附加数据。
 
-This is optional data that has no effect on rendering icons, so it was moved to a separate document.
+这是可选数据，对渲染图标没有影响，因此已移至单独的文档中。
 
-See [IconifyJSON metadata](./iconify-json-metadata.md) for details.
+有关详细信息，请参阅 [IconifyJSON 元数据](./iconify-json-metadata.md)。
 
-## Functions
+## 函数
 
-To parse icon sets, [Iconify Utils](/docs/libraries/utils/index.md) offers the following functions:
+为了解析图标集，[Iconify Utils](/docs/libraries/utils/index.md) 提供了以下函数：
 
-- `[func]parseIconSet()` parses an entire icon set, calling custom function for every icon.
-- `[func]getIconData()` extracts data for an icon in `[type]IconifyIcon` format.
+- `[func]parseIconSet()` 解析整个图标集，并为每个图标调用自定义函数。
+- `[func]getIconData()` 以 `[type]IconifyIcon` 格式提取图标的数据。
 
-To create convert icons to icon sets, use [Iconify Tools](/docs/libraries/tools/index.md).
+要将图标转换为图标集，请使用 [Iconify Tools](/docs/libraries/tools/index.md)。

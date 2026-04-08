@@ -1,16 +1,16 @@
 ```yaml
-title: ResolvedIconifyIcon Type
+title: ResolvedIconifyIcon 类型
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
   FullIconifyIcon: '../utils/full-iconify-icon.md'
   IconSet: './icon-set/index.md'
 ```
 
-# ResolvedIconifyIcon type
+# ResolvedIconifyIcon 类型
 
-`[type]ResolvedIconifyIcon` type is used in [Iconify Utils](./index.md).
+`[type]ResolvedIconifyIcon` 类型用于 [Iconify Utils](./index.md)。
 
-It is `[type]IconifyIcon` with added optional properties that exist in both `[type]ExtendedIconifyIcon` and `[type]ExtendedIconifyAlias`.
-Currently, there is only one extra property:
+它是 `[type]IconifyIcon`，并添加了同时存在于 `[type]ExtendedIconifyIcon` 和 `[type]ExtendedIconifyAlias` 中的可选属性。
+目前，仅包含一个额外属性：
 
-- `[prop]hidden`, `[type]boolean`. If value is `true`, icon is hidden and should not be displayed in the list of icons. Usually, this property is set for icons that used to exist in an older version of the icon set, but no longer exist.
+- `[prop]hidden`，`[type]boolean`。如果值为 `true`，则图标将被隐藏，且不应显示在图标列表中。通常，此属性用于设置那些曾存在于旧版图标集中但现已不存在的图标。

@@ -1,5 +1,5 @@
 ```yaml
-title: Add icon variation to icon set
+title: 向图标集添加图标变体
 types:
   IconSet: './index.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
@@ -13,29 +13,29 @@ functions:
 
 # setVariation()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]setVariation()` adds new icon variation to icon set or overwrites existing item.
+函数 `[func]setVariation()` 向图标集添加新的图标变体，或覆盖现有项。
 
-## Variation
+## 变体
 
-Icon variation is an item that is based on different icon, but has at least one transformation applied to it.
+图标变体是基于其他图标创建的项，但至少应用了一种变换。
 
-For example, `[str]arrow-left` can be a variation of `[str]arrow-right` with `[prop]hFlip` enabled.
+例如，在启用 `[prop]hFlip` 的情况下，`[str]arrow-left` 可以是 `[str]arrow-right` 的变体。
 
-Variations make it easier to maintain icons that are based on other icons and reduce content duplication.
+变体使得维护基于其他图标的图标变得更加容易，并减少内容重复。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数具有以下参数：
 
-- `[prop]name`, `[type]string`. Icon name.
-- `[prop]parent`, `[type]string`. Parent item name.
-- `[prop]props`, `[type]CommonIconProps`. Icon transformations.
+- `[prop]name`，`[type]string`。图标名称。
+- `[prop]parent`，`[type]string`。父项名称。
+- `[prop]props`，`[type]CommonIconProps`。图标变换。
 
-Function returns a simple `true` on success, `false` on failure.
+函数在成功时返回简单的 `true`，失败时返回 `false`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/set-alias.ts

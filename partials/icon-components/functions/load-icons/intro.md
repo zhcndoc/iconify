@@ -1,10 +1,10 @@
-The function `[func]loadIcons()` retrieves icons from Iconify API.
+函数 `[func]loadIcons()` 从 Iconify API 检索图标。
 
-When to use this function:
+何时使用此函数：
 
-- To preload multiple icons that you will use later. This will make sure icon data is available when needed and it will load faster.
-- If you need to get icon data as soon as it is available. For example, when rendering a custom component. However, if you need to load just one icon, there is also `[func]loadIcon()` that is easier to use.
+- 预加载多个稍后将使用的图标。这将确保在需要时图标数据已可用，并且加载速度更快。
+- 如果你需要在图标数据可用后立即获取。例如，在渲染自定义组件时。但是，如果你只需要加载单个图标，还有更易用的 `[func]loadIcon()`。
 
-This function is the most efficient way to preload icons that you know will be needed at some point. It loads icon data from Iconify API in bulk, reducing the number of queries.
+此函数是预加载已知将来会用到的图标的最有效方式。它会批量从 Iconify API 加载图标数据，从而减少查询次数。
 
-It is safe to call the function multiple times with the same icon name, component will not load icon data from Iconify API twice. If you set a callback parameter, callback will be called correctly even if icon was loaded with different `[func]loadIcons()` call, making sure callback is reliable.
+使用相同的图标名称多次调用该函数是安全的，组件不会从 Iconify API 重复加载图标数据。如果你设置了回调参数，即使图标是通过其他 `[func]loadIcons()` 调用加载的，回调也会被正确触发，从而确保回调的可靠性。

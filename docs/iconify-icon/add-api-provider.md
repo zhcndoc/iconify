@@ -1,22 +1,22 @@
 ```yaml
-title: 'Iconify Icon Web Component Function: addAPIProvider'
+title: 'Iconify Icon Web 组件函数：addAPIProvider'
 ```
 
-# Web component function: addAPIProvider
+# Web 组件函数：addAPIProvider
 
-This tutorial is part of [Iconify Icon web component tutorial](./index.md#functions).
+本教程是 [Iconify Icon Web 组件教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/add-api-provider/intro`
 
-## API providers
+## API 提供商
 
 `include icon-components/api-providers`
 
-## Usage
+## 用法
 
 `include icon-components/functions/add-api-provider/props`
 
-## Example
+## 示例
 
 ```yaml
 src: icon-components/icon/add-api-provider.ts

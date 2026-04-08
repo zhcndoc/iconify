@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify for Svelte Function: loadIcons'
+title: 'Iconify for Svelte 函数：loadIcons'
 functions:
   getIcon: './get-icon.md'
   loadIcon: './load-icon.md'
@@ -7,31 +7,31 @@ types:
   IconifyIconName: './icon-name.md'
 ```
 
-# Iconify for Svelte function: loadIcons
+# Iconify for Svelte 函数：loadIcons
 
-This tutorial is part of [Iconify for Svelte functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Svelte 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/load-icons/intro`
 
-## Usage
+## 使用方法
 
 `include icon-components/functions/load-icons/props`
 
-## Icons list
+## 图标列表
 
 `include icon-components/functions/load-icons/props-icons`
 
-## Callback
+## 回调函数
 
 `include icon-components/functions/load-icons/props-callback`
 
-## IconifyIconName type
+## IconifyIconName 类型
 
 `include types/iconify-icon-name`
 
-## Examples
+## 示例
 
-Simple callback that loads one icon:
+加载单个图标的简单回调：
 
 ```yaml
 src: icon-components/common/load-icons.js
@@ -40,7 +40,7 @@ replacements:
     replace: svelte
 ```
 
-Async version of `[func]loadIcons()`:
+`[func]loadIcons()` 的异步版本：
 
 ```yaml
 src: icon-components/common/load-icons-async.js
@@ -49,12 +49,12 @@ replacements:
     replace: svelte
 ```
 
-## Svelte component example
+## Svelte 组件示例
 
-This example renders `[html]<slot />` while icon is being loaded, emulating behavior of React component. Due to bug in Svelte, third party components cannot use `[html]<slot />`, so Svelte component behaves a bit different than other components.
+此示例在图标加载期间渲染 `[html]<slot />`，以模拟 React 组件的行为。由于 Svelte 中存在一个 bug，第三方组件无法使用 `[html]<slot />`，因此 Svelte 组件的行为与其他组件略有不同。
 
 ```yaml
 src: icon-components/common/get-icon.svelte
 ```
 
-If you want to load only one icon, there is also `[func]loadIcon()` that is easier to use.
+如果您只想加载单个图标，还可以使用更简单的 `[func]loadIcon()`。

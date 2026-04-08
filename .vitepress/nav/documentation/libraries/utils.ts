@@ -4,7 +4,7 @@ const root = '/docs/libraries/utils/'
 
 export const UtilsSidebar: SidebarItem[] = [
   {
-    text: 'Icon Sets',
+    text: '图标集',
     collapsed: true,
     items: [{
       text: 'validateIconSet()',
@@ -33,7 +33,7 @@ export const UtilsSidebar: SidebarItem[] = [
     }],
   },
   {
-    text: 'Icon',
+    text: '图标',
     collapsed: true,
     items: [{
       text: 'mergeIconData()',
@@ -48,7 +48,7 @@ export const UtilsSidebar: SidebarItem[] = [
     }],
   },
   {
-    text: 'Icon Customisations',
+    text: '图标自定义',
     collapsed: true,
     items: [{
       text: 'mergeCustomisations()',
@@ -72,7 +72,7 @@ export const UtilsSidebar: SidebarItem[] = [
     }],
   },
   {
-    text: 'Build SVG',
+    text: '构建 SVG',
     collapsed: true,
     items: [{
       text: 'iconToSVG()',
@@ -89,7 +89,7 @@ export const UtilsSidebar: SidebarItem[] = [
     }],
   },
   {
-    text: 'Parse SVG',
+    text: '解析 SVG',
     collapsed: true,
     items: [{
       text: 'parseSVGContent()',
@@ -132,7 +132,7 @@ export const UtilsSidebar: SidebarItem[] = [
     }],
   },
   {
-    text: 'Icon Name',
+    text: '图标名称',
     collapsed: true,
     items: [{
       text: 'matchName',
@@ -144,13 +144,13 @@ export const UtilsSidebar: SidebarItem[] = [
       text: 'validateIconName()',
       link: `${root}validate-icon`,
     }, {
-      text: 'IconName type',
+      text: 'IconName 类型',
       link: `${root}icon-name`,
       hidden: true,
     }],
   },
   {
-    text: 'Colors',
+    text: '颜色',
     collapsed: true,
     items: [{
       text: 'stringToColor()',
@@ -167,23 +167,23 @@ export const UtilsSidebar: SidebarItem[] = [
     }],
   },
   {
-    text: 'Examples',
+    text: '示例',
     collapsed: true,
     link: `${root}examples/`,
     items: [{
-      text: 'Icon Set to SVGs',
+      text: '图标集转 SVG',
       link: `${root}examples/export-svgs-from-icon-set`,
     }, {
-      text: 'Export SVG',
+      text: '导出 SVG',
       items: [{
-        text: 'From Icon Set',
+        text: '从图标集',
         link: `${root}examples/export-svg-from-icon-set`,
       }, {
-        text: 'From Data',
+        text: '从数据',
         link: `${root}examples/export-svg-from-data`,
       }],
     }, {
-      text: 'Export CSS',
+      text: '导出 CSS',
       link: `${root}examples/generate-css`,
     }],
   },

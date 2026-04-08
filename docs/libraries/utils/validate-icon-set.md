@@ -1,5 +1,5 @@
 ```yaml
-title: validateIconSet() in Iconify Utils
+title: Iconify Utils 中的 validateIconSet()
 types:
   IconifyJSON: '../../types/iconify-json.md'
 functions:
@@ -8,47 +8,47 @@ functions:
 
 # validateIconSet()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]validateIconSet()` validates icon set, returning cleaned up `[type]IconifyJSON` object.
+函数 `[func]validateIconSet()` 用于验证图标集，并返回清理后的 `[type]IconifyJSON` 对象。
 
-If there are errors in provided data:
+如果提供的数据中存在错误：
 
-- If error is critical, function will throw an exception.
-- If error can be fixed, function will throw an exception, unless `[prop]fix` option is provided.
+- 如果错误是严重的，函数将抛出异常。
+- 如果错误可以修复，函数将抛出异常，除非提供了 `[prop]fix` 选项。
 
-This function checks everything, including metadata.
+此函数会检查所有内容，包括元数据。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+函数具有以下参数：
 
-- `[prop]data`, `[type]object`. Data to validate.
-- `[prop]options`, `[type]object`. Optional options object.
+- `[prop]data`，`[type]object`。要验证的数据。
+- `[prop]options`，`[type]object`。可选的配置对象。
 
-Function returns:
+函数返回：
 
-- `[type]IconifyJSON` object on success (same as passed in first parameter).
+- 成功时返回 `[type]IconifyJSON` 对象（与第一个参数传入的对象相同）。
 
-If function encounters an error that cannot be fixed, function will throw an exception.
+如果函数遇到无法修复的错误，将抛出异常。
 
-### Options {#options}
+### 选项 {#options}
 
-Options object has the following properties:
+选项对象具有以下属性：
 
-- `[prop]fix`, `[type]boolean`. If set to `true`, function will attempt to fix errors whenever possible instead of throwing exception. Default value is `false`.
-- `[prop]prefix`, `[type]string`. Default value for `[prop]prefix` property of icon set. If set, function will overwrite `[prop]prefix` in icon set with your value.
-- `[prop]provider`, `[type]string`. Default value for `[prop]provider` property of icon set. If set, function will overwrite `[prop]provider` in icon set with your value.
+- `[prop]fix`，`[type]boolean`。如果设置为 `true`，函数将尽可能尝试修复错误，而不是抛出异常。默认值为 `false`。
+- `[prop]prefix`，`[type]string`。图标集 `[prop]prefix` 属性的默认值。如果设置，函数将用你提供的值覆盖图标集中的 `[prop]prefix`。
+- `[prop]provider`，`[type]string`。图标集 `[prop]provider` 属性的默认值。如果设置，函数将用你提供的值覆盖图标集中的 `[prop]provider`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/validate.ts
 title: 'usage.ts'
 ```
 
-## Quick validation
+## 快速验证
 
-This function is quite big, so it is not recommended to bundle it for browser usage.
+此函数体积较大，因此不建议将其打包用于浏览器环境。
 
-If you want to validate icon set in browser, such as when loading data from API in an icon component, use `[func]quicklyValidateIconSet()` instead. It is smaller and faster because it does not check metadata, does not attempt to fix errors.
+如果你想在浏览器中验证图标集（例如在图标组件中从 API 加载数据时），请改用 `[func]quicklyValidateIconSet()`。它更小、更快，因为它不检查元数据，也不尝试修复错误。

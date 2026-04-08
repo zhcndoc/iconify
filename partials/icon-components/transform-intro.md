@@ -1,6 +1,6 @@
-An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.
+图标可以进行旋转，以及水平和/或垂直翻转。所有变换均相对于图标中心进行。
 
-There are two types of transformations:
+变换分为两种类型：
 
-- Horizontal and vertical flip.
-- Rotation by `[num]90`, `[num]180` and `[num]270` degrees.
+- 水平翻转和垂直翻转。
+- 旋转 `[num]90`、`[num]180` 和 `[num]270` 度。

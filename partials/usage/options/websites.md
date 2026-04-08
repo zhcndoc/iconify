@@ -1,2 +1,2 @@
-- [Iconify icon sets](https://icon-sets.iconify.design/) - official website.
-- [Icones](https://icones.js.org/) - alternative website created by Anthony Fu.
+- [Iconify 图标集](https://icon-sets.iconify.design/) - 官方网站。
+- [Icones](https://icones.js.org/) - 由 Anthony Fu 创建的替代网站。

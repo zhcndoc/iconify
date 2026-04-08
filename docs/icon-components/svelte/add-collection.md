@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify for Svelte Function: addCollection'
+title: 'Iconify for Svelte 函数：addCollection'
 types:
   IconifyJSON: '../../types/iconify-json.md'
   IconifyIcon: '../../types/iconify-icon.md'
@@ -7,17 +7,17 @@ functions:
   addIcon: './add-icon.md'
 ```
 
-# Iconify for Svelte function: addCollection
+# Iconify for Svelte 函数：addCollection
 
-This tutorial is part of [Iconify for Svelte functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Svelte 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/add-collection/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/add-collection/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/add-collection.js
@@ -35,11 +35,11 @@ replacements:
 
 `include icon-components/functions/add-collection/notes`
 
-## API provider
+## API 提供者
 
 `include icon-components/functions/add-collection/provider`
 
-Example:
+示例：
 
 ```yaml
 src: icon-components/common/add-collection3.js
@@ -48,13 +48,13 @@ replacements:
     replace: svelte
 ```
 
-Code above adds only one icon:
+上述代码仅添加了一个图标：
 
-- `[prop]provider` is `[str]custom`.
-- `[prop]prefix` is `[str]md`.
-- `[prop]name` is `[str]test`.
+- `[prop]provider` 为 `[str]custom`。
+- `[prop]prefix` 为 `[str]md`。
+- `[prop]name` 为 `[str]test`。
 
-In component template code this icon can be used like this:
+在组件模板代码中，可以像这样使用该图标：
 
 ```jsx
 <Icon icon="@custom:md:test" />
@@ -62,6 +62,6 @@ In component template code this icon can be used like this:
 
 `include icon-components/functions/add-collection/custom`
 
-## One icon
+## 单个图标
 
 `include icon-components/functions/add-collection/footer`

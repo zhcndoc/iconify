@@ -1,20 +1,20 @@
 ```yaml
-title: 'Iconify for Ember Function: replaceIDs'
+title: 'Iconify for Ember 函数：replaceIDs'
 functions:
   getIcon: './get-icon.md'
 ```
 
-# Iconify for Ember function: replaceIDs
+# Iconify for Ember 函数：replaceIDs
 
-This tutorial is part of [Iconify for Ember functions tutorial](./index.md#functions).
+本教程是 [Iconify for Ember 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/replace-ids/intro-component`
 
-## Usage
+## 用法
 
 `include icon-components/functions/replace-ids/props`
 
-## Example
+## 示例
 
 `include icon-components/functions/replace-ids/example-component`
 

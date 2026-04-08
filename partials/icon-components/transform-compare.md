@@ -1,6 +1,6 @@
-These are not CSS transformations, transformations are applied inside SVG.
+这些并非 CSS 变换，变换是在 SVG 内部进行的。
 
-What's the difference from CSS transformations?
+与 CSS 变换有什么区别？
 
-- If you rotate an icon by 90 degrees in CSS, icon's bounding box remains the same. 16x24 icon still takes space for 16x24, but might overlap elements around it.
-- If you rotate an icon by 90 degrees in SVG Framework, icon's dimensions swap places. 16x24 icon becomes 24x16 icon, and it does not affect elements around it.
+- 如果在 CSS 中将图标旋转 90 度，图标的边界框保持不变。16x24 的图标仍然占据 16x24 的空间，但可能会与周围的元素重叠。
+- 如果在 SVG 框架中将图标旋转 90 度，图标的尺寸会互换。16x24 的图标会变成 24x16 的图标，并且不会影响周围的元素。

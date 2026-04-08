@@ -5,11 +5,9 @@ import lock from '/assets/svg/lock.svg?raw'
 <section class="vendor-lock-in">
     <div v-html="lock"></div>
     <div>
-        <p>Iconify makes it easy to <a href="/docs/articles/vendor-lock-in.html">avoid vendor lock-in</a>.</p>
+        <p>Iconify 让<a href="/docs/articles/vendor-lock-in.html">避免供应商锁定</a>变得简单。</p>
         <p>
-            You can use many open source icon sets with a large choice of open
-            source icon components. Thousands of high-quality icons from 100+ icon
-            sets, all validated, cleaned up, optimised and always up to date.
+            您可以使用许多开源图标集，拥有大量的开源图标组件选择。来自100多个图标集的数千个高质量图标，全部经过验证、清理、优化且始终保持最新。
         </p>
     </div>
 </section>

@@ -1,5 +1,5 @@
 ```yaml
-title: Resolve icon in icon set
+title: 解析图标集中的图标
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
@@ -9,20 +9,20 @@ types:
 
 # resolve()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数是 [Iconify Tools](../index.md) 中 `[type]IconSet` 类的一部分。
 
-Function `[func]resolve()` retrieve data for icon in `[type]IconifyIcon` format.
+函数 `[func]resolve()` 用于检索 `[type]IconifyIcon` 格式的图标数据。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数具有以下参数：
 
-- `[prop]name`, `[type]string`. Icon name.
-- `[prop]full`, `[type]boolean`. Optional. If `true`, function will return full icon data (`[type]FullIconifyIcon`).
+- `[prop]name`，`[type]string` 类型。图标名称。
+- `[prop]full`，`[type]boolean` 类型。可选参数。如果为 `true`，函数将返回完整的图标数据（`[type]FullIconifyIcon`）。
 
-Function returns `[type]IconifyIcon` (or `[type]FullIconifyIcon` if second parameter is `true`), `[type]null` on error.
+函数返回 `[type]IconifyIcon`（如果第二个参数为 `true` 则返回 `[type]FullIconifyIcon`），出错时返回 `[type]null`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/resolve.ts

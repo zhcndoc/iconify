@@ -34,20 +34,20 @@ functions:
   fetFetch: "./set-fetch.md"
 ```
 
-# SVG framework functions
+# SVG 框架函数
 
-This tutorial is part of [Iconify SVG Framework tutorial](./index.md).
+本教程是 [Iconify SVG 框架教程](./index.md) 的一部分。
 
-Iconify SVG framework has many functions that you can use to use the SVG framework in your scripts.
+Iconify SVG 框架提供了许多函数，你可以在脚本中使用它们来调用 SVG 框架。
 
-## Usage
+## 使用方法
 
-There are two ways of using SVG framework functions:
+有两种使用 SVG 框架函数的方法：
 
-- By using `[var]Iconify` global.
-- By importing `[var]Iconify` (or named functions you want to import) from `[npm]@iconify/iconify@2` if you are bundling SVG framework with your scripts.
+- 通过使用 `[var]Iconify` 全局变量。
+- 如果你将 SVG 框架与脚本一起打包，可以从 `[npm]@iconify/iconify@2` 导入 `[var]Iconify`（或你想导入的具名函数）。
 
-Examples of using `[func]loadIcon` function:
+使用 `[func]loadIcon` 函数的示例：
 
 ```yaml
 src: icon-components/iconify/load-icon-global.html
@@ -60,35 +60,35 @@ extra:
     title: "Node.js:"
 ```
 
-Even if you use bundle (method shown in second example), `[var]Iconify` global is also available because SVG framework exports functions and creates a global variable regardless of how you use it. That means you can use method shown in first example regardless of how you import SVG framework.
+即使你使用打包方式（如第二个示例所示），`[var]Iconify` 全局变量依然可用，因为无论以何种方式使用，SVG 框架都会导出函数并创建全局变量。这意味着无论你如何导入 SVG 框架，都可以使用第一个示例中展示的方法。
 
-## Functions
+## 函数
 
-Functions are split in several groups:
+函数分为以下几组：
 
-- [General functions](#general).
-- [Getting icons](#getting-icons).
-- [Adding icons](#adding-icons).
-- [Rendering icons](#render).
-- [Scanning and observing DOM](#scanner).
-- [API functions](#api).
-- [Internal API functions](#internal).
+- [通用函数](#general)。
+- [获取图标](#getting-icons)。
+- [添加图标](#adding-icons)。
+- [渲染图标](#render)。
+- [扫描和监听 DOM](#scanner)。
+- [API 函数](#api)。
+- [内部 API 函数](#internal)。
 
-Click function name to see more details and examples.
+点击函数名称查看更多详情和示例。
 
-## General functions {#general}
+## 通用函数 {#general}
 
-In this section there is only one function:
+本节仅包含一个函数：
 
-- `[func]getVersion()`. This function returns SVG framework version string. `[str]"2.0.0"`
+- `[func]getVersion()`。此函数返回 SVG 框架的版本字符串。`[str]"2.0.0"`
 
-## Getting icons {#getting-icons}
+## 获取图标 {#getting-icons}
 
 ```yaml
 include: icon-components/components/functions-list/getting-icons
 ```
 
-## Adding icons {#adding-icons}
+## 添加图标 {#adding-icons}
 
 ```yaml
 include: icon-components/components/functions-list/adding-icons
@@ -97,49 +97,49 @@ replacements:
     replace: "SVG framework"
 ```
 
-## Rendering icons {#render}
+## 渲染图标 {#render}
 
-Functions that generate SVG or data:
+用于生成 SVG 或数据的函数：
 
-- `[func]renderSVG(name, customisations?)`. Creates `[tag]svg` element.
-- `[func]renderHTML(name, customisations?)`. Returns `[tag]svg` string.
-- `[func]renderIcon(name, customisations?)`. Generates data used by functions above. This can be used if you prefer to generate `[tag]svg` yourself. Data includes attributes for `[tag]svg` and inner HTML.
-- `[func]buildIcon(data, customisations)` is identical to `[func]renderIcon()`, but uses icon data as first parameter
+- `[func]renderSVG(name, customisations?)`。创建 `[tag]svg` 元素。
+- `[func]renderHTML(name, customisations?)`。返回 `[tag]svg` 字符串。
+- `[func]renderIcon(name, customisations?)`。生成上述函数所使用的数据。如果你希望自己生成 `[tag]svg`，可以使用此函数。数据包含 `[tag]svg` 的属性和内部 HTML。
+- `[func]buildIcon(data, customisations)` 与 `[func]renderIcon()` 相同，但将图标数据作为第一个参数
 
-## Scanning and observing DOM {#scanner}
+## 扫描和监听 DOM {#scanner}
 
-SVG framework automatically scans DOM whenever something changes. However, there are some limitations:
+每当 DOM 发生变化时，SVG 框架都会自动进行扫描。但是，存在一些限制：
 
-- Observer can observe only child elements of `[prop]document.body`.
-- SVG framework scans DOM after every change (though scans are throttled to avoid scanning too often).
+- 监听器只能监听 `[prop]document.body` 的子元素。
+- SVG 框架会在每次更改后扫描 DOM（尽管扫描会进行节流处理，以避免过于频繁）。
 
-In some instances you might want to temporarily disable observer or scan an element that is not part of DOM, such as Shadow DOM. There are functions that you can use:
+在某些情况下，你可能希望暂时禁用监听器，或扫描不属于 DOM 的元素（例如 Shadow DOM）。你可以使用以下函数：
 
-- `[func]scan(root?)`. Scans DOM or custom element for placeholder elements.
-- `[func]observe(root)`. Observes custom root element.
-- `[func]stopObserving(root)`. Stops observing custom root element. You can call it with `[prop]document.body` as parameter to stop observing `[prop]document.body`.
-- `[func]pauseObserver(root?)`. Pauses observer.
-- `[func]resumeObserver(root?)`. Resumes observer.
+- `[func]scan(root?)`。扫描 DOM 或自定义元素中的占位符元素。
+- `[func]observe(root)`。监听自定义根元素。
+- `[func]stopObserving(root)`。停止监听自定义根元素。你可以将 `[prop]document.body` 作为参数调用它，以停止监听 `[prop]document.body`。
+- `[func]pauseObserver(root?)`。暂停监听器。
+- `[func]resumeObserver(root?)`。恢复监听器。
 
-## Helper functions {#helper}
+## 辅助函数 {#helper}
 
-Few helper functions that are exposed because they might be useful when creating things such as icon picker:
+公开了一些辅助函数，因为在创建图标选择器等工具时它们可能会很有用：
 
-- `[func]calculateSize()`. Helper function to calculates icon size. It is used to calculate `[attr]width` if only `[attr]height` is set and vice versa.
-- `[func]replaceIDs(html)`. Randomizes IDs in generated string. This should be used when rendering icon based on data returned by `[func]renderIcon()` or `[func]getIcon` to make sure elements inside each icon have unique IDs. This function is not needed for icons generated by `[func]renderSVG()` and `[func]renderHTML()`.
+- `[func]calculateSize()`。用于计算图标尺寸的辅助函数。当仅设置 `[attr]height` 时用于计算 `[attr]width`，反之亦然。
+- `[func]replaceIDs(html)`。随机化生成字符串中的 ID。当基于 `[func]renderIcon()` 或 `[func]getIcon` 返回的数据渲染图标时，应使用此函数以确保每个图标内部的元素具有唯一的 ID。对于由 `[func]renderSVG()` 和 `[func]renderHTML()` 生成的图标，不需要此函数。
 
-## API functions {#api}
+## API 函数 {#api}
 
 ```yaml
 include: icon-components/components/functions-list/api
 ```
 
-## Internal API functions {#internal}
+## 内部 API 函数 {#internal}
 
 `include icon-components/components/functions-list/internal-intro`
 
-All internal API functions are exposed as properties of `[var]Iconify._api` object and are available only when API is included:
+所有内部 API 函数都作为 `[var]Iconify._api` 对象的属性公开，并且仅在包含 API 时可用：
 
-- `[func]getAPI()`. Returns internal API module.
-- `[func]getAPIConfig()`. Returns API configuration.
-- `[func]setAPIModule(provider)`. Sets API module for provider. This is experimental function intended for custom API providers. API provider functionality is in development.
+- `[func]getAPI()`。返回内部 API 模块。
+- `[func]getAPIConfig()`。返回 API 配置。
+- `[func]setAPIModule(provider)`。为提供商设置 API 模块。这是一个实验性函数，旨在用于自定义 API 提供商。API 提供商功能正在开发中。

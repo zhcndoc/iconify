@@ -1,5 +1,5 @@
-To add `[prop]vertical-align` to icon, the icon component has several options:
+要为图标添加 `[prop]vertical-align`，图标组件提供以下几种选项：
 
-- Swapping `[var]Icon` component with `[var]InlineIcon`.
-- Adding `[attr]inline` attribute.
-- Adding `[prop]vertical-align` style with value `[num]-0.125em`.
+- 将 `[var]Icon` 组件替换为 `[var]InlineIcon`。
+- 添加 `[attr]inline` 属性。
+- 添加值为 `[num]-0.125em` 的 `[prop]vertical-align` 样式。

@@ -1,17 +1,17 @@
-export const copyright = 'Copyright © 2020-PRESENT Iconify OÜ'
+export const copyright = 'Copyright © 2020-PRESENT Iconify OÜ | 采用 Apache 2.0 许可证发布'
 export const ogUrl = 'https://iconify.design/'
 export const ogImage = `${ogUrl}assets/og/iconify.png`
-export const title = 'Iconify'
-export const description = 'All popular icon sets, one framework'
+export const title = 'Iconify 中文文档'
+export const description = '所有流行图标集，一个框架'
 
 export const hero = {
-  title: 'Home of open source icon sets',
-  p1: 'All popular icon sets, one framework.',
-  p2: 'Over 200,000 open source vector icons.',
+  title: '开源图标集框架',
+  p1: '一个框架汇聚所有流行图标集',
+  p2: '超过 200,000 个开源矢量图标',
 }
 export const license = {
-  title: 'License',
-  p1: 'Iconify is an open source project.',
-  p2: 'Almost all parts of the project use MIT license. Some older packages use Apache 2.0 and/or GPL 2.0 licenses.',
-  p3: 'This license does not apply to icons. Icon sets use various open source licenses, see each icon set for details.',
+  title: '许可证',
+  p1: 'Iconify 是一个开源项目。',
+  p2: '项目几乎所有部分都使用 MIT 许可证。部分较早的包使用 Apache 2.0 和/或 GPL 2.0 许可证。',
+  p3: '该许可证不适用于图标。图标集使用各自的开源许可证，请查看每个图标集的详情。',
 }

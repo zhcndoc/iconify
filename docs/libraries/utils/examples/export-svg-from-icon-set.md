@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify Utils Code Examples: Export SVG'
+title: 'Iconify Utils 代码示例：导出 SVG'
 functions:
   getIconData: '../get-icon-data.md'
   iconToSVG: '../icon-to-svg.md'
@@ -10,45 +10,45 @@ types:
   IconifyIcon: '/docs/types/iconify-icon.md'
 ```
 
-# Export SVG using Iconify Utils
+# 使用 Iconify Utils 导出 SVG
 
-This tutorial is part of [code examples for Iconify Utils](./index.md).
+本教程是 [Iconify Utils 代码示例](./index.md) 的一部分。
 
-## Export SVG
+## 导出 SVG
 
-This is an example of using Iconify Utils to generate SVG from an icon set:
+这是一个使用 Iconify Utils 从图标集生成 SVG 的示例：
 
 ```yaml
 src: libraries/utils/svg-from-set.ts
 title: 'demo.ts'
 ```
 
-## Async example
+## 异步示例
 
-This is another example that:
+这是另一个示例，它：
 
-- Uses asynchronous functions to parse icon sets.
-- Uses `[npm]@iconify/json` as source.
-- Written in modern JavaScript, not TypeScript.
+- 使用异步函数解析图标集。
+- 使用 `[npm]@iconify/json` 作为数据源。
+- 使用现代 JavaScript 编写，而非 TypeScript。
 
 ```yaml
 src: usage/svg-utils.js
 title: 'demo.js'
 ```
 
-## Functions
+## 函数
 
-Functions used in this code sample:
+此代码示例中使用的函数：
 
-- `[func]getIconData()` to extract data for one icon from the icon set.
-- `[func]iconToSVG()` to generate attributes and HTML for SVG.
-- `[func]iconToHTML()` to convert the result of `[func]iconToSVG()` to string.
+- `[func]getIconData()` 用于从图标集中提取单个图标的数据。
+- `[func]iconToSVG()` 用于生成 SVG 的属性和 HTML。
+- `[func]iconToHTML()` 用于将 `[func]iconToSVG()` 的结果转换为字符串。
 
-## Source
+## 数据源
 
-For icon set source, this example uses [individual icon set package](/docs/icons/json.md).
+对于图标集数据源，本示例使用 [独立图标集包](/docs/icons/json.md)。
 
-If you need to read from a different file, replace that code with something like this:
+如果你需要从其他文件读取，可以将该代码替换为类似以下内容：
 
 ```ts
 import { readFileSync } from 'fs';
@@ -56,7 +56,7 @@ import { readFileSync } from 'fs';
 const icons = JSON.parse(readFileSync('whatever.json', 'utf8'));
 ```
 
-Typecast it to `[type]IconifyJSON` if you are using TypeScript:
+如果你使用的是 TypeScript，请将其类型转换为 `[type]IconifyJSON`：
 
 ```ts
 import type { IconifyJSON } from '@iconify/types';
@@ -65,21 +65,21 @@ import { readFileSync } from 'fs';
 const icons = JSON.parse(readFileSync('whatever.json', 'utf8')) as IconifyJSON;
 ```
 
-## Output
+## 输出
 
-Example outputs SVG to console.
+示例将 SVG 输出到控制台。
 
-If you need to write it to a file, use file system function, such as `[func]writeFileSync()` or one of its asynchronous counterparts.
+如果你需要将其写入文件，请使用文件系统函数，例如 `[func]writeFileSync()` 或其对应的异步函数之一。
 
-## Icon size
+## 图标尺寸
 
-In this example all generated icons have `[prop]height="1em"`.
+在此示例中，所有生成的图标都具有 `[prop]height="1em"`。
 
-You can remove that by adding customisations as second parameter to `[func]iconToSVG()`:
+你可以通过向 `[func]iconToSVG()` 添加自定义配置作为第二个参数来移除它：
 
 ```js
 const renderData = iconToSVG(iconData, {
-	// 'unset' removes dimensions from icon
+	// 'unset' 会移除图标的尺寸
 	height: 'unset',
 });
 ```

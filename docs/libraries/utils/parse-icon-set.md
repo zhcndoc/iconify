@@ -1,5 +1,5 @@
 ```yaml
-title: parseIconSet() in Iconify Utils
+title: Iconify Utils 中的 parseIconSet()
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyInfo: '/docs/types/iconify-info.md'
@@ -11,67 +11,67 @@ functions:
 
 # parseIconSet()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Functions `[func]parseIconSet()` and `[func]parseIconSetAsync()` parse icon set, calling custom function for every icon.
+函数 `[func]parseIconSet()` 和 `[func]parseIconSetAsync()` 用于解析图标集，并为每个图标调用自定义函数。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数具有以下参数：
 
-- `[prop]data`, `[type]IconifyJSON`. Icon set data.
-- `[prop]callback`, `[type]function`. Callback, called for each icon found in icon set.
+- `[prop]data`，`[type]IconifyJSON`。图标集数据。
+- `[prop]callback`，`[type]function`。回调函数，为图标集中找到的每个图标调用。
 
-Function returns names of parsed icons as `[type]string[]`.
+函数以 `[type]string[]` 形式返回已解析图标的名称。
 
-### Callback
+### 回调
 
-Callback function has 2 parameters:
+回调函数具有 2 个参数：
 
-- `[prop]name`, `[type]string`. Icon name.
-- `[prop]data`, `[type]IconifyIcon | null`. Icon data, `null` if icon is invalid.
+- `[prop]name`，`[type]string`。图标名称。
+- `[prop]data`，`[type]IconifyIcon | null`。图标数据，如果图标无效则为 `null`。
 
-Callback is called for each entry in icon set: all icons, aliases and all entries in `[prop]not_found` property.
+回调会为图标集中的每个条目调用：所有图标、别名以及 `[prop]not_found` 属性中的所有条目。
 
-If `[prop]data` parameter in callback is `null`, icon is invalid or missing.
+如果回调中的 `[prop]data` 参数为 `null`，则表示图标无效或缺失。
 
 ## parseIconSetAsync
 
-Function `[func]parseIconSetAsync()` is identical to `[func]parseIconSet()`, except that it is asynchronous and callback is also an asynchronous function:
+函数 `[func]parseIconSetAsync()` 与 `[func]parseIconSet()` 完全相同，不同之处在于它是异步的，且回调函数也是异步函数：
 
 ```js
 await parseIconSetAsync(iconSet, async (name, data) => {
-	// do async stuff
+	// 执行异步操作
 });
 ```
 
-## Example
+## 示例
 
-Exporting all icons from icon set:
+从图标集中导出所有图标：
 
 ```yaml
 src: libraries/utils/parse.ts
 title: 'usage.ts'
 ```
 
-Counting icons in icon set:
+统计图标集中的图标数量：
 
 ```yaml
 src: libraries/utils/count.ts
 title: 'count.ts'
 ```
 
-Code used in example above should be used to count icons in icon set when calculating number of icons for `[type]IconifyInfo` data. It counts all icons, excluding hidden icons and basic aliases.
+在计算 `[type]IconifyInfo` 数据的图标数量时，应使用上述示例中的代码来统计图标集中的图标。它会统计所有图标，但不包括隐藏的图标和基本别名。
 
-### Validation
+### 验证
 
-Function does not check icon set for errors. Before using it, validate icon set using `[func]validateIconSet()` or `[func]quicklyValidateIconSet()`.
+该函数不会检查图标集是否存在错误。在使用之前，请使用 `[func]validateIconSet()` 或 `[func]quicklyValidateIconSet()` 验证图标集。
 
-### JSON Modules
+### JSON 模块
 
-When using ES modules, examples above might require running node with `[str]--experimental-json-modules` flag.
+在使用 ES 模块时，上述示例可能需要使用 `[str]--experimental-json-modules` 标志运行 node。
 
-Until JSON modules support in Node.js becomes stable, you can avoid using flag by replacing `[func]import` with `[func]require()` because `[func]require()` supports JSON files:
+在 Node.js 对 JSON 模块的支持稳定之前，你可以通过将 `[func]import` 替换为 `[func]require()` 来避免使用该标志，因为 `[func]require()` 支持 JSON 文件：
 
 ```js
 const { icons } = require('@iconify-json/codicon');

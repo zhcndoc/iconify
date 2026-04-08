@@ -16,9 +16,9 @@ import {
 const enablePWA = false; // isCI || !isDevelopment || process.env.SW_DEV === 'true'
 
 export default defineConfig({
-  lang: "en-US",
+  lang: "zh-CN",
   title,
-  titleTemplate: title,
+  titleTemplate: `:title - ${title}`,
   description,
   outDir: "./dist",
   srcExclude: [
@@ -66,6 +66,7 @@ export default defineConfig({
     ["meta", { name: "twitter:image", content: ogImage }],
     ["meta", { name: "twitter:site", content: "@cyberalien_dev" }],
     ["meta", { name: "twitter:url", content: ogUrl }],
+    ["script", { src: "https://www.zhcndoc.com/js/common.js", defer: true }],
     ["link", { rel: "stylesheet", href: "/assets/yt/lite-yt-embed.css" }],
     ["script", { src: "/assets/yt/lite-yt-embed.js" }],
   ],
@@ -83,18 +84,18 @@ export default defineConfig({
     search: {
       provider: "local",
     },
-    carbonAds: {
-      code: "CESI4K3W",
-      placement: "iconifydesign",
-    },
+    // carbonAds: {
+    //   code: "CESI4K3W",
+    //   placement: "iconifydesign",
+    // },
     sidebar: GlobalSidebar,
     editLink: {
       pattern: editPageLinkPattern,
-      text: "Suggest changes to this page",
+      text: "在 GitHub 上编辑此页",
     },
     socialLinks,
     footer: {
-      message: "Released under the Apache 2.0 License.",
+      message: `<a style="text-decoration: none;" target="_blank" href="https://www.zhcndoc.com">简中文档</a> | <a style="text-decoration: none;" rel="nofollow" target="_blank" href="https://beian.miit.gov.cn">沪ICP备2024070610号-3</a>`,
       copyright,
     },
   },

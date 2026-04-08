@@ -7,19 +7,19 @@ replacements:
     value: "${counters.icons-short}"
 ```
 
-# Iconify for Tailwind CSS
+# 适用于 Tailwind CSS 的 Iconify
 
-Iconify plugin for Tailwind CSS makes it easy to use icons in Tailwind CSS.
+适用于 Tailwind CSS 的 Iconify 插件让您能够轻松地在 Tailwind CSS 中使用图标。
 
-You can use [over 60,000 open source icons](/docs/icons/icon-data.md) and custom icons with minimal code.
+您只需编写极少的代码，即可使用[超过 60,000 个开源图标](/docs/icons/icon-data.md)和自定义图标。
 
-## Plugins
+## 插件
 
-There are separate plugins for Tailwind 3 and Tailwind 4.
+Tailwind 3 和 Tailwind 4 分别有独立的插件。
 
-Tailwind 3 plugin is also usable with Tailwind 4, but requires creating a configuration file.
+Tailwind 3 的插件也可用于 Tailwind 4，但需要创建配置文件。
 
-Follow one of these links for documentation:
+请点击以下链接查看文档：
 
-- [Documentation for Tailwind 4 plugin](./tailwind4/index.md)
-- [Documentation for Tailwind 3 plugin](./tailwind3/index.md)
+- [Tailwind 4 插件文档](./tailwind4/index.md)
+- [Tailwind 3 插件文档](./tailwind3/index.md)

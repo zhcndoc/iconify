@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify for Vue 2 Function: addIcon'
+title: 'Iconify for Vue 2 函数：addIcon'
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
@@ -7,17 +7,17 @@ functions:
   addCollection: './add-collection.md'
 ```
 
-# Iconify for Vue 2 function: addIcon
+# Iconify for Vue 2 函数：addIcon
 
-This tutorial is part of [Iconify for Vue 2 functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Vue 2 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/add-icon/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/add-icon/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/add-icon.js
@@ -28,11 +28,11 @@ replacements:
 
 `include icon-components/functions/add-icon/notes`
 
-## API provider
+## API 提供者
 
 `include icon-components/functions/add-icon/provider`
 
-Example:
+示例：
 
 ```yaml
 src: icon-components/common/add-icon2.js
@@ -41,13 +41,13 @@ replacements:
     replace: vue2
 ```
 
-Code above adds the following icon:
+上述代码添加了以下图标：
 
-- `[prop]provider` is `[str]custom`.
-- `[prop]prefix` is `[str]md`.
-- `[prop]name` is `[str]test`.
+- `[prop]provider` 为 `[str]custom`。
+- `[prop]prefix` 为 `[str]md`。
+- `[prop]name` 为 `[str]test`。
 
-In component template this icon can be used like this:
+在组件模板中，可以像这样使用该图标：
 
 ```jsx
 <Icon icon="@custom:md:test" />
@@ -55,6 +55,6 @@ In component template this icon can be used like this:
 
 `include icon-components/functions/add-icon/custom`
 
-## One icon
+## 单个图标
 
 `include icon-components/functions/add-icon/footer`

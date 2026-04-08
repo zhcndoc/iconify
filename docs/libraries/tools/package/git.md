@@ -1,70 +1,70 @@
 ```yaml
-title: Downloading Git repository
+title: 下载 Git 仓库
 types:
   DownloadGitRepoResult: './git.md#result'
 ```
 
-# Downloading Git repository
+# 下载 Git 仓库
 
-This tutorial is part of [package functions documentation](./index.md) in [Iconify Tools](../index.md).
+本教程是 [Iconify Tools](../index.md) 中 [包函数文档](./index.md) 的一部分。
 
-Function `[func]downloadGitRepo()` creates a shallow clone of Git repository.
+函数 `[func]downloadGitRepo()` 会创建 Git 仓库的浅克隆。
 
-## Git executable
+## Git 可执行文件
 
-This function uses Git to clone repository. Make sure Git is installed on your computer.
+此函数使用 Git 来克隆仓库。请确保您的计算机上已安装 Git。
 
-## Usage
+## 用法
 
-Function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]options`, `[type]object`. Options, see below.
+- `[prop]options`，`[type]object`。配置选项，详见下文。
 
-Function returns:
+函数返回：
 
-- `[type]DownloadGitRepoResult` object on success.
-- `[str]not_modified` string if repository has not been updated since last run (can be returned only if `[prop]ifModifiedSince` option is set).
+- 成功时返回 `[type]DownloadGitRepoResult` 对象。
+- 如果自上次运行以来仓库未更新，则返回 `[str]not_modified` 字符串（仅在设置了 `[prop]ifModifiedSince` 选项时可能返回）。
 
-In case of error, function might throw an exception, which you can catch using `[func]try` and `[func]catch`.
+如果发生错误，函数可能会抛出异常，您可以使用 `[func]try` 和 `[func]catch` 进行捕获。
 
-Function is asynchronous. That means you need to handle it as `[class]Promise` instance, usually by adding `[js]await` before function call.
+该函数是异步的。这意味着您需要将其作为 `[class]Promise` 实例进行处理，通常是在函数调用前添加 `[js]await`。
 
-### Options
+### 选项
 
-Options object has the following mandatory properties:
+选项对象包含以下必需属性：
 
-- `[prop]target`, `[type]string`. Target directory. If directory is missing, it will be created. Value can contain `[str]{hash}` that will be replaced with latest commit hash.
-- `[prop]remote`, `[type]string`. Git repository, such as `[str]git@github.com:iconify/tools.git`.
-- `[prop]branch`, `[type]string`. Branch, such as `[str]master`.
+- `[prop]target`，`[type]string`。目标目录。如果目录不存在，将会自动创建。值可以包含 `[str]{hash}`，它将被替换为最新的提交哈希值。
+- `[prop]remote`，`[type]string`。Git 仓库地址，例如 `[str]git@github.com:iconify/tools.git`。
+- `[prop]branch`，`[type]string`。分支名称，例如 `[str]master`。
 
-and the following optional properties:
+以及以下可选属性：
 
-- `[prop]cleanup`, `[type]boolean`. If `true`, target directory will be emptied before exporting icons. Default is `false`.
-- `[prop]ifModifiedSince`, `[type]string | true | DownloadGitRepoResult`. If set, function will check if repository has been updated.
+- `[prop]cleanup`，`[type]boolean`。如果为 `true`，则在导出图标前会清空目标目录。默认为 `false`。
+- `[prop]ifModifiedSince`，`[type]string | true | DownloadGitRepoResult`。如果设置，函数将检查仓库是否已更新。
 
 #### ifModifiedSince
 
-Option `[prop]ifModifiedSince` is used when you want to retrieve data only if repository has been updated.
+当您希望仅在仓库已更新时才获取数据时，可使用 `[prop]ifModifiedSince` 选项。
 
-Value can be one of the following:
+该值可以是以下之一：
 
-- Commit hash as `[type]string`. You can get it from `[prop]hash` property of result of previous run.
-- If value is `true`, function compare hash in remote repository with hash from previously downloaded files in `[prop]target` directory.
-- `[type]DownloadGitRepoResult` value from previous run.
+- 作为 `[type]string` 的提交哈希值。您可以从上次运行结果的 `[prop]hash` 属性中获取。
+- 如果值为 `true`，函数会将远程仓库中的哈希值与 `[prop]target` 目录中先前下载文件的哈希值进行比较。
+- 上次运行返回的 `[type]DownloadGitRepoResult` 值。
 
-If repository has not been modified, function will return string `[str]not_modified`.
+如果仓库未发生修改，函数将返回字符串 `[str]not_modified`。
 
-If option is not set, function cannot return `[str]not_modified`.
+如果未设置此选项，函数将不会返回 `[str]not_modified`。
 
-### Result
+### 返回值
 
-Result object has the following properties:
+结果对象包含以下属性：
 
-- `[prop]downloadType` = `[str]git`.
-- `[prop]contentsDir`, `[type]string`. Directory where repository was cloned to. It is normalized version of `[prop]target` option, without trailing `[str]/` and with `[str]{hash}` replaced with commit hash.
-- `[prop]hash`, `[type]string`. Last commit hash.
+- `[prop]downloadType` = `[str]git`。
+- `[prop]contentsDir`，`[type]string`。仓库被克隆到的目录。它是 `[prop]target` 选项的规范化版本，不包含末尾的 `[str]/`，且 `[str]{hash}` 已被替换为提交哈希值。
+- `[prop]hash`，`[type]string`。最后一次提交的哈希值。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/package/git.ts

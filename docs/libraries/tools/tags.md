@@ -1,44 +1,44 @@
 ```yaml
-title: SVG validation in Iconify Tools
+title: Iconify Tools 中的 SVG 验证
 ```
 
-# SVG validation in Iconify Tools
+# Iconify Tools 中的 SVG 验证
 
-When importing SVG in Iconify Tools, there are some limitations, which cannot be changed.
+在 Iconify Tools 中导入 SVG 时，存在一些无法更改的限制。
 
-Any icons containing the following will not be imported:
+包含以下任何内容的图标将不会被导入：
 
-- Scripts.
-- External resources.
-- Raster images.
-- Text.
+- 脚本。
+- 外部资源。
+- 位图图像。
+- 文本。
 
-Iconify is very strict when it comes to security and quality.
-Icons should look identical for all users, regardless of browser and operating system.
+Iconify 在安全性和质量方面要求非常严格。
+无论使用何种浏览器和操作系统，图标在所有用户看来都应完全一致。
 
-## Scripts
+## 脚本
 
-Not allowing scripts should be obvious.
-Scripts can be malicious. 
-Also, scripts are not executed when icon is used as `[func]url()`, so they might not even work.
+不允许使用脚本应该是显而易见的。
+脚本可能包含恶意代码。 
+此外，当图标用作 `[func]url()` 时，脚本不会被执行，因此它们甚至可能无法正常工作。
 
-## External resources
+## 外部资源
 
-Relying on external resources is not ok:
+依赖外部资源是不可接受的：
 
-- Those resources might not be available for all users.
-- It might be used for tracking.
+- 这些资源可能并非对所有用户都可用。
+- 它可能被用于跟踪。
 
-There are no valid use cases for external resources in public SVG.
+在公开的 SVG 中，不存在使用外部资源的合理场景。
 
-## Raster images
+## 位图图像
 
-SVGs are meant to scale. Raster images do not belong in SVG.
+SVG 旨在进行缩放。位图图像不属于 SVG 的范畴。
 
-## Text
+## 文本
 
-Text is rendered differently in different browsers and operating systems.
-This is not acceptable.
-Icons should render identically for all users.
+文本在不同浏览器和操作系统中的渲染效果各不相同。
+这是不可接受的。
+图标在所有用户处的渲染效果必须完全一致。
 
-Convert text to vector shapes.
+请将文本转换为矢量形状。

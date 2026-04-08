@@ -1,105 +1,105 @@
 ```yaml
-title: Iconify Alias Type
+title: Iconify Alias 类型
 types:
   IconifyIcon: './iconify-icon.md'
   IconifyJSON: './iconify-json.md'
 ```
 
-# IconifyAlias type
+# IconifyAlias 类型
 
-All Iconify libraries share common object structures. They are described as types in `[npm]@iconify/types` NPM package.
+所有 Iconify 库都共享通用的对象结构。它们在 `[npm]@iconify/types` NPM 包中被定义为类型。
 
-For description of types and short explanation of TypeScript see [types documentation](./index.md).
+有关类型的描述和 TypeScript 的简要说明，请参阅[类型文档](./index.md)。
 
-This article describes `[type]IconifyAlias` type.
+本文介绍 `[type]IconifyAlias` 类型。
 
-## IconifyAlias type {#iconify-alias}
+## IconifyAlias 类型 {#iconify-alias}
 
-Type `[type]IconifyAlias` represents an alias for icon. It is used in Iconify JSON files.
+`[type]IconifyAlias` 类型表示图标的别名。它用于 Iconify JSON 文件中。
 
-What is an alias? An alias is icon that reuses another icon's properties.
+什么是别名？别名是复用另一个图标属性的图标。
 
-`[icon]arrow-left` could be an alias of `[icon]arrow-right` with horizontal flip enabled.
-No need to create new shape when existing shape can be reused with a simple transformation.
+`[icon]arrow-left` 可以是启用了水平翻转的 `[icon]arrow-right` 的别名。
+当现有形状可以通过简单变换复用时，无需创建新形状。
 
-`[icon]battery-empty` could be an alias of `[icon]battery-0` without any changes.
-This makes it possible to assign multiple names to the same icon.
+`[icon]battery-empty` 可以是没有任何更改的 `[icon]battery-0` 的别名。
+这使得为同一个图标分配多个名称成为可能。
 
-## Structure
+## 结构
 
-Type `[type]IconifyAlias` is similar to `[type]IconifyIcon`.
+`[type]IconifyAlias` 类型与 `[type]IconifyIcon` 类似。
 
-Properties:
+属性：
 
-- `[prop]parent`, `[type]string`. Name of parent icon, required.
+- `[prop]parent`，`[type]string`。父图标的名称，必填。
 
-Other properties are from `[type]IconifyOptional` type, they are shared with `[type]IconifyIcon` type.
+其他属性来自 `[type]IconifyOptional` 类型，它们与 `[type]IconifyIcon` 类型共享。
 
 `include types/iconify-optional`
 
-### Parent icon
+### 父图标
 
-Parent icon name should not include icon set prefix, and parent icon must be present in the icon set.
+父图标名称不应包含图标集前缀，且父图标必须存在于该图标集中。
 
-If you use another alias as a parent, make sure there are no circular dependencies.
-For example, if `[icon]arrow-left` is an alias of `[icon]arrow-right` (with horizontal flip),
-which in turn is an alias of `[icon]arrow-up` (with 90 degrees rotation),
-which in turn is an alias of `[icon]arrow-down` (with vertical flip),
-`[icon]arrow-down` could not be an alias of `[icon]arrow-left` because that would create a loop.
+如果使用另一个别名作为父级，请确保不存在循环依赖。
+例如，如果 `[icon]arrow-left` 是 `[icon]arrow-right`（带水平翻转）的别名，
+而 `[icon]arrow-right` 又是 `[icon]arrow-up`（旋转 90 度）的别名，
+而 `[icon]arrow-up` 又是 `[icon]arrow-down`（带垂直翻转）的别名，
+那么 `[icon]arrow-down` 就不能是 `[icon]arrow-left` 的别名，因为那样会形成循环。
 
-To be safe, use only icons as parent, not other aliases.
+为安全起见，请仅使用图标作为父级，不要使用其他别名。
 
-## Merging properties for icon and alias
+## 合并图标和别名的属性
 
-If, when merging properties, an icon alias has a property that parent icon also has, the following rules apply:
+如果在合并属性时，图标别名具有父图标也拥有的属性，则适用以下规则：
 
-- `[prop]hFlip` and `[prop]vFlip`. Result is `[js]icon.hFlip !== alias.hFlip`. That means if both icon and alias are flipped horizontally, the result will not be flipped (horizontal flip + horizontal flip cancel each other). If only one of the items is flipped horizontally, the result will be flipped (horizontal flip + no flip = horizontal flip).
-- `[prop]rotate`. The result is a sum of rotations. That means 90 degrees rotation + 180 degrees rotation = 270 degrees rotation.
+- `[prop]hFlip` 和 `[prop]vFlip`。结果为 `[js]icon.hFlip !== alias.hFlip`。这意味着如果图标和别名都进行了水平翻转，则结果将不会翻转（水平翻转 + 水平翻转相互抵消）。如果只有一项进行了水平翻转，则结果将翻转（水平翻转 + 无翻转 = 水平翻转）。
+- `[prop]rotate`。结果为旋转角度的总和。这意味着 90 度旋转 + 180 度旋转 = 270 度旋转。
 
-For all other properties alias overrides parent icon's value.
+对于所有其他属性，别名将覆盖父图标的值。
 
-Examples of merging icon and alias:
+合并图标和别名的示例：
 
 ```yaml
 src: types/icon-merge1.json
-title: 'Icon:'
+title: '图标：'
 extra:
   - src: types/icon-merge1-alias.json
-    title: 'Alias:'
+    title: '别名：'
   - src: types/icon-merge1-result.json
-    title: 'Merged:'
+    title: '合并后：'
 ```
 
-In the example above, `[js]hFlip + hFlip = false`, `[js]!vFlip /* default value */ + vFlip = true`, icon alias overwrote other properties.
+在上面的示例中，`[js]hFlip + hFlip = false`，`[js]!vFlip /* 默认值 */ + vFlip = true`，图标别名覆盖了其他属性。
 
-## Examples
+## 示例
 
 ```yaml
 src: types/alias-raw.json
-title: 'IconifyAlias:'
+title: 'IconifyAlias：'
 extra:
   - src: types/alias-json.json
-    title: 'IconifyJSON:'
+    title: 'IconifyJSON：'
   - src: types/alias-merged.json
-    title: 'Merged "arrow-right" icon as IconifyIcon:'
+    title: '合并后的 "arrow-right" 图标（作为 IconifyIcon）：'
 ```
 
 ```yaml
 src: types/alias2-raw.json
-title: 'IconifyAlias:'
+title: 'IconifyAlias：'
 extra:
   - src: types/alias2-json.json
-    title: 'IconifyJSON:'
+    title: 'IconifyJSON：'
   - src: types/alias2-merged.json
-    title: 'Merged "home" icon as IconifyIcon:'
+    title: '合并后的 "home" 图标（作为 IconifyIcon）：'
 ```
 
 ```yaml
 src: types/alias3-raw.json
-title: 'IconifyAlias:'
+title: 'IconifyAlias：'
 extra:
   - src: types/alias3-json.json
-    title: 'IconifyJSON:'
+    title: 'IconifyJSON：'
   - src: types/alias3-merged.json
-    title: 'Merged "house-32" icon as IconifyIcon:'
+    title: '合并后的 "house-32" 图标（作为 IconifyIcon）：'
 ```

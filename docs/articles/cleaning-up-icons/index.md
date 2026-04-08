@@ -1,5 +1,5 @@
 ```yaml
-title: Cleaning up icons
+title: 清理图标
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
 functions:
@@ -7,75 +7,75 @@ functions:
   forEach: '/docs/libraries/tools/icon-set/for-each.md'
 ```
 
-# Cleaning up icons
+# 清理图标
 
-All icon sets available with Iconify pass validation and clean up process.
+所有通过 Iconify 提供的图标集都会经过验证和清理流程。
 
-Why is it needed? SVG is not like other images, it can contain a lot of things, making it hard to work with.
+为什么需要这样做？SVG 与其他图像不同，它可能包含大量内容，导致处理起来很困难。
 
-Often icons contain a lot of useless code (especially when exported from old software).
+图标通常包含大量无用代码（尤其是从旧版软件导出时）。
 
-Icons can even contain malicious code, such as scripts, event listeners and links to external resources.
+图标甚至可能包含恶意代码，例如脚本、事件监听器以及指向外部资源的链接。
 
-When working with monotone icons (icons that have only one color, which supposed to be changeable), some icons use `[attr]fill`, some `[attr]stroke`, some rely on system default colors, some use `[prop]black` color, some use seemingly random colors.
+在处理单色图标（仅有一种颜色，且该颜色应可更改的图标）时，有些图标使用 `[attr]fill`，有些使用 `[attr]stroke`，有些依赖系统默认颜色，有些使用 `[prop]black` 颜色，还有些使用看似随机的颜色。
 
-All the tools you need are available in [Iconify Tools](/docs/libraries/tools/index.md) package.
+您需要的所有工具均可在 [Iconify Tools](/docs/libraries/tools/index.md) 包中找到。
 
-## Process
+## 处理流程
 
-Clean up process is done in 3 steps:
+清理流程分为 3 个步骤：
 
-- Validation and initial clean up.
-- Changing icon palette.
-- Optimisation.
+- 验证与初步清理。
+- 更改图标调色板。
+- 优化。
 
-### Validation and initial clean up {#cleanup}
+### 验证与初步清理 {#cleanup}
 
-First part is code validation and initial clean up.
+第一部分是代码验证与初步清理。
 
-When a designer exports an icon from an editor, often SVG contains a lot of extra code that is not needed to display an icon.
+当设计师从编辑器导出图标时，SVG 通常包含大量显示图标所不需要的额外代码。
 
-Icons can also contain dangerous elements, such as scripts or external resources. Icons are validated to make sure they do not contain anything other than vector shapes.
+图标还可能包含危险元素，例如脚本或外部资源。会对图标进行验证，以确保它们不包含矢量形状以外的任何内容。
 
-See [example of bad code](./cleanup.md) and [explanation of how SVG validation works](./validate.md).
+请参阅 [错误代码示例](./cleanup.md) 以及 [SVG 验证工作原理说明](./validate.md)。
 
-### Palette changes {#palette}
+### 调色板更改 {#palette}
 
-After initial clean up and validation, the icon palette is changed.
+在初步清理和验证之后，会更改图标的调色板。
 
-For monotone icons, color is changed to `[prop]currentColor` to make sure the icon follows text color. This way it is easy to change color for any icon, regardless if the icon uses `[prop]fill` or `[prop]stroke`.
+对于单色图标，颜色会更改为 `[prop]currentColor`，以确保图标跟随文本颜色。这样无论图标使用的是 `[prop]fill` 还是 `[prop]stroke`，都能轻松更改任何图标的颜色。
 
-For icons with a hardcoded palette, the parser checks that the icon does not use system default colors or `[prop]currentColor`.
+对于具有硬编码调色板的图标，解析器会检查图标是否未使用系统默认颜色或 `[prop]currentColor`。
 
-See [article explaining palette changes](./palette.md).
+请参阅 [解释调色板更改的文章](./palette.md)。
 
-### Optimisation {#optimisation}
+### 优化 {#optimisation}
 
-Last step is optimisation. It reduces icon size by removing unnecessary code and optimising paths.
+最后一步是优化。它通过移除不必要的代码和优化路径来减小图标大小。
 
-See [a very short article explaining icon optimisation](./optimise.md).
+请参阅 [一篇非常简短的解释图标优化的文章](./optimise.md)。
 
-## Code
+## 代码
 
-Want to try it with your icons? All functions you need are available in [Iconify Tools](/docs/libraries/tools/index.md).
+想用自己的图标试试吗？您需要的所有函数均可在 [Iconify Tools](/docs/libraries/tools/index.md) 中找到。
 
-Below are several examples.
+以下是几个示例。
 
-### Parsing one monotone icon
+### 解析单个单色图标
 
-This code sample parses one monotone icon. Icon uses black color, which is replaced with `[prop]currentColor`, shapes with white color are removed.
+此代码示例解析单个单色图标。图标使用黑色，该颜色将被替换为 `[prop]currentColor`，白色形状将被移除。
 
-Icon is loaded from one file, output is stored in another file.
+图标从单个文件加载，输出存储在另一个文件中。
 
 ```yaml
 src: libraries/tools/examples/cleanup-one-icon.ts
 ```
 
-### Parsing an entire icon set
+### 解析整个图标集
 
-This code sample parses an entire icon set and returns icon set in `[type]IconifyJSON` format.
+此代码示例解析整个图标集，并以 `[type]IconifyJSON` 格式返回图标集。
 
-It is similar to the example above, but uses `[func]importDirectory()` to import all SVG files in a directory, then stores the result in a JSON file. Each icon is parsed in asynchronous `[func]forEach()` callback.
+它与上面的示例类似，但使用 `[func]importDirectory()` 导入目录中的所有 SVG 文件，然后将结果存储在 JSON 文件中。每个图标都在异步 `[func]forEach()` 回调中进行解析。
 
 ```yaml
 src: libraries/tools/examples/cleanup-directory.ts

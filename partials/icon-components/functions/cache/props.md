@@ -1,3 +1,3 @@
-The function has the following parameter:
+该函数具有以下参数：
 
-- `[prop]storage`. Storage to disable.
+- `[prop]storage`。要禁用的存储。

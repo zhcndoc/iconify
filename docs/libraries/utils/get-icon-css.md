@@ -9,57 +9,55 @@ types:
 
 # getIconCSS()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]getIconCSS()` generates stylesheet to render an icon as a background or mask image.
+函数 `[func]getIconCSS()` 用于生成样式表，将图标渲染为背景图像或遮罩图像。
 
-It generates code only for one icon. To generate code for multiple icons at the same time, see `[func]getIconsCSS()`.
+它仅为单个图标生成代码。若要同时为多个图标生成代码，请参阅 `[func]getIconsCSS()`。
 
-If instead of using icon as a background or mask image,
-you want to use icon as content of a pseudo-element, see `[func]getIconContentCSS()`.
+如果您不想将图标用作背景或遮罩图像，而是想将其用作伪元素的内容，请参阅 `[func]getIconContentCSS()`。
 
-To use icon in HTML, all you need to do is create any element,
-such as `[tag]span` with class name that you passed in `[prop]iconSelector` option.
+要在 HTML 中使用图标，您只需创建任意元素（例如 `[tag]span`），并为其指定在 `[prop]iconSelector` 选项中传入的类名即可。
 
-## Color
+## 颜色
 
-Monotone icons are rendered as mask image with background color set to `[prop]currentColor`. That means icon will use same color as text.
+单色图标将渲染为遮罩图像，其背景颜色设置为 `[prop]currentColor`。这意味着图标将使用与文本相同的颜色。
 
-To change icon color, simply change text color.
+要更改图标颜色，只需更改文本颜色即可。
 
 ```yaml
 include: common/css-demo
 ```
 
-Icons with palette are rendered as background image.
+带调色板的图标将渲染为背景图像。
 
-You can also use `[prop]color` option to convert monotone icon to icon with palette. See `[str]Color option` section below.
+您还可以使用 `[prop]color` 选项将单色图标转换为带调色板的图标。请参阅下方的 `[str]颜色选项` 部分。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]icon`, `[type]IconifyIcon`. Icon data.
-- `[prop]options`. Options object, optional.
+- `[prop]icon`，`[type]IconifyIcon`。图标数据。
+- `[prop]options`。选项对象，可选。
 
-Function returns `[type]string` with stylesheet for icon.
+函数返回包含图标样式表的 `[type]string` 类型字符串。
 
-## Options
+## 选项
 
-The `[prop]options` object has the following properties:
+`[prop]options` 对象包含以下属性：
 
-- `[prop]iconSelector`, `[type]string`. Selector for icon, defaults to `[str].icon`.
-- `[prop]pseudoSelector`, `[type]boolean`. Set it to `true` if selector for icon is a pseudo-selector, such as `[str].icon-home:after`.
-- `[prop]varName`, `[type]string`. Name for variable to use for icon, defaults ti `[str]svg`. Set to `null` to disable.
-- `[prop]forceSquare`, `[type]boolean`. Forces icon to have width of `[num]1em`.
-- `[prop]color`: `[type]string`. Sets color for monotone icons. Also renders icons as background images.
-- `[prop]mode`: `[str]mask` or `[str]background`. Forces icon to render as mask image or background image. If not set, mode will be detected from icon content: icons that contain `[prop]currentColor` will be rendered as mask image, other icons as background image.
-- `[prop]format`. Stylesheet formatting option. Matches options used in Sass. Supported values: `[str]expanded`, `[str]compact`, `[str]compressed`.
-- `[prop]rules`, `[type]Record<string, string>`. Extra rules to add to CSS.
+- `[prop]iconSelector`，`[type]string`。图标的选择器，默认为 `[str].icon`。
+- `[prop]pseudoSelector`，`[type]boolean`。如果图标的选择器是伪选择器（例如 `[str].icon-home:after`），请将其设置为 `true`。
+- `[prop]varName`，`[type]string`。用于图标的变量名称，默认为 `[str]svg`。设置为 `null` 可禁用。
+- `[prop]forceSquare`，`[type]boolean`。强制图标宽度为 `[num]1em`。
+- `[prop]color`：`[type]string`。设置单色图标的颜色。同时会将图标渲染为背景图像。
+- `[prop]mode`：`[str]mask` 或 `[str]background`。强制将图标渲染为遮罩图像或背景图像。如果未设置，将根据图标内容自动检测模式：包含 `[prop]currentColor` 的图标将渲染为遮罩图像，其他图标则渲染为背景图像。
+- `[prop]format`。样式表格式化选项。与 Sass 中使用的选项匹配。支持的值：`[str]expanded`、`[str]compact`、`[str]compressed`。
+- `[prop]rules`，`[type]Record<string, string>`。要添加到 CSS 中的额外规则。
 
-## Result
+## 结果
 
-Example of generated stylesheet:
+生成的样式表示例：
 
 ```css
 .icon {
@@ -75,13 +73,13 @@ Example of generated stylesheet:
 }
 ```
 
-That code can be used in HTML with any element, such as `[tag]span` with class name that you passed in `[prop]iconSelector` option:
+该代码可在 HTML 中与任意元素配合使用，例如使用您在 `[prop]iconSelector` 选项中传入的类名的 `[tag]span` 元素：
 
 ```html
 <span class="icon"></span>
 ```
 
-## Color option
+## 颜色选项
 
 ```yaml
 include: libraries/utils/css-color
@@ -91,9 +89,9 @@ include: libraries/utils/css-color
 <span class="icon" style="color: var(--icon-color)"></span>
 ```
 
-## Examples
+## 示例
 
-Generating CSS for a monotone icon:
+为单色图标生成 CSS：
 
 ```yaml
 src: libraries/utils/get-icon-css.ts
@@ -105,7 +103,7 @@ extra:
     title: 'Usage in HTML:'
 ```
 
-Generating CSS for an icon with palette:
+为带调色板的图标生成 CSS：
 
 ```yaml
 src: libraries/utils/get-icon-css2.ts
@@ -117,7 +115,7 @@ extra:
     title: 'Usage in HTML:'
 ```
 
-Using pseudo-element for icon:
+为图标使用伪元素：
 
 ```yaml
 src: libraries/utils/get-icon-css3.ts

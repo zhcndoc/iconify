@@ -10,19 +10,19 @@ const modernComponentRoots = new Set([
 export function commonComponentAttributes(root: string): SidebarItem[] {
   return [
     {
-      text: "Icon Color",
+      text: "图标颜色",
       link: `${root}color`,
     },
     {
-      text: "Icon Dimensions",
+      text: "图标尺寸",
       link: `${root}dimensions`,
     },
     {
-      text: "Transformations",
+      text: "变换",
       link: `${root}transform`,
     },
     {
-      text: "Vertical Alignment",
+      text: "垂直对齐",
       link: `${root}inline`,
     },
   ];

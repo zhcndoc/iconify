@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify SVG Framework Function: addCollection'
+title: 'Iconify SVG 框架函数：addCollection'
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
@@ -7,9 +7,9 @@ functions:
   addIcon: './add-icon.md'
 ```
 
-# SVG framework function: addCollection
+# SVG 框架函数：addCollection
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#adding-icons).
+本教程属于 [Iconify SVG 框架函数教程](./functions.md#adding-icons) 的一部分。
 
 ```yaml
 include: icon-components/functions/add-collection/intro
@@ -18,11 +18,11 @@ replacements:
     replace: SVG framework
 ```
 
-## Usage
+## 用法
 
 `include icon-components/functions/add-collection/props`
 
-## Examples
+## 示例
 
 ```js
 Iconify.addCollection({
@@ -37,7 +37,7 @@ Iconify.addCollection({
 });
 ```
 
-Another example:
+另一个示例：
 
 ```js
 Iconify.addCollection({
@@ -61,16 +61,16 @@ Iconify.addCollection({
 });
 ```
 
-## Notes
+## 注意事项
 
-- Icons added by this function are not cached in `[prop]localStorage` and `[prop]sessionStorage`.
-- Calling this function will trigger re-scan of DOM on the next tick.
+- 通过此函数添加的图标不会缓存在 `[prop]localStorage` 和 `[prop]sessionStorage` 中。
+- 调用此函数将在下一个 tick 触发 DOM 重新扫描。
 
-## API provider
+## API 提供者
 
 `include icon-components/functions/add-collection/provider`
 
-Example:
+示例：
 
 ```js
 Iconify.addCollection(
@@ -88,13 +88,13 @@ Iconify.addCollection(
 );
 ```
 
-Code above adds only one icon:
+上述代码仅添加了一个图标：
 
-- `[prop]provider` is `[str]custom`.
-- `[prop]prefix` is `[str]md`.
-- `[prop]name` is `[str]test`.
+- `[prop]provider` 为 `[str]custom`。
+- `[prop]prefix` 为 `[str]md`。
+- `[prop]name` 为 `[str]test`。
 
-In HTML code this icon can be used like this:
+在 HTML 代码中，可以按如下方式使用该图标：
 
 ```html
 <span class="iconify" data-icon="@custom:md:test"></span>
@@ -102,6 +102,6 @@ In HTML code this icon can be used like this:
 
 `include icon-components/functions/add-collection/custom`
 
-## One icon
+## 单个图标
 
 `include icon-components/functions/add-collection/footer`

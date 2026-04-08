@@ -1,10 +1,10 @@
-By default, icon height is set to `[str]"1em"`, icon width is changed dynamically based on the icon's width/height ratio. This makes it easy to change icon size by changing `[attr]font-size` in the stylesheet, just like icon fonts.
+默认情况下，图标高度设置为 `[str]"1em"`，图标宽度会根据图标的宽高比动态调整。这使得只需在样式表中更改 `[attr]font-size` 即可轻松调整图标大小，就像使用图标字体一样。
 
-There are several ways to change icon dimensions:
+有几种方法可以更改图标尺寸：
 
-- Setting `[prop]font-size` in style (or `[prop]fontSize` if you are using inline style).
-- Setting `[prop]width` and/or `[prop]height` property.
+- 在样式中设置 `[prop]font-size`（如果使用内联样式，则使用 `[prop]fontSize`）。
+- 设置 `[prop]width` 和/或 `[prop]height` 属性。
 
-Values for `[prop]width` and `[prop]height` can be numbers or strings.
+`[prop]width` 和 `[prop]height` 的值可以是数字或字符串。
 
-If you set only one dimension, another dimension will be calculated using the icon's width/height ratio. For example, if the icon size is 16 x 24, you set the height to 48, the width will be set to 32. Calculations work not only with numbers, but also with string values.
+如果仅设置一个维度，另一个维度将根据图标的宽高比自动计算。例如，如果图标尺寸为 16 x 24，将高度设置为 48 时，宽度将自动设置为 32。该计算不仅适用于数字，也适用于字符串值。

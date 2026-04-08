@@ -1,18 +1,18 @@
 ```yaml
-title: 'Iconify for Vue Function: listIcons'
+title: 'Iconify for Vue 函数：listIcons'
 ```
 
-# Iconify for Vue function: listIcons
+# Iconify for Vue 函数：listIcons
 
-This tutorial is part of [Iconify for Vue functions tutorial](./index.md#functions).
+本教程是 [Iconify for Vue 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/list-icons/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/list-icons/props`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/list-icons.js
@@ -21,7 +21,7 @@ replacements:
     replace: vue
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/common/list-icons2.js

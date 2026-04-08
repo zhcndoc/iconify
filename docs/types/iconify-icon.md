@@ -1,5 +1,5 @@
 ```yaml
-title: Iconify Icon Type
+title: Iconify 图标类型
 types:
   IconifyAlias: './iconify-alias.md'
   IconifyJSON: './iconify-json.md'
@@ -9,60 +9,57 @@ functions:
   getIcon: '../libraries/tools/svg/index.md'
 ```
 
-# IconifyIcon type
+# IconifyIcon 类型
 
-All Iconify libraries share common object structures. They are described as types in `[npm]@iconify/types` NPM package.
+所有 Iconify 库都共享通用的对象结构。它们在 `[npm]@iconify/types` NPM 包中被定义为类型。
 
-For description of types and short explanation of TypeScript see [types documentation](./index.md).
+有关类型的描述和 TypeScript 的简要说明，请参阅[类型文档](./index.md)。
 
-This article describes `[type]IconifyIcon` type that contains data for one icon.
+本文介绍了包含单个图标数据的 `[type]IconifyIcon` 类型。
 
-## Usage
+## 用法
 
-Icon data in `[type]IconifyIcon` type is usually extracted from `[type]IconifyJSON` icon set.
+`[type]IconifyIcon` 类型中的图标数据通常从 `[type]IconifyJSON` 图标集中提取。
 
-To extract icon data in your code, use `[func]getIconData()` function from Iconify Utils. 
-[Iconify Utils](/docs/libraries/utils/index.md) can be used in any environment.
+要在代码中提取图标数据，请使用 Iconify Utils 中的 `[func]getIconData()` 函数。[Iconify Utils](/docs/libraries/utils/index.md) 可在任何环境中使用。
 
-To convert SVG to `[type]IconifyIcon`, you can use `[func]getIcon()` function of `[type]SVG` instance from Iconify Tools.
-[Iconify Tools](/docs/libraries/tools/index.md) is a Node.js package for importing and parsing icons. 
-Make sure you [clean up icon](/docs/libraries/tools/icon/cleanup.md) before exporting it.
+要将 SVG 转换为 `[type]IconifyIcon`，你可以使用 Iconify Tools 中 `[type]SVG` 实例的 `[func]getIcon()` 函数。[Iconify Tools](/docs/libraries/tools/index.md) 是一个用于导入和解析图标的 Node.js 包。在导出之前，请确保[清理图标](/docs/libraries/tools/icon/cleanup.md)。
 
-## Structure
+## 结构
 
-Type `[type]IconifyIcon` is a simple object. It has two parts:
+`[type]IconifyIcon` 类型是一个简单的对象。它包含两部分：
 
-- `[prop]body`, `[type]string` contains icon content, mandatory.
-- Optional `[type]IconifyOptional` properties that contain icon dimensions and basic transformations.
+- `[prop]body`，`[type]string` 类型，包含图标内容，必填。
+- 可选的 `[type]IconifyOptional` 属性，包含图标尺寸和基本变换。
 
-Example of a basic icon:
+基础图标示例：
 
 ```yaml
 src: types/icon-basic.json
 copy: false
 ```
 
-## Body
+## 主体
 
-Body contains contents of `[tag]svg`, without `[tag]svg` tag.
+主体包含 `[tag]svg` 的内容，但不包含 `[tag]svg` 标签本身。
 
-It does not include `[tag]svg` tag because:
+不包含 `[tag]svg` 标签的原因如下：
 
-- Contents can be manipulated, such as rotating or flipping an icon. This is much easier to do when there is no need to parse an entire `[tag]svg`.
-- It gives components full control over `[tag]svg` tag, allowing addition/removal of custom attributes.
-- Makes it easy to use in various frameworks (such as React, Vue, Svelte), where `[tag]svg` element is created using framework's native code and content is set as its property.
+- 可以对内容进行操作，例如旋转或翻转图标。当无需解析整个 `[tag]svg` 时，这会容易得多。
+- 它使组件能够完全控制 `[tag]svg` 标签，允许添加/移除自定义属性。
+- 便于在各种框架（如 React、Vue、Svelte）中使用，这些框架中 `[tag]svg` 元素是使用框架的原生代码创建的，内容则作为其属性进行设置。
 
-## Optional properties {#iconify-optional}
+## 可选属性 {#iconify-optional}
 
-There are several properties that are shared in multiple types. They are described in `[type]IconifyOptional` type.
+有多个属性在多种类型中共享。它们在 `[type]IconifyOptional` 类型中进行了描述。
 
 `include types/iconify-optional`
 
-Example of typical icon data:
+典型图标数据示例：
 
 ```yaml
 src: types/icon-basic2.json
 copy: false
 ```
 
-In your code you can get default values from `[var]defaultIconProps` constant from [Iconify Utils](/docs/libraries/utils/index.md).
+在你的代码中，你可以从 [Iconify Utils](/docs/libraries/utils/index.md) 的 `[var]defaultIconProps` 常量中获取默认值。

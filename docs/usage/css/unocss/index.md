@@ -1,5 +1,5 @@
 ```yaml
-title: Iconify in UnoCSS
+title: UnoCSS 中的 Iconify
 replacements:
   - code: '60,000'
     value: '${counters.icons}'
@@ -9,15 +9,15 @@ types:
   IconifyIcon: '/docs/types/iconify-icon.md'
 ```
 
-# Icons with UnoCSS
+# 在 UnoCSS 中使用图标
 
-If you are using [UnoCSS](https://github.com/unocss/unocss), you can easily use [over 60,000 open source icons](/docs/icons/icon-data.md) and custom icons with minimal code.
+如果你正在使用 [UnoCSS](https://github.com/unocss/unocss)，只需极少的代码即可轻松使用 [超过 60,000 个开源图标](/docs/icons/icon-data.md) 以及自定义图标。
 
-Among other features, UnoCSS has `[npm]@unocss/preset-icons` package that dynamically generates icons. It uses [icon data from Iconify](/docs/icons/icon-data.md).
+除了其他功能外，UnoCSS 还提供了 `[npm]@unocss/preset-icons` 包，用于动态生成图标。它使用了 [来自 Iconify 的图标数据](/docs/icons/icon-data.md)。
 
-## Usage
+## 使用方法
 
-To use icons with UnoCSS, add `[npm]@unocss/preset-icons` preset to config:
+要在 UnoCSS 中使用图标，请将 `[npm]@unocss/preset-icons` 预设添加到配置中：
 
 ```js
 import presetIcons from '@unocss/preset-icons';
@@ -25,77 +25,76 @@ import presetIcons from '@unocss/preset-icons';
 UnoCSS({
 	presets: [
 		presetIcons({
-			/* options */
+			/* 选项 */
 		}),
-		// ...other presets
+		// ...其他预设
 	],
 });
 ```
 
-In your code add element with the following class name: `[str]i-` + icon set prefix + `[str]-` + icon name.
+在你的代码中，添加具有以下类名的元素：`[str]i-` + 图标集前缀 + `[str]-` + 图标名称。
 
-Examples:
+示例：
 
 ```html
 <span class="i-carbon-logo-github"></span>
 <span class="i-mdi-light-home"></span>
 ```
 
-It is that simple.
+就是这么简单。
 
-For more information, see [README file in preset-icons package](https://github.com/unocss/unocss/tree/main/packages/preset-icons/).
+更多信息，请参阅 [preset-icons 包中的 README 文件](https://github.com/unocss/unocss/tree/main/packages/preset-icons/)。
 
-## Icon size
+## 图标尺寸
 
-Be aware that by default, UnoCSS scales icons to `[num]1.2em`.
+请注意，默认情况下，UnoCSS 会将图标缩放至 `[num]1.2em`。
 
-You can change that by changing `[prop]scale` option.
+你可以通过修改 `[prop]scale` 选项来更改此设置。
 
-If you want to change `[prop]width` and `[prop]height` separately or make icon square, you can use `[prop]customize` option.
-See below. 
+如果你想分别更改 `[prop]width` 和 `[prop]height`，或者将图标设为正方形，可以使用 `[prop]customize` 选项。请见下文。 
 
-## Custom icons
+## 自定义图标
 
-You can use UnoCSS with custom icons. During the build process, you can import, clean up and optimise icons using [Iconify Tools](/docs/libraries/tools/index.md).
+你可以将 UnoCSS 与自定义图标结合使用。在构建过程中，你可以使用 [Iconify Tools](/docs/libraries/tools/index.md) 导入、清理和优化图标。
 
-See [demo from Iconify Tools package](https://github.com/iconify/tools/tree/main/%40iconify-demo/unocss). Configuration is in `[file]unocss.config.ts`.
+请参阅 [Iconify Tools 包中的演示](https://github.com/iconify/tools/tree/main/%40iconify-demo/unocss)。配置位于 `[file]unocss.config.ts` 中。
 
-Functions used in that config file are documented in [Iconify Tools](/docs/libraries/tools/index.md) section of this documentation. 
+该配置文件中使用的函数已在本文档的 [Iconify Tools](/docs/libraries/tools/index.md) 部分中进行了说明。 
 
-## Customise icons
+## 定制图标
 
-You can customise icons using `[prop]customize` option.
+你可以使用 `[prop]customize` 选项来定制图标。
 
-Option `[prop]customize` is part of `[prop]customizations` option, it is a function has 3 parameters:
-- `[prop]customisations` that can be used for flip or rotate icon.
-- `[prop]data`, `[type]IconifyIcon` with icon data.
-- `[prop]name`, `[type]string` with icon name in `[str]prefix:name` format.
+`[prop]customize` 选项是 `[prop]customizations` 选项的一部分，它是一个包含 3 个参数的函数：
+- `[prop]customisations`，可用于翻转或旋转图标。
+- `[prop]data`，类型为 `[type]IconifyIcon`，包含图标数据。
+- `[prop]name`，类型为 `[type]string`，包含格式为 `[str]prefix:name` 的图标名称。
 
-The first parameter is a legacy option, it is not really useful.
+第一个参数是遗留选项，实际上用处不大。
 
-Icon data is a mutable object, you can change it to customise icon.
-You can change colors in icons that have hardcoded palette, opacity, timing for animations, add additional shapes and so on...
-You can also resize icon or add padding by messing with `[prop]width`, `[prop]height`, `[prop]left` and `[prop]top` properties.
+图标数据是一个可变对象，你可以修改它来定制图标。
+你可以更改具有硬编码调色板的图标颜色、透明度、动画计时，添加额外的形状等等……
+你还可以通过调整 `[prop]width`、`[prop]height`、`[prop]left` 和 `[prop]top` 属性来调整图标大小或添加内边距。
 
-See [IconifyIcon type](/docs/types/iconify-icon.md) for icon data format.
+图标数据格式请参阅 [IconifyIcon 类型](/docs/types/iconify-icon.md)。
 
-Icon name lets you know which icon you are customizing.
+图标名称让你知道正在定制哪个图标。
 
-### Examples
+### 示例
 
-Making all icons square:
+将所有图标设为正方形：
 
 ```js
 presetIcons({
     customizations: {
         customize: (defaultCustomizations, data, name) => {
-            // Make icon square
+            // 将图标设为正方形
             const width = data.width ?? 16;
             const height = data.height ?? 16;
             if (height > width) {
-              // Set width to match height
+              // 设置宽度以匹配高度
               data.width = height;
-              // Center icon horizontally by changing viewBox left position
+              // 通过更改 viewBox 的左侧位置使图标水平居中
               data.left = (data.left ?? 0) - (height - width) / 2;
             }
             
@@ -105,14 +104,14 @@ presetIcons({
 })
 ```
 
-Changing color:
+更改颜色：
 
 ```js
 presetIcons({
     customizations: {
         customize: (defaultCustomizations, data, name) => {
             if (name === 'twemoji:blue-square') {
-                // Turn blue square into red square
+                // 将蓝色方块变为红色方块
                 data.body = data.body.replaceAll('#55ACEE', '#e83933')
             }
             
@@ -122,4 +121,4 @@ presetIcons({
 })
 ```
 
-If something is not working, don't forget that you can always `[js]console.log(data)` to see icon data.
+如果某些功能未正常工作，别忘了你始终可以使用 `[js]console.log(data)` 来查看图标数据。

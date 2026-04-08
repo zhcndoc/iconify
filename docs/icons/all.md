@@ -1,12 +1,12 @@
 ```yaml
-title: Iconify Icon Sets Package
+title: Iconify 图标集包
 replacements:
   - code: "60,000"
     value: "${counters.icons}"
   - code: "60k"
     value: "${counters.icons-short}"
-  - code: "80 icon sets"
-    value: "${counters.sets} icon sets"
+  - code: "80 个图标集"
+    value: "${counters.sets} 个图标集"
 types:
   IconifyJSON: "/docs/types/iconify-json.md"
   IconifyInfo: "/docs/types/iconify-json-metadata.md"
@@ -19,89 +19,89 @@ functions:
   getIcons: "/docs/libraries/utils/get-icons.md"
 ```
 
-# Iconify icon sets package
+# Iconify 图标集包
 
-You can get the latest version of open source icon data from the following sources:
+您可以从以下来源获取最新版本的开源图标数据：
 
-- From GitHub: [https://github.com/iconify/icon-sets](https://github.com/iconify/icon-sets)
-- From NPM: `[npm]@iconify/json`
-- From Packagist: `[packagist]iconify/json`
+- 来自 GitHub：[https://github.com/iconify/icon-sets](https://github.com/iconify/icon-sets)
+- 来自 NPM：`[npm]@iconify/json`
+- 来自 Packagist：`[packagist]iconify/json`
 
-You can also get smaller packages, but it is not covered in this document. See [icon data documentation](./icon-data.md).
+您也可以获取更小的包，但本文档未涵盖相关内容。请参阅[图标数据文档](./icon-data.md)。
 
-## Contents
+## 内容
 
-Package contains:
+该包包含：
 
-- List of icon sets in `[file]collections.json`.
-- Icon sets in `[file]json/{prefix}.json`, where `[str]{prefix}` is icon set prefix, such as `[file]json/mdi-light.json`.
-- Helper functions for PHP and Node.js
-- Misc files, such as package definition files, README, human-readable list of icon sets.
+- 位于 `[file]collections.json` 中的图标集列表。
+- 位于 `[file]json/{prefix}.json` 中的图标集，其中 `[str]{prefix}` 是图标集前缀，例如 `[file]json/mdi-light.json`。
+- 适用于 PHP 和 Node.js 的辅助函数
+- 其他文件，如包定义文件、README 以及人类可读的图标集列表。
 
-## Icon sets list
+## 图标集列表
 
-Icon sets list is stored in `[file]collections.json`.
+图标集列表存储在 `[file]collections.json` 中。
 
-Contents are a simple object, where key is icon set prefix, value is icon set information in `[type]IconifyInfo` format. Information includes icon set name, author information, license, number of files and 3 sample files to display.
+内容是一个简单的对象，其中键是图标集前缀，值是以 `[type]IconifyInfo` 格式存储的图标集信息。信息包括图标集名称、作者信息、许可证、文件数量以及 3 个用于展示的示例文件。
 
-Additionally, `[file]collections.md` contains the same data, but in human-readable format.
+此外，`[file]collections.md` 包含相同的数据，但采用人类可读的格式。
 
-## Icon sets
+## 图标集
 
-Each icon has is stored in one file, located in directory `[file]json/`. File name matches icon set prefix, which you can find as key in icon sets list in `[file]collections.json`.
+每个图标集都存储在一个文件中，位于 `[file]json/` 目录下。文件名与图标集前缀匹配，您可以在 `[file]collections.json` 的图标集列表中将其作为键找到。
 
-Contents are stored in `[type]IconifyJSON` format.
+内容以 `[type]IconifyJSON` 格式存储。
 
-Icon set files contain all icon set data, including info and metadata. If you want to get minimal version without extra stuff, use [small packages instead](./json.md).
+图标集文件包含所有图标集数据，包括信息和元数据。如果您想获取不包含额外内容的最小版本，请改用[小型包](./json.md)。
 
-## Maintenance
+## 维护
 
-Package is automatically updated every few days, so it always includes the latest icons. If you want to use the latest icons, all you have to do is keep dependencies in your project up to date.
+该包每隔几天会自动更新一次，因此始终包含最新的图标。如果您想使用最新的图标，只需保持项目中的依赖项为最新即可。
 
-If you are using [Iconify API](../api/index.md), you do not need to do anything because changes are automatically pushed to API servers within minutes after being published.
+如果您正在使用 [Iconify API](../api/index.md)，则无需执行任何操作，因为更改会在发布后几分钟内自动推送到 API 服务器。
 
-## Reading data {#tools}
+## 读取数据 {#tools}
 
-For reading icon sets, you can use:
+要读取图标集，您可以使用：
 
-- [Iconify Utils](/docs/libraries/utils/index.md) for JavaScript.
-- [Iconify JSON Tools](https://github.com/iconify/json-tools.php) for PHP, deprecated and unmaintained.
+- 适用于 JavaScript 的 [Iconify Utils](/docs/libraries/utils/index.md)。
+- 适用于 PHP 的 [Iconify JSON Tools](https://github.com/iconify/json-tools.php)，已弃用且不再维护。
 
-To use icon set packages with Iconify Utils, follow these steps:
+要将图标集包与 Iconify Utils 配合使用，请按照以下步骤操作：
 
-- Read icons data from JSON file for specific icon set. If you are using file system functions that return a string, convert it to `[type]IconifyJSON` object using `[func]JSON.parse()`.
-- Extract data. To extract multiple icons, use `[func]getIcons()`, to extract one icon use `[func]getIconData()`. Click function links for code samples.
+- 从特定图标集的 JSON 文件中读取图标数据。如果您使用的是返回字符串的文件系统函数，请使用 `[func]JSON.parse()` 将其转换为 `[type]IconifyJSON` 对象。
+- 提取数据。要提取多个图标，请使用 `[func]getIcons()`；要提取单个图标，请使用 `[func]getIconData()`。点击函数链接可查看代码示例。
 
-## Helper functions {#helpers}
+## 辅助函数 {#helpers}
 
-Package contains simple helper functions for Node.js and PHP.
+该包包含适用于 Node.js 和 PHP 的简单辅助函数。
 
-### Node.js functions {#functions-node}
+### Node.js 函数 {#functions-node}
 
-In Node.js version of `[npm]@iconify/json` functions are asynchronous:
+在 `[npm]@iconify/json` 的 Node.js 版本中，函数是异步的：
 
-- `[func]lookupCollections()` returns list of collections. It is a simple object, where key is prefix, value is information about icon set in `[type]IconifyInfo` format.
-- `[func]lookupCollection(prefix)` loads an icon set. Result is `[type]IconifyJSON` object.
+- `[func]lookupCollections()` 返回集合列表。它是一个简单的对象，其中键是前缀，值是以 `[type]IconifyInfo` 格式存储的图标集信息。
+- `[func]lookupCollection(prefix)` 加载一个图标集。结果为 `[type]IconifyJSON` 对象。
 
-All functions listed above are asynchronous and require using `[func]await` before function name (see example below).
+上述所有函数均为异步函数，需要在函数名前使用 `[func]await`（见下方示例）。
 
-There are also few synchronous functions:
+此外还有少数同步函数：
 
-- `[func]locate(prefix)` returns location of JSON file for an icon set.
+- `[func]locate(prefix)` 返回图标集 JSON 文件的位置。
 
-### PHP functions
+### PHP 函数
 
-PHP is a synchronous language, so functions for PHP are identical for versions 1 and 2.
+PHP 是一种同步语言，因此适用于 PHP 的函数在版本 1 和版本 2 中是相同的。
 
-Use `[prop]Iconify\IconsJSON\Finder` class that has the following static functions:
+使用 `[prop]Iconify\IconsJSON\Finder` 类，该类包含以下静态函数：
 
-- `[func]collections()` returns list of collections. It is a simple object, where key is prefix, value is information about icon set. For version 1 data is in `[type]LegacyIconifyInfo` format, for version 2 data is in `[type]IconifyInfo` format.
-- `[func]locate(prefix)` returns location of JSON file for an icon set.
-- `[func]rootDir()` returns location of root directory of package.
+- `[func]collections()` 返回集合列表。它是一个简单的对象，其中键是前缀，值是图标集信息。对于版本 1，数据采用 `[type]LegacyIconifyInfo` 格式；对于版本 2，数据采用 `[type]IconifyInfo` 格式。
+- `[func]locate(prefix)` 返回图标集 JSON 文件的位置。
+- `[func]rootDir()` 返回包根目录的位置。
 
-### Example
+### 示例
 
-Example:
+示例：
 
 ```yaml
 src: icons/json/finder.js
@@ -111,14 +111,14 @@ extra:
     title: PHP
 ```
 
-These helper functions only list and locate icon sets.
+这些辅助函数仅用于列出和定位图标集。
 
-For reading icon sets, you can use [Iconify Utils](/docs/libraries/utils/index.md).
+要读取图标集，您可以使用 [Iconify Utils](/docs/libraries/utils/index.md)。
 
-## Adding icon sets {#submit}
+## 添加图标集 {#submit}
 
-Do you know a good open source icon set that is missing in Iconify icon sets? [Open an issue on GitHub](https://github.com/iconify/icon-sets/issues) to request to add it to Iconify icon sets.
+您是否知道某个优秀的开源图标集尚未收录在 Iconify 图标集中？[在 GitHub 上提交 Issue](https://github.com/iconify/icon-sets/issues) 以请求将其添加到 Iconify 图标集中。
 
-## Licences
+## 许可证
 
-All icon sets available in Iconify collections are released under free or open source licence, which allows redistribution. See each icon set's info for details.
+Iconify 集合中提供的所有图标集均在免费或开源许可证下发布，允许重新分发。有关详细信息，请参阅每个图标集的信息。

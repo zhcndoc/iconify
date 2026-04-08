@@ -1,1 +1,1 @@
-Important note about `[prop]color` option: you cannot use CSS variables. Color is not added to style, it is changed inside icon. Icon is not inlined in HTML, it is treated as an external resource. Elements of icon cannot be targeted or styled, just like any other image linked with `[func]url()`, therefore, CSS variables are not available in icon.
+关于 `[prop]color` 选项的重要说明：无法使用 CSS 变量。颜色并非通过样式添加，而是直接在图标内部进行修改。图标不会以内联形式嵌入 HTML 中，而是被视为外部资源。图标的内部元素无法被选中或设置样式，这与通过 `[func]url()` 引用的任何其他图像一样，因此图标中无法使用 CSS 变量。

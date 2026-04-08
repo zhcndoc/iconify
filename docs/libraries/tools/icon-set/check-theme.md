@@ -1,5 +1,5 @@
 ```yaml
-title: Checking themes in icon set
+title: 检查图标集中的主题
 types:
   IconSet: './index.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
@@ -14,22 +14,22 @@ functions:
 
 # checkTheme()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]checkTheme()` finds all icons that belong to theme. It can be used to validate themes to make sure there are no empty or missing themes.
+函数 `[func]checkTheme()` 用于查找属于特定主题的所有图标。它可用于验证主题，以确保不存在空主题或缺失的主题。
 
-## Usage
+## 用法
 
-Function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]prefix`, `[type]boolean`. What to check. If `true`, function checks `[func]prefixes`. If `false`, function checks `[func]suffixes`.
+- `[prop]prefix`，`[type]boolean` 类型。指定要检查的内容。如果为 `true`，函数将检查 `[func]prefixes`。如果为 `false`，函数将检查 `[func]suffixes`。
 
-Function returns an object with the following properties:
+该函数返回一个包含以下属性的对象：
 
-- `[prop]valid`, `[type]Record<string, string[]>`. Icons that match theme. Key is theme name (not title!), value is array of icon names.
-- `[prop]invalid`, `[type]string[]`. Icons that do not match any theme.
+- `[prop]valid`，`[type]Record<string, string[]>` 类型。匹配主题的图标。键为主题名称（而非标题！），值为图标名称数组。
+- `[prop]invalid`，`[type]string[]` 类型。不匹配任何主题的图标。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/check-theme.ts

@@ -7,21 +7,21 @@ types:
 
 # fromSVG()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]fromSVG()` imports icon from `[type]SVG` instance to `[type]IconSet` icon set.
-It can be used to add a new icon or replace an existing icon.
+函数 `[func]fromSVG()` 将图标从 `[type]SVG` 实例导入到 `[type]IconSet` 图标集中。
+它可用于添加新图标或替换现有图标。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[type]name`, `[type]string`. Icon name.
-- `[type]svg`, `[type]SVG`. SVG instance.
+- `[type]name`，`[type]string`。图标名称。
+- `[type]svg`，`[type]SVG`。SVG 实例。
 
-Function returns `true` on success, `false` on failure.
+函数在成功时返回 `true`，失败时返回 `false`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/to-svg.ts

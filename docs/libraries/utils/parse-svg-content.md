@@ -1,5 +1,5 @@
 ```yaml
-title: parseSVGContent() in Iconify Utils
+title: Iconify Utils 中的 parseSVGContent()
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
   SVGViewBox: './get-svg-viewbox.md'
@@ -11,45 +11,45 @@ functions:
 
 # parseSVGContent()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]parseSVGContent()` parses string that contains SVG, extracts attributes for `[tag]svg` element and icon content.
+函数 `[func]parseSVGContent()` 用于解析包含 SVG 的字符串，提取 `[tag]svg` 元素的属性以及图标内容。
 
-## Usage
+## 用法
 
-This function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]content`, `[type]string`. SVG.
+- `[prop]content`，`[type]string` 类型。SVG 字符串。
 
-This function returns data with type `[type]ParsedSVGContent`, `[type]undefined` on error. See below.
+该函数返回类型为 `[type]ParsedSVGContent` 的数据，出错时返回 `[type]undefined`。详见下文。
 
-## Result {#result}
+## 返回值 {#result}
 
-The result is an object with the following properties:
+返回值是一个包含以下属性的对象：
 
-- `[prop]body`, `[type]string`. Icon content.
-- `[prop]attributes`, `[type]object`. Attributes for `[tag]svg` element.
+- `[prop]body`，`[type]string` 类型。图标内容。
+- `[prop]attributes`，`[type]object` 类型。`[tag]svg` 元素的属性。
 
-Attributes are not checked.
+不会对属性进行校验。
 
-The result should be passed to either `[func]buildParsedSVG()` or `[func]convertParsedSVG()`.
-Both functions do simple validation of attributes in `[tag]svg` element and convert it to usable data.
+该结果应传递给 `[func]buildParsedSVG()` 或 `[func]convertParsedSVG()`。
+这两个函数会对 `[tag]svg` 元素中的属性进行简单验证，并将其转换为可用数据。
 
 ## Iconify Tools
 
-This function is very basic. For advanced parsing and clean up, use [Iconify Tools](../tools/index.md).
+此函数功能较为基础。如需高级解析和清理功能，请使用 [Iconify Tools](../tools/index.md)。
 
-## Examples
+## 示例
 
-Example using `[func]parseSVGContent()` with `[func]buildParsedSVG()` and `[func]iconToHTML()` to clean up icon:
+结合使用 `[func]parseSVGContent()`、`[func]buildParsedSVG()` 和 `[func]iconToHTML()` 来清理图标的示例：
 
 ```yaml
 src: libraries/utils/build-parsed-svg.ts
 title: 'cleanup.ts'
 ```
 
-Example using `[func]parseSVGContent()` with `[func]convertParsedSVG()` to get icon data in `[type]IconifyIcon` format,
-which can be used by various icon components:
+结合使用 `[func]parseSVGContent()` 和 `[func]convertParsedSVG()` 获取 `[type]IconifyIcon` 格式图标数据的示例，
+该格式可供各种图标组件使用：
 
 ```yaml
 src: libraries/utils/convert-parsed-svg.ts

@@ -1,63 +1,63 @@
 ```yaml
-title: April 2025 Iconify icon components migration guide
+title: 2025年4月 Iconify 图标组件迁移指南
 ```
 
-# Icon components migration guide
+# 图标组件迁移指南
 
-The following migration guide applies to:
+以下迁移指南适用于：
 
-- [Iconify icon web component](/docs/iconify-icon/index.md) version 2 to 3.
-- [Iconify icon component for Vue](/docs/icon-components/vue/index.md) version 4 to 5.
-- [Iconify icon component for Svelte](/docs/icon-components/svelte/index.md) version 4 to 5.
-- [Iconify icon component for React](/docs/icon-components/react/index.md) version 5 to 6.
+- [Iconify 图标 Web 组件](/docs/iconify-icon/index.md) 版本 2 到 3。
+- [Iconify Vue 图标组件](/docs/icon-components/vue/index.md) 版本 4 到 5。
+- [Iconify Svelte 图标组件](/docs/icon-components/svelte/index.md) 版本 4 到 5。
+- [Iconify React 图标组件](/docs/icon-components/react/index.md) 版本 5 到 6。
 
-New major versions of all components mentioned above was released in April 2025.
+上述所有组件的新主版本已于 2025 年 4 月发布。
 
-This was a breaking change, this migration guide should help you change your code.
+这是一次破坏性更新，本迁移指南将帮助您修改代码。
 
-## Changes
+## 变更内容
 
-Update introduces the following changes:
+本次更新引入了以下变更：
 
-- Previously deprecated functions `[func]disableCache()` and `[func]enableCache()` have been removed.
-- Previously deprecated function `[func]iconExists()` has been removed. Use `[func]iconLoaded()` instead (see below).
+- 之前已弃用的函数 `[func]disableCache()` 和 `[func]enableCache()` 已被移除。
+- 之前已弃用的函数 `[func]iconExists()` 已被移除。请改用 `[func]iconLoaded()`（见下文）。
 
-There are more changes for Vue and Svelte components, see below.
+Vue 和 Svelte 组件还有更多变更，请见下文。
 
-### iconExists removal
+### 移除 iconExists
 
-Do not worry, function is not gone. It was renamed to `[func]iconLoaded()`.
+不用担心，该函数并未消失，只是重命名为了 `[func]iconLoaded()`。
 
-Reason for renaming function is really bad name.
-It was internal name in initial versions of component, used inside storage module.
-It checks if icon exists in storage, which makes sense within storage.
-However, when exported from component, function no longer storage specific, so it gave impression that it can be used to check if icon exists in Iconify API.
+重命名该函数的原因是其原名非常不恰当。
+它是组件初始版本中的内部名称，用于存储模块内部。
+它用于检查图标是否存在于存储中，这在存储模块内部是合理的。
+然而，当从组件导出时，该函数不再特定于存储，因此会让人误以为它可以用来检查图标是否存在于 Iconify API 中。
 
-To avoid confusion, later function was renamed to `[func]iconLoaded()`, but old name `[func]iconExists()` was supported for backwards compatibility.
+为避免混淆，该函数后来被重命名为 `[func]iconLoaded()`，但为了向后兼容，旧名称 `[func]iconExists()` 仍被支持。
 
-New major version is a good time to get rid of it.
+发布新主版本正是彻底移除它的好时机。
 
-Migration is as simple as it can get: change function name in your code.
+迁移非常简单：只需更改代码中的函数名称即可。
 
-### Cache functions
+### 缓存函数
 
-Caching in storage is no longer available.
+存储中的缓存功能已不再可用。
 
-To migrate, simply remove usages of those functions.
+要进行迁移，只需移除对这些函数的调用即可。
 
-See [/news/2025.md#components-storage](January 2025 news) for detailed explanation of why these functions were removed.
+有关移除这些函数的详细原因，请参阅 [2025年1月新闻](/news/2025.md#components-storage)。
 
-### Vue changes
+### Vue 变更
 
-Vue component has been rewritten with Vue's Composition API. It does not change behavior, but now you can remove Options API from bundle if other components do not use it.
+Vue 组件已使用 Vue 的组合式 API（Composition API）重写。这不会改变其行为，但如果其他组件未使用选项式 API（Options API），现在您可以将其从打包文件中移除。
 
-Other changes:
+其他变更：
 
 #### onLoad
 
-Callback `[prop]onLoad` in Vue component has been replaced with `[prop]load` event.
+Vue 组件中的回调 `[prop]onLoad` 已被 `[prop]load` 事件取代。
 
-Old code:
+旧代码：
 
 ```vue
 <template>
@@ -65,7 +65,7 @@ Old code:
 </template>
 ```
 
-New code:
+新代码：
 
 ```vue
 <template>
@@ -75,29 +75,29 @@ New code:
 
 ### Svelte
 
-Svelte component has been rewritten using Svelte 5 runes.
+Svelte 组件已使用 Svelte 5 的 runes 语法重写。
 
-If you are still using Svelte 4 or older version, new Svelte component will not work for you.
+如果您仍在使用 Svelte 4 或更早版本，新的 Svelte 组件将无法正常工作。
 
-You need to use version 5 of component:
+您需要使用组件的第 5 版：
 
 ```bash
 npm install --save-dev @iconify/svelte@4
 ```
 
-or use a [web component](/docs/iconify-icon/index.md).
+或使用 [Web 组件](/docs/iconify-icon/index.md)。
 
 #### onLoad
 
-Event `[prop]on:load` in Svelte component has been replaced with `[prop]onload` callback.
+Svelte 组件中的事件 `[prop]on:load` 已被 `[prop]onload` 回调取代。
 
-Old code:
+旧代码：
 
 ```svelte
 <Icon icon="mdi:home" on:load={(event) => console.log('Loaded', event.detail.icon)} />
 ```
 
-New code:
+新代码：
 
 ```svelte
 <Icon icon="mdi:home" onload={(icon) => console.log('Loaded', icon)} />

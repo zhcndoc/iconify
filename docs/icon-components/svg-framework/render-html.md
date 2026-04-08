@@ -1,26 +1,26 @@
 ```yaml
-title: 'Iconify SVG Framework Function: renderHTML'
+title: 'Iconify SVG 框架函数：renderHTML'
 functions:
   renderSVG: './render-svg.md'
   renderIcon: './render-icon.md'
 ```
 
-# SVG framework function: renderHTML
+# SVG 框架函数：renderHTML
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#render).
+本教程是 [Iconify SVG 框架函数教程](./functions.md#render) 的一部分。
 
-Function `[func]renderHTML()` generates HTML code for icon.
+函数 `[func]renderHTML()` 用于生成图标的 HTML 代码。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]name`, `[type]string`. Icon name.
-- `[prop]customisations`. Optional customizations object.
+- `[prop]name`，`[type]string` 类型。图标名称。
+- `[prop]customisations`。可选的自定义配置对象。
 
-Function returns `[type]string`, `null` if icon is not available.
+函数返回 `[type]string` 类型，如果图标不可用则返回 `null`。
 
-## Examples
+## 示例
 
 ```js
 if (Iconify.iconExists('mdi:home')) {
@@ -28,7 +28,7 @@ if (Iconify.iconExists('mdi:home')) {
 }
 ```
 
-Another example:
+另一个示例：
 
 ```js
 const node = document.createElement('div');
@@ -38,18 +38,18 @@ node.innerHTML = Iconify.renderHTML('bi:stopwatch', {
 });
 ```
 
-## Customizations
+## 自定义配置
 
-Second parameter is optional icon customizations. Do not confuse it with placeholder `[attr]data-` attributes.
+第二个参数是可选的图标自定义配置。请勿将其与占位符 `[attr]data-` 属性混淆。
 
-Available customizations:
+可用的自定义配置：
 
 `include icon-components/customisations`
 
-For more details about dimensions and alignment see [icon dimensions documentation](./dimensions.md).
+有关尺寸和对齐的更多详细信息，请参阅[图标尺寸文档](./dimensions.md)。
 
-For more details about transformations see [icon transformations documentation](./transform.md).
+有关变换的更多详细信息，请参阅[图标变换文档](./transform.md)。
 
-## Rendering SVG
+## 渲染 SVG
 
-This function creates `[tag]string`. If you want to create `[tag]svg` element, use `[func]renderSVG()` instead.
+此函数创建 `[tag]string`。如果您想创建 `[tag]svg` 元素，请改用 `[func]renderSVG()`。

@@ -1,60 +1,55 @@
-# About Iconify
+# 关于 Iconify
 
-Hello,
+你好，
 
-My name is Vjacheslav Trushkin, I'm a freelance developer from Estonia and author of the Iconify project.
+我叫 Vjacheslav Trushkin，是一名来自爱沙尼亚的自由开发者，也是 Iconify 项目的作者。
 
-You can reach me on:
+你可以通过以下方式联系我：
 
 <contact-links></contact-links>
 
-## History
+## 历史
 
-Iconify was created as an experiment in 2016. Goal was to create a replacement for icon fonts that would offer a large selection of icons,
-but without embedding all those icons.
+Iconify 最初于 2016 年作为一个实验项目诞生。其目标是创建一种图标字体的替代方案，能够提供大量图标选择，同时无需将所有图标都嵌入其中。
 
-In 2018, I created proof of concept for [SVG framework](/docs/icon-components/svg-framework/index.md),
-later renamed project from SimpleSVG to Iconify.
+2018 年，我为 [SVG 框架](/docs/icon-components/svg-framework/index.md) 创建了概念验证，随后将项目从 SimpleSVG 更名为 Iconify。
 
-In 2020, a part-time experiment turned into a proper full time project and all real development work started.
+2020 年，这个兼职实验项目正式转变为全职项目，所有实质性的开发工作也随之展开。
 
-For more detailed history, [check out Iconify history page](/about/history.md).
+如需了解更详细的历史，请[查看 Iconify 历史页面](/about/history.md)。
 
-## Iconify purpose
+## Iconify 的宗旨
 
-The purpose of Iconify project is to give developers freedom to choose icons.
+Iconify 项目的宗旨是赋予开发者自由选择图标的权利。
 
-### Vendor lock-in
+### 供应商锁定
 
-When you use one icon set or icon font, you are vendor locked-in. It is usually very hard to switch to other icons or add your own icons.
+当你使用某一图标集或图标字体时，就会陷入供应商锁定。通常很难切换到其他图标或添加自定义图标。
 
-Vendor lock-in and lack of choice are even bigger concerns if you are working with advanced customisable software, such as blogs or forums.
-By choosing one icon set, software authors not only lock-in themselves, but also all designers that want to customise that software.
-Plugins designed for such software use whatever icon set is supplied in software.
-Themes designed for such software are expected to work with third party plugins, making it very hard or even impossible to change icons, making all themes look the same.
+如果你正在使用高度可定制的软件（如博客或论坛），供应商锁定和缺乏选择的问题会更加严重。
+通过选择单一的图标集，软件作者不仅限制了自己，也限制了所有想要定制该软件的设计师。
+为此类软件设计的插件只能使用软件内置的图标集。
+为此类软件设计的主题需要与第三方插件兼容，这使得更换图标变得极其困难甚至不可能，导致所有主题看起来千篇一律。
 
-Iconify solves that by:
+Iconify 通过以下方式解决这一问题：
 
--   Offering a huge choice of icon sets and icons.
--   Making it easy to add custom icons or icon sets. Tools used for importing and processing icons are open source.
--   Making icon data easily available, so you can use it with your own tools and icon components.
+-   提供海量的图标集和图标选择。
+-   轻松添加自定义图标或图标集。用于导入和处理图标的工具均为开源。
+-   使图标数据易于获取，以便你将其与自己的工具和图标组件配合使用。
 
-## Open source
+## 开源
 
-Iconify is open source.
+Iconify 是开源的。
 
-However, currently some parts of the project are not yet open-sourced.
-The plan is to fix it by the end of 2022 by cleaning up all old spaghetti code and publishing everything to public repositories.
+不过，目前项目的部分代码尚未开源。
+我们计划在 2022 年底前解决这一问题，通过清理所有陈旧的面条式代码，并将所有内容发布到公共仓库中。
 
-## Monetising
+## 商业化
 
-Iconify is not monetised.
+Iconify 目前不进行商业化盈利。
 
-Originally, the plan was to eventually offer premium icon sets that would pay for servers and development.
-In mid 2022 that plan changed, thanks to people showing interest in sponsoring open source development.
-The new plan is to open source everything and rely on sponsors to finance development.
-Current, sponsorship level is nowhere near enough, but every bit helps and gives hope for the future of the project.
+最初的计划是最终提供付费的高级图标集，以支付服务器和开发成本。2022 年中期，由于许多人表示有兴趣赞助开源开发，该计划发生了改变。新的计划是将所有内容开源，并依靠赞助者来资助开发工作。目前赞助金额还远远不够，但每一份支持都至关重要，也为项目的未来带来了希望。
 
-If you are using Iconify in your projects, [please consider sponsoring Iconify development](/sponsors/index.md).
+如果你在项目中使用 Iconify，[请考虑赞助 Iconify 的开发](/sponsors/index.md)。
 
 <contact-info />

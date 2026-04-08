@@ -1,1 +1,1 @@
-List of icons is an array. Each element can be a string, such as `[icon]mdi:home` or a `[type]IconifyIconName` object.
+图标列表是一个数组。每个元素可以是字符串，例如 `[icon]mdi:home`，或 `[type]IconifyIconName` 对象。

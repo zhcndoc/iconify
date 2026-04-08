@@ -1,31 +1,31 @@
 ```yaml
-title: Getting version number of package
+title: 获取包的版本号
 functions:
   downloadNPMPackage: './npm.md'
   getNPMVersion: './npm-version.md'
 ```
 
-# Getting version number of package
+# 获取包的版本号
 
-This tutorial is part of [package functions documentation](./index.md) in [Iconify Tools](../index.md).
+本教程是 [Iconify Tools](../index.md) 中 [包函数文档](./index.md) 的一部分。
 
-Function `[func]getPackageVersion()` is a simple function that retrieves version number from `[file]package.json` in target directory.
+函数 `[func]getPackageVersion()` 是一个简单的函数，用于从目标目录中的 `[file]package.json` 获取版本号。
 
-It is used by `[func]downloadNPMPackage()` to retrieve version number of package that has already been downloaded and extracted. It can also be used to get version number of package downloaded from Git repository (as shown in example below).
+它被 `[func]downloadNPMPackage()` 用于获取已下载并解压的包的版本号。它也可用于获取从 Git 仓库下载的包的版本号（如下例所示）。
 
-## Usage
+## 用法
 
-Function has the following parameter:
+该函数具有以下参数：
 
-- `[prop]target`, `[type]string`. Target directory, without `[str]/package.json`.
+- `[prop]target`，`[type]string` 类型。目标目录，不包含 `[str]/package.json`。
 
-Function returns version number as `[type]string`.
+函数以 `[type]string` 类型返回版本号。
 
-Also see `[func]getNPMVersion()`.
+另请参阅 `[func]getNPMVersion()`。
 
-Function is asynchronous.
+该函数为异步函数。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/package/package-version.ts

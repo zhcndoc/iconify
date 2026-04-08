@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify SVG Framework Function: loadIcons'
+title: 'Iconify SVG 框架函数：loadIcons'
 functions:
   scan: './scan.md'
   getIcon: './get-icon.md'
@@ -8,31 +8,31 @@ types:
   IconifyIconName: './icon-name.md'
 ```
 
-# SVG framework function: loadIcons
+# SVG 框架函数：loadIcons
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#api).
+本教程是 [Iconify SVG 框架函数教程](./functions.md#api) 的一部分。
 
 `include icon-components/functions/load-icons/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/load-icons/props`
 
-## Icons list
+## 图标列表
 
 `include icon-components/functions/load-icons/props-icons`
 
-## Callback
+## 回调函数
 
 `include icon-components/functions/load-icons/props-callback`
 
-## IconifyIconName type
+## IconifyIconName 类型
 
 `include types/iconify-icon-name`
 
-## Examples
+## 示例
 
-Simple callback that loads one icon:
+加载单个图标的简单回调：
 
 ```js
 const iconName = 'mdi:home';
@@ -50,25 +50,25 @@ Iconify.loadIcons([iconName], (loaded, missing, pending, unsubscribe) => {
 	}
 
 	if (pending.length) {
-		// Pending icons list in this example is empty.
-		// If you call loadIcons() with multiple icons, pending list might not be empty, but for one icon it is always empty.
+		// 在此示例中，待处理的图标列表为空。
+		// 如果使用多个图标调用 loadIcons()，待处理列表可能不为空，但对于单个图标，它始终为空。
 		//
-		// Callback is called when something changes, with 1 icon there can only be 2 type of changes: icon has loaded or icon is missing.
+		// 当发生某些变化时会调用回调函数，对于 1 个图标，只有 2 种变化类型：图标已加载或图标缺失。
 	}
 });
 ```
 
-Async version of `[func]loadIcons()`:
+`[func]loadIcons()` 的异步版本：
 
 ```js
 /**
- * Function to load icons, returns Promise
+ * 加载图标的函数，返回 Promise
  */
 function loadIcons(icons) {
 	return new Promise((fulfill, reject) => {
 		Iconify.loadIcons(icons, (loaded, missing, pending, unsubscribe) => {
 			if (pending.length) {
-				// Icons are pending, wait for all to load/fail
+				// 图标正在处理中，等待全部加载成功或失败
 				return;
 			}
 			if (missing.length) {
@@ -86,7 +86,7 @@ function loadIcons(icons) {
 }
 
 /**
- * Usage example in async function
+ * 在异步函数中的使用示例
  */
 async function test() {
 	await loadIcons(['jam:info', 'cil:locomotive', 'cil:paper-plane']).catch(
@@ -95,10 +95,10 @@ async function test() {
 		}
 	);
 
-	// Do stuff with loaded icons
+	// 对已加载的图标进行操作
 	console.log('Loaded!');
 }
 test();
 ```
 
-If you want to load only one icon, there is also `[func]loadIcon()` that is easier to use.
+如果你只想加载单个图标，还可以使用更易用的 `[func]loadIcon()`。

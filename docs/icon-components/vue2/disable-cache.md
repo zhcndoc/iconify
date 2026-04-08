@@ -1,26 +1,26 @@
 ```yaml
-title: 'Iconify for Vue 2 Function: disableCache'
+title: 'Iconify for Vue 2 函数：disableCache'
 functions:
   enableCache: './enable-cache.md'
   addIcon: './add-icon.md'
   addCollection: './add-collection.md'
 ```
 
-# Iconify for Vue 2 function: disableCache
+# Iconify for Vue 2 函数：disableCache
 
-This tutorial is part of [Iconify for Vue 2 functions tutorial](./index.md#functions).
+本教程是 [Iconify for Vue 2 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/cache/intro-disable`
 
-## Usage
+## 用法
 
 `include icon-components/functions/cache/props`
 
-## Storage types
+## 存储类型
 
 `include icon-components/functions/cache/storage-types`
 
-## Examples
+## 示例
 
 ```yaml
 src: icon-components/common/disable-cache.js
@@ -29,7 +29,7 @@ replacements:
     replace: vue2
 ```
 
-Another example:
+另一个示例：
 
 ```yaml
 src: icon-components/common/disable-cache2.js
@@ -38,6 +38,6 @@ replacements:
     replace: vue2
 ```
 
-## Notes
+## 注意事项
 
 `include icon-components/functions/cache/notes`

@@ -1,3 +1,3 @@
-- `[func]loadIcons(icons, callback?)`. Loads icons from API, calls optional callback when either all or part of icons have been loaded.
-- `[func]loadIcon(icon)`. Loads one icon from API, returns `[type]Promise`.
-- `[func]addAPIProvider()`. Adds custom API provider. See [API providers documentation](/docs/api/providers.md).
+- `[func]loadIcons(icons, callback?)`。从 API 加载图标，在全部或部分图标加载完成后调用可选的回调函数。
+- `[func]loadIcon(icon)`。从 API 加载单个图标，返回 `[type]Promise`。
+- `[func]addAPIProvider()`。添加自定义 API 提供程序。请参阅 [API 提供程序文档](/docs/api/providers.md)。

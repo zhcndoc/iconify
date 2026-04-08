@@ -1,11 +1,11 @@
-Optional properties:
+可选属性：
 
-- `[prop]inline`, `[type]boolean` changes vertical alignment.
-- `[prop]width`, `[type]string | number` icon width.
-- `[prop]height`, `[type]string | number` icon height.
-- `[prop]hFlip`, `[type]boolean` flips icon horizontally.
-- `[prop]vFlip`, `[type]boolean` flips icon vertically.
-- `[prop]flip`, `[type]string` alternative to `[prop]hFlip` and `[prop]vFlip`.
-- `[prop]rotate`, `[type]number | string` rotates icon.
-- `[prop]color`, `[type]string` changes icon color.
-- `[prop]onLoad`, `[type]function` is a callback that is called when icon data has been loaded. See below.
+- `[prop]inline`，`[type]boolean` 更改垂直对齐方式。
+- `[prop]width`，`[type]string | number` 图标宽度。
+- `[prop]height`，`[type]string | number` 图标高度。
+- `[prop]hFlip`，`[type]boolean` 水平翻转图标。
+- `[prop]vFlip`，`[type]boolean` 垂直翻转图标。
+- `[prop]flip`，`[type]string` `[prop]hFlip` 和 `[prop]vFlip` 的替代方案。
+- `[prop]rotate`，`[type]number | string` 旋转图标。
+- `[prop]color`，`[type]string` 更改图标颜色。
+- `[prop]onLoad`，`[type]function` 当图标数据加载完成时调用的回调函数。请参阅下文。

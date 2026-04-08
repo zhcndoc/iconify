@@ -4,43 +4,43 @@ const root = "/docs/icons/";
 
 export const IconsSidebar: SidebarItem[] = [
   {
-    text: "Icon Data",
+    text: "图标数据",
     link: `${root}icon-data`,
     collapsed: true,
     items: [
       {
-        text: "All Icons",
+        text: "全部图标",
         link: `${root}all`,
       },
       {
-        text: "Icon Sets List",
+        text: "图标集列表",
         link: `${root}collections`,
       },
       {
-        text: "Individual Icon Sets",
+        text: "单个图标集",
         link: `${root}json`,
       },
       {
-        text: "Individual Icons",
+        text: "单个图标",
         link: `${root}icons`,
         hidden: true,
       },
     ],
   },
   {
-    text: "Icons Cleanup",
+    text: "图标清理",
     link: `${root}icon-basics`,
   },
   {
-    text: "Icon Sets",
+    text: "图标集",
     link: `${root}icon-set-basics`,
   },
   {
-    text: "Custom Icon Sets",
+    text: "自定义图标集",
     link: `${root}custom`,
   },
   {
-    text: "Add Icon Set",
+    text: "添加图标集",
     link: "/docs/articles/add-icon-set/",
   },
 ];

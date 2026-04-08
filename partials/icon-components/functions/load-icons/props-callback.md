@@ -1,6 +1,6 @@
-Optional callback has the following parameters:
+可选回调函数包含以下参数：
 
-- `[prop]loaded`, `[type]IconifyIconName[]`. List of icons that have been loaded.
-- `[prop]missing`, `[type]IconifyIconName[]`. List of icons that are not available on API.
-- `[prop]pending`, `[type]IconifyIconName[]`. List of icons that are still loading.
-- `[prop]unsubscribe`, `[type]function`. Function to call to cancel loading. It is the same as result of `[func]loadIcons()` call.
+- `[prop]loaded`，`[type]IconifyIconName[]`。已加载的图标列表。
+- `[prop]missing`，`[type]IconifyIconName[]`。API 上不可用的图标列表。
+- `[prop]pending`，`[type]IconifyIconName[]`。仍在加载中的图标列表。
+- `[prop]unsubscribe`，`[type]function`。用于取消加载的函数。它与调用 `[func]loadIcons()` 的返回值相同。

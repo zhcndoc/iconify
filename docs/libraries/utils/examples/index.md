@@ -1,37 +1,37 @@
 ```yaml
-title: Iconify Utils Code Examples
+title: Iconify Utils 代码示例
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
 ```
 
-# Code examples for Iconify Utils
+# Iconify Utils 代码示例
 
-Documentation for [each function in Iconify Utils](../index.md) includes code samples.
+Iconify Utils 中[每个函数的文档](../index.md)都包含代码示例。
 
-However, how to figure out which function to look at? Below are code samples for common use cases.
+然而，如何确定该查看哪个函数呢？以下是常见用例的代码示例。
 
-## Export icon set
+## 导出图标集
 
-Examples to export an entire icon set:
+导出整个图标集的示例：
 
-- [Export icon set as SVGs](./export-svgs-from-icon-set.md).
+- [将图标集导出为 SVG](./export-svgs-from-icon-set.md)。
 
-## Export single SVG
+## 导出单个 SVG
 
-Examples of generating a single SVG file:
+生成单个 SVG 文件的示例：
 
-- [Export SVG from icon set](./export-svg-from-icon-set.md).
-- [Export SVG from icon data](./export-svg-from-data.md).
+- [从图标集导出 SVG](./export-svg-from-icon-set.md)。
+- [从图标数据导出 SVG](./export-svg-from-data.md)。
 
-## Export CSS
+## 导出 CSS
 
-Examples to export icons as CSS:
+将图标导出为 CSS 的示例：
 
-- [Generate CSS for selected icons](./generate-css.md).
+- [为选定的图标生成 CSS](./generate-css.md)。
 
-## Advanced import / export {#advanced}
+## 高级导入/导出 {#advanced}
 
-Iconify Utils is a basic package that parses `[type]IconifyJSON` and `[type]IconifyIcon` data. It is not meant for more complex stuff.
+Iconify Utils 是一个基础包，用于解析 `[type]IconifyJSON` 和 `[type]IconifyIcon` 数据。它并非为处理更复杂的功能而设计。
 
-For more complex stuff, such as importing icons, validating icon code, changing palette, cleaning up, exporting to various formats, see [Iconify Tools package](../../tools/index.md).
+对于更复杂的功能，例如导入图标、验证图标代码、更改调色板、清理以及导出为各种格式，请参阅 [Iconify Tools 包](../../tools/index.md)。

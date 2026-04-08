@@ -10,69 +10,69 @@ replacements:
 
 # Iconify API
 
-Iconify API is an open source hosted (or self-hosted) service for developers.
+Iconify API 是一项面向开发者的开源托管（或自托管）服务。
 
-What is it for?
+它有什么用途？
 
-- API provides icon data, which made it possible to create [Iconify icon components](../icon-components/index.md) that load icons demand.
-- API [generates SVG](./svg.md), which developers can link to in HTML or stylesheet.
-- API [generates CSS](./css.md) to render icons as background or mask images.
-- API has a search engine for hosted icons, which can be used by icon pickers. Currently used by [Iconify plug-ins](../design/index.md) for various UI design tools.
+- API 提供图标数据，从而使得创建能够按需加载图标的 [Iconify 图标组件](../icon-components/index.md) 成为可能。
+- API [生成 SVG](./svg.md)，开发者可以在 HTML 或样式表中链接到它。
+- API [生成 CSS](./css.md)，用于将图标渲染为背景或遮罩图像。
+- API 内置了托管图标的搜索引擎，可供图标选择器使用。目前已被用于各种 UI 设计工具的 [Iconify 插件](../design/index.md)。
 
-API can be used to offer hundreds of thousands of icons in website builders or theme customisers. Host your own API, use API's search engine in custom icon picker to allow users select icons, use icon components in UI to render icons.
+API 可用于在网站构建器或主题定制器中提供数十万个图标。您可以托管自己的 API，在自定义图标选择器中使用 API 的搜索引擎以允许用户选择图标，并在 UI 中使用图标组件来渲染图标。
 
-## Hosting API
+## 托管 API
 
-You can host your own Iconify API service.
+您可以自行托管 Iconify API 服务。
 
-By hosting Iconify API yourself you:
+自行托管 Iconify API 可以让您：
 
-- Have full control over servers instead of relying on third party service.
-- Can choose which icon sets to host or host your own icon sets.
+- 完全掌控服务器，而无需依赖第三方服务。
+- 可以选择托管哪些图标集，或托管您自己的图标集。
 
-See [hosting Iconify API](./hosting.md) for more details.
+有关更多详细信息，请参阅[托管 Iconify API](./hosting.md)。
 
-API is available on:
+API 可通过以下途径获取：
 
-- [GitHub](https://github.com/iconify/api/) - you can customise it before deploying.
-- [NPM](https://www.npmjs.com/package/@iconify/api) - can be embedded in an app without running a full server.
-- [Docker](https://hub.docker.com/r/iconify/api) - for quick deployment.
+- [GitHub](https://github.com/iconify/api/) - 您可以在部署前对其进行自定义。
+- [NPM](https://www.npmjs.com/package/@iconify/api) - 可嵌入到应用程序中，无需运行完整的服务器。
+- [Docker](https://hub.docker.com/r/iconify/api) - 适用于快速部署。
 
-## Public API
+## 公共 API
 
-Iconify project offers public API servers, which host over 60k icons from more than 70 open source icon sets.
+Iconify 项目提供公共 API 服务器，托管了来自 70 多个开源图标集的超过 6 万个图标。
 
-To improve loading times, API is hosted on multiple servers in different parts of the world. Icons are usually loaded within fraction of a second.
+为了提高加载速度，API 部署在全球不同地区的多台服务器上。图标通常能在几分之一秒内加载完成。
 
-Public API is available at `[url]https://api.iconify.design`.
+公共 API 的访问地址为 `[url]https://api.iconify.design`。
 
-It is a public service, servers are free to use, but please do keep in mind that running those servers is not free. If you are using public API or API software, [please consider supporting Iconify](https://iconify.design/sponsors/) to help out with infrastructure, development and maintenance costs.
+这是一项公共服务，服务器可免费使用，但请牢记运行这些服务器并非没有成本。如果您正在使用公共 API 或 API 软件，[请考虑支持 Iconify](https://iconify.design/sponsors/)，以帮助分担基础设施、开发和维护成本。
 
-### Redundancy
+### 冗余备份
 
-Sometimes there are problems with internet connections. It happens. Maybe server has issues, maybe visitor's ISP has issues.
+有时网络连接会出现问题。这很常见。可能是服务器出了问题，也可能是访问者的网络服务提供商（ISP）出现了故障。
 
-In case main API host cannot be reached, Iconify public API has backup host names:
+如果无法访问主 API 主机，Iconify 公共 API 提供了备用主机名：
 
 - `[url]https://api.simplesvg.com`
 - `[url]https://api.unisvg.com`
 
-Each of backup host names points to half of API servers. For example, in western Europe there are currently 2 servers: in Frankfurt and in London. Main host points to both, one of backup hosts points to server in Frankfurt, another backup host points to server in London. If server in Frankfurt goes down, users that are using that server can be redirected to server in London using one of backup host names.
+每个备用主机名指向一半的 API 服务器。例如，在西欧目前有两台服务器：分别位于法兰克福和伦敦。主主机指向这两台服务器，其中一个备用主机指向法兰克福的服务器，另一个备用主机指向伦敦的服务器。如果法兰克福的服务器宕机，使用该服务器的用户可以通过其中一个备用主机名被重定向到伦敦的服务器。
 
-Redundancy built in Iconify icon components accounts for that. It tries to connect to main host first, then, if there was no response in reasonable time (timeout is 0.75 seconds), it attempts to connect to one of backup hosts, then to another backup host. Small delay caused by check only affects first query, all further API queries are sent to host that responded.
+Iconify 图标组件内置的冗余机制已考虑到这一点。它会首先尝试连接主主机，然后，如果在合理时间内（超时时间为 0.75 秒）未收到响应，它将尝试连接其中一个备用主机，接着尝试另一个备用主机。检查造成的微小延迟仅影响首次查询，所有后续的 API 查询都将发送至已响应的主机。
 
-See [building redundant API](./cdn.md) for more details.
+有关更多详细信息，请参阅[构建冗余 API](./cdn.md)。
 
-## Queries
+## 查询
 
-Iconify API can be used to render SVG, to retrieve icon data, to browse and search icons.
+Iconify API 可用于渲染 SVG、检索图标数据、浏览和搜索图标。
 
-For full list of supported queries, their parameters and API responses see [Iconify API queries documentation](./queries.md).
+有关支持的查询完整列表、其参数及 API 响应，请参阅 [Iconify API 查询文档](./queries.md)。
 
-## API providers
+## API 提供商
 
-Iconify icon components can retrieve icons from multiple API servers.
+Iconify 图标组件可以从多个 API 服务器检索图标。
 
-This allows you to run your own API to serve only custom icons, while using public Iconify API to get data for open source icon sets.
+这允许您运行自己的 API 仅用于提供自定义图标，同时使用公共 Iconify API 获取开源图标集的数据。
 
-See [Iconify API providers](./providers.md) for details.
+有关详细信息，请参阅 [Iconify API 提供商](./providers.md)。

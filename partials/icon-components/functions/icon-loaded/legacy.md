@@ -1,5 +1,5 @@
-Note: in old versions of component, this function was named `[func]iconExists()`. It was the same function, but with bad name.
+注意：在组件的旧版本中，此函数名为 `[func]iconExists()`。它是同一个函数，只是命名不当。
 
-Because of bad name, some developers assumed it checks if icon exists on Iconify API. It does not. All it does is checks component's storage.
+由于命名不当，部分开发者误以为该函数会检查图标是否存在于 Iconify API 中。事实并非如此。它所做的仅仅是检查组件的存储。
 
-To avoid confusion, function was renamed.
+为避免混淆，该函数已被重命名。

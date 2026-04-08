@@ -1,3 +1,3 @@
-The function `[func]replaceIDs()` finds IDs in SVG and replaces them with unique random IDs.
+函数 `[func]replaceIDs()` 会查找 SVG 中的 ID，并将其替换为唯一的随机 ID。
 
-This function is meant to be used when you generate `[tag]svg` element yourself using data provided by `[func]getIcon()`.
+当您使用 `[func]getIcon()` 提供的数据自行生成 `[tag]svg` 元素时，应使用此函数。

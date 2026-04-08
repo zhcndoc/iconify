@@ -5,14 +5,14 @@ const root = '/docs/icon-components/svg-framework/'
 
 export const SVGFrameworkSidebar: SidebarItem[] = [
   {
-    text: 'IconifyIconName type',
+    text: 'IconifyIconName 类型',
     link: `${root}icon-name`,
     hidden: true,
   },
   // Attributes
   ...commonComponentAttributes(root),
   {
-    text: 'Functions',
+    text: '函数',
     link: `${root}functions`,
     items: [
       // Internal
@@ -66,7 +66,7 @@ export const SVGFrameworkSidebar: SidebarItem[] = [
     ],
   },
   {
-    text: 'Optimizations',
+    text: '优化',
     link: `${root}optimizations`,
   },
 ]

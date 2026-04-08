@@ -2,27 +2,27 @@
 title: Iconify for Designers
 ```
 
-# Iconify for designers
+# 设计师专用 Iconify
 
-For designers, Iconify ecosystem offers several ways to easily import icons in various design tools.
+对于设计师而言，Iconify 生态系统提供了多种方式，可轻松将图标导入各类设计工具中。
 
-Available options:
+可用选项：
 
-- Figma users can install [Iconify plug-in for Figma](./figma/index.md).
-- Penpot users can install [Iconify plug-in for Penpot](./penpot/index.md).
-- Sketch users can install [Iconify plugin-in for Sketch](./sketch/index.md).
-- For other design tools, or if you are experiencing issues with plug-ins listed above, you can copy and paste SVG from one of sources listed below.
+- Figma 用户可安装 [Figma 专用 Iconify 插件](./figma/index.md)。
+- Penpot 用户可安装 [Penpot 专用 Iconify 插件](./penpot/index.md)。
+- Sketch 用户可安装 [Sketch 专用 Iconify 插件](./sketch/index.md)。
+- 对于其他设计工具，或在使用上述插件遇到问题时，您可以从下方列出的来源中复制并粘贴 SVG。
 
-## Browse icons
+## 浏览图标
 
-You can browse and search more than 60k open source icons at one of the following websites:
+您可以在以下任一网站浏览和搜索超过 6 万个开源图标：
 
-- [Iconify icon sets](https://icon-sets.iconify.design/) - official website.
-- [Icones](https://icones.js.org/) - alternative website created by Anthony Fu.
+- [Iconify 图标集](https://icon-sets.iconify.design/) - 官方网站。
+- [Icones](https://icones.js.org/) - 由 Anthony Fu 开发的替代网站。
 
-Find icon you want, select it, copy SVG to clipboard, paste it to your favorite design tool.
+找到所需图标后，选中它，将 SVG 复制到剪贴板，然后粘贴至您常用的设计工具中。
 
-Possible issues:
+可能遇到的问题：
 
-- Some design tools do not support `[prop]currentColor`. Set icon color to black before copying code sample.
-- Almost all image editing software do not support SVG 2 animations. Animated icons will be imported without animations, sometimes rendered weirdly.
+- 部分设计工具不支持 `[prop]currentColor`。请在复制代码示例前，将图标颜色设置为黑色。
+- 几乎所有图像编辑软件均不支持 SVG 2 动画。动态图标导入时将丢失动画效果，有时渲染可能会出现异常。

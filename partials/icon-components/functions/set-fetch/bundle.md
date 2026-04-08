@@ -1,1 +1,1 @@
-This code must be added only to script that runs on the server side, not bundled for client side use. Browsers already support Fetch API, so this code is not needed in browsers.
+此代码只能添加到在服务器端运行的脚本中，不应打包供客户端使用。浏览器已经支持 Fetch API，因此在浏览器中不需要此代码。

@@ -1,5 +1,5 @@
-The function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]name`, `[type]string`. Icon name.
+- `[prop]name`，`[type]string`。图标名称。
 
-The function returns `[type]boolean` value: `[bool]true` if icon is available, `[bool]false` if icon is not available.
+该函数返回 `[type]boolean` 值：如果图标可用，则返回 `[bool]true`；如果图标不可用，则返回 `[bool]false`。

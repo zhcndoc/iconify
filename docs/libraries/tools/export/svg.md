@@ -9,13 +9,13 @@ functions:
   forEach: '../icon-set/for-each.md'
 ```
 
-# Exporting SVG
+# 导出 SVG
 
-This tutorial is part of [export functions documentation](./index.md) in [Iconify Tools](../index.md).
+本教程属于 [Iconify Tools](../index.md) 中的 [导出函数文档](./index.md) 部分。
 
-`[type]IconSet` instance has `[func]toString()` function that exports icon as `[type]string`. You can use `[func]forEach()` to loop all icons in icon set.
+`[type]IconSet` 实例提供了 `[func]toString()` 函数，可将图标导出为 `[type]string` 格式。您可以使用 `[func]forEach()` 遍历图标集中的所有图标。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/export/svg.ts

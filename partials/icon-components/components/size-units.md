@@ -1,3 +1,3 @@
-Size can be a `[type]string` with or without units or a `[type]number`. If value is a `[type]number` or `[type]string` without units, it will be treated by browser as pixels.
+尺寸可以是带单位或不带单位的 `[type]string`，也可以是 `[type]number`。如果值为 `[type]number` 或不带单位的 `[type]string`，浏览器会将其视为像素。
 
-Examples of `[num]24px` icon:
+`[num]24px` 图标的示例：

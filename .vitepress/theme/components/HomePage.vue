@@ -8,7 +8,7 @@ import type { HomePageButtonProps } from "./HomePageButton.vue";
 const buttons: HomePageButtonProps[] = [
   {
     link: "/getting-started/",
-    text: "Getting Started",
+    text: "快速开始",
     primary: true,
     // icon: "line-md:chevron-right",
     // iconify-ui:chevron-right-square-rounded
@@ -38,7 +38,7 @@ const buttons: HomePageButtonProps[] = [
   },
   {
     link: "/news/#latest-updates",
-    text: "Latest Updates",
+    text: "最新更新",
     // icon: "line-md:calendar",
     // iconify-ui:alert-square-rounded
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24">
@@ -59,7 +59,7 @@ const buttons: HomePageButtonProps[] = [
   },
   {
     link: "/docs/",
-    text: "Documentation",
+    text: "文档首页",
     // icon: "line-md:document-code",
     // iconify-ui:code-tags-square-rounded
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24">
@@ -89,7 +89,7 @@ const buttons: HomePageButtonProps[] = [
   },
   {
     link: "https://icon-sets.iconify.design/",
-    text: "Browse Icons",
+    text: "浏览图标",
     // icon: 'line-md:image-twotone',
     // iconify-ui:image-rounded-search
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24">
@@ -182,9 +182,9 @@ const buttons: HomePageButtonProps[] = [
         -->
 
         <section id="sponsored-by" class="home">
-          <h1>Sponsored by</h1>
+          <h1>赞助支持</h1>
           <div class="sponsors">
-            <a href="/sponsors/" title="Support Iconify!">
+            <a href="/sponsors/" title="支持 Iconify！">
               <img
                 crossorigin="anonymous"
                 width="800"
@@ -192,7 +192,7 @@ const buttons: HomePageButtonProps[] = [
                 class="resizable-img"
                 loading="lazy"
                 src="https://cyberalien.github.io/static/sponsors.svg"
-                alt="Vjacheslav Trushkin's sponsors"
+                alt="Vjacheslav Trushkin 的赞助者"
               />
             </a>
           </div>

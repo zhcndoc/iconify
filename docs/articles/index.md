@@ -1,27 +1,27 @@
 ```yaml
-title: Iconify blog
+title: Iconify 博客
 ```
 
-# Iconify blog
+# Iconify 博客
 
-Blog below contains major updates, migration guides and helpful articles related to Iconify project.
+本博客包含与 Iconify 项目相关的主要更新、迁移指南及实用文章。
 
-## Iconify stuff
+## Iconify 相关
 
-Articles related to Iconify project that are too long for documentation:
+与 Iconify 项目相关，但因篇幅过长未收录至官方文档的文章：
 
-- [How icons are validated and cleaned up in Iconify](./cleaning-up-icons/index.md).
-- [How add an icon set to Iconify](./add-icon-set/index.md).
+- [Iconify 中图标的验证与清理机制](./cleaning-up-icons/index.md)。
+- [如何将图标集添加至 Iconify](./add-icon-set/index.md)。
 
-## Animated icons
+## 动态图标
 
-How to work with animated SVG:
+动态 SVG 的使用指南：
 
-- [SVG animations level 2 spec: common issues and solutions](./svg-animation-issues/index.md).
+- [SVG 动画二级规范：常见问题与解决方案](./svg-animation-issues/index.md)。
 
-## Migration guides
+## 迁移指南
 
-Migration guides for major releases:
+主要版本更新迁移指南：
 
-- [Iconify icon components April 2025 migration guide](./migration/icon-v3.md).
-- [Iconify plugin for Figma 2024 update](/docs/design/figma/update-2024.md).
+- [Iconify 图标组件 2025 年 4 月迁移指南](./migration/icon-v3.md)。
+- [Figma 版 Iconify 插件 2024 年更新指南](/docs/design/figma/update-2024.md)。

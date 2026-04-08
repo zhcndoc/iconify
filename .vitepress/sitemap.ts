@@ -16,7 +16,7 @@ export const preconnectLinks: HeadConfig[] = [
 ];
 
 export const editPageLinkPattern =
-  "https://github.com/iconify/website/edit/main/:path";
+  "https://github.com/zhcndoc/iconify/edit/main/:path";
 
 export const socialLinks: DefaultTheme.SocialLink[] = [
   { icon: "discord", link: "https://iconify.design/discord" },
@@ -47,7 +47,7 @@ const links: SitemapEntry[] = [];
 
 // eslint-disable-next-line n/prefer-global/process
 // const hostname: string = isCI ? ogUrl : (process.env.HTTPS ? 'https://localhost/' : 'http://localhost:4173/')
-const hostname = "https://iconify.design/";
+const hostname = "https://iconify.zhcndoc.com/";
 
 export function transformHtml(
   code: string,

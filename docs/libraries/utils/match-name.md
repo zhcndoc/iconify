@@ -1,5 +1,5 @@
 ```yaml
-title: matchIconName in Iconify Utils
+title: Iconify Utils 中的 matchIconName
 types:
   IconifyIconName: './icon-name.md'
 functions:
@@ -8,15 +8,15 @@ functions:
 
 # matchIconName
 
-This constant is part of [Iconify Utils package](./index.md).
+此常量是 [Iconify Utils 包](./index.md) 的一部分。
 
-Constant `[func]matchIconName` is used to validate all parts of icon name.
+常量 `[func]matchIconName` 用于验证图标名称的各个部分。
 
-The only exception is provider. API provider can be empty, so additional check for empty provider is needed.
+唯一的例外是 provider。API provider 可能为空，因此需要额外检查 provider 是否为空。
 
-This constant is used by `[func]validateIconName()`.
+该常量由 `[func]validateIconName()` 使用。
 
-## Usage
+## 用法
 
 ```ts
 import { matchIconName } from '@iconify/utils';

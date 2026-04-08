@@ -1,26 +1,26 @@
-Both functions have the same parameters, except for type of callback:
+这两个函数的参数相同，仅回调函数的类型不同：
 
-- `[prop]callback`, `[type]function`. Callback that loads icons, can be synchronous or asynchronous function.
-- `[prop]prefix`, `[type]string`. Icon set prefix.
-- `[prop]provider`, `[type]string`. Icon set provider, optional.
+- `[prop]callback`，`[type]function`。用于加载图标的回调函数，可以是同步或异步函数。
+- `[prop]prefix`，`[type]string`。图标集前缀。
+- `[prop]provider`，`[type]string`。图标集提供商，可选。
 
-Callback is a function that loads icon data.
+回调函数是用于加载图标数据的函数。
 
-Both synchronous and asynchronous (returns `[type]Promise` instance) callbacks are supported.
+支持同步和异步（返回 `[type]Promise` 实例）回调函数。
 
-Callbacks for both functions have similar parameters.
+这两个函数的回调函数具有相似的参数。
 
-Parameters for `[func]setCustomIconLoader()`:
+`[func]setCustomIconLoader()` 的参数：
 
-- `[prop]name`, `[type]string`. Icon name.
-- `[prop]prefix`, `[type]string`. Icon set prefix.
-- `[prop]provider`, `[type]string`. Icon set provider.
+- `[prop]name`，`[type]string`。图标名称。
+- `[prop]prefix`，`[type]string`。图标集前缀。
+- `[prop]provider`，`[type]string`。图标集提供商。
 
-Order of parameters is intentional: from most important to least important. If you have set loader for one prefix, you most likely only need `[prop]name` parameter.
+参数的顺序是有意安排的：按重要性从高到低排列。如果你已为某个前缀设置了加载器，通常只需要 `[prop]name` 参数即可。
 
-The callback returns icon data as `[type]IconifyIcon` or `null` on failure (or `[type]Promise` of those types).
+回调函数返回 `[type]IconifyIcon` 类型的图标数据，失败时返回 `null`（或返回这些类型的 `[type]Promise`）。
 
-Callback for `[func]setCustomIconsLoader()` is almost identical, except:
+`[func]setCustomIconsLoader()` 的回调函数几乎完全相同，区别在于：
 
-- First parameter is an array of icon names: `[type]string[]`.
-- Callback returns an icon set as `[type]IconifyJSON` or `null` on failure (or `[type]Promise` of those types).
+- 第一个参数是图标名称数组：`[type]string[]`。
+- 回调函数返回 `[type]IconifyJSON` 类型的图标集，失败时返回 `null`（或返回这些类型的 `[type]Promise`）。

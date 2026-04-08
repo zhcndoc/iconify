@@ -10,31 +10,31 @@ functions:
   iconLoaded: "./icon-exists.md"
 ```
 
-# Iconify for Vue 2 function: buildIcon
+# Iconify for Vue 2 函数：buildIcon
 
-This tutorial is part of [Iconify for Vue 2 functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Vue 2 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/build-icon/intro-component`
 
-## Usage
+## 用法
 
 `include icon-components/functions/build-icon/usage`
 
-## Result
+## 结果
 
 `include icon-components/functions/build-icon/result`
 
-## Customizations
+## 自定义选项
 
-Second parameter is optional icon customizations. Available customizations:
+第二个参数是可选的图标自定义选项。可用的自定义选项包括：
 
 `include icon-components/customisations`
 
-For more details about dimensions see [icon dimensions documentation](./dimensions.md).
+有关尺寸的更多详细信息，请参阅[图标尺寸文档](./dimensions.md)。
 
-For more details about transformations see [icon transformations documentation](./transform.md).
+有关变换的更多详细信息，请参阅[图标变换文档](./transform.md)。
 
-## Example
+## 示例
 
 ```yaml
 src: icon-components/common/build-icon.js

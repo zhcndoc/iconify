@@ -1,5 +1,5 @@
 ```yaml
-title: minifyIconSet() in Iconify Utils
+title: Iconify Utils 中的 minifyIconSet()
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
@@ -9,21 +9,21 @@ types:
 
 # minifyIconSet()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]minifyIconSet()` optimises icon set, reducing file size.
+函数 `[func]minifyIconSet()` 用于优化图标集，从而减小文件大小。
 
-## Usage
+## 用法
 
-Function has only one parameter:
+该函数仅有一个参数：
 
-- `[prop]data`, `[type]IconifyJSON`. Icon set data.
+- `[prop]data`，`[type]IconifyJSON` 类型。图标集数据。
 
-Function does not create a new object, it modifies object passed to function.
+该函数不会创建新对象，而是直接修改传入函数的对象。
 
-## What exactly does it do? {#explanation}
+## 它具体做了什么？ {#explanation}
 
-Icons in icon set have common properties, such as `[prop]width` and `[prop]height`:
+图标集中的图标通常具有公共属性，例如 `[prop]width` 和 `[prop]height`：
 
 ```json
 {
@@ -48,7 +48,7 @@ Icons in icon set have common properties, such as `[prop]width` and `[prop]heigh
 }
 ```
 
-In example above, icons `[str]icon1` and `[str]icon2` have identical `[prop]width` and `[prop]height`. To avoid duplication, these values can be moved to root object:
+在上面的示例中，图标 `[str]icon1` 和 `[str]icon2` 具有相同的 `[prop]width` 和 `[prop]height`。为了避免重复，可以将这些值移至根对象：
 
 ```json
 {
@@ -71,15 +71,15 @@ In example above, icons `[str]icon1` and `[str]icon2` have identical `[prop]widt
 }
 ```
 
-Function `[func]minifyIconSet()` finds common properties in icon set and moves them to root object.
+函数 `[func]minifyIconSet()` 会查找图标集中的公共属性，并将它们移至根对象。
 
-What properties can be minified? Properties defined in `[type]IconifyDimensions` type: `[prop]left`, `[prop]top`, `[prop]width` and `[prop]height`.
+哪些属性可以被精简？在 `[type]IconifyDimensions` 类型中定义的属性：`[prop]left`、`[prop]top`、`[prop]width` 和 `[prop]height`。
 
-See `[type]IconifyJSON` type for more information.
+有关更多信息，请参阅 `[type]IconifyJSON` 类型。
 
-In this example difference between original and minified files isn't big, but for large icon sets with thousands of icons it does make a big difference in file size.
+在此示例中，原始文件与精简后文件的差异并不大，但对于包含数千个图标的大型图标集而言，它确实能显著减小文件大小。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/minify.ts

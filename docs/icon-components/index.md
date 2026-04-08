@@ -1,5 +1,5 @@
 ```yaml
-title: Icons on Demand
+title: 按需加载图标
 replacements:
   - code: '60,000'
     value: '${counters.icons}'
@@ -7,17 +7,17 @@ replacements:
     value: '${counters.icons-short}'
 ```
 
-# Icons on demand
+# 按需加载图标
 
-Iconify ecosystem has a unique feature: [Iconify API](/docs/api/index.md).
+Iconify 生态系统拥有一个独特的功能：[Iconify API](/docs/api/index.md)。
 
-It can be used to [load icon data on demand](/docs/api/icon-data.md) and is used by Iconify icon components.
+它可用于[按需加载图标数据](/docs/api/icon-data.md)，并且被 Iconify 图标组件所使用。
 
-[Skip to list of available components](#components) if you want to skip long explanation of how it all works.
+如果您想跳过关于其工作原理的长篇解释，可以直接[跳转到可用组件列表](#components)。
 
-## How does it work? {#process}
+## 它是如何工作的？ {#process}
 
-Iconify icon components are very easy to use. All developer has to specify is an icon name:
+Iconify 图标组件非常易于使用。开发者只需指定一个图标名称：
 
 ```yaml
 src: icon-components/icon/usage.html
@@ -26,99 +26,99 @@ demoFirst: false
 class: sample-big
 ```
 
-Unlike [regular icon components](/docs/usage/svg/index.md), Iconify icon components do not bundle icon data. They load only data for icons used on currently viewed page at run time.
+与[常规图标组件](/docs/usage/svg/index.md)不同，Iconify 图标组件不会打包图标数据。它们仅在运行时加载当前查看页面所使用的图标数据。
 
 <icon-loading-process link="#components"></icon-loading-process>
 
-### Advantages
+### 优势
 
-Loading icon data on demand has its advantages and disadvantages over using [regular icon components](/docs/usage/svg/index.md).
+与使用[常规图标组件](/docs/usage/svg/index.md)相比，按需加载图标数据既有优势也有劣势。
 
-Advantages:
+优势：
 
-- Very easy to use.
-- If you are using many icons on various pages, bundle size is smaller because icon data is loaded only as needed.
-- It can be used with customisable themes, where a developer doesn't know which icons theme is using.
-- Small HTML. Icons are loaded only in browser, not server side rendered.
+- 非常易于使用。
+- 如果您在不同页面上使用大量图标，打包体积会更小，因为图标数据仅在需要时加载。
+- 它可以与可定制的主题配合使用，适用于开发者不知道主题具体使用哪些图标的场景。
+- HTML 体积小。图标仅在浏览器中加载，而非服务端渲染。
 
-Disadvantages:
+劣势：
 
-- Requires access to Iconify API, making it unusable for offline applications. You can host your own API instance, but it is not trivial.
-- Icons might not render instantly. Even though there are multiple layers of caching icon data, there is a few milliseconds delay in rendering.
+- 需要访问 Iconify API，因此无法用于离线应用。您可以自行托管 API 实例，但这并不简单。
+- 图标可能无法立即渲染。尽管有多层图标数据缓存机制，但渲染时仍会有几毫秒的延迟。
 
-## Components
+## 组件
 
-The best option by far is [Web component](#web-component).
-It is usable in HTML with or without UI frameworks.  
+目前最好的选择是 [Web 组件](#web-component)。
+无论是否使用 UI 框架，它都可以在 HTML 中使用。  
 
-Additionally, there are [components for UI frameworks](#ui-frameworks): React, Vue, Svelte, Ember.
+此外，还有[适用于 UI 框架的组件](#ui-frameworks)：React、Vue、Svelte、Ember。
 
-In future, only `[npm]iconify-icon` web component will be supported. Why?
-- SVG Framework is an old version of the web component, developed many years ago as an experiment when browser did not support web components. It has no place in modern development.
-- Framework-specific components have issue with server side rendering. Web compponent solves those issues.
+未来，将仅支持 `[npm]iconify-icon` Web 组件。为什么？
+- SVG Framework 是 Web 组件的旧版本，是多年前在浏览器尚不支持 Web 组件时作为实验开发的。它在现代开发中已无立足之地。
+- 特定于框架的组件在服务端渲染方面存在问题。Web 组件解决了这些问题。
 
-### Web component {#web-component}
+### Web 组件 {#web-component}
 
-The best option by far is web component.
-It is the most modern iteration, works with all UI frameworks and works great with server side rendering.
+目前最好的选择是 Web 组件。
+它是目前最现代的迭代版本，兼容所有 UI 框架，并且在服务端渲染方面表现优异。
 
-Usage is simple:
+用法很简单：
 
 ```html
 <iconify-icon icon="mdi:home"></iconify-icon>
 ```
 
-See [Iconify icon web component documentation](/docs/iconify-icon/index.md).
+请参阅 [Iconify 图标 Web 组件文档](/docs/iconify-icon/index.md)。
 
 #### Shadow DOM
 
-Web component renders icon in Shadow DOM, separating it from the main document.
+Web 组件在 Shadow DOM 中渲染图标，将其与主文档分离。
 
-That has its advantages and disadvantages over other components.
+与其他组件相比，这既有优势也有劣势。
 
-Advantages:
+优势：
 
-- Separates icon from main DOM, so main DOM doesn't become bloated.
-- No conflicts with unique ids, which are used in some icons in masks, clip paths, animations and few other elements.
-- Works wonderfully with SSR, much better than UI framework native components: no ID conflicts, render is independent of framework rendering, so it doesn't cause any issues with hydration.
+- 将图标与主 DOM 分离，避免主 DOM 变得臃肿。
+- 不会与唯一 ID 冲突，某些图标在遮罩、裁剪路径、动画及其他少数元素中会使用这些 ID。
+- 与 SSR 配合极佳，远优于 UI 框架原生组件：无 ID 冲突，渲染独立于框架渲染，因此不会引起任何水合（hydration）问题。
 
-Disadvantages:
+劣势：
 
-- Accessing icon content, such as changing `[prop]stroke-width`, is not always possible. Depends on use case.
-- Cannot render icon without `[prop]width` and `[prop]height`, making it impossible to resize icon with those properties. Icon can be resized only with `[prop]font-size`.
+- 访问图标内容（例如更改 `[prop]stroke-width`）并不总是可行。具体取决于使用场景。
+- 无法在不提供 `[prop]width` 和 `[prop]height` 的情况下渲染图标，因此无法通过这些属性调整图标大小。图标只能通过 `[prop]font-size` 调整大小。
 
-If these disadvantages are unacceptable for your project, use "SVG framework" or one of UI framework specific components listed below.
+如果您的项目无法接受这些劣势，请使用“SVG framework”或下方列出的特定 UI 框架组件之一。
 
-### UI frameworks {#ui-frameworks}
+### UI 框架 {#ui-frameworks}
 
-Iconify offers components native to various UI frameworks:
+Iconify 提供了原生支持各种 UI 框架的组件：
 
-- [React](./react/index.md) (warning: when using with Next.js, wrap it in a client-only component or switch to IconifyIcon web component!)
+- [React](./react/index.md)（警告：与 Next.js 配合使用时，请将其包装在仅客户端组件中，或切换到 IconifyIcon Web 组件！）
 - [Vue](./vue/index.md)
 - [Svelte](./svelte/index.md)
 
-Usage is as any other component:
+用法与其他任何组件相同：
 
 ```jsx
 <Icon icon="mdi:home" />
 ```
 
-These components behave differently than the web component:
+这些组件的行为与 Web 组件不同：
 
-- To avoid SSR errors, icons are rendered only after a component is mounted. Otherwise, it breaks hydration.
-- Icons can be rendered without `[prop]width` and `[prop]height` attributes, making it easy to style in CSS.
+- 为避免 SSR 错误，图标仅在组件挂载后渲染。否则会导致水合（hydration）失败。
+- 图标可以在没有 `[prop]width` 和 `[prop]height` 属性的情况下渲染，便于在 CSS 中进行样式设置。
 
-You should consider using the `[npm]iconify-icon` web component instead of components mentioned above.
-Dynamic data loading does not work well with SSR.
-Web component solves those issues.
+建议您考虑使用 `[npm]iconify-icon` Web 组件，而不是上述组件。
+动态数据加载与 SSR 的配合并不理想。
+Web 组件解决了这些问题。
 
-#### Legacy components
+#### 遗留组件
 
-In addition to components listed above, there are several legacy components.
-They were created a long time ago, but no longer relevant in modern development. 
+除了上述组件外，还有几个遗留组件。
+它们创建于很久以前，但在现代开发中已不再适用。 
 
-These components are no longer updated, but can be used if you really need it:
+这些组件已不再更新，但如果您确实需要，仍可使用：
 
-- [Vue 2](./vue2/index.md) (Vue 3 was released a long time ago, no point in supporting the old version)
-- [Ember](./ember/index.md) (Ember framework is outdated)
-- [SVG Framework](./svg-framework/index.md) (the oldest of components, has been replaced by the IconifyIcon web component)
+- [Vue 2](./vue2/index.md)（Vue 3 早已发布，继续支持旧版本已无意义）
+- [Ember](./ember/index.md)（Ember 框架已过时）
+- [SVG Framework](./svg-framework/index.md)（最古老的组件，已被 IconifyIcon Web 组件取代）

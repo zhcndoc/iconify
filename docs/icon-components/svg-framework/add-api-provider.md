@@ -1,31 +1,31 @@
 ```yaml
-title: 'Iconify SVG Framework Function: addAPIProvider'
+title: 'Iconify SVG 框架函数：addAPIProvider'
 ```
 
-# SVG framework function: addAPIProvider
+# SVG 框架函数：addAPIProvider
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#api).
+本教程属于 [Iconify SVG 框架函数教程](./functions.md#api) 的一部分。
 
 ```yaml
 include: icon-components/functions/add-api-provider/intro
 replacements:
   - search: component
-    replace: SVG framework
+    replace: SVG 框架
 ```
 
-## API providers
+## API 提供商
 
 `include icon-components/api-providers`
 
-## Usage
+## 用法
 
 `include icon-components/functions/add-api-provider/props`
 
-## Example
+## 示例
 
 ```js
 Iconify.addAPIProvider('local', {
-	// Array of host names
+	// 主机名数组
 	resources: ['http://localhost:3000'],
 });
 ```

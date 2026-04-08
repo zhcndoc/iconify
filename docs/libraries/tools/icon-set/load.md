@@ -1,5 +1,5 @@
 ```yaml
-title: Load icon set
+title: 加载图标集
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconSet: './index.md'
@@ -10,17 +10,17 @@ functions:
 
 # load()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]load()` loads icon set from `[type]IconifyJSON` data.
+函数 `[func]load()` 从 `[type]IconifyJSON` 数据加载图标集。
 
-It replaces existing icon set data, so it is identical to creating new `[type]IconSet` instance. If you want to merge icon sets instead, see `[func]mergeIconSets()` function.
+它会替换现有的图标集数据，因此与创建新的 `[type]IconSet` 实例完全相同。如果您想合并图标集，请参阅 `[func]mergeIconSets()` 函数。
 
-## Validation
+## 验证
 
-Function does not validate icon set. If you are not sure about source, you need to validate it using `[func]validateIconSet()` from [Iconify Utils](../../utils/index.md).
+该函数不会验证图标集。如果您不确定数据来源，需要使用 [Iconify Utils](../../utils/index.md) 中的 `[func]validateIconSet()` 进行验证。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/load.ts

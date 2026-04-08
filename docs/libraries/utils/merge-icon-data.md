@@ -1,5 +1,5 @@
 ```yaml
-title: mergeIconData() in Iconify Utils
+title: Iconify Utils 中的 mergeIconData()
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
   IconifyOptional: '/docs/types/iconify-icon.md#iconify-optional'
@@ -7,26 +7,26 @@ types:
 
 # mergeIconData()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]mergeIconData()` merges data for icon and alias.
+函数 `[func]mergeIconData()` 用于合并图标与别名的数据。
 
-## Merging logic
+## 合并逻辑
 
-When combining icon and alias, properties cannot be simply merged. This is because transformations for alias are relative to parent icons' transformations.
+在组合图标和别名时，属性无法直接合并。这是因为别名的变换是相对于父图标的变换而言的。
 
-For example, if icon has 90 degrees rotation and alias also has 90 degrees rotation, result is 180 degrees rotation. Same for horizontal and vertical flip.
+例如，若图标旋转 90 度，别名也旋转 90 度，则最终结果为旋转 180 度。水平翻转与垂直翻转同理。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]icon`, `[type]IconifyIcon`. Icon data.
-- `[prop]alias`, `[type]IconifyOptional`. Alias data.
+- `[prop]icon`，`[type]IconifyIcon`。图标数据。
+- `[prop]alias`，`[type]IconifyOptional`。别名数据。
 
-Function returns merged icon data.
+函数返回合并后的图标数据。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/merge-icon-data.ts

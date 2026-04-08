@@ -1,13 +1,13 @@
 ```yaml
-title: Icon set prefix
+title: 图标集前缀
 types:
   IconSet: './index.md'
 ```
 
 # prefix
 
-This property is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此属性是 [Iconify Tools](../index.md) 中 `[type]IconSet` 类的一部分。
 
-Property `[prop]prefix` contains icon set prefix, `[type]string`.
+属性 `[prop]prefix` 包含图标集前缀，类型为 `[type]string`。
 
-You can write to property directly to update value.
+您可以直接对该属性赋值以更新其值。

@@ -1,5 +1,5 @@
 ```yaml
-title: expandIconSet() in Iconify Utils
+title: Iconify Utils 中的 expandIconSet()
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
   IconifyIcon: '/docs/types/iconify-icon.md'
@@ -11,28 +11,28 @@ functions:
 
 # expandIconSet()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]expandIconSet()` de-optimises icon set, opposite of `[func]minifyIconSet()`.
+函数 `[func]expandIconSet()` 用于反优化图标集，与 `[func]minifyIconSet()` 的作用相反。
 
-## Usage
+## 用法
 
-Function has only one parameter:
+该函数仅有一个参数：
 
-- `[prop]data`, `[type]IconifyJSON`. Icon set data.
+- `[prop]data`，`[type]IconifyJSON` 类型。图标集数据。
 
-Function does not create a new object, it de-optimises object passed to function.
+该函数不会创建新对象，而是直接对传入函数的对象进行反优化。
 
-## What exactly does it do? {#explanation}
+## 它具体做了什么？ {#explanation}
 
-See `[func]minifyIconSet()` for details.
+详情请参阅 `[func]minifyIconSet()`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/expand.ts
 title: 'usage.ts'
 extra:
   - src: libraries/utils/expand.json
-    title: 'Result:'
+    title: '结果：'
 ```

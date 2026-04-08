@@ -1,33 +1,33 @@
-# Privacy Policy
+# 隐私政策
 
-Privacy policy for `iconify.design` and subdomains.
+本隐私政策适用于 `iconify.design` 及其子域名。
 
-This website is intended for IT professionals who understand how the internet works, so this document avoids unnecessary long explanations.
+本网站面向了解互联网运作原理的 IT 专业人士，因此本文档避免了冗长不必要的解释。
 
-## Personal data
+## 个人数据
 
-Account data is stored only for authenticated users on parts of website that use authentication.
+账户数据仅在使用身份验证的网站部分为已验证用户存储。
 
-Account data is private, it is not shared with any third parties, it is not used for tracking or analytics.
+账户数据属于隐私信息，不会与任何第三方共享，也不会用于跟踪或分析。
 
-## Cookies
+## Cookie
 
-Iconify website uses cookies only to manage user sessions for authenticated users.
+Iconify 网站仅使用 Cookie 来管理已验证用户的会话。
 
 ### CloudFlare
 
-Iconify uses CloudFlare service for some parts of the website to improve speed and security.
+Iconify 在网站的某些部分使用 CloudFlare 服务，以提升速度和安全性。
 
-CloudFlare sometimes does store cookies to improve performance.
+CloudFlare 有时会存储 Cookie 以提升性能。
 
-## Browser storage
+## 浏览器存储
 
-Iconify website uses browser storage to store customised settings, such as dark/light mode, color changes when you customise icons, etc...
+Iconify 网站使用浏览器存储来保存自定义设置，例如深色/浅色模式、自定义图标时的颜色更改等……
 
-This data does not contain any personal information, it does not leave your browser, it is not used for tracking or analytics.
+这些数据不包含任何个人信息，不会离开您的浏览器，也不会用于跟踪或分析。
 
-## Clearing data
+## 清除数据
 
-If you want to clear all stored data, simply clear `localStorage` contents in your browser.
+如果您想清除所有存储的数据，只需在浏览器中清除 `localStorage` 的内容即可。
 
-If you want to delete your account data, you can do that from account management menu after signing in.
+如果您想删除账户数据，可以在登录后通过账户管理菜单进行操作。

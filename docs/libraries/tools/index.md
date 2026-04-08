@@ -1,5 +1,5 @@
 ```yaml
-title: Iconify Tools
+title: Iconify 工具
 replacements:
   - code: "@iconify/tools@2"
     value: "${tools.import-tools2}"
@@ -19,86 +19,86 @@ functions:
   cleanupSVG: "./icon/cleanup.md"
 ```
 
-# Iconify Tools
+# Iconify 工具
 
-Iconify Tools is a set of reusable functions for importing, exporting, and parsing icons.
+Iconify Tools 是一组用于导入、导出和解析图标的可复用函数。
 
-Library is written in TypeScript.
+该库使用 TypeScript 编写。
 
-## Installation
+## 安装
 
-To install library run:
+要安装该库，请运行：
 
 ```sh
 npm install @iconify/tools@2 --save
 ```
 
-### CommonJS support
+### CommonJS 支持
 
-The latest version does not support CommonJS.
+最新版本不支持 CommonJS。
 
-If you need to use CommonJS, install version 4:
+如果您需要使用 CommonJS，请安装版本 4：
 
 ```sh
 npm install @iconify/tools@cjs --save
 ```
 
-## Classes
+## 类
 
 `include libraries/tools/main-classes`
 
-## Import
+## 导入
 
-To start working with an icon set, you can either create blank icon set or import icon set from some source.
+要开始使用图标集，您可以创建空白图标集，或从某些来源导入图标集。
 
-Documentation from importing icons:
+导入图标的相关文档：
 
-- [Importing Iconify JSON data](./import/json.md).
-- [Importing SVG](./import/svg.md).
-- [Importing all SVG in directory](./import/directory.md).
-- [Importing icons from Figma](./import/figma/index.md).
+- [导入 Iconify JSON 数据](./import/json.md)。
+- [导入 SVG](./import/svg.md)。
+- [导入目录中的所有 SVG](./import/directory.md)。
+- [从 Figma 导入图标](./import/figma/index.md)。
 
-Before using Iconify Tools, you should be aware that package is opinionated.
-Certain tags are not allowed and will cause import to fail.
-See [SVG import limitations](./tags.md).
+在使用 Iconify Tools 之前，您应了解该包具有明确的设计约定。
+某些标签是不被允许的，并且会导致导入失败。
+请参阅 [SVG 导入限制](./tags.md)。
 
-## Cleanup and validation
+## 清理与验证
 
-Cleaning up and validating icons is the first thing you should do after importing icons if icons come from:
+如果图标来自以下来源，导入图标后您首先应该做的就是清理和验证图标：
 
-- Image editing software. Often software leaves a lot of junk code in icons, which must be removed.
-- Third party. You need to make sure icons do not contain scripts, events.
+- 图像编辑软件。此类软件通常会在图标中留下大量冗余代码，必须将其移除。
+- 第三方来源。您需要确保图标不包含脚本或事件。
 
-See `[func]cleanupSVG()` documentation.
+请参阅 `[func]cleanupSVG()` 文档。
 
-## Manipulation
+## 图标操作
 
-Iconify Tools offer several functions for manipulating icons. You can:
+Iconify Tools 提供了多个用于操作图标的函数。您可以：
 
-- Check or change color palette.
-- Optimise icon.
-- Fix `[tag]path` elements to support old software.
+- 检查或更改调色板。
+- 优化图标。
+- 修复 `[tag]path` 元素以兼容旧版软件。
 
-See [icon manipulation functions](./icon/index.md) for list of available functions.
+有关可用函数列表，请参阅[图标操作函数](./icon/index.md)。
 
-## Export
+## 导出
 
-After manipulating icons, you can [export icon set to various formats](./export/index.md).
+操作图标后，您可以[将图标集导出为各种格式](./export/index.md)。
 
-Documentation from exporting icons:
+导出图标的相关文档：
 
-- [Exporting Iconify JSON data](./export/json.md).
-- [Exporting SVG to directory (simplified version)](./export/directory.md).
-- [Exporting SVG](./export/svg.md).
-- [Exporting icon packages](./export/icon-package.md).
-- [Exporting Iconify JSON packages](./export/json-package.md).
+- [导出 Iconify JSON 数据](./export/json.md)。
+- [将 SVG 导出到目录（简化版）](./export/directory.md)。
+- [导出 SVG](./export/svg.md)。
+- [导出图标包](./export/icon-package.md)。
+- [导出 Iconify JSON 包](./export/json-package.md)。
 
-## Package functions {#package}
+## 包管理函数 {#package}
 
-In addition to managing icons, Iconify Tools has several [functions to manage packages and repositories](./package/index.md):
+除了管理图标外，Iconify Tools 还提供了一些[用于管理包和仓库的函数](./package/index.md)：
 
-- [Download Git repository](./package/git.md)
-- [Download GitHub repository using GitHub API](./package/github.md)
-- [Download NPM package](./package/npm.md)
-- [Compare directories](./package/compare.md)
-- [Manage versions of packages or repositories](./package/index.md#versions)
+- [下载 Git 仓库](./package/git.md)
+- [使用 GitHub API 下载 GitHub 仓库](./package/github.md)
+- [下载 NPM 包](./package/npm.md)
+- [比较目录](./package/compare.md)
+- [管理包或仓库的版本](./package/index.md#versions)

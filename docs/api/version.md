@@ -1,62 +1,62 @@
 ```yaml
-title: API Version Query
+title: API 版本查询
 ```
 
-# API version query
+# API 版本查询
 
-API query `[url]/version` shows:
+API 查询 `[url]/version` 会显示：
 
-- API version.
-- Which server you are connected to, if `[prop]STATUS_REGION` environment variable is set.
+- API 版本。
+- 如果设置了 `[prop]STATUS_REGION` 环境变量，则显示您连接到的服务器。
 
-## Region
+## 区域
 
-Purpose of this query is to be able to tell which server you are connected to, but without exposing actual location of server, which can help debug error. This is used in networks when many servers are running.
+此查询的目的是能够告知您连接到了哪台服务器，同时不暴露服务器的实际位置，这有助于调试错误。当网络中运行着多台服务器时，会使用此功能。
 
-For example, public Iconify API servers are running multiple servers, placed in various locations all over the world. DNS is configured to redirect visitor to the closest server using AWS Route53 latency routing. This guarantees smallest possible response time. See [building budged CDN article](./cdn.md) for details.
+例如，公共 Iconify API 服务器运行着多台服务器，分布在全球各地。DNS 配置为使用 AWS Route53 延迟路由将访问者重定向到最近的服务器。这保证了尽可能最小的响应时间。有关详细信息，请参阅[构建低成本 CDN 文章](./cdn.md)。
 
-If something goes wrong, it would be nice to know which server is causing problems, but without exposing actual IP address of server and `[url]/version` query solves that.
+如果出现问题，最好能知道是哪台服务器导致了问题，但又不暴露服务器的实际 IP 地址，而 `[url]/version` 查询正好解决了这个问题。
 
-## Query
+## 查询
 
-API query is `[url]/version`.
+API 查询为 `[url]/version`。
 
-There are no parameters.
+无参数。
 
-## Response
+## 响应
 
-Response plain text, showing version number.
+响应为纯文本，显示版本号。
 
-## Examples
+## 示例
 
-Basic response:
+基本响应：
 
 ```txt
 Iconify API version 3.0.0-beta.1
 ```
 
-Response with `[prop]STATUS_REGION=DE`:
+设置 `[prop]STATUS_REGION=DE` 时的响应：
 
 ```txt
 Iconify API version 3.0.0-beta.1 (DE)
 ```
 
-## Configuration
+## 配置
 
-In [Node.js version of API](./hosting-js/index.md) you can configure result of this API query.
+在 [API 的 Node.js 版本](./hosting-js/index.md) 中，您可以配置此 API 查询的结果。
 
-Query can be enabled or disabled using environment variable `[prop]ENABLE_VERSION`. Possible values: `[bool]true` or `[bool]false`:
+可以使用环境变量 `[prop]ENABLE_VERSION` 启用或禁用该查询。可能的值：`[bool]true` 或 `[bool]false`：
 
 ```txt
 ENABLE_VERSION=false
 ```
 
-You can also set it in `[file]src/config/app.ts` in `[var]enableVersion` property, then rebuild API.
+您也可以在 `[file]src/config/app.ts` 文件的 `[var]enableVersion` 属性中进行设置，然后重新构建 API。
 
-Region value can be set using `[prop]STATUS_REGION` environment variable. Value is a string:
+区域值可以使用 `[prop]STATUS_REGION` 环境变量进行设置。该值为字符串：
 
 ```txt
 STATUS_REGION=API1
 ```
 
-You can also set it in `[file]src/config/app.ts` in `[var]statusRegion` property, then rebuild API.
+您也可以在 `[file]src/config/app.ts` 文件的 `[var]statusRegion` 属性中进行设置，然后重新构建 API。

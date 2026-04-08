@@ -1,5 +1,5 @@
 ```yaml
-title: quicklyValidateIconSet() in Iconify Utils
+title: Iconify Utils 中的 quicklyValidateIconSet()
 types:
   IconifyJSON: '/docs/types/iconify-json.md'
 functions:
@@ -8,34 +8,34 @@ functions:
 
 # quicklyValidateIconSet()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]quicklyValidateIconSet()` validates icon set, returning cleaned up `[type]IconifyJSON` object.
+函数 `[func]quicklyValidateIconSet()` 用于验证图标集，并返回清理后的 `[type]IconifyJSON` 对象。
 
-If there are errors in provided data, it will return `null`.
+如果提供的数据存在错误，它将返回 `null`。
 
-This function does not check metadata.
+此函数不会检查元数据。
 
-## Usage
+## 用法
 
-Function has the following parameter:
+该函数包含以下参数：
 
-- `[prop]data`, `[type]object`. Data to validate.
+- `[prop]data`，`[type]object`。需要验证的数据。
 
-Function returns:
+函数返回值：
 
-- `[type]IconifyJSON` object on success (same as passed in first parameter).
-- `[type]null` on error.
+- 成功时返回 `[type]IconifyJSON` 对象（与传入的第一个参数相同）。
+- 出错时返回 `[type]null`。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/quickly-validate.ts
 title: 'usage.ts'
 ```
 
-## Advanced validation
+## 高级验证
 
-This function is optimised for bundle size and performance, therefore it does only basic validation.
+此函数针对包体积和性能进行了优化，因此仅执行基本验证。
 
-If you want to fully validate icon set, use `[func]validateIconSet()` instead.
+如果您想完全验证图标集，请改用 `[func]validateIconSet()`。

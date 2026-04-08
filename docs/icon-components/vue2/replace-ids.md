@@ -4,17 +4,17 @@ functions:
   getIcon: './get-icon.md'
 ```
 
-# Iconify for Vue 2 function: replaceIDs
+# Iconify for Vue 2 函数：replaceIDs
 
-This tutorial is part of [Iconify for Vue 2 functions tutorial](./index.md#functions).
+本教程属于 [Iconify for Vue 2 函数教程](./index.md#functions) 的一部分。
 
 `include icon-components/functions/replace-ids/intro-component`
 
-## Usage
+## 用法
 
 `include icon-components/functions/replace-ids/props`
 
-## Example
+## 示例
 
 `include icon-components/functions/replace-ids/example-component`
 

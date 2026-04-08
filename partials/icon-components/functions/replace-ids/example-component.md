@@ -1,1 +1,1 @@
-This is a rather useless example. In real code, this function is used when generating SVG code samples in Icon Finder, which is not as simple as this example.
+这是一个相当无用的例子。在实际代码中，该函数用于在 Icon Finder 中生成 SVG 代码示例，而实际情况远比本例复杂。

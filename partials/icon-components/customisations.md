@@ -1,25 +1,25 @@
-`[type]IconifyIconCustomisations` type is an object with the following optional properties, split into several categories.
+`[type]IconifyIconCustomisations` 类型是一个对象，包含以下可选属性，分为几个类别。
 
-Vertical alignment:
+垂直对齐：
 
-- `[prop]inline`, `[type]boolean`. If enabled, adds `[html]vertical-align: -0.125em` to style, rendering icon below baseline. The default value is `false`.
+- `[prop]inline`，`[type]boolean`。若启用，会在样式中添加 `[html]vertical-align: -0.125em`，使图标渲染于基线下方。默认值为 `false`。
 
-Icon dimensions:
+图标尺寸：
 
-- `[prop]width`, `[type]string | number | null`. Icon width. The default value is `null`.
-- `[prop]height`, `[type]string | number | null`. Icon height. The default value is `null`.
+- `[prop]width`，`[type]string | number | null`。图标宽度。默认值为 `null`。
+- `[prop]height`，`[type]string | number | null`。图标高度。默认值为 `null`。
 
-There are several keywords that can be used for `[prop]width` and `[prop]height`:
+有几个关键字可用于 `[prop]width` 和 `[prop]height`：
 
-- `[str]auto` sets dimension to original icon's dimensions found in `[attr]viewBox`.
-- `[str]unset` and `[str]none` remove dimensions from SVG.
+- `[str]auto` 将尺寸设置为 `[attr]viewBox` 中找到的原始图标尺寸。
+- `[str]unset` 和 `[str]none` 会从 SVG 中移除尺寸。
 
-If neither of dimensions is set, `[prop]height` defaults to `[str]1em`.
+如果两个尺寸均未设置，`[prop]height` 将默认为 `[str]1em`。
 
-It is enough to set one dimension, such as `[prop]height`. Another dimension will be calculated using icon's width/height ratio. In the case of keywords, another dimension will be set to the same keyword.
+只需设置一个尺寸（例如 `[prop]height`）即可。另一个尺寸将根据图标的宽高比自动计算。若使用关键字，另一个尺寸也将设置为相同的关键字。
 
-Transformations:
+变换：
 
-- `[prop]hFlip`, `[type]boolean`. Flip icon horizontally. The default value is `[bool]false`.
-- `[prop]vFlip`, `[type]boolean`. Flip icon vertically. The default value is `[bool]false`.
-- `[prop]rotate`, `[type]number`. Rotation in 90 degrees increments. The default value is `[num]0`.
+- `[prop]hFlip`，`[type]boolean`。水平翻转图标。默认值为 `[bool]false`。
+- `[prop]vFlip`，`[type]boolean`。垂直翻转图标。默认值为 `[bool]false`。
+- `[prop]rotate`，`[type]number`。以 90 度为增量进行旋转。默认值为 `[num]0`。

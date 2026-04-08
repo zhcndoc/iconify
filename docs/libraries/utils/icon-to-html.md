@@ -1,5 +1,5 @@
 ```yaml
-title: iconToHTML() in Iconify Utils
+title: Iconify Utils 中的 iconToHTML()
 types:
   IconifyIconBuildResult: './icon-to-svg.md#build-result'
 functions:
@@ -10,31 +10,31 @@ functions:
 
 # iconToHTML()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]iconToHTML()` generates SVG from a list of attributes for `[tag]svg` element and icon content.
+函数 `[func]iconToHTML()` 根据 `[tag]svg` 元素的属性列表和图标内容生成 SVG。
 
-It can be used with results of `[func]iconToSVG()`, `[func]parseSVGContent()` or `[func]buildParsedSVG()`.
+它可以与 `[func]iconToSVG()`、`[func]parseSVGContent()` 或 `[func]buildParsedSVG()` 的结果配合使用。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数具有以下参数：
 
-- `[prop]body`, `[type]string`. Icon content, without `[tag]svg` tag.
-- `[prop]attributes`, `[type]Record<string, string>`. Attributes to add, such as `[prop]viewBox`.
+- `[prop]body`，`[type]string`。图标内容，不包含 `[tag]svg` 标签。
+- `[prop]attributes`，`[type]Record<string, string>`。要添加的属性，例如 `[prop]viewBox`。
 
-Function returns `[type]string`.
+函数返回 `[type]string`。
 
-## Notes
+## 注意事项
 
-Function adds the following attributes automatically, do not add them in `[prop]attributes` parameter:
+函数会自动添加以下属性，请勿在 `[prop]attributes` 参数中添加它们：
 
-- `[str]xmlns`: always added.
-- `[str]xmlns:xlink`: added if `[prop]body` contains `[str]xlink:`. Modern icons should not contain `[str]xlink:` attributes.
+- `[str]xmlns`：始终添加。
+- `[str]xmlns:xlink`：如果 `[prop]body` 包含 `[str]xlink:` 则添加。现代图标不应包含 `[str]xlink:` 属性。
 
-Attribute values are not modified. Make sure they are escaped before calling function.
+属性值不会被修改。请确保在调用函数前已对其进行转义。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/get-icon.ts

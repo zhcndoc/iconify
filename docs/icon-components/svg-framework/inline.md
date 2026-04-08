@@ -1,20 +1,20 @@
 ```yaml
-title: Vertical Alignment in Iconify SVG Framework
+title: Iconify SVG 框架中的垂直对齐
 ```
 
-# Vertical alignment
+# 垂直对齐
 
-This tutorial is part of [Iconify SVG Framework tutorial](./index.md).
+本教程是 [Iconify SVG 框架教程](./index.md) 的一部分。
 
 `include icon-components/vertical-align-intro`
 
-## Inline attribute
+## 内联属性
 
-To add `[prop]vertical-align` to icon, there are has several options:
+要为图标添加 `[prop]vertical-align`，有以下几种选项：
 
-- Adding `[str]iconify-inline` to class list (or replacing `[str]iconify` with `[str]iconify-inline`).
-- Adding `[attr]data-inline` attribute.
-- Adding `[prop]vertical-align` style with value `[num]-0.125em`.
+- 将 `[str]iconify-inline` 添加到类列表中（或将 `[str]iconify` 替换为 `[str]iconify-inline`）。
+- 添加 `[attr]data-inline` 属性。
+- 添加值为 `[num]-0.125em` 的 `[prop]vertical-align` 样式。
 
 ```yaml
 src: icon-components/common/inline.html

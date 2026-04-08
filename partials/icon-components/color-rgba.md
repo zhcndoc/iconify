@@ -1,3 +1,3 @@
-Avoid using `[prop]rgba` and `[prop]hsla` colors. Some icons have multiple layers on top of each other. Using semi-transparent color will result in both layers being visible.
+避免使用 `[prop]rgba` 和 `[prop]hsla` 颜色。某些图标包含多个相互叠加的图层。使用半透明颜色会导致各图层均可见。
 
-Instead, use a solid color and add transparency with `[prop]opacity`. This will result in browser rendering shapes with a solid color, then applying opacity to an entire icon.
+相反，请使用纯色，并通过 `[prop]opacity` 添加透明度。这样浏览器会先以纯色渲染形状，然后再对整个图标应用透明度。

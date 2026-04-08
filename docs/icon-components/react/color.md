@@ -2,9 +2,9 @@
 title: Changing Icon Color in Iconify for React
 ```
 
-# Icon color
+# 图标颜色
 
-This tutorial is part of [Iconify for React tutorial](./index.md).
+本教程是 [Iconify for React 教程](./index.md) 的一部分。
 
 ```yaml
 include: icon-components/components/color-intro
@@ -21,10 +21,10 @@ class: components-color
 include: icon-components/components/color-intro2
 ```
 
-## RGBA and HSLA colors {#opacity}
+## RGBA 和 HSLA 颜色 {#opacity}
 
 `include icon-components/color-rgba`
 
-## fill and stroke
+## fill 和 stroke
 
 `include icon-components/color-fill`

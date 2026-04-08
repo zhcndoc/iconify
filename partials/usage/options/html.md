@@ -1,4 +1,4 @@
-- [SVG + CSS is the preferred solution, if you can use it](/docs/usage/svg-css/index.md).
-- [You can add icons to CSS](/docs/usage/css/index.md).
-- [You can add SVG to HTML](/docs/usage/svg/index.md).
-- [Iconify offers unique components that render icons on demand](/docs/icon-components/index.md).
+- [如果可以的话，SVG + CSS 是首选方案](/docs/usage/svg-css/index.md)。
+- [您可以将图标添加到 CSS 中](/docs/usage/css/index.md)。
+- [您可以将 SVG 添加到 HTML 中](/docs/usage/svg/index.md)。
+- [Iconify 提供专属组件，支持按需渲染图标](/docs/icon-components/index.md)。

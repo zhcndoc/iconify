@@ -1,5 +1,5 @@
 ```yaml
-title: Remove icon from icon set
+title: 从图标集中移除图标
 types:
   IconSet: './index.md'
   SVG: '../svg/index.md'
@@ -7,26 +7,26 @@ types:
 
 # remove()
 
-This function is part of `[type]IconSet` class in [Iconify Tools](../index.md).
+此函数属于 [Iconify Tools](../index.md) 中的 `[type]IconSet` 类。
 
-Function `[func]remove()` deletes an icon.
+函数 `[func]remove()` 用于删除图标。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[type]name`, `[type]string`. Icon name.
-- `[type]removeDependencies`, `[type]boolean | string`. Optional, default is `true`. What to do with aliases and variations that use removed icon as parent icon.
+- `[type]name`，`[type]string`。图标名称。
+- `[type]removeDependencies`，`[type]boolean | string`。可选，默认为 `true`。指定如何处理以被删除图标为父图标的别名和变体。
 
-Function returns `[type]number` of removed items.
+函数返回已删除项目的数量（`[type]number`）。
 
-Possible values for `[prop]removeDependencies` property:
+`[prop]removeDependencies` 属性的可能取值：
 
-- `true` removes icon, all aliases and variations.
-- `false` removes only icon, does not change aliases and variations.
-- `[type]string` removes icon, changes `[prop]parent` property for aliases and variations to provided value.
+- `true` 删除图标、所有别名和变体。
+- `false` 仅删除图标，不更改别名和变体。
+- `[type]string` 删除图标，并将别名和变体的 `[prop]parent` 属性更改为提供的值。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/tools/icon-set/remove.ts

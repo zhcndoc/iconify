@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify SVG Framework Function: loadIcon'
+title: 'Iconify SVG 框架函数：loadIcon'
 functions:
   scan: './scan.md'
   loadIcons: './load-icons.md'
@@ -8,9 +8,9 @@ types:
   FullIconifyIcon: '/docs/libraries/utils/full-iconify-icon.md'
 ```
 
-# SVG framework function: loadIcon
+# SVG 框架函数：loadIcon
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#api).
+本教程属于 [Iconify SVG 框架函数教程](./functions.md#api) 的一部分。
 
 ```yaml
 include: icon-components/functions/load-icon/intro
@@ -19,17 +19,17 @@ replacements:
     replace: 'SVG framework'
 ```
 
-## Usage
+## 用法
 
 `include icon-components/functions/load-icon/props`
 
-## IconifyIconName type
+## IconifyIconName 类型
 
 `include types/iconify-icon-name`
 
-## Examples
+## 示例
 
-Using `[type]Promise` syntax:
+使用 `[type]Promise` 语法：
 
 ```yaml
 src: icon-components/iconify/load-icon-global.html
@@ -38,10 +38,10 @@ replacements:
     value: '/${svg-framework.version.major}/${svg-framework.version.full}/'
 ```
 
-Async/await syntax:
+Async/await 语法：
 
 ```yaml
 src: icon-components/iconify/load-icon-await.js
 ```
 
-If you want to load multiple icons, see `[func]loadIcons()`.
+如果您想加载多个图标，请参阅 `[func]loadIcons()`。

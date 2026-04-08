@@ -1,5 +1,5 @@
 ```yaml
-title: mergeCustomisations() in Iconify Utils
+title: Iconify Utils 中的 mergeCustomisations()
 types:
   FullIconCustomisations: './icon-customisations.md'
   IconifyIconCustomisations: './icon-customisations.md'
@@ -10,35 +10,35 @@ functions:
 
 # mergeCustomisations()
 
-This function is part of [Iconify Utils package](./index.md).
+此函数属于 [Iconify Utils 包](./index.md)。
 
-Function `[func]mergeCustomisations()` merges default customisations, presented as `[type]FullIconCustomisations` object and partial customisations. It also validates types, so it can be used to clean up user input.
+函数 `[func]mergeCustomisations()` 用于合并默认自定义配置（以 `[type]FullIconCustomisations` 对象形式呈现）与部分自定义配置。它还会验证类型，因此可用于清理用户输入。
 
-## Usage
+## 用法
 
-Function has the following parameters:
+该函数包含以下参数：
 
-- `[prop]defaults`, `[type]FullIconCustomisations`. Full customisations.
-- `[prop]item`, `[type]IconifyIconCustomisations`. Partial customisations that need to be merged with `[prop]defaults`.
+- `[prop]defaults`，`[type]FullIconCustomisations`。完整自定义配置。
+- `[prop]item`，`[type]IconifyIconCustomisations`。需要与 `[prop]defaults` 合并的部分自定义配置。
 
-Function returns merged customisations with same type as passed in first parameter (which makes it possible to use function with extended types).
+函数返回合并后的自定义配置，其类型与第一个参数传入的类型相同（这使得该函数可用于扩展类型）。
 
-## Example
+## 示例
 
 ```yaml
 src: libraries/utils/merge-customisations2.ts
 title: 'example.ts'
 ```
 
-## Merge
+## 合并
 
-Why not just merge objects, like this?
+为什么不直接像这样合并对象呢？
 
 ```yaml
 src: libraries/utils/merge-customisations.ts
 title: 'bad-example.ts'
 ```
 
-That works only with default customisations, but not if both objects have transformations.
+这种方法仅适用于默认自定义配置，但如果两个对象都包含变换，则无法正常工作。
 
-Function `[func]mergeCustomisations()` should be used when, for example, you are merging customisations from icon, which might include transformations and user's customisations. It can also be used to merge customisations when resolving icon alias.
+例如，当你合并来自图标的自定义配置（可能包含变换）与用户的自定义配置时，应使用 `[func]mergeCustomisations()` 函数。它也可用于在解析图标别名时合并自定义配置。

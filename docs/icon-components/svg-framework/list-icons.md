@@ -1,28 +1,28 @@
 ```yaml
-title: 'Iconify SVG Framework Function: listIcons'
+title: 'Iconify SVG 框架函数：listIcons'
 ```
 
-# SVG framework function: listIcons
+# SVG 框架函数：listIcons
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#getting-icons).
+本教程属于 [Iconify SVG 框架函数教程](./functions.md#getting-icons) 的一部分。
 
 `include icon-components/functions/list-icons/intro`
 
-## Usage
+## 用法
 
 `include icon-components/functions/list-icons/props`
 
-## Examples
+## 示例
 
 ```js
-// List all icons
+// 列出所有图标
 console.log(Iconify.listIcons());
 ```
 
-Another example:
+另一个示例：
 
 ```js
-// List all loaded Material Design Icons
+// 列出所有已加载的 Material Design 图标
 console.log(Iconify.listIcons('', 'mdi'));
 // ["mdi:alert", "mdi:home", "mdi:account-box-outline", "mdi:eyedropper", "mdi:account-off", "mdi:account", "mdi:account-box", "mdi:account-cash"]
 ```
