@@ -99,3 +99,11 @@ Currently, Iconify provides SVG+CSS solutions for the following frameworks:
 - [SolidJS components](./solid/index.md)
 
 Additionally, [Iconify Unplugin](https://github.com/iconify/unplugin-iconify) can render icons on demand for all frameworks listed above.
+
+## Customise icons
+
+If you want to change icon color in a monotone icon, change text color.
+
+If you want to change something else, like a specific color or opacity or stroke-width, you can customise icons using CSS variables.
+
+See [Customising icons with CSS variables](./css.md) article.

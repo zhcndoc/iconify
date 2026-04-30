@@ -25,6 +25,10 @@ export const UsageSidebar: SidebarItem[] = [
         text: "SolidJS",
         link: `${usageRoot}svg-css/solid/`,
       },
+      {
+        text: "Customising CSS",
+        link: `${usageRoot}svg-css/css`,
+      },
     ],
   },
   {
