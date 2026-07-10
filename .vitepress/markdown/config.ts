@@ -1,3 +1,5 @@
+import { iconSetsCount, iconsCount } from '../constants';
+
 export const contentReplacements = {
 	'html': {
 		header: '',
@@ -48,9 +50,9 @@ export const contentReplacements = {
 		'import-tools2': '@iconify/tools',
 	},
 	'counters': {
-		'sets': '200',
-		'icons': '275,000',
-		'icons-short': '275k',
+		'sets': `${iconSetsCount}`,
+		'icons': `${iconsCount},000`,
+		'icons-short': `${iconsCount}k`,
 	},
 	'icons': {
 		'hash': 'line-md:hash-small',

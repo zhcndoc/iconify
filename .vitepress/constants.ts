@@ -4,10 +4,16 @@ export const ogImage = `${ogUrl}assets/og/iconify.png`;
 export const title = 'Iconify';
 export const description = 'All popular icon sets, one framework';
 
+// Number of icon sets, rounded down
+export const iconSetsCount = 200;
+
+// Number of icons in thousands, rounded down
+export const iconsCount = 300;
+
 export const hero = {
 	title: 'Home of open source icon sets',
 	p1: 'All popular icon sets, one framework.',
-	p2: 'Over 300,000 open source vector icons.',
+	p2: `Over ${iconsCount},000 open source vector icons.`,
 };
 export const license = {
 	title: 'License',
