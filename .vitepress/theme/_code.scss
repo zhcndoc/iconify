@@ -1,4 +1,4 @@
-$code-font-family: "PT Mono", monospace;
+$code-font-family: 'PT Mono', monospace;
 $code-font-size: 14px;
 $code-line-height: 22px;
 
@@ -10,217 +10,219 @@ $small-line-height: 22px;
 
 // Inline code
 .inline-code {
-  display: inline-block;
-  margin: -1px 2px;
-  padding: 0 3px;
-  color: var(--vp-c-text-1);
-  background: var(--vp-c-mute);
-  border: 1px dashed var(--vp-c-border);
-  border-radius: 6px;
+	display: inline-block;
+	margin: -1px 2px;
+	padding: 0 3px;
+	color: var(--vp-c-text-1);
+	background: var(--vp-c-mute);
+	border: 1px dashed var(--vp-c-border);
+	border-radius: 6px;
 }
 
 // Wrapper for code blocks
 .code-blocks {
-  margin: 4px 0 8px;
-  padding: 0;
+	margin: 4px 0 8px;
+	padding: 0;
 }
 
 // Override VP style
 div.code-blocks code {
-  display: block;
-  margin: 0;
-  padding: 0;
-  font-family: $code-font-family;
-  font-size: $code-font-size;
-  line-height: $code-line-height;
-  color: var(--vp-c-text-1);
-  word-wrap: break-word;
-  background: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-family: $code-font-family;
+	font-size: $code-font-size;
+	line-height: $code-line-height;
+	color: var(--vp-c-text-1);
+	word-wrap: break-word;
+	background: none;
 }
 
 // Blocks inside code blocks wrapper
 .code-block {
-  margin: 6px 0;
-  position: relative;
+	margin: 6px 0;
+	position: relative;
 
-  > div {
-    border-top: 1px solid var(--vp-c-divider);
-    &.code-block-hint {
-      border-top-width: 0;
-    }
-  }
+	> div {
+		border-top: 1px solid var(--vp-c-divider);
+		&.code-block-hint {
+			border-top-width: 0;
+		}
+	}
 
-  &-title {
-    padding: 8px 16px;
-    color: var(--vp-c-text-2);
-    background: var(--vp-c-mute-dark);
-    //font-size: $medium-font-size;
-    //line-height: $medium-line-height;
-    + div {
-      border-top-width: 0;
-    }
-  }
+	&-title {
+		padding: 8px 16px;
+		color: var(--vp-c-text-2);
+		background: var(--vp-c-mute-dark);
+		//font-size: $medium-font-size;
+		//line-height: $medium-line-height;
+		+ div {
+			border-top-width: 0;
+		}
+	}
 
-  &-content {
-    padding: 8px 12px;
-    background: var(--vp-c-mute);
-    position: relative;
-    @media (max-width: 600px) {
-      padding: 8px;
-    }
-  }
+	&-content {
+		padding: 8px 12px;
+		background: var(--vp-c-mute);
+		position: relative;
+		@media (max-width: 600px) {
+			padding: 8px;
+		}
+	}
 
-  &--demo &-content {
-    background: var(--vp-c-bg-alt);
-  }
+	&--demo &-content {
+		background: var(--vp-c-bg-alt);
+	}
 
-  &-hint {
-    padding: 8px 16px;
-    color: var(--vp-c-text-2);
-    background: var(--vp-c-mute-dark);
-    font-size: $small-font-size;
-    line-height: $small-line-height;
-    border-top-style: dashed;
-    border-bottom-width: 0;
-  }
+	&-hint {
+		padding: 8px 16px;
+		color: var(--vp-c-text-2);
+		background: var(--vp-c-mute-dark);
+		font-size: $small-font-size;
+		line-height: $small-line-height;
+		border-top-style: dashed;
+		border-bottom-width: 0;
+	}
 
-  // &:first-child > div:first-child {
-  > div:first-child {
-    border-top-width: 0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
+	// &:first-child > div:first-child {
+	> div:first-child {
+		border-top-width: 0;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
 
-  // &:last-child > div:last-child {
-  > div:last-child {
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-  }
+	// &:last-child > div:last-child {
+	> div:last-child {
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+	}
 
-  &--demo {
-    p {
-      margin: 4px 0;
-    }
-  }
+	&--demo {
+		p {
+			margin: 4px 0;
+		}
+	}
 
-  // Language
-  &-lang {
-    position: absolute;
-    right: -1px;
-    top: -4px;
-    padding: 0 3px 0 1px;
-    line-height: 24px;
-    height: 24px;
-    background: var(--c-blue-gray);
-    color: var(--vp-c-bg);
-    opacity: 0.9;
-    pointer-events: none;
-    transition: opacity 0.4s, transform 0.3s;
-    transform-origin: right 4px;
+	// Language
+	&-lang {
+		position: absolute;
+		right: -1px;
+		top: -4px;
+		padding: 0 3px 0 1px;
+		line-height: 24px;
+		height: 24px;
+		background: var(--c-blue-gray);
+		color: var(--vp-c-bg);
+		opacity: 0.9;
+		pointer-events: none;
+		transition:
+			opacity 0.4s,
+			transform 0.3s;
+		transform-origin: right 4px;
 
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      color: var(--c-blue-gray);
-      background-color: currentColor;
-      -webkit-mask-image: var(--svg);
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-size: contain;
-      mask-image: var(--svg);
-      mask-repeat: no-repeat;
-      mask-size: contain;
-    }
-    &:before {
-      --svg: var(--icon-lang-before);
-      left: -11px;
-      height: 24px;
-      width: 12px;
-    }
-    &:after {
-      --svg: var(--icon-lang-after);
-      right: -7px;
-      width: 8px;
-      height: 36px;
-      transition: transform 0.1s;
-      transform-origin: left top;
-    }
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			color: var(--c-blue-gray);
+			background-color: currentColor;
+			-webkit-mask-image: var(--svg);
+			-webkit-mask-repeat: no-repeat;
+			-webkit-mask-size: contain;
+			mask-image: var(--svg);
+			mask-repeat: no-repeat;
+			mask-size: contain;
+		}
+		&:before {
+			--svg: var(--icon-lang-before);
+			left: -11px;
+			height: 24px;
+			width: 12px;
+		}
+		&:after {
+			--svg: var(--icon-lang-after);
+			right: -7px;
+			width: 8px;
+			height: 36px;
+			transition: transform 0.1s;
+			transform-origin: left top;
+		}
 
-    &--html,
-    &--php {
-      background: var(--c-green);
-      &:before,
-      &:after {
-        color: var(--c-green);
-      }
-    }
-    &--js,
-    &--ts {
-      background: var(--c-purple);
-      &:before,
-      &:after {
-        color: var(--c-purple);
-      }
-    }
+		&--html,
+		&--php {
+			background: var(--c-green);
+			&:before,
+			&:after {
+				color: var(--c-green);
+			}
+		}
+		&--js,
+		&--ts {
+			background: var(--c-purple);
+			&:before,
+			&:after {
+				color: var(--c-purple);
+			}
+		}
 
-    .code-block-title + div & {
-      // Move to title
-      top: -24px;
-      opacity: 1 !important; // Show even when copy to clipboard is shown
-      transform: none !important;
-      &:after {
-        transform: none !important;
-      }
-    }
-  }
+		.code-block-title + div & {
+			// Move to title
+			top: -24px;
+			opacity: 1 !important; // Show even when copy to clipboard is shown
+			transform: none !important;
+			&:after {
+				transform: none !important;
+			}
+		}
+	}
 
-  // Copy to clipboard
-  &-copy {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 3px 8px;
-    color: var(--vp-c-brand);
-    transition: color 0.2s linear;
-    &:hover {
-      color: var(--vp-c-brand-accent);
-    }
+	// Copy to clipboard
+	&-copy {
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: 3px 8px;
+		color: var(--vp-c-brand);
+		transition: color 0.2s linear;
+		&:hover {
+			color: var(--vp-c-brand-accent);
+		}
 
-    .copied,
-    .hidden {
-      visibility: hidden;
-    }
+		.copied,
+		.hidden {
+			visibility: hidden;
+		}
 
-    &--copied {
-      color: var(--c-gray-dimmed);
-      .not-copied {
-        visibility: hidden;
-      }
-      .copied {
-        visibility: visible;
-      }
-    }
-  }
+		&--copied {
+			color: var(--c-gray-dimmed);
+			.not-copied {
+				visibility: hidden;
+			}
+			.copied {
+				visibility: visible;
+			}
+		}
+	}
 
-  &:hover,
-  &:focus-within {
-    .code-block-copy {
-      display: block;
-    }
-    button + .code-block-lang {
-      //opacity: 0;
-      transform: scaleX(0);
-      &:after {
-        transform: scaleX(0);
-      }
-    }
-  }
+	&:hover,
+	&:focus-within {
+		.code-block-copy {
+			display: block;
+		}
+		button + .code-block-lang {
+			//opacity: 0;
+			transform: scaleX(0);
+			&:after {
+				transform: scaleX(0);
+			}
+		}
+	}
 }
 
 // Big sample
 .sample-big {
-  font-size: 24px;
-  line-height: 32px;
+	font-size: 24px;
+	line-height: 32px;
 }

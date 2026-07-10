@@ -1,137 +1,137 @@
 // Getting started: lock icon, sponsor
-.vendor-lock-in, .intro-sponsor {
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  align-items: center;
-  > div:first-child {
-    flex: 0;
-    color: var(--vp-c-text-2);
-    padding-bottom: 8px;
-  }
-  > div:last-child {
-    flex: 1;
-  }
+.vendor-lock-in,
+.intro-sponsor {
+	display: flex;
+	flex-direction: row;
+	gap: 24px;
+	align-items: center;
+	> div:first-child {
+		flex: 0;
+		color: var(--vp-c-text-2);
+		padding-bottom: 8px;
+	}
+	> div:last-child {
+		flex: 1;
+	}
 }
 
 .intro-sponsor {
-  > div:first-child {
-    color: var(--vp-c-brand);
-    svg {
-      width: 48px;
-      height: 48px;
-    }
-  }
-  p:first-child {
-    margin-top: 0;
-  }
-  p:last-child {
-    margin-bottom: 0;
-  }
+	> div:first-child {
+		color: var(--vp-c-brand);
+		svg {
+			width: 48px;
+			height: 48px;
+		}
+	}
+	p:first-child {
+		margin-top: 0;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
 }
 
 // Getting started: icons
 .intro-icons {
-  display: flex;
-  flex-direction: row-reverse;
-  margin-bottom: 16px;
+	display: flex;
+	flex-direction: row-reverse;
+	margin-bottom: 16px;
 
-  &-content {
-    width: 100%;
-  }
+	&-content {
+		width: 100%;
+	}
 
-  &-icons {
-    margin-left: 16px;
-    display: flex;
-    flex-direction: row;
-  }
+	&-icons {
+		margin-left: 16px;
+		display: flex;
+		flex-direction: row;
+	}
 }
 
 .intro-icons-block {
-  margin: 0 0 8px;
-  line-height: 1em;
-  display: flex;
-  flex-direction: column;
+	margin: 0 0 8px;
+	line-height: 1em;
+	display: flex;
+	flex-direction: column;
 
-  iconify-icon {
-    display: inline-block;
-    margin: 4px;
-  }
+	iconify-icon {
+		display: inline-block;
+		margin: 4px;
+	}
 
-  &--24 {
-    // width: 24px;
-    iconify-icon {
-      font-size: 24px;
-    }
-  }
-  &--32 {
-    // width: 32px;
-    iconify-icon {
-      font-size: 32px;
-    }
-  }
+	&--24 {
+		// width: 24px;
+		iconify-icon {
+			font-size: 24px;
+		}
+	}
+	&--32 {
+		// width: 32px;
+		iconify-icon {
+			font-size: 32px;
+		}
+	}
 
-  .icon--light-blue {
-    color: var(--c-light-blue);
-  }
-  .icon--deep-purple {
-    color: var(--c-deep-purple);
-  }
-  .icon--teal {
-    color: var(--c-teal);
-  }
-  .icon--red {
-    color: var(--c-red);
-  }
-  .icon--indigo {
-    color: var(--c-indigo);
-  }
-  .icon--green {
-    color: var(--c-green);
-  }
-  .icon--blue {
-    color: var(--c-blue);
-  }
-  .icon--purple {
-    color: var(--c-purple);
-  }
+	.icon--light-blue {
+		color: var(--c-light-blue);
+	}
+	.icon--deep-purple {
+		color: var(--c-deep-purple);
+	}
+	.icon--teal {
+		color: var(--c-teal);
+	}
+	.icon--red {
+		color: var(--c-red);
+	}
+	.icon--indigo {
+		color: var(--c-indigo);
+	}
+	.icon--green {
+		color: var(--c-green);
+	}
+	.icon--blue {
+		color: var(--c-blue);
+	}
+	.icon--purple {
+		color: var(--c-purple);
+	}
 }
 
-
 @media (max-width: 650px) {
-  .intro-icons {
-    display: block;
+	.intro-icons {
+		display: block;
 
-    &-icons {
-      margin: 0 auto;
-      width: fit-content;
-      flex-direction: column;
-    }
-    &-block {
-      flex-direction: row;
-    }
-  }
+		&-icons {
+			margin: 0 auto;
+			width: fit-content;
+			flex-direction: column;
+		}
+		&-block {
+			flex-direction: row;
+		}
+	}
 }
 
 // Anchor
 div.vp-doc a.header-anchor {
-  width: 24px;
+	width: 24px;
 
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    margin-top: -12px;
-    width: 24px;
-    height: 24px;
-    background-color: currentColor;
-    -webkit-mask-image: var(--icon-hash);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    mask-image: var(--icon-hash);
-    mask-repeat: no-repeat;
-    mask-size: contain;
-  }
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin-top: -12px;
+		width: 24px;
+		height: 24px;
+		background-color: currentColor;
+		-webkit-mask-image: var(--icon-hash);
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: contain;
+		mask-image: var(--icon-hash);
+		mask-repeat: no-repeat;
+		mask-size: contain;
+	}
 }

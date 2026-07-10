@@ -48,7 +48,49 @@ $palette-gray-925: #121212;
 $palette-gray-950: #0c0c0c;
 $palette-gray-975: #060606;
 $palette-gray-1000: #000000;
-$palette-gray: (#ffffff, #f8f8f8, #f2f2f2, #ebebeb, #e4e4e4, #dedede, #d7d7d7, #d1d1d1, #cacaca, #c3c3c3, #bdbdbd, #b6b6b6, #afafaf, #a9a9a9, #a2a2a2, #9c9c9c, #959595, #8e8e8e, #888888, #818181, #7a7a7a, #747474, #6e6e6e, #686868, #626262, #5c5c5c, #565656, #505050, #494949, #434343, #3d3d3d, #373737, #313131, #2b2b2b, #252525, #1f1f1f, #181818, #121212, #0c0c0c, #060606, #000000);
+$palette-gray: (
+	#ffffff,
+	#f8f8f8,
+	#f2f2f2,
+	#ebebeb,
+	#e4e4e4,
+	#dedede,
+	#d7d7d7,
+	#d1d1d1,
+	#cacaca,
+	#c3c3c3,
+	#bdbdbd,
+	#b6b6b6,
+	#afafaf,
+	#a9a9a9,
+	#a2a2a2,
+	#9c9c9c,
+	#959595,
+	#8e8e8e,
+	#888888,
+	#818181,
+	#7a7a7a,
+	#747474,
+	#6e6e6e,
+	#686868,
+	#626262,
+	#5c5c5c,
+	#565656,
+	#505050,
+	#494949,
+	#434343,
+	#3d3d3d,
+	#373737,
+	#313131,
+	#2b2b2b,
+	#252525,
+	#1f1f1f,
+	#181818,
+	#121212,
+	#0c0c0c,
+	#060606,
+	#000000
+);
 
 // Palette: red
 $palette-red-0: #ffffff;
@@ -92,7 +134,49 @@ $palette-red-925: #3d110d;
 $palette-red-950: #330e0b;
 $palette-red-975: #290b09;
 $palette-red-1000: #200907;
-$palette-red: (#ffffff, #fef5f4, #feeae9, #fde0de, #fdd6d3, #fcccc8, #fbc1bd, #fbb7b2, #faada7, #faa39c, #f99891, #f88e86, #f8847b, #f77a70, #f76f66, #f6655b, #f55b50, #f55145, #f4463a, #ea4236, #e13e32, #d73b30, #cd382d, #c4362b, #ba3329, #b03027, #a72e25, #9d2b23, #942921, #8a261f, #80231c, #77211a, #6d1e18, #631b16, #5a1914, #501612, #461310, #3d110d, #330e0b, #290b09, #200907);
+$palette-red: (
+	#ffffff,
+	#fef5f4,
+	#feeae9,
+	#fde0de,
+	#fdd6d3,
+	#fcccc8,
+	#fbc1bd,
+	#fbb7b2,
+	#faada7,
+	#faa39c,
+	#f99891,
+	#f88e86,
+	#f8847b,
+	#f77a70,
+	#f76f66,
+	#f6655b,
+	#f55b50,
+	#f55145,
+	#f4463a,
+	#ea4236,
+	#e13e32,
+	#d73b30,
+	#cd382d,
+	#c4362b,
+	#ba3329,
+	#b03027,
+	#a72e25,
+	#9d2b23,
+	#942921,
+	#8a261f,
+	#80231c,
+	#77211a,
+	#6d1e18,
+	#631b16,
+	#5a1914,
+	#501612,
+	#461310,
+	#3d110d,
+	#330e0b,
+	#290b09,
+	#200907
+);
 
 // Palette: pink
 $palette-pink-0: #ffffff;
@@ -136,7 +220,49 @@ $palette-pink-925: #3d081a;
 $palette-pink-950: #330716;
 $palette-pink-975: #290511;
 $palette-pink-1000: #1e040d;
-$palette-pink: (#ffffff, #fef4f7, #fde9f0, #fcdee8, #fbd3e1, #fac8d9, #f9bdd1, #f7b2ca, #f6a7c2, #f59cba, #f491b3, #f386ab, #f27ba4, #f1709c, #f06594, #ef5a8d, #ee4f85, #ed447d, #ec3976, #eb2e6e, #e92367, #e11f61, #d91c5c, #ce1b58, #c41953, #ba184f, #af174b, #a51546, #9b1442, #90133d, #861139, #7c1034, #710f30, #670d2c, #5c0c27, #520b23, #48091e, #3d081a, #330716, #290511, #1e040d);
+$palette-pink: (
+	#ffffff,
+	#fef4f7,
+	#fde9f0,
+	#fcdee8,
+	#fbd3e1,
+	#fac8d9,
+	#f9bdd1,
+	#f7b2ca,
+	#f6a7c2,
+	#f59cba,
+	#f491b3,
+	#f386ab,
+	#f27ba4,
+	#f1709c,
+	#f06594,
+	#ef5a8d,
+	#ee4f85,
+	#ed447d,
+	#ec3976,
+	#eb2e6e,
+	#e92367,
+	#e11f61,
+	#d91c5c,
+	#ce1b58,
+	#c41953,
+	#ba184f,
+	#af174b,
+	#a51546,
+	#9b1442,
+	#90133d,
+	#861139,
+	#7c1034,
+	#710f30,
+	#670d2c,
+	#5c0c27,
+	#520b23,
+	#48091e,
+	#3d081a,
+	#330716,
+	#290511,
+	#1e040d
+);
 
 // Palette: purple
 $palette-purple-0: #ffffff;
@@ -180,7 +306,49 @@ $palette-purple-925: #2d0b33;
 $palette-purple-950: #250929;
 $palette-purple-975: #1c0720;
 $palette-purple-1000: #140517;
-$palette-purple: (#ffffff, #fbf6fc, #f7eef9, #f3e5f6, #efddf3, #ebd4ef, #e8ccec, #e4c3e9, #e0bbe6, #dcb2e3, #d8aae0, #d4a1dd, #d099da, #cc90d6, #c888d3, #c47fd0, #c076cd, #bd6eca, #b965c7, #b55dc4, #b154c1, #ab47bc, #a53ab7, #9e30b1, #9826ab, #8f24a2, #872299, #7f208f, #771e86, #6f1c7d, #661a74, #5e186a, #561561, #4e1358, #46114e, #3d0f45, #350d3c, #2d0b33, #250929, #1c0720, #140517);
+$palette-purple: (
+	#ffffff,
+	#fbf6fc,
+	#f7eef9,
+	#f3e5f6,
+	#efddf3,
+	#ebd4ef,
+	#e8ccec,
+	#e4c3e9,
+	#e0bbe6,
+	#dcb2e3,
+	#d8aae0,
+	#d4a1dd,
+	#d099da,
+	#cc90d6,
+	#c888d3,
+	#c47fd0,
+	#c076cd,
+	#bd6eca,
+	#b965c7,
+	#b55dc4,
+	#b154c1,
+	#ab47bc,
+	#a53ab7,
+	#9e30b1,
+	#9826ab,
+	#8f24a2,
+	#872299,
+	#7f208f,
+	#771e86,
+	#6f1c7d,
+	#661a74,
+	#5e186a,
+	#561561,
+	#4e1358,
+	#46114e,
+	#3d0f45,
+	#350d3c,
+	#2d0b33,
+	#250929,
+	#1c0720,
+	#140517
+);
 
 // Palette: deep-purple
 $palette-deep-purple-0: #ffffff;
@@ -224,7 +392,49 @@ $palette-deep-purple-925: #1e1135;
 $palette-deep-purple-950: #180e2b;
 $palette-deep-purple-975: #130b22;
 $palette-deep-purple-1000: #0d0818;
-$palette-deep-purple: (#ffffff, #f9f7fc, #f3f0f9, #eee8f7, #e8e1f4, #e2d9f1, #dcd2ee, #d6caec, #d1c3e9, #cbbbe6, #c5b4e3, #bface1, #b9a5de, #b39ddb, #ae96d8, #a88ed6, #a286d3, #9c7fd0, #9677cd, #9170cb, #8b68c8, #815cc3, #7850bf, #6f45ba, #6639b5, #6036ab, #5b33a1, #553098, #502d8e, #4a2a84, #45277a, #3f2470, #3a2066, #341d5d, #2f1a53, #291749, #24143f, #1e1135, #180e2b, #130b22, #0d0818);
+$palette-deep-purple: (
+	#ffffff,
+	#f9f7fc,
+	#f3f0f9,
+	#eee8f7,
+	#e8e1f4,
+	#e2d9f1,
+	#dcd2ee,
+	#d6caec,
+	#d1c3e9,
+	#cbbbe6,
+	#c5b4e3,
+	#bface1,
+	#b9a5de,
+	#b39ddb,
+	#ae96d8,
+	#a88ed6,
+	#a286d3,
+	#9c7fd0,
+	#9677cd,
+	#9170cb,
+	#8b68c8,
+	#815cc3,
+	#7850bf,
+	#6f45ba,
+	#6639b5,
+	#6036ab,
+	#5b33a1,
+	#553098,
+	#502d8e,
+	#4a2a84,
+	#45277a,
+	#3f2470,
+	#3a2066,
+	#341d5d,
+	#2f1a53,
+	#291749,
+	#24143f,
+	#1e1135,
+	#180e2b,
+	#130b22,
+	#0d0818
+);
 
 // Palette: indigo
 $palette-indigo-0: #ffffff;
@@ -268,7 +478,49 @@ $palette-indigo-925: #121734;
 $palette-indigo-950: #0f132b;
 $palette-indigo-975: #0b0f21;
 $palette-indigo-1000: #080b18;
-$palette-indigo: (#ffffff, #f7f8fc, #f0f1f9, #e8eaf6, #e1e3f3, #d9dcf0, #d1d6ed, #cacfea, #c2c8e7, #bac1e5, #b3bae2, #abb3df, #a4acdc, #9ca5d9, #949ed6, #8d97d3, #8590d0, #7d8acd, #7683ca, #6e7cc7, #6775c4, #5b6ac0, #4f60bb, #4657b5, #3d4faf, #3a4aa6, #36469c, #334293, #303e89, #2d3980, #293576, #26316d, #232d63, #1f285a, #1c2451, #192047, #151c3e, #121734, #0f132b, #0b0f21, #080b18);
+$palette-indigo: (
+	#ffffff,
+	#f7f8fc,
+	#f0f1f9,
+	#e8eaf6,
+	#e1e3f3,
+	#d9dcf0,
+	#d1d6ed,
+	#cacfea,
+	#c2c8e7,
+	#bac1e5,
+	#b3bae2,
+	#abb3df,
+	#a4acdc,
+	#9ca5d9,
+	#949ed6,
+	#8d97d3,
+	#8590d0,
+	#7d8acd,
+	#7683ca,
+	#6e7cc7,
+	#6775c4,
+	#5b6ac0,
+	#4f60bb,
+	#4657b5,
+	#3d4faf,
+	#3a4aa6,
+	#36469c,
+	#334293,
+	#303e89,
+	#2d3980,
+	#293576,
+	#26316d,
+	#232d63,
+	#1f285a,
+	#1c2451,
+	#192047,
+	#151c3e,
+	#121734,
+	#0f132b,
+	#0b0f21,
+	#080b18
+);
 
 // Palette: blue
 $palette-blue-0: #ffffff;
@@ -312,7 +564,49 @@ $palette-blue-925: #08243a;
 $palette-blue-950: #071e31;
 $palette-blue-975: #051928;
 $palette-blue-1000: #041420;
-$palette-blue: (#ffffff, #f2f9fe, #e5f3fe, #d8ecfd, #cae6fc, #bde0fb, #b0dafb, #a3d4fa, #96cdf9, #89c7f9, #7cc1f8, #6fbbf7, #61b4f6, #54aef6, #47a8f5, #3aa2f4, #2d9cf4, #2695ed, #1f8ee5, #1d86d9, #1c7ecc, #1b79c4, #1974bb, #186eb2, #1769aa, #1664a1, #155e99, #145990, #125487, #114e7f, #104976, #0f446d, #0e3e65, #0d395c, #0b3453, #0a2e4b, #092942, #08243a, #071e31, #051928, #041420);
+$palette-blue: (
+	#ffffff,
+	#f2f9fe,
+	#e5f3fe,
+	#d8ecfd,
+	#cae6fc,
+	#bde0fb,
+	#b0dafb,
+	#a3d4fa,
+	#96cdf9,
+	#89c7f9,
+	#7cc1f8,
+	#6fbbf7,
+	#61b4f6,
+	#54aef6,
+	#47a8f5,
+	#3aa2f4,
+	#2d9cf4,
+	#2695ed,
+	#1f8ee5,
+	#1d86d9,
+	#1c7ecc,
+	#1b79c4,
+	#1974bb,
+	#186eb2,
+	#1769aa,
+	#1664a1,
+	#155e99,
+	#145990,
+	#125487,
+	#114e7f,
+	#104976,
+	#0f446d,
+	#0e3e65,
+	#0d395c,
+	#0b3453,
+	#0a2e4b,
+	#092942,
+	#08243a,
+	#071e31,
+	#051928,
+	#041420
+);
 
 // Palette: light-blue
 $palette-light-blue-0: #ffffff;
@@ -356,7 +650,49 @@ $palette-light-blue-925: #012637;
 $palette-light-blue-950: #01212f;
 $palette-light-blue-975: #001b28;
 $palette-light-blue-1000: #001620;
-$palette-light-blue: (#ffffff, #effafe, #dff4fe, #cfeffd, #bfe9fc, #afe4fc, #9fdefb, #8fd9fa, #7fd3f9, #6fcef9, #5fc9f8, #4fc3f7, #3fbef7, #30b8f6, #20b3f5, #11adf3, #03a7f1, #039ee4, #0394d6, #028bc9, #0282bb, #027cb4, #0277ac, #0272a4, #026c9c, #026794, #02618d, #025c85, #02577d, #015175, #014c6e, #014666, #01415e, #013c56, #01364e, #013147, #012c3f, #012637, #01212f, #001b28, #001620);
+$palette-light-blue: (
+	#ffffff,
+	#effafe,
+	#dff4fe,
+	#cfeffd,
+	#bfe9fc,
+	#afe4fc,
+	#9fdefb,
+	#8fd9fa,
+	#7fd3f9,
+	#6fcef9,
+	#5fc9f8,
+	#4fc3f7,
+	#3fbef7,
+	#30b8f6,
+	#20b3f5,
+	#11adf3,
+	#03a7f1,
+	#039ee4,
+	#0394d6,
+	#028bc9,
+	#0282bb,
+	#027cb4,
+	#0277ac,
+	#0272a4,
+	#026c9c,
+	#026794,
+	#02618d,
+	#025c85,
+	#02577d,
+	#015175,
+	#014c6e,
+	#014666,
+	#01415e,
+	#013c56,
+	#01364e,
+	#013147,
+	#012c3f,
+	#012637,
+	#01212f,
+	#001b28,
+	#001620
+);
 
 // Palette: cyan
 $palette-cyan-0: #ffffff;
@@ -400,7 +736,49 @@ $palette-cyan-925: #00292e;
 $palette-cyan-950: #002328;
 $palette-cyan-975: #001e22;
 $palette-cyan-1000: #00181c;
-$palette-cyan: (#ffffff, #eefbfc, #ddf6f9, #ccf2f6, #bbedf4, #abe9f1, #9ae4ee, #89e0eb, #78dbe8, #67d7e5, #56d3e3, #45cee0, #34cadd, #23c5da, #12c1d7, #09bad0, #00b2c9, #00a7bd, #009cb0, #0092a4, #008798, #008192, #007c8c, #007685, #00717f, #006b79, #006673, #00606c, #005b66, #005560, #00505a, #004a54, #00454d, #003f47, #003a41, #00343b, #002f34, #00292e, #002328, #001e22, #00181c);
+$palette-cyan: (
+	#ffffff,
+	#eefbfc,
+	#ddf6f9,
+	#ccf2f6,
+	#bbedf4,
+	#abe9f1,
+	#9ae4ee,
+	#89e0eb,
+	#78dbe8,
+	#67d7e5,
+	#56d3e3,
+	#45cee0,
+	#34cadd,
+	#23c5da,
+	#12c1d7,
+	#09bad0,
+	#00b2c9,
+	#00a7bd,
+	#009cb0,
+	#0092a4,
+	#008798,
+	#008192,
+	#007c8c,
+	#007685,
+	#00717f,
+	#006b79,
+	#006673,
+	#00606c,
+	#005b66,
+	#005560,
+	#00505a,
+	#004a54,
+	#00454d,
+	#003f47,
+	#003a41,
+	#00343b,
+	#002f34,
+	#00292e,
+	#002328,
+	#001e22,
+	#00181c
+);
 
 // Palette: teal
 $palette-teal-0: #ffffff;
@@ -444,7 +822,49 @@ $palette-teal-925: #002522;
 $palette-teal-950: #001f1c;
 $palette-teal-975: #001917;
 $palette-teal-1000: #001412;
-$palette-teal: (#ffffff, #f1f9f8, #e3f4f2, #d5eeeb, #c7e8e5, #b9e2de, #abddd8, #9dd7d1, #8fd1cb, #81cbc4, #73c6be, #65c0b7, #58bab1, #4ab4aa, #3cafa4, #2ea99d, #20a397, #129d90, #04988a, #029183, #008a7d, #008477, #007e72, #00786d, #007267, #006c62, #00665d, #006057, #005a52, #00544d, #004f47, #004942, #00433d, #003d37, #003732, #00312c, #002b27, #002522, #001f1c, #001917, #001412);
+$palette-teal: (
+	#ffffff,
+	#f1f9f8,
+	#e3f4f2,
+	#d5eeeb,
+	#c7e8e5,
+	#b9e2de,
+	#abddd8,
+	#9dd7d1,
+	#8fd1cb,
+	#81cbc4,
+	#73c6be,
+	#65c0b7,
+	#58bab1,
+	#4ab4aa,
+	#3cafa4,
+	#2ea99d,
+	#20a397,
+	#129d90,
+	#04988a,
+	#029183,
+	#008a7d,
+	#008477,
+	#007e72,
+	#00786d,
+	#007267,
+	#006c62,
+	#00665d,
+	#006057,
+	#005a52,
+	#00544d,
+	#004f47,
+	#004942,
+	#00433d,
+	#003d37,
+	#003732,
+	#00312c,
+	#002b27,
+	#002522,
+	#001f1c,
+	#001917,
+	#001412
+);
 
 // Palette: green
 $palette-green-0: #ffffff;
@@ -488,7 +908,49 @@ $palette-green-925: #112812;
 $palette-green-950: #0f2210;
 $palette-green-975: #0c1d0d;
 $palette-green-1000: #0a170a;
-$palette-green: (#ffffff, #f4faf4, #e9f5e9, #def0de, #d3ebd4, #c7e6c9, #bce1be, #b1dcb3, #a6d7a8, #9bd29d, #90cd92, #85c888, #7ac37d, #6fbe72, #63b967, #58b55c, #4db051, #49a64d, #449d48, #409444, #3c8a3f, #3a843d, #377f3a, #357937, #327335, #306d32, #2d682f, #2a622d, #285c2a, #255627, #235125, #204b22, #1e4520, #1b3f1d, #19391a, #163418, #142e15, #112812, #0f2210, #0c1d0d, #0a170a);
+$palette-green: (
+	#ffffff,
+	#f4faf4,
+	#e9f5e9,
+	#def0de,
+	#d3ebd4,
+	#c7e6c9,
+	#bce1be,
+	#b1dcb3,
+	#a6d7a8,
+	#9bd29d,
+	#90cd92,
+	#85c888,
+	#7ac37d,
+	#6fbe72,
+	#63b967,
+	#58b55c,
+	#4db051,
+	#49a64d,
+	#449d48,
+	#409444,
+	#3c8a3f,
+	#3a843d,
+	#377f3a,
+	#357937,
+	#327335,
+	#306d32,
+	#2d682f,
+	#2a622d,
+	#285c2a,
+	#255627,
+	#235125,
+	#204b22,
+	#1e4520,
+	#1b3f1d,
+	#19391a,
+	#163418,
+	#142e15,
+	#112812,
+	#0f2210,
+	#0c1d0d,
+	#0a170a
+);
 
 // Palette: light-green
 $palette-light-green-0: #ffffff;
@@ -532,7 +994,49 @@ $palette-light-green-925: #1e2a10;
 $palette-light-green-950: #1a240e;
 $palette-light-green-975: #161f0c;
 $palette-light-green-1000: #12190a;
-$palette-light-green: (#ffffff, #f7fbf3, #eff7e6, #e7f3da, #dfefce, #d7ebc1, #d0e6b5, #c8e2a9, #c0de9c, #b8da90, #b0d684, #a8d277, #a0ce6b, #98ca5f, #90c652, #88bd4b, #80b444, #78a840, #709d3b, #679137, #5f8633, #5b8031, #577b2f, #54752d, #50702a, #4c6a28, #486526, #446024, #405a22, #3c5520, #394f1e, #354a1c, #31451a, #2d3f18, #293a16, #253414, #212f12, #1e2a10, #1a240e, #161f0c, #12190a);
+$palette-light-green: (
+	#ffffff,
+	#f7fbf3,
+	#eff7e6,
+	#e7f3da,
+	#dfefce,
+	#d7ebc1,
+	#d0e6b5,
+	#c8e2a9,
+	#c0de9c,
+	#b8da90,
+	#b0d684,
+	#a8d277,
+	#a0ce6b,
+	#98ca5f,
+	#90c652,
+	#88bd4b,
+	#80b444,
+	#78a840,
+	#709d3b,
+	#679137,
+	#5f8633,
+	#5b8031,
+	#577b2f,
+	#54752d,
+	#50702a,
+	#4c6a28,
+	#486526,
+	#446024,
+	#405a22,
+	#3c5520,
+	#394f1e,
+	#354a1c,
+	#31451a,
+	#2d3f18,
+	#293a16,
+	#253414,
+	#212f12,
+	#1e2a10,
+	#1a240e,
+	#161f0c,
+	#12190a
+);
 
 // Palette: lime
 $palette-lime-0: #ffffff;
@@ -576,7 +1080,49 @@ $palette-lime-925: #292c0b;
 $palette-lime-950: #24270a;
 $palette-lime-975: #1f2209;
 $palette-lime-1000: #1b1d07;
-$palette-lime: (#ffffff, #fbfcf0, #f8fae2, #f4f7d3, #f0f5c4, #edf2b6, #e9efa7, #e5ed98, #e1ea8a, #dee87b, #dae56d, #d6e35e, #d3e04f, #cddb43, #c7d537, #b9c734, #acb930, #9fab2c, #929d29, #858e25, #778021, #737b20, #6e761f, #6a711d, #656c1c, #60671b, #5c6219, #575d18, #525817, #4e5316, #494e14, #444913, #404412, #3b3f10, #363a0f, #32360e, #2d310d, #292c0b, #24270a, #1f2209, #1b1d07);
+$palette-lime: (
+	#ffffff,
+	#fbfcf0,
+	#f8fae2,
+	#f4f7d3,
+	#f0f5c4,
+	#edf2b6,
+	#e9efa7,
+	#e5ed98,
+	#e1ea8a,
+	#dee87b,
+	#dae56d,
+	#d6e35e,
+	#d3e04f,
+	#cddb43,
+	#c7d537,
+	#b9c734,
+	#acb930,
+	#9fab2c,
+	#929d29,
+	#858e25,
+	#778021,
+	#737b20,
+	#6e761f,
+	#6a711d,
+	#656c1c,
+	#60671b,
+	#5c6219,
+	#575d18,
+	#525817,
+	#4e5316,
+	#494e14,
+	#444913,
+	#404412,
+	#3b3f10,
+	#363a0f,
+	#32360e,
+	#2d310d,
+	#292c0b,
+	#24270a,
+	#1f2209,
+	#1b1d07
+);
 
 // Palette: yellow
 $palette-yellow-0: #ffffff;
@@ -620,7 +1166,49 @@ $palette-yellow-925: #302d0b;
 $palette-yellow-950: #2b280a;
 $palette-yellow-975: #262309;
 $palette-yellow-1000: #211f08;
-$palette-yellow: (#ffffff, #fffdf0, #fffce1, #fffad2, #fff9c2, #fff7b3, #fff6a4, #fff495, #fff386, #fff177, #fff068, #ffee59, #ffec49, #f6e340, #edda37, #dccb33, #cbbb2f, #baab2b, #a99b27, #978c23, #867c1f, #81771e, #7c721d, #776e1c, #72691a, #6d6419, #686018, #635b17, #5e5616, #595215, #544d13, #4f4912, #4a4411, #453f10, #403b0f, #3a360e, #35310c, #302d0b, #2b280a, #262309, #211f08);
+$palette-yellow: (
+	#ffffff,
+	#fffdf0,
+	#fffce1,
+	#fffad2,
+	#fff9c2,
+	#fff7b3,
+	#fff6a4,
+	#fff495,
+	#fff386,
+	#fff177,
+	#fff068,
+	#ffee59,
+	#ffec49,
+	#f6e340,
+	#edda37,
+	#dccb33,
+	#cbbb2f,
+	#baab2b,
+	#a99b27,
+	#978c23,
+	#867c1f,
+	#81771e,
+	#7c721d,
+	#776e1c,
+	#72691a,
+	#6d6419,
+	#686018,
+	#635b17,
+	#5e5616,
+	#595215,
+	#544d13,
+	#4f4912,
+	#4a4411,
+	#453f10,
+	#403b0f,
+	#3a360e,
+	#35310c,
+	#302d0b,
+	#2b280a,
+	#262309,
+	#211f08
+);
 
 // Palette: amber
 $palette-amber-0: #ffffff;
@@ -664,7 +1252,49 @@ $palette-amber-925: #332701;
 $palette-amber-950: #2d2201;
 $palette-amber-975: #271e01;
 $palette-amber-1000: #211901;
-$palette-amber: (#ffffff, #fffaed, #fff6db, #fff1c9, #ffedb7, #ffe8a5, #ffe493, #ffdf81, #ffdb6f, #ffd65d, #ffd24b, #ffcd39, #ffc927, #fdc317, #fbbe07, #ebb206, #dba606, #cb9906, #bb8d05, #aa8105, #9a7504, #947004, #8e6c04, #886704, #826204, #7c5e03, #765903, #705503, #6a5003, #644c03, #5e4703, #584202, #523e02, #4c3902, #453502, #3f3002, #392b02, #332701, #2d2201, #271e01, #211901);
+$palette-amber: (
+	#ffffff,
+	#fffaed,
+	#fff6db,
+	#fff1c9,
+	#ffedb7,
+	#ffe8a5,
+	#ffe493,
+	#ffdf81,
+	#ffdb6f,
+	#ffd65d,
+	#ffd24b,
+	#ffcd39,
+	#ffc927,
+	#fdc317,
+	#fbbe07,
+	#ebb206,
+	#dba606,
+	#cb9906,
+	#bb8d05,
+	#aa8105,
+	#9a7504,
+	#947004,
+	#8e6c04,
+	#886704,
+	#826204,
+	#7c5e03,
+	#765903,
+	#705503,
+	#6a5003,
+	#644c03,
+	#5e4703,
+	#584202,
+	#523e02,
+	#4c3902,
+	#453502,
+	#3f3002,
+	#392b02,
+	#332701,
+	#2d2201,
+	#271e01,
+	#211901
+);
 
 // Palette: orange
 $palette-orange-0: #ffffff;
@@ -708,7 +1338,49 @@ $palette-orange-925: #372100;
 $palette-orange-950: #301c00;
 $palette-orange-975: #281800;
 $palette-orange-1000: #211400;
-$palette-orange: (#ffffff, #fff8ee, #fff1dd, #ffeacb, #ffe3ba, #ffdca9, #ffd598, #ffce86, #ffc775, #ffc064, #ffb953, #ffb242, #ffac30, #ffa51f, #ff9e0e, #f69507, #ed8d00, #de8400, #cf7b00, #c07300, #b16a00, #aa6500, #a36100, #9c5d00, #945800, #8d5400, #865000, #7f4c00, #784700, #704300, #693f00, #623a00, #5b3600, #543200, #4c2e00, #452900, #3e2500, #372100, #301c00, #281800, #211400);
+$palette-orange: (
+	#ffffff,
+	#fff8ee,
+	#fff1dd,
+	#ffeacb,
+	#ffe3ba,
+	#ffdca9,
+	#ffd598,
+	#ffce86,
+	#ffc775,
+	#ffc064,
+	#ffb953,
+	#ffb242,
+	#ffac30,
+	#ffa51f,
+	#ff9e0e,
+	#f69507,
+	#ed8d00,
+	#de8400,
+	#cf7b00,
+	#c07300,
+	#b16a00,
+	#aa6500,
+	#a36100,
+	#9c5d00,
+	#945800,
+	#8d5400,
+	#865000,
+	#7f4c00,
+	#784700,
+	#704300,
+	#693f00,
+	#623a00,
+	#5b3600,
+	#543200,
+	#4c2e00,
+	#452900,
+	#3e2500,
+	#372100,
+	#301c00,
+	#281800,
+	#211400
+);
 
 // Palette: deep-orange
 $palette-deep-orange-0: #ffffff;
@@ -752,7 +1424,49 @@ $palette-deep-orange-925: #3d1508;
 $palette-deep-orange-950: #331207;
 $palette-deep-orange-975: #2a0e06;
 $palette-deep-orange-1000: #210b04;
-$palette-deep-orange: (#ffffff, #fff5f2, #ffebe5, #ffe1d8, #ffd8cb, #ffcebe, #ffc4b1, #ffbaa4, #ffb097, #ffa68a, #ff9c7d, #ff9270, #ff8963, #ff7f56, #ff7549, #ff6b3c, #ff612f, #f95a28, #f25320, #e54e1f, #d84a1d, #cf471c, #c6441a, #bd4019, #b43d18, #aa3a17, #a13716, #983414, #8f3113, #862e12, #7d2b11, #74270f, #6a240e, #61210d, #581e0c, #4f1b0b, #461809, #3d1508, #331207, #2a0e06, #210b04);
+$palette-deep-orange: (
+	#ffffff,
+	#fff5f2,
+	#ffebe5,
+	#ffe1d8,
+	#ffd8cb,
+	#ffcebe,
+	#ffc4b1,
+	#ffbaa4,
+	#ffb097,
+	#ffa68a,
+	#ff9c7d,
+	#ff9270,
+	#ff8963,
+	#ff7f56,
+	#ff7549,
+	#ff6b3c,
+	#ff612f,
+	#f95a28,
+	#f25320,
+	#e54e1f,
+	#d84a1d,
+	#cf471c,
+	#c6441a,
+	#bd4019,
+	#b43d18,
+	#aa3a17,
+	#a13716,
+	#983414,
+	#8f3113,
+	#862e12,
+	#7d2b11,
+	#74270f,
+	#6a240e,
+	#61210d,
+	#581e0c,
+	#4f1b0b,
+	#461809,
+	#3d1508,
+	#331207,
+	#2a0e06,
+	#210b04
+);
 
 // Palette: brown
 $palette-brown-0: #ffffff;
@@ -796,7 +1510,49 @@ $palette-brown-925: #221814;
 $palette-brown-950: #1c1411;
 $palette-brown-975: #160f0d;
 $palette-brown-1000: #100b09;
-$palette-brown: (#ffffff, #faf8f8, #f4f1f0, #efeae9, #e9e3e1, #e4dcda, #ded5d2, #d9cecb, #d3c7c3, #cec0bc, #c8bab4, #c3b3ad, #bdaca5, #b8a59e, #b29e96, #ad978f, #a79087, #a28980, #9c8278, #977b71, #917469, #8a6a5f, #826054, #7a584c, #735145, #6d4d41, #67483d, #61443a, #5a4036, #543b32, #4e372e, #48322b, #422e27, #3b2a23, #352520, #2f211c, #291d18, #221814, #1c1411, #160f0d, #100b09);
+$palette-brown: (
+	#ffffff,
+	#faf8f8,
+	#f4f1f0,
+	#efeae9,
+	#e9e3e1,
+	#e4dcda,
+	#ded5d2,
+	#d9cecb,
+	#d3c7c3,
+	#cec0bc,
+	#c8bab4,
+	#c3b3ad,
+	#bdaca5,
+	#b8a59e,
+	#b29e96,
+	#ad978f,
+	#a79087,
+	#a28980,
+	#9c8278,
+	#977b71,
+	#917469,
+	#8a6a5f,
+	#826054,
+	#7a584c,
+	#735145,
+	#6d4d41,
+	#67483d,
+	#61443a,
+	#5a4036,
+	#543b32,
+	#4e372e,
+	#48322b,
+	#422e27,
+	#3b2a23,
+	#352520,
+	#2f211c,
+	#291d18,
+	#221814,
+	#1c1411,
+	#160f0d,
+	#100b09
+);
 
 // Palette: blue-gray
 $palette-blue-gray-0: #ffffff;
@@ -840,7 +1596,49 @@ $palette-blue-gray-925: #192124;
 $palette-blue-gray-950: #151b1e;
 $palette-blue-gray-975: #111618;
 $palette-blue-gray-1000: #0c1012;
-$palette-blue-gray: (#ffffff, #f7f9f9, #eff2f4, #e7ecee, #e0e5e8, #d8dfe2, #d0d8dd, #c8d2d7, #c0ccd1, #b8c5cb, #b1bfc6, #a9b8c0, #a1b2ba, #99acb5, #91a5af, #899fa9, #8198a3, #7a929e, #728b98, #6a8592, #627f8c, #5d7986, #597380, #546e7a, #506874, #4c636e, #485d68, #435862, #3f525c, #3b4d55, #37474f, #334249, #2e3c43, #2a373d, #263137, #222c31, #1d262b, #192124, #151b1e, #111618, #0c1012);
+$palette-blue-gray: (
+	#ffffff,
+	#f7f9f9,
+	#eff2f4,
+	#e7ecee,
+	#e0e5e8,
+	#d8dfe2,
+	#d0d8dd,
+	#c8d2d7,
+	#c0ccd1,
+	#b8c5cb,
+	#b1bfc6,
+	#a9b8c0,
+	#a1b2ba,
+	#99acb5,
+	#91a5af,
+	#899fa9,
+	#8198a3,
+	#7a929e,
+	#728b98,
+	#6a8592,
+	#627f8c,
+	#5d7986,
+	#597380,
+	#546e7a,
+	#506874,
+	#4c636e,
+	#485d68,
+	#435862,
+	#3f525c,
+	#3b4d55,
+	#37474f,
+	#334249,
+	#2e3c43,
+	#2a373d,
+	#263137,
+	#222c31,
+	#1d262b,
+	#192124,
+	#151b1e,
+	#111618,
+	#0c1012
+);
 
 $palette_map: (
 	'gray': $palette-gray,
@@ -861,12 +1659,15 @@ $palette_map: (
 	'orange': $palette-orange,
 	'deep-orange': $palette-deep-orange,
 	'brown': $palette-brown,
-	'blue-gray': $palette-blue-gray
+	'blue-gray': $palette-blue-gray,
 );
 
 @function palette($palette, $shade) {
 	@if meta.type_of($palette) == 'string' {
-		@return list.nth(map.get($palette_map, $palette), calc($shade / $palette-step + 1));
+		@return list.nth(
+			map.get($palette_map, $palette),
+			calc($shade / $palette-step + 1)
+		);
 	}
 	@return list.nth($palette, $shade / $palette-step + 1);
 }

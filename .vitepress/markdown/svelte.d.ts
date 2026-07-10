@@ -1,3 +1,3 @@
 declare module 'highlightjs-svelte' {
-    export default function (hljs: any): void
+	export default function (hljs: any): void;
 }

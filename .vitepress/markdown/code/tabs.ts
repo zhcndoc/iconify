@@ -1,29 +1,29 @@
-export type CodeTabType = "src" | "css" | "demo";
+export type CodeTabType = 'src' | 'css' | 'demo';
 
 export interface CodeTab {
-  type: CodeTabType;
-  src: string;
-  title: string;
-  lang: string;
-  raw: string;
-  html: string;
-  hint: string;
-  replace?: (content: string) => string;
+	type: CodeTabType;
+	src: string;
+	title: string;
+	lang: string;
+	raw: string;
+	html: string;
+	hint: string;
+	replace?: (content: string) => string;
 }
 
 // Replacements for language hint
 const langReplacements: Record<string, string> = {
-  scss: "css",
-  bash: "",
-  sh: "",
-  txt: "",
-  regex: "",
-  raw: "",
-  apache: "httpd.conf",
-  nginx: "nginx.conf",
+	scss: 'css',
+	bash: '',
+	sh: '',
+	txt: '',
+	regex: '',
+	raw: '',
+	apache: 'httpd.conf',
+	nginx: 'nginx.conf',
 };
 
-const disableCopy: Set<string> = new Set(["txt"]);
+const disableCopy: Set<string> = new Set(['txt']);
 
 /**
  * Current code parser data
@@ -34,71 +34,71 @@ let tabs: CodeTab[] = [];
  * Reset code tabs
  */
 export function resetCodeTabs() {
-  tabs = [];
+	tabs = [];
 }
 
 /**
  * Get current tabs
  */
 export function getCodeTabs(): CodeTab[] {
-  return tabs;
+	return tabs;
 }
 
 function returnContent(str: string): string {
-  return str;
+	return str;
 }
 
 /**
  * Convert tabs content to string
  */
 export function renderCodeTabs(): string {
-  let code = '<div class="code-blocks">';
-  tabs.forEach((tab) => {
-    const replace = tab.replace || returnContent;
-    let raw = "";
-    if (tab.raw !== "") {
-      // eslint-disable-next-line n/prefer-global/buffer
-      const buff = Buffer.from(tab.raw, "utf8");
-      raw = replace(buff.toString("base64"));
-    }
+	let code = '<div class="code-blocks">';
+	tabs.forEach((tab) => {
+		const replace = tab.replace || returnContent;
+		let raw = '';
+		if (tab.raw !== '') {
+			// eslint-disable-next-line n/prefer-global/buffer
+			const buff = Buffer.from(tab.raw, 'utf8');
+			raw = replace(buff.toString('base64'));
+		}
 
-    // Container
-    code += `<div class="code-block code-block--${tab.type}${
-      tab.title === "" ? "" : " code-block--with-title"
-    }">`;
+		// Container
+		code += `<div class="code-block code-block--${tab.type}${
+			tab.title === '' ? '' : ' code-block--with-title'
+		}">`;
 
-    // Title
-    if (tab.title !== "") {
-      code += `<div class="code-block-title">${replace(tab.title)}</div>`;
-    }
+		// Title
+		if (tab.title !== '') {
+			code += `<div class="code-block-title">${replace(tab.title)}</div>`;
+		}
 
-    // HTML
-    let html = tab.html;
-    if (tab.type !== "demo") {
-      const baseLang = tab.lang;
-      const lang = langReplacements[baseLang] ?? baseLang;
-      if (raw !== "" && !disableCopy.has(baseLang))
-        html = `<copy-to-clipboard raw="${raw}" lang="${lang}">${html}</copy-to-clipboard>`;
-      else if (lang)
-        html = `<small class="code-block-lang code-block-lang--${lang}">${lang}</small>${html}`;
-    }
+		// HTML
+		let html = tab.html;
+		if (tab.type !== 'demo') {
+			const baseLang = tab.lang;
+			const lang = langReplacements[baseLang] ?? baseLang;
+			if (raw !== '' && !disableCopy.has(baseLang))
+				html = `<copy-to-clipboard raw="${raw}" lang="${lang}">${html}</copy-to-clipboard>`;
+			else if (lang)
+				html = `<small class="code-block-lang code-block-lang--${lang}">${lang}</small>${html}`;
+		}
 
-    // Content
-    code += `<div class="code-block-content code-block-content--with${
-      tab.title === "" ? "out" : ""
-    }-title code-block-content--with${
-      tab.hint === "" ? "out" : ""
-    }-hint">${html}</div>`;
+		// Content
+		code += `<div class="code-block-content code-block-content--with${
+			tab.title === '' ? 'out' : ''
+		}-title code-block-content--with${
+			tab.hint === '' ? 'out' : ''
+		}-hint">${html}</div>`;
 
-    // Hint
-    if (tab.hint !== "") {
-      code += `<div class="code-block-hint">${replace(tab.hint)}</div>`;
-    }
+		// Hint
+		if (tab.hint !== '') {
+			code += `<div class="code-block-hint">${replace(tab.hint)}</div>`;
+		}
 
-    // Close container
-    code += "</div>";
-  });
+		// Close container
+		code += '</div>';
+	});
 
-  code += "</div>";
-  return code;
+	code += '</div>';
+	return code;
 }

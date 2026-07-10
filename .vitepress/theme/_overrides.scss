@@ -1,30 +1,29 @@
 .vp-code-group .tabs label {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 table {
-  width: 100% !important;
-  display: table;
+	width: 100% !important;
+	display: table;
 }
 
 .custom-block.tip .custom-block-title {
-  color: var(--vp-c-brand);
+	color: var(--vp-c-brand);
 }
 
 // Underline for links in content
 .vp-doc a {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 // Sidebar item: hide collapse button for active section
 .VPSidebarItem {
-  &.has-active {
-    > .item > .caret {
-      display: none;
-    }
-  }
+	&.has-active {
+		> .item > .caret {
+			display: none;
+		}
+	}
 }
-
 
 /**
  * VitePress: Custom fix
@@ -36,227 +35,239 @@ table {
   over scoped class data attribute.
 */
 .dark {
-  /* todo: review this if team included */
-  /*.vp-doc a:not(.VPSocialLink),*/
-  .vp-doc a > code,
-  .VPNavBarMenuLink.VPNavBarMenuLink:hover,
-  .VPNavBarMenuLink.VPNavBarMenuLink.active,
-  .link.link:hover,
-  .link.link.active,
-  .edit-link-button.edit-link-button {
-    color: var(--vp-c-brand-lighter);
-  }
-  .vp-doc a:not(.VPSocialLink):hover,
-  .vp-doc a > code:hover {
-    color: var(--vp-c-brand-lightest);
-    opacity: 1;
-  }
+	/* todo: review this if team included */
+	/*.vp-doc a:not(.VPSocialLink),*/
+	.vp-doc a > code,
+	.VPNavBarMenuLink.VPNavBarMenuLink:hover,
+	.VPNavBarMenuLink.VPNavBarMenuLink.active,
+	.link.link:hover,
+	.link.link.active,
+	.edit-link-button.edit-link-button {
+		color: var(--vp-c-brand-lighter);
+	}
+	.vp-doc a:not(.VPSocialLink):hover,
+	.vp-doc a > code:hover {
+		color: var(--vp-c-brand-lightest);
+		opacity: 1;
+	}
 }
 
 /* Pager */
 div.prev-next {
-  width: 100%;
-  flex-wrap: wrap;
-  > div.pager {
-    flex-grow: 1;
-    width: auto;
-  }
+	width: 100%;
+	flex-wrap: wrap;
+	> div.pager {
+		flex-grow: 1;
+		width: auto;
+	}
 }
 a.pager-link[class] {
-  border: none;
-  position: relative;
+	border: none;
+	position: relative;
 
-  .desc {
-    opacity: 0.87;
-    transition: opacity 0.2s;
-  }
+	.desc {
+		opacity: 0.87;
+		transition: opacity 0.2s;
+	}
 
-  &.prev, &.next {
-    &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      margin-top: -16px;
-      width: 28px;
-      height: 32px;
-      padding-right: 32px;
-      color: var(--vp-c-text-3);
-      transition: color 0.2s;
-      background-color: currentColor;
-      -webkit-mask-image: var(--icon-pager);
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-size: 100% 100%;
-      mask-image: var(--icon-pager);
-      mask-repeat: no-repeat;
-      mask-size: 100% 100%;
-    }
-  }
+	&.prev,
+	&.next {
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			margin-top: -16px;
+			width: 28px;
+			height: 32px;
+			padding-right: 32px;
+			color: var(--vp-c-text-3);
+			transition: color 0.2s;
+			background-color: currentColor;
+			-webkit-mask-image: var(--icon-pager);
+			-webkit-mask-repeat: no-repeat;
+			-webkit-mask-size: 100% 100%;
+			mask-image: var(--icon-pager);
+			mask-repeat: no-repeat;
+			mask-size: 100% 100%;
+		}
+	}
 
-  &.prev {
-    padding-left: 36px;
-    padding-right: 0;
-    &:after {
-      left: 0;
-      transform: rotate(180deg);
-    }
-  }
+	&.prev {
+		padding-left: 36px;
+		padding-right: 0;
+		&:after {
+			left: 0;
+			transform: rotate(180deg);
+		}
+	}
 
-  &.next {
-    padding-left: 0;
-    padding-right: 36px;
-    &:after {
-      right: 0;
-    }
-  }
+	&.next {
+		padding-left: 0;
+		padding-right: 36px;
+		&:after {
+			right: 0;
+		}
+	}
 
-  &:hover {
-    &:after {
-      color: var(--vp-c-brand-accent);
-    }
-    .title {
-      color: var(--vp-c-brand-accent);
-    }
-    .desc {
-      opacity: 1;
-    }
-  }
+	&:hover {
+		&:after {
+			color: var(--vp-c-brand-accent);
+		}
+		.title {
+			color: var(--vp-c-brand-accent);
+		}
+		.desc {
+			opacity: 1;
+		}
+	}
 }
 
 /* Links hover */
-a.edit-link-button[class], .vp-doc a {
-  &:hover {
-    color: var(--vp-c-brand-accent);
-    transition: none;
-  }
+a.edit-link-button[class],
+.vp-doc a {
+	&:hover {
+		color: var(--vp-c-brand-accent);
+		transition: none;
+	}
 }
 
 /* VPNavBarTitle */
 .VPNavBarTitle {
-  .title {
-    svg {
-      transition: all .2s ease-in-out;
-    }
-    &:hover {
-      opacity: 1;
-      svg {
-        transform: scale(1.1);
-      }
-    }
-  }
+	.title {
+		svg {
+			transition: all 0.2s ease-in-out;
+		}
+		&:hover {
+			opacity: 1;
+			svg {
+				transform: scale(1.1);
+			}
+		}
+	}
 }
 
 // Fake border
-.vp-doc h2, .group + .group[data-v-1e48ca08] {
-  position: relative;
-  border-top-width: 0;
+.vp-doc h2,
+.group + .group[data-v-1e48ca08] {
+	position: relative;
+	border-top-width: 0;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--vp-c-border);
-    animation: 2s linear forwards border-line;
-  }
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: var(--vp-c-border);
+		animation: 2s linear forwards border-line;
+	}
 }
 
 @media (min-width: 960px) {
-  .VPNavBarTitle.has-sidebar a.title {
-    position: relative;
-    border-bottom-width: 0;
+	.VPNavBarTitle.has-sidebar a.title {
+		position: relative;
+		border-bottom-width: 0;
 
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--vp-c-border);
-      animation: 1s linear forwards border-line;
-    }
-  }
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 1px;
+			background: var(--vp-c-border);
+			animation: 1s linear forwards border-line;
+		}
+	}
 }
 
-.VPSidebarItem.level-1 .items, .VPSidebarItem.level-2 .items, .VPSidebarItem.level-3 .items, .VPSidebarItem.level-4 .items, .VPSidebarItem.level-5 .items, .VPDocAside .has-outline .content {
-  position: relative;
-  border-left-color: transparent !important;
+.VPSidebarItem.level-1 .items,
+.VPSidebarItem.level-2 .items,
+.VPSidebarItem.level-3 .items,
+.VPSidebarItem.level-4 .items,
+.VPSidebarItem.level-5 .items,
+.VPDocAside .has-outline .content {
+	position: relative;
+	border-left-color: transparent !important;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -1px;
-    width: 1px;
-    background: var(--vp-c-border);
-    animation: 0.5s linear forwards border-horizontal;
-  }
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: -1px;
+		width: 1px;
+		background: var(--vp-c-border);
+		animation: 0.5s linear forwards border-horizontal;
+	}
 }
 
-.menu + .translations::before, .menu + .appearance::before, .menu + .social-links::before, .translations + .appearance::before, .appearance + .social-links::before {
-  animation: 0.5s linear forwards height24;
+.menu + .translations::before,
+.menu + .appearance::before,
+.menu + .social-links::before,
+.translations + .appearance::before,
+.appearance + .social-links::before {
+	animation: 0.5s linear forwards height24;
 }
 
 @keyframes border-line {
-  from {
-    right: 100%;
-  }
-  to {
-    right: 0;
-  }
+	from {
+		right: 100%;
+	}
+	to {
+		right: 0;
+	}
 }
 
 @keyframes border-horizontal {
-  from {
-    bottom: 100%;
-  }
-  to {
-    bottom: 0;
-  }
+	from {
+		bottom: 100%;
+	}
+	to {
+		bottom: 0;
+	}
 }
 
 @keyframes height24 {
-  from {
-    height: 0;
-  }
-  to {
-    height: 24px;
-  }
+	from {
+		height: 0;
+	}
+	to {
+		height: 24px;
+	}
 }
 
 // List item
 .vp-doc ul.simple-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 
-  li {
-    display: block;
-    margin: 8px 0;
-    padding: 0;
-  }
+	li {
+		display: block;
+		margin: 8px 0;
+		padding: 0;
+	}
 
-  iconify-icon {
-    font-size: 24px;
-    line-height: 1em;
-    margin-right: 8px;
-    vertical-align: -4px;
-    color: var(--vp-c-text-3);
-    transition: color 0.2s;
-  }
+	iconify-icon {
+		font-size: 24px;
+		line-height: 1em;
+		margin-right: 8px;
+		vertical-align: -4px;
+		color: var(--vp-c-text-3);
+		transition: color 0.2s;
+	}
 
-  &:hover {
-    iconify-icon {
-      color: var(--vp-c-brand);
-    }
-  }
+	&:hover {
+		iconify-icon {
+			color: var(--vp-c-brand);
+		}
+	}
 
-  li:hover {
-    iconify-icon {
-      color: var(--vp-c-brand-accent);
-    }
-  }
+	li:hover {
+		iconify-icon {
+			color: var(--vp-c-brand-accent);
+		}
+	}
 }
