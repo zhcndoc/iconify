@@ -2,37 +2,26 @@
 title: Split Icon Packages
 types:
   IconifyIcon: '/docs/types/iconify-icon.md'
+  IconifyInfo: '/docs/types/iconify-info.md'
 functions:
   exportIconPackage: '/docs/libraries/tools/export/icon-package.md'
 ```
 
 # Split icon packages
 
-`include notices/split-icons`
-
 For developer's convenience, [full icon sets package](./all.md) was also available as smaller packages.
 
 This documentation is for packages that contain many files, one per icon. These packages can be used if you need to import only few icons without parsing the whole icon set.
 
-Be aware that some packages might contain many files, which some file systems cannot handle.
-
 ## Packages
 
-There are 2 versions of packages available on NPM:
-
-- `[npm]@iconify-icons/{prefix}` that contains data as ES modules for modern development.
-- `[npm]@iconify/icons-{prefix}` that contains icon data as CommonJS for legacy code.
-
-Replace `[str]{prefix}` with an icon set prefix.
+Packages are published as `[npm]@iconify-icons/{prefix}`, where `[str]{prefix}` is icon set prefix.
 
 Packages are automatically generated from [big icon sets package](./all.md) whenever it is updated.
 
 ## Contents
 
-Each package contains one icon set, with separate files for each icon (`[str]{name}` is icon name):
-
-- `[file]{name}.js` contains icon data in `[type]IconifyIcon` format as default export.
-- `[file]{name}.d.ts` contains type definition.
+Each package contains one icon set, with separate files for each icon (`[str]{name}` is icon name).
 
 Icon data in `[type]IconifyIcon` format looks like this:
 
@@ -53,12 +42,16 @@ Example of React component using icon from such package:
 src: icon-components/common/offline.jsx
 ```
 
-### CommonJS packages
+## Info
 
-For older software use CommonJS packages. Replace `[func]import` with `[func]require()`:
+Additionally, each package contains default export with information about icon set in `[type]IconifyInfo` format.
+
+Usage:
 
 ```js
-const mdiHome = require('@iconify/icons-mdi/home');
+import mdiLightInfo from '@iconify-icons/mdi';
+
+console.log('Icon set name:', mdiLightInfo.name);
 ```
 
 ## Creating packages
