@@ -1,12 +1,12 @@
 import { createWriteStream } from 'node:fs';
 import { resolve } from 'node:path';
-import { writeFile } from 'node:fs/promises';
+import { writeFile, readFile } from 'node:fs/promises';
 import type {
 	DefaultTheme,
 	HeadConfig,
 	SiteConfig,
 	TransformContext,
-} from 'vitepress/dist/node';
+} from 'vitepress';
 import { SitemapStream } from 'sitemap';
 import { isCI } from 'std-env';
 import { ogUrl } from './constants';
@@ -114,10 +114,11 @@ export async function buildSitemap({ outDir }: SiteConfig) {
 	links.forEach((link) => sitemap.write(link));
 	sitemap.end();
 	await new Promise((resolve) => writeStream.on('finish', resolve));
+
+	const oldRobots = await readFile('public/robots.txt', 'utf8');
 	await writeFile(
 		resolve(outDir, 'robots.txt'),
-		`User-agent: *
-Allow: /
+		`${oldRobots.trim()}
 
 Sitemap: ${hostname}sitemap.xml`.replace(/\\r\\n/g, '\n'),
 		{ encoding: 'utf-8' }
