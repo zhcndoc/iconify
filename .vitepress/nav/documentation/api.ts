@@ -57,6 +57,20 @@ export const APISidebar: SidebarItem[] = [
 				link: `${root}hosting-js/`,
 				items: [
 					{
+						text: 'Deployment',
+						link: `${root}hosting-js/deployment`,
+						items: [
+							{
+								text: 'VPS',
+								link: `${root}hosting-js/vps`,
+							},
+							{
+								text: 'Build API',
+								link: `${root}hosting-js/build`,
+							},
+						],
+					},
+					{
 						text: 'Configuration',
 						link: `${root}hosting-js/config`,
 					},
